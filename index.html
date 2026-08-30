@@ -4,285 +4,929 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>翁法罗斯 Skill 套件 · Amphoreus Skill Suite</title>
-<meta name="description" content="以《崩坏:星穹铁道》翁法罗斯篇十三位角色为人格外壳的 13 张工程方法卡 + 1 个总路由,面向 Claude Code / Cursor 及多智能体生态。">
+<meta name="description" content="以《崩坏：星穹铁道》翁法罗斯篇十三位黄金裔为人格外壳的 13 张工程方法卡 + 1 个总路由。每张卡不是聊天人设,而是一套可执行、可验收的工程方法论。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="翁法罗斯 Skill 套件 · Amphoreus Skill Suite">
+<meta property="og:description" content="13 张黄金裔工程方法卡 + 1 个总路由:65 个冻结评测场景、每卡 60/60、182 条台词逐字对齐、两线端到端 CONFIRMED。">
+<meta property="og:url" content="https://xi-kari.github.io/amphoreus-skill-suite/">
+<meta property="og:image" content="https://xi-kari.github.io/amphoreus-skill-suite/assets/banner.jpg">
+<meta property="og:image:width" content="2319">
+<meta property="og:image:height" content="328">
+<meta property="og:image:alt" content="十三卡「逐火者的命录」横幅拼图">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b0d15">
+<link rel="canonical" href="https://xi-kari.github.io/amphoreus-skill-suite/">
 <link rel="icon" href="assets/symbols/trailblazer-stelle.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Noto+Serif+SC:wght@600;900&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
+/* ============ tokens ============ */
 :root{
-  --bg:#0b0e14;--bg2:#11141d;--panel:#161a26;--line:#2a2f3e;
-  --gold:#e3b341;--gold2:#caa14a;--parch:#f2e7cd;--ink:#c9cfdd;--dim:#8b93a7;
+  --void:#07080d; --bg:#0b0d15; --bg2:#0e111a;
+  --panel:#12151f; --panel2:#151827;
+  --hair:rgba(240,230,205,.10); --hair2:rgba(240,230,205,.055);
+  --goldline:rgba(201,162,75,.32); --goldline2:rgba(201,162,75,.16);
+  --gold:#e8b54a; --gold2:#c9a24b; --gold3:#9c7a2e;
+  --parch:#f0e6cd; --ink:#c3cadb; --dim:#8f97ab; --faint:#7f88a0;
+  --vigil:#a9bfdd; --cinnabar:#c65f4e;
+  --serif:'Noto Serif SC',serif; --sans:'Noto Sans SC',system-ui,sans-serif;
+  --lat:'Cinzel',serif; --mono:'JetBrains Mono','Noto Sans SC',Consolas,monospace;
+  --grad-gold:linear-gradient(135deg,#f4d488,#e0ab3a 48%,#a97f2f);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:'Noto Sans SC',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
-h1,h2,h3{font-family:'Noto Serif SC',serif;color:var(--parch)}
+html{scroll-behavior:smooth;scroll-padding-top:92px;overflow-x:hidden;overflow-x:clip}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.85;overflow-x:hidden;overflow-x:clip;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(232,181,74,.32);color:#fff8e7}
 a{color:var(--gold);text-decoration:none}
-.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
-section{padding:72px 0}
-.kicker{letter-spacing:.35em;font-size:.78rem;color:var(--gold2);text-transform:uppercase}
-h2{font-size:1.9rem;margin:.4em 0 1.2em;font-weight:900}
-h2 small{display:block;font-size:.8rem;color:var(--dim);font-family:'Noto Sans SC';letter-spacing:.2em;margin-top:.4em}
+a:hover{color:#f4d488}
+img{max-width:100%}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--void)}
+::-webkit-scrollbar-thumb{background:#242a3a;border-radius:5px;border:2px solid var(--void)}
+::-webkit-scrollbar-thumb:hover{background:var(--gold3)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+.mono{font-family:var(--mono)}
 
-/* hero */
-.hero{position:relative;padding:96px 0 40px;text-align:center;
-  background:
-    radial-gradient(1200px 500px at 50% -10%,rgba(227,179,65,.14),transparent 62%),
-    radial-gradient(2px 2px at 18% 32%,rgba(242,231,205,.5),transparent 60%),
-    radial-gradient(1.5px 1.5px at 82% 22%,rgba(242,231,205,.4),transparent 60%),
-    radial-gradient(1.5px 1.5px at 66% 60%,rgba(242,231,205,.28),transparent 60%),
-    radial-gradient(2px 2px at 30% 74%,rgba(242,231,205,.22),transparent 60%),
-    linear-gradient(180deg,#0d1019,var(--bg))}
-.hero h1{font-size:clamp(2.2rem,5.4vw,3.6rem);font-weight:900;letter-spacing:.08em}
-.hero .en{color:var(--gold);font-size:clamp(.9rem,2vw,1.1rem);letter-spacing:.5em;margin-top:10px;text-transform:uppercase}
-.hero p.tag{max-width:660px;margin:22px auto 0;color:var(--dim)}
-.coinrow{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:34px}
-.coinrow img{width:44px;height:44px;border-radius:50%;border:1px solid rgba(227,179,65,.55);
-  box-shadow:0 0 12px rgba(227,179,65,.22);transition:transform .25s}
-.coinrow img:hover{transform:scale(1.22) rotate(6deg)}
-.chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:30px 0 34px}
-.chip{border:1px solid var(--line);background:rgba(22,26,38,.75);border-radius:999px;padding:7px 16px;
-  font-size:.82rem;color:var(--parch)}
-.chip b{color:var(--gold)}
-.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.btn{padding:12px 26px;border-radius:8px;font-weight:700;font-size:.95rem;transition:all .25s}
-.btn.gold{background:linear-gradient(135deg,var(--gold),#b78528);color:#151000}
-.btn.gold:hover{box-shadow:0 6px 24px rgba(227,179,65,.4);transform:translateY(-2px)}
-.btn.ghost{border:1px solid var(--gold2);color:var(--gold)}
-.btn.ghost:hover{background:rgba(227,179,65,.1)}
-.banner{margin-top:56px}
-.banner img{width:100%;display:block;border-radius:10px;border:1px solid var(--line);
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
-  mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.credit{font-size:.75rem;color:var(--dim);margin-top:10px}
+/* ============ sky ============ */
+.sky{position:fixed;inset:0;z-index:-2;background:
+  radial-gradient(1100px 560px at 18% -6%,rgba(201,162,75,.13),transparent 62%),
+  radial-gradient(900px 620px at 88% 12%,rgba(120,132,180,.08),transparent 60%),
+  radial-gradient(1.6px 1.6px at 12% 24%,rgba(242,231,205,.5),transparent 55%),
+  radial-gradient(1.2px 1.2px at 34% 12%,rgba(242,231,205,.34),transparent 55%),
+  radial-gradient(1.8px 1.8px at 58% 30%,rgba(242,231,205,.28),transparent 55%),
+  radial-gradient(1.2px 1.2px at 76% 8%,rgba(242,231,205,.4),transparent 55%),
+  radial-gradient(1.4px 1.4px at 90% 42%,rgba(242,231,205,.26),transparent 55%),
+  radial-gradient(1.2px 1.2px at 22% 58%,rgba(242,231,205,.2),transparent 55%),
+  radial-gradient(1.6px 1.6px at 47% 74%,rgba(242,231,205,.22),transparent 55%),
+  radial-gradient(1.2px 1.2px at 68% 62%,rgba(242,231,205,.26),transparent 55%),
+  radial-gradient(1.4px 1.4px at 84% 82%,rgba(242,231,205,.2),transparent 55%),
+  linear-gradient(180deg,var(--void),var(--bg) 42%,var(--bg2))}
+.sky::after{content:'';position:absolute;inset:0;opacity:.5;mix-blend-mode:overlay;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='.055'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
 
-/* cards */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(236px,1fr));gap:22px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;
-  position:relative;transition:transform .3s,box-shadow .3s,border-color .3s;opacity:0;transform:translateY(24px)}
-.card.on{opacity:1;transform:none}
-.card:hover{transform:translateY(-8px);border-color:rgba(227,179,65,.6);box-shadow:0 14px 40px rgba(0,0,0,.5),0 0 24px rgba(227,179,65,.12)}
-.card .art{position:relative}
-.card .art img.face{width:100%;display:block;aspect-ratio:4/7;object-fit:cover}
-.card .art img.coin{position:absolute;right:10px;bottom:-24px;width:52px;height:52px;border-radius:50%;
-  border:2px solid var(--gold2);box-shadow:0 4px 14px rgba(0,0,0,.55)}
-.card .meta{padding:20px 16px 18px}
-.card .meta h3{font-size:1.12rem}
-.card .meta .title{color:var(--gold2);font-size:.8rem;letter-spacing:.14em;margin-top:2px}
-.card .meta code{display:inline-block;margin:10px 0 8px;font-size:.74rem;color:var(--gold);
-  background:rgba(227,179,65,.08);border:1px solid rgba(227,179,65,.25);border-radius:6px;padding:2px 8px}
-.card .meta .m{font-size:.82rem;color:var(--dim)}
+/* ============ ornaments ============ */
+.meander{display:inline-block;width:96px;height:9px;vertical-align:middle;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='9' viewBox='0 0 20 9'%3E%3Cpath d='M2 8V1.5h13v4H7v-2h5' fill='none' stroke='%23c9a24b' stroke-opacity='.6' stroke-width='1'/%3E%3C/svg%3E") repeat-x left center/20px 9px}
+.rule{display:flex;align-items:center;gap:14px}
+.rule::before,.rule::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--goldline2))}
+.rule::after{background:linear-gradient(90deg,var(--goldline2),transparent)}
 
-/* router */
-.router{display:flex;gap:34px;align-items:center;justify-content:center;flex-wrap:wrap;
-  background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:34px}
-.router img{width:150px;border-radius:10px;border:1px solid var(--line)}
-.router .txt{max-width:420px}
-.router .txt h3{font-size:1.3rem;margin-bottom:8px}
-.router .txt p{font-size:.9rem;color:var(--dim)}
+/* ============ nav ============ */
+nav{position:fixed;top:0;left:0;right:0;z-index:40;border-bottom:1px solid var(--hair2);
+  background:rgba(8,9,15,.74);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+nav .bar{max-width:1180px;margin:0 auto;padding:0 26px;height:64px;display:flex;align-items:center;gap:26px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--parch)}
+.brand img{width:30px;height:30px;border-radius:50%;border:1px solid var(--goldline)}
+.brand b{font-family:var(--serif);font-weight:900;font-size:1.02rem;letter-spacing:.1em;white-space:nowrap}
+.brand span{font-family:var(--lat);font-size:.6rem;letter-spacing:.34em;color:var(--gold2);display:block;line-height:1;margin-top:3px}
+nav .links{margin-left:auto;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav .links::-webkit-scrollbar{display:none}
+nav .links a{color:var(--dim);font-size:.86rem;padding:8px 12px;border-radius:3px;white-space:nowrap;transition:color .2s}
+nav .links a:hover{color:var(--parch)}
+nav .links a.act{color:var(--gold)}
+.gh{flex:none;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--goldline);color:var(--gold);
+  font-size:.82rem;padding:7px 16px;border-radius:3px;transition:.25s}
+.gh:hover{background:rgba(232,181,74,.1);color:#f4d488}
 
-/* pipelines */
-.line{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 22px;margin-bottom:26px}
-.line h3{font-size:1.15rem;margin-bottom:4px}
-.line .sub{font-size:.8rem;color:var(--dim);margin-bottom:18px}
-.chain{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.station{display:flex;flex-direction:column;align-items:center;gap:6px;width:88px;text-align:center}
-.station img{width:54px;height:54px;border-radius:50%;border:1.5px solid rgba(227,179,65,.5);transition:transform .25s}
-.station:hover img{transform:scale(1.15)}
-.station .n{font-size:.66rem;color:var(--gold2)}
-.station .nm{font-size:.8rem;color:var(--parch);line-height:1.3}
-.station .r{font-size:.68rem;color:var(--dim)}
-.arrow{color:var(--gold2);font-size:1.1rem;margin-top:-30px}
+/* ============ hero ============ */
+.hero{position:relative;padding:170px 0 0}
+.hero .cols{display:grid;grid-template-columns:1fr;align-items:center}
+.kicker{font-size:.8rem;letter-spacing:.3em;color:var(--gold2);display:flex;align-items:center;gap:16px;margin-bottom:26px}
+.hero h1{font-family:var(--serif);font-weight:900;color:var(--parch);
+  font-size:clamp(2.5rem,5.6vw,4rem);line-height:1.22;letter-spacing:.06em}
+.hero h1 .g{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .en{font-family:var(--lat);color:var(--gold2);letter-spacing:.46em;font-size:clamp(.72rem,1.4vw,.95rem);margin:18px 0 26px;text-transform:uppercase}
+.hero p.tag{max-width:560px;color:var(--dim);font-size:1.02rem}
+.hero p.tag b{color:var(--parch);font-weight:700}
+.statline{display:flex;flex-wrap:wrap;margin:34px 0 38px;border-block:1px solid var(--hair);padding:16px 0}
+.stat{padding:2px 26px 2px 0;margin-right:26px;border-right:1px solid var(--hair)}
+.stat:last-child{border-right:0;margin-right:0;padding-right:0}
+.stat b{display:block;font-family:var(--serif);font-weight:900;font-size:1.3rem;color:var(--gold);line-height:1.3;letter-spacing:.02em}
+.stat span{font-size:.74rem;color:var(--faint);letter-spacing:.08em}
+.btns{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 30px;border-radius:3px;font-weight:700;font-size:.94rem;
+  letter-spacing:.06em;transition:.25s;position:relative}
+.btn-solid{background:var(--grad-gold);color:#1c1305;box-shadow:0 1px 0 rgba(255,240,200,.5) inset,0 8px 26px rgba(160,120,40,.22)}
+.btn-solid:hover{filter:brightness(1.08);transform:translateY(-2px);box-shadow:0 1px 0 rgba(255,240,200,.5) inset,0 12px 32px rgba(190,140,50,.32);color:#1c1305}
+.btn-ghost{border:1px solid var(--goldline);color:var(--gold)}
+.btn-ghost:hover{background:rgba(232,181,74,.08);color:#f4d488}
+.btn-text{color:var(--dim);font-size:.9rem}
+.btn-text:hover{color:var(--parch)}
 
-/* metrics */
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;margin-bottom:26px}
-.tile{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px 18px;text-align:center}
-.tile b{display:block;font-size:1.7rem;color:var(--gold);font-family:'Noto Serif SC'}
-.tile span{font-size:.8rem;color:var(--dim)}
-.notes{font-size:.86rem;color:var(--dim);border-left:3px solid var(--gold2);padding-left:16px}
-.notes li{margin:6px 0;list-style:none}
+/* (环阵动画已按用户指示移除,待复刻游戏内原生效果后重建) */
 
-/* adapters */
-.adp{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.adp .a{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 18px}
-.adp .a h3{font-size:1rem;margin-bottom:6px}
-.adp .a p{font-size:.8rem;color:var(--dim)}
-.adp .a code{color:var(--gold);font-size:.76rem}
+/* frieze marquee */
+.frieze{margin-top:84px;border-block:1px solid var(--hair)}
+.frieze .inner{padding:16px 0;border-block:1px solid var(--hair2);overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.frieze .track{display:flex;width:max-content;animation:friezeSlide var(--fdur,110s) linear infinite;will-change:transform}
+.frieze .track img{height:clamp(200px,26vw,280px);width:auto;margin-right:18px;display:block;
+  border-radius:9px;border:1px solid var(--hair);background:var(--panel)}
+@keyframes friezeSlide{to{transform:translateX(-50%)}}
+.frieze:hover .track{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){.frieze .track{animation:none}.frieze .inner{overflow-x:auto}}
+.credit{text-align:center;font-size:.72rem;color:var(--faint);padding:12px 0 0;letter-spacing:.06em}
+.credit a{color:var(--dim)}
+.credit a:hover{color:var(--gold)}
 
-/* install */
-pre{background:#0d1019;border:1px solid var(--line);border-radius:12px;padding:22px;overflow:auto;position:relative}
-pre code{font-size:.85rem;color:#d8deed;font-family:Consolas,monospace;line-height:1.8}
-pre .cm{color:#6d7690}
-.copy{position:absolute;top:12px;right:12px;background:rgba(227,179,65,.12);border:1px solid rgba(227,179,65,.4);
-  color:var(--gold);border-radius:6px;padding:4px 12px;font-size:.75rem;cursor:pointer}
-.copy:hover{background:rgba(227,179,65,.25)}
+/* ============ section scaffold ============ */
+section{padding:118px 0 0}
+.shead{margin-bottom:54px}
+.shead .no{font-family:var(--lat);font-size:.8rem;letter-spacing:.4em;color:var(--gold2);display:flex;align-items:center;gap:18px}
+.shead .no::after{content:'';width:96px;height:9px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='9' viewBox='0 0 20 9'%3E%3Cpath d='M2 8V1.5h13v4H7v-2h5' fill='none' stroke='%23c9a24b' stroke-opacity='.55' stroke-width='1'/%3E%3C/svg%3E") repeat-x left center/20px 9px}
+.shead h2{font-family:var(--serif);font-weight:900;color:var(--parch);font-size:clamp(1.7rem,3.4vw,2.35rem);
+  letter-spacing:.08em;margin:14px 0 10px}
+.shead .sub{color:var(--dim);font-size:.95rem;max-width:720px}
+.shead .sub code,.sub code{font-family:var(--mono);font-size:.84em;color:var(--gold);background:rgba(232,181,74,.07);
+  border:1px solid rgba(232,181,74,.18);border-radius:3px;padding:1px 7px}
 
-footer{border-top:1px solid var(--line);padding:44px 0 56px;text-align:center;font-size:.8rem;color:var(--dim)}
-footer .fs{margin-top:14px;letter-spacing:.3em;color:var(--gold2)}
-@media (max-width:560px){.station{width:72px}.hero{padding-top:64px}}
+/* reveal */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js .rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
+
+/* ============ pillars ============ */
+.pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.pillar{position:relative;background:linear-gradient(170deg,var(--panel2),var(--panel));border:1px solid var(--hair);
+  padding:30px 30px 28px;border-radius:4px}
+.pillar::before{content:'';position:absolute;left:10px;top:10px;width:16px;height:16px;
+  border-left:1px solid var(--goldline);border-top:1px solid var(--goldline)}
+.pillar::after{content:'';position:absolute;right:10px;bottom:10px;width:16px;height:16px;
+  border-right:1px solid var(--goldline);border-bottom:1px solid var(--goldline)}
+.pillar .pn{font-family:var(--lat);color:var(--gold2);font-size:.78rem;letter-spacing:.3em}
+.pillar h3{font-family:var(--serif);color:var(--parch);font-weight:900;font-size:1.18rem;margin:10px 0 12px;letter-spacing:.05em}
+.pillar p{font-size:.9rem;color:var(--dim)}
+.pillar p b{color:var(--parch);font-weight:500}
+.pillar .rc{display:block;margin-top:14px;font-family:var(--mono);font-size:.76rem;color:var(--gold);
+  background:rgba(232,181,74,.06);border:1px solid rgba(232,181,74,.16);border-left:2px solid var(--gold2);
+  border-radius:3px;padding:9px 13px;line-height:1.7;overflow-wrap:anywhere}
+.pillar .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.pillar .tags i{font-style:normal;font-size:.74rem;color:var(--dim);border:1px solid var(--hair);
+  border-radius:2px;padding:2px 10px;letter-spacing:.05em}
+
+/* ============ card plates ============ */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:26px}
+.plate{position:relative;background:var(--panel);border:1px solid var(--hair);border-radius:5px;overflow:hidden;
+  transition:transform .4s cubic-bezier(.2,.7,.2,1),border-color .4s,box-shadow .4s}
+.plate:hover{transform:translateY(-8px);border-color:rgba(201,162,75,.55);
+  box-shadow:0 20px 46px rgba(0,0,0,.55),0 0 0 1px rgba(201,162,75,.12),0 0 34px rgba(212,167,60,.1)}
+.plate .hit{position:absolute;inset:0;z-index:3;background:none;border:0;cursor:pointer}
+.plate .art{position:relative}
+.plate .clip{position:relative;overflow:hidden}
+.plate .art .face{width:100%;display:block;aspect-ratio:400/702;object-fit:cover;
+  transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.plate:hover .art .face{transform:scale(1.045)}
+.plate .no{position:absolute;top:10px;left:12px;z-index:4;pointer-events:none;font-family:var(--lat);font-size:.76rem;
+  letter-spacing:.18em;color:var(--parch);background:rgba(7,8,13,.62);border:1px solid var(--goldline2);
+  border-radius:2px;padding:2px 9px;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.plate .coin{position:absolute;right:12px;bottom:-22px;z-index:4;width:52px;height:52px;border-radius:50%;
+  border:1.5px solid var(--gold2);box-shadow:0 5px 16px rgba(0,0,0,.6),0 0 14px rgba(212,167,60,.22);background:var(--bg)}
+.plate .steps{position:absolute;inset:auto 0 0 0;z-index:1;padding:52px 64px 12px 14px;
+  background:linear-gradient(180deg,transparent,rgba(7,8,13,.6) 30%,rgba(7,8,13,.94));
+  font-size:.74rem;line-height:1.9;color:var(--parch);letter-spacing:.02em;
+  opacity:0;translate:0 14px;transition:.45s cubic-bezier(.2,.7,.2,1)}
+.plate:hover .steps,.plate:focus-within .steps{opacity:1;translate:0 0}
+.plate .steps em{font-style:normal;color:var(--gold2);margin:0 4px}
+.plate .steps .hint{display:block;margin-top:5px;font-size:.68rem;color:var(--gold);letter-spacing:.16em}
+.plate .meta{padding:22px 18px 20px;border-top:1px solid var(--hair2)}
+.plate .meta h3{font-family:var(--serif);font-weight:900;color:var(--parch);font-size:1.16rem;letter-spacing:.04em;display:inline}
+.plate .meta .ttl{color:var(--gold2);font-size:.78rem;letter-spacing:.22em;margin-left:9px}
+.plate .meta code{display:inline-block;margin:10px 0 9px;font-family:var(--mono);font-size:.72rem;color:var(--gold);
+  background:rgba(232,181,74,.06);border:1px solid rgba(232,181,74,.18);border-radius:3px;padding:2px 9px}
+.plate .meta .mth{font-size:.86rem;color:var(--parch);font-weight:500}
+.plate .meta .dom{font-size:.78rem;color:var(--faint);margin-top:3px;letter-spacing:.03em}
+
+/* ============ dialog ============ */
+dialog.cardDlg{width:min(880px,94vw);max-height:88vh;margin:auto;border:1px solid var(--goldline2);border-radius:6px;
+  background:linear-gradient(165deg,#141726,#0e1119 55%);color:var(--ink);padding:0;overflow:hidden}
+dialog.cardDlg::backdrop{background:rgba(5,6,10,.74);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px)}
+dialog.cardDlg:not([open]){display:none}
+html:has(dialog[open]){overflow-y:hidden}
+.dlg{display:grid;grid-template-columns:296px 1fr;max-height:88vh}
+.dlg .dart{position:relative;background:#0a0c12}
+.dlg .dart img{width:100%;height:100%;object-fit:cover;display:block}
+.dlg .dart::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 62%,rgba(14,17,25,.9))}
+.dlg .body{padding:34px 36px 30px;overflow-y:auto}
+.dlg .top{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-right:40px}
+.dlg .top img{width:54px;height:54px;border-radius:50%;border:1.5px solid var(--gold2);background:var(--bg)}
+.dlg .top .lat{font-family:var(--lat);color:var(--gold2);font-size:.8rem;letter-spacing:.3em}
+.dlg .top h3{font-family:var(--serif);font-weight:900;color:var(--parch);font-size:1.5rem;letter-spacing:.05em;line-height:1.3}
+.dlg .top .ttl{color:var(--gold2);font-size:.82rem;letter-spacing:.24em}
+.dlg .idrow{margin:16px 0 6px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.dlg .idrow code{font-family:var(--mono);font-size:.78rem;color:var(--gold);background:rgba(232,181,74,.07);
+  border:1px solid rgba(232,181,74,.2);border-radius:3px;padding:3px 11px}
+.dlg .idrow .mth{font-family:var(--serif);font-weight:700;color:var(--parch);font-size:1rem;letter-spacing:.06em}
+.dlg .duty{font-size:.9rem;color:var(--dim);margin:8px 0 20px}
+.dlg h4{font-size:.76rem;color:var(--gold2);letter-spacing:.3em;font-weight:500;margin:22px 0 12px;display:flex;align-items:center;gap:12px}
+.dlg h4::after{content:'';flex:1;height:1px;background:var(--hair)}
+.dlg ol.chain{list-style:none;counter-reset:st;display:flex;flex-wrap:wrap;gap:8px}
+.dlg ol.chain li{counter-increment:st;font-size:.8rem;color:var(--parch);border:1px solid var(--hair);
+  background:rgba(18,21,31,.7);border-radius:3px;padding:5px 12px 5px 9px;letter-spacing:.03em}
+.dlg ol.chain li::before{content:counter(st,decimal-leading-zero);font-family:var(--mono);font-size:.68rem;
+  color:var(--gold2);margin-right:8px}
+.dlg .moves{display:flex;flex-wrap:wrap;gap:8px}
+.dlg .moves span{font-size:.8rem;color:var(--dim);border:1px dashed var(--goldline2);border-radius:3px;padding:4px 12px}
+.dlg .moves span b{color:var(--gold);font-weight:500}
+.dlg .quirk{font-size:.88rem;color:var(--parch);border-left:2px solid var(--gold2);
+  background:rgba(232,181,74,.05);padding:12px 16px;border-radius:0 3px 3px 0;line-height:1.9}
+.dlg .qrow{display:flex;align-items:flex-end;gap:12px}
+.dlg .qrow img.stk{width:66px;height:66px;flex:none;object-fit:contain;filter:drop-shadow(0 6px 12px rgba(0,0,0,.5))}
+.dlg .qrow img.stk+img.stk{margin-left:-26px}
+.dlg .qrow .quirk{flex:1;min-width:0}
+.dlg .rcpt{font-family:var(--mono);font-size:.75rem;color:var(--gold);background:rgba(232,181,74,.06);
+  border:1px solid rgba(232,181,74,.16);border-radius:3px;padding:10px 14px;overflow-wrap:anywhere}
+.dlg .flink{display:inline-block;margin-top:22px;font-size:.82rem}
+.cardDlg .x{position:absolute;top:14px;right:14px;z-index:5;width:36px;height:36px;border-radius:3px;cursor:pointer;
+  border:1px solid var(--hair);background:rgba(7,8,13,.6);color:var(--dim);font-size:1rem;line-height:1;transition:.2s}
+.cardDlg .x:hover{color:var(--parch);border-color:var(--goldline)}
+
+/* ============ router ============ */
+.routergrid{display:grid;grid-template-columns:150px 1fr 150px;gap:38px;align-items:center;
+  background:linear-gradient(170deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:6px;
+  padding:40px 42px;position:relative}
+.routergrid::before{content:'';position:absolute;left:12px;top:12px;width:20px;height:20px;border-left:1px solid var(--goldline);border-top:1px solid var(--goldline)}
+.routergrid::after{content:'';position:absolute;right:12px;bottom:12px;width:20px;height:20px;border-right:1px solid var(--goldline);border-bottom:1px solid var(--goldline)}
+.routergrid .tb{border-radius:5px;border:1px solid var(--hair);transition:transform .45s;box-shadow:0 14px 30px rgba(0,0,0,.45);aspect-ratio:400/703;object-fit:cover;width:100%}
+.routergrid .tb.l{transform:rotate(-3.5deg)}
+.routergrid .tb.r{transform:rotate(3.5deg)}
+.routergrid:hover .tb{transform:rotate(0)}
+.rin h3{font-family:var(--serif);font-weight:900;color:var(--parch);font-size:1.3rem;letter-spacing:.06em;margin-bottom:6px}
+.rin .rid{font-family:var(--mono);font-size:.78rem;color:var(--gold);margin-bottom:16px}
+.rin p{font-size:.88rem;color:var(--dim)}
+.depth{display:grid;gap:9px;margin:20px 0}
+.depth .d{display:flex;gap:14px;align-items:baseline;font-size:.85rem;color:var(--dim);
+  border:1px solid var(--hair2);border-radius:3px;padding:9px 14px;background:rgba(11,13,21,.5)}
+.depth .d b{font-family:var(--lat);color:var(--gold);font-size:.8rem;letter-spacing:.1em;flex:none}
+.depth .d span b{font-family:var(--sans);color:var(--parch);font-weight:500;font-size:.85rem}
+.telegraph{margin:22px 0;text-align:center;border-block:1px solid var(--hair);padding:18px 10px}
+.telegraph .t{font-family:var(--serif);font-weight:700;color:var(--parch);font-size:1.06rem;letter-spacing:.12em}
+.telegraph .n{font-size:.74rem;color:var(--faint);margin-top:7px;letter-spacing:.06em}
+.gears{display:flex;flex-wrap:wrap;gap:9px}
+.gears span{font-size:.78rem;color:var(--dim);border:1px solid var(--hair);border-radius:2px;padding:4px 12px}
+.gears span b{color:var(--gold2);font-weight:500;margin-right:7px}
+
+/* ============ pipelines ============ */
+.pline{--acc:var(--gold);--accdim:rgba(232,181,74,.32);position:relative;
+  background:linear-gradient(170deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:6px;
+  padding:34px 36px 30px;margin-bottom:26px;overflow:hidden}
+.pline.vigil{--acc:var(--vigil);--accdim:rgba(169,191,221,.32)}
+.pline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,transparent,var(--acc),transparent);opacity:.6}
+.pline .ph{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.pline h3{font-family:var(--serif);font-weight:900;color:var(--parch);font-size:1.24rem;letter-spacing:.08em}
+.pline .ph .lat{font-family:var(--lat);font-size:.72rem;letter-spacing:.32em;color:var(--acc);opacity:.85}
+.pline .desc{font-size:.84rem;color:var(--dim);margin-bottom:26px}
+.chainrow{display:flex;align-items:flex-start}
+.stn{display:grid;justify-items:center;gap:7px;text-align:center;flex:1;min-width:0}
+.stn img{width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 6px 12px rgba(0,0,0,.55));transition:transform .3s}
+.stn:hover img{transform:scale(1.18) rotate(-4deg)}
+.stn .sn{font-family:var(--lat);font-size:.62rem;color:var(--acc);letter-spacing:.22em;opacity:.85}
+.stn .nm{font-family:var(--serif);font-weight:700;font-size:.86rem;color:var(--parch);line-height:1.35}
+.stn .rl{font-size:.7rem;color:var(--faint);line-height:1.5}
+.lk{flex:none;width:34px;height:1px;margin-top:32px;position:relative;
+  background:linear-gradient(90deg,transparent,var(--accdim),transparent)}
+.lk::after{content:'';position:absolute;right:6px;top:-2.5px;width:6px;height:6px;
+  border-top:1px solid var(--acc);border-right:1px solid var(--acc);transform:rotate(45deg);opacity:.8}
+.pnote{font-size:.76rem;color:var(--faint);margin-top:24px;padding-top:16px;border-top:1px solid var(--hair2);letter-spacing:.03em}
+.pnote b{color:var(--dim);font-weight:500}
+
+/* ============ quality ============ */
+.plaques{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:34px}
+.plaque{position:relative;background:linear-gradient(170deg,var(--panel2),var(--panel));border:1px solid var(--hair);
+  border-radius:4px;padding:26px 18px 22px;text-align:center}
+.plaque::before{content:'';position:absolute;left:8px;top:8px;width:12px;height:12px;border-left:1px solid var(--goldline);border-top:1px solid var(--goldline)}
+.plaque::after{content:'';position:absolute;right:8px;bottom:8px;width:12px;height:12px;border-right:1px solid var(--goldline);border-bottom:1px solid var(--goldline)}
+.plaque b{display:block;font-family:var(--serif);font-weight:900;font-size:1.75rem;color:var(--gold);letter-spacing:.02em;line-height:1.25}
+.plaque b span{display:inline;font-size:inherit;color:inherit}
+.plaque i{display:block;font-style:normal;font-size:.8rem;color:var(--parch);margin-top:7px;letter-spacing:.06em}
+.plaque > span{display:block;font-size:.7rem;color:var(--faint);margin-top:5px;line-height:1.6}
+.qcols{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.qbox{background:linear-gradient(170deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:6px;padding:30px 32px}
+.qbox h3{font-family:var(--serif);font-weight:900;color:var(--parch);font-size:1.12rem;letter-spacing:.1em;margin-bottom:6px}
+.qbox .qsub{font-size:.78rem;color:var(--faint);margin-bottom:20px}
+.qbox ul{list-style:none;display:grid;gap:13px}
+.qbox ul li{font-size:.85rem;color:var(--dim);padding-left:22px;position:relative;line-height:1.8}
+.qbox ul li b{color:var(--parch);font-weight:500}
+.qbox.rules li::before{content:'◆';position:absolute;left:0;top:1px;color:var(--gold2);font-size:.6rem}
+.qbox.ledger{border-color:rgba(198,95,78,.26)}
+.qbox.ledger li::before{content:'✕';position:absolute;left:0;top:0;color:var(--cinnabar);font-size:.78rem;font-weight:700}
+.qbox.ledger h3 em{font-style:normal;color:var(--cinnabar)}
+.qfoot{margin-top:26px;font-size:.82rem;color:var(--faint)}
+
+/* ============ adapters ============ */
+.adp{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.adp .a{background:linear-gradient(170deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:4px;
+  padding:24px 22px;transition:border-color .3s,transform .3s}
+.adp .a:hover{border-color:var(--goldline2);transform:translateY(-4px)}
+.adp .a .an{font-family:var(--lat);font-size:.68rem;color:var(--gold2);letter-spacing:.3em}
+.adp .a h3{font-family:var(--serif);font-weight:900;color:var(--parch);font-size:1.02rem;margin:8px 0 9px;letter-spacing:.04em}
+.adp .a p{font-size:.78rem;color:var(--dim);line-height:1.8}
+.adp .a code{font-family:var(--mono);font-size:.72rem;color:var(--gold);overflow-wrap:anywhere}
+.faith{margin-top:22px;font-size:.8rem;color:var(--faint);border-left:2px solid var(--goldline2);padding:4px 0 4px 16px}
+.faith b{color:var(--dim);font-weight:500}
+
+/* ============ install ============ */
+.term{background:#080a10;border:1px solid var(--hair);border-radius:7px;overflow:hidden;
+  box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.term .tbar{display:flex;align-items:center;gap:8px;padding:13px 18px;border-bottom:1px solid var(--hair2);background:rgba(18,21,31,.6)}
+.term .tbar i{width:11px;height:11px;border-radius:50%;background:#2c3244}
+.term .tbar i:nth-child(1){background:rgba(198,95,78,.75)}
+.term .tbar i:nth-child(2){background:rgba(201,162,75,.75)}
+.term .tbar i:nth-child(3){background:rgba(120,160,120,.7)}
+.term .tbar span{margin-left:10px;font-family:var(--mono);font-size:.72rem;color:var(--faint);letter-spacing:.08em}
+.term .tbar button{margin-left:auto;font-family:var(--sans);font-size:.74rem;color:var(--gold);cursor:pointer;
+  background:rgba(232,181,74,.08);border:1px solid rgba(232,181,74,.3);border-radius:3px;padding:5px 15px;transition:.2s}
+.term .tbar button:hover{background:rgba(232,181,74,.2)}
+.term pre{padding:26px 26px 28px;overflow-x:auto}
+.term code{font-family:var(--mono);font-size:.84rem;line-height:2.05;color:#dde3f0}
+.term .cm{color:#7b86a3}
+.term .out{color:#8d96ac}
+.term .pr{color:var(--gold2);user-select:none}
+.term .ok{color:#9dc49d}
+.usage{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.usage .u{border:1px solid var(--hair);border-radius:4px;padding:20px 24px;background:rgba(18,21,31,.5)}
+.usage .u .q{font-family:var(--serif);font-weight:700;color:var(--parch);font-size:.98rem;letter-spacing:.04em;line-height:1.8}
+.usage .u .q code{font-family:var(--mono);font-size:.82em;color:var(--gold)}
+.usage .u .w{font-size:.74rem;color:var(--faint);margin-top:9px;letter-spacing:.04em}
+
+/* ============ footer ============ */
+footer{margin-top:130px;border-top:1px solid var(--hair);padding:60px 0 66px;text-align:center}
+footer .seal{display:flex;align-items:center;gap:18px;justify-content:center;margin-bottom:30px}
+footer .seal::before,footer .seal::after{content:'';width:130px;max-width:18vw;height:1px;background:linear-gradient(90deg,transparent,var(--goldline2))}
+footer .seal::after{background:linear-gradient(90deg,var(--goldline2),transparent)}
+footer .seal b{font-family:var(--serif);font-weight:700;color:var(--gold2);letter-spacing:.5em;font-size:.92rem;text-indent:.5em;white-space:nowrap}
+footer p{font-size:.78rem;color:var(--faint);max-width:760px;margin:0 auto;line-height:2.05}
+footer p a{color:var(--dim)}
+footer p a:hover{color:var(--gold)}
+footer .fl{margin-top:22px;display:flex;gap:26px;justify-content:center;flex-wrap:wrap;font-size:.82rem}
+
+/* ============ 角色讲解员(表情包气泡) ============ */
+.guide{display:flex;align-items:flex-end;gap:16px;margin-top:26px}
+.guide img.stk{width:86px;height:86px;flex:none;object-fit:contain;
+  filter:drop-shadow(0 8px 16px rgba(0,0,0,.5));transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.guide:hover img.stk{transform:translateY(-5px) rotate(-4deg)}
+.guide.duo img.stk+img.stk{margin-left:-32px;transform:rotate(6deg) translateY(5px)}
+.guide.duo:hover img.stk+img.stk{transform:translateY(-1px) rotate(9deg)}
+.guide .say{position:relative;max-width:480px;background:#141726;border:1px solid var(--goldline2);
+  border-radius:12px 12px 12px 4px;padding:13px 20px 12px;margin-bottom:10px}
+.guide .say::before{content:'';position:absolute;left:-6.5px;bottom:15px;width:11px;height:11px;background:#141726;
+  border-left:1px solid var(--goldline2);border-bottom:1px solid var(--goldline2);transform:rotate(45deg)}
+.guide .who{font-size:.7rem;color:var(--gold2);letter-spacing:.2em;margin-bottom:3px}
+.guide .txt{font-size:.88rem;color:var(--parch);line-height:1.8}
+.pline .guide{margin:0 0 28px}
+.guide.center{justify-content:center;margin:0 0 36px}
+
+/* ============ responsive ============ */
+@media (max-width:1020px){
+  .plaques{grid-template-columns:repeat(3,1fr)}
+  .routergrid{grid-template-columns:1fr;padding:32px 28px}
+  .routergrid .tb{display:none}
+  .hero{padding-top:130px}
+}
+@media (max-width:840px){
+  .pillars{grid-template-columns:1fr}
+  .qcols{grid-template-columns:1fr}
+  .usage{grid-template-columns:1fr}
+  .chainrow{flex-direction:column;gap:0;border-left:1px solid var(--accdim);margin-left:28px;padding-left:0}
+  .pline .chainrow .stn{grid-template-columns:56px 1fr;justify-items:start;text-align:left;gap:4px 18px;
+    padding:12px 0;margin-left:-28.5px;width:calc(100% + 28.5px)}
+  .stn img{grid-row:1/4}
+  .lk{display:none}
+  section{padding:88px 0 0}
+  .dlg{grid-template-columns:1fr}
+  .dlg .dart{display:none}
+}
+@media (max-width:560px){
+  .plaques{grid-template-columns:repeat(2,1fr)}
+  .guide img.stk{width:68px;height:68px}
+  .guide .txt{font-size:.84rem}
+  .dlg .qrow{flex-wrap:wrap}
+  .statline{gap:12px 0}
+  .stat{padding-right:16px;margin-right:16px}
+  nav .links a{padding:8px 8px;font-size:.8rem}
+  .brand span span{display:none}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+  .plate .steps{display:none}
+  .plate .coin{width:40px;height:40px;bottom:-16px}
+  .plate .meta{padding:16px 13px 14px}
+  .plate .meta .ttl{display:block;margin:2px 0 0}
+  .term pre{padding:18px 14px}
+  .term code{font-size:.72rem}
+}
 </style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
+<div class="sky" aria-hidden="true"></div>
 
-<header class="hero">
+<nav aria-label="页面导航">
+  <div class="bar">
+    <a class="brand" href="#top" aria-label="回到顶部">
+      <img src="assets/symbols/trailblazer-stelle.png" alt="">
+      <span><b>翁法罗斯</b><span>AMPHOREUS</span></span>
+    </a>
+    <div class="links" id="navlinks">
+      <a href="#idea">理念</a>
+      <a href="#cards">十三卡</a>
+      <a href="#router">总路由</a>
+      <a href="#pipelines">流水线</a>
+      <a href="#quality">验收</a>
+      <a href="#adapters">适配</a>
+      <a href="#install">安装</a>
+    </div>
+    <a class="gh" href="https://github.com/xi-kari/amphoreus-skill-suite" target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
   <div class="wrap">
-    <div class="coinrow" id="coinrow"></div>
-    <h1>翁法罗斯 Skill 套件</h1>
-    <div class="en">Amphoreus Skill Suite</div>
-    <p class="tag">以《崩坏:星穹铁道》翁法罗斯篇十三位角色为人格外壳的 <b style="color:var(--gold)">13 张工程方法卡 + 1 个总路由</b>。<br>每张卡不是聊天人设,而是一套可执行、可验收的工程方法论。</p>
-    <div class="chips">
-      <span class="chip"><b>13/13</b> 卡在产</span>
-      <span class="chip"><b>65</b> 冻结评测场景</span>
-      <span class="chip">每卡 <b>60/60</b></span>
-      <span class="chip"><b>182</b> 条台词逐字对齐</span>
-      <span class="chip">两线端到端 <b>CONFIRMED</b></span>
-    </div>
-    <div class="btns">
-      <a class="btn gold" href="https://github.com/xi-kari/amphoreus-skill-suite">GitHub 仓库</a>
-      <a class="btn ghost" href="#install">安装指北</a>
-    </div>
-    <div class="banner">
-      <img src="assets/banner.jpg" alt="十三卡「逐火者的命录」横幅">
-      <div class="credit">卡面与符号:「逐火者的命录」系列 · 取自 B 站星穹铁道 Wiki · 版权归米哈游所有</div>
+    <div class="cols">
+      <div>
+        <div class="kicker rv">《崩坏：星穹铁道》翁法罗斯篇 · 同人衍生</div>
+        <h1 class="rv" style="--d:.06s"><span class="g">翁法罗斯</span><br>Skill 套件</h1>
+        <div class="en rv" style="--d:.12s">Amphoreus Skill Suite</div>
+        <p class="tag rv" style="--d:.18s">以十三位黄金裔为人格外壳的 <b>13 张工程方法卡 + 1 个总路由</b>,为 Claude Code / Cursor 的 skills 生态而作。每张卡不是聊天人设,而是一套<b>可执行、可验收的工程方法论</b>——角色只在 15% 的风格预算内说话,方法、证据与回执才是正文。</p>
+        <div class="statline rv" style="--d:.24s">
+          <div class="stat"><b>13/13</b><span>卡牌在产</span></div>
+          <div class="stat"><b>65</b><span>冻结评测场景</span></div>
+          <div class="stat"><b>60/60</b><span>每卡盲评 · 硬失败 0</span></div>
+          <div class="stat"><b>182 条</b><span>台词逐字对齐</span></div>
+          <div class="stat"><b>CONFIRMED</b><span>两线端到端终验</span></div>
+        </div>
+        <div class="btns rv" style="--d:.3s">
+          <a class="btn btn-solid" href="#cards">浏览十三卡</a>
+          <a class="btn btn-ghost" href="https://github.com/xi-kari/amphoreus-skill-suite" target="_blank" rel="noopener">GitHub 仓库 ↗</a>
+          <a class="btn-text" href="#install">安装指北 →</a>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="frieze rv" aria-label="「逐火者的命录」十五张卡面向左循环轮播,悬停暂停">
+    <div class="inner"><div class="track" id="frieze"></div></div>
+  </div>
+  <div class="credit">卡面与徽记「逐火者的命录」系列 · 取自 <a href="https://wiki.biligame.com/sr/%E9%80%90%E7%81%AB%E8%80%85%E7%9A%84%E5%91%BD%E8%B7%AF.exe" target="_blank" rel="noopener">B 站星穹铁道 Wiki</a> · 角色 Q 版表情包 · 版权均归米哈游所有</div>
 </header>
+
+<main>
+
+<section id="idea">
+  <div class="wrap">
+    <div class="shead rv">
+      <div class="no">I · CONTRACT</div>
+      <h2>方法即人格</h2>
+      <p class="sub">每张卡由两份文件构成:<code>SKILL.md</code> 是静态可校验的行为契约,<code>persona.md</code> 是逐字对齐游戏语料的台词参考库。角色是外壳,方法论、边界与回执才是本体。</p>
+      <div class="guide"><img class="stk" src="assets/stickers/cerydra.png" alt="" loading="lazy" decoding="async">
+        <div class="say"><div class="who">刻律德菈 · 执棋的君主</div><div class="txt">人格是外壳,契约才是正文;三读通过,方可颁布。</div></div>
+      </div>
+    </div>
+    <div class="pillars">
+      <div class="pillar rv">
+        <div class="pn">METHOD</div>
+        <h3>一人一法,具名可执行</h3>
+        <p>十三套具名 SOP:万敌的<b>先让十步法</b>要求先复现十次,再一轮只验一个假设;那刻夏的<b>五问法</b>给评审配上删除测试;遐蝶的<b>告别四步</b>把退役做成影响先行的告别仪式。每一步都有产出物与停止条件。</p>
+        <p class="tags"><i>立界</i><i>让十步</i><i>正面强攻</i><i>关键一击</i><i>停战</i></p>
+      </div>
+      <div class="pillar rv" style="--d:.08s">
+        <div class="pn">STYLE TAX</div>
+        <h3>风格税 ≤ 15%</h3>
+        <p>角色化文字不超过可见输出的 15%,正文、代码、命令、数据与验证结果不计入表演。预算不足时<b>先删口癖、再删意象</b>,最后保留的永远是方法、裁决、移交与回执。报错、线上事故、删除、发布、回滚等严肃场景<b>自动静音</b>。</p>
+        <p class="tags"><i>浓</i><i>标准</i><i>静音</i><i>严肃场景自动静音</i></p>
+      </div>
+      <div class="pillar rv" style="--d:.16s">
+        <div class="pn">ABSENCE</div>
+        <h3>缺席合同,不代演</h3>
+        <p>流水线上某张卡未部署时,如实报告并保留移交事实包——<b>不代演、不冒充、不由近似角色顶替</b>;缺席文件不得列入回执的「读取」。</p>
+        <span class="rc">角色未部署｜原因：module_unavailable｜未完成职责：&lt;职责&gt;</span>
+      </div>
+      <div class="pillar rv" style="--d:.24s">
+        <div class="pn">HANDOVER</div>
+        <h3>移交事实包,回执落款</h3>
+        <p>下游存在时,角色在正文后写一行移交,移交物必须是<b>本卡已产出的清楚对象</b>(可指认、可验收的产物);路由捕捉后询问用户,确认前不加载下游。每卡末行固定回执,只证明读取范围,不证明命令已运行。</p>
+        <span class="rc">此事移交风堇：&lt;最小复现＋根因证据＋修复边界＋回归指标＋残余风险&gt;</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="cards">
   <div class="wrap">
-    <div class="kicker">CHRYSOS HEIRS</div>
-    <h2>十三卡画廊<small>每位黄金裔一枚符号 · 一套方法 · 一张卡</small></h2>
+    <div class="shead rv">
+      <div class="no">II · CHRYSOS HEIRS</div>
+      <h2>十三卡总览</h2>
+      <p class="sub">与顶部卡面轮播同序陈列,罗马数字即卡序(I–XIII)。悬停卡面预览方法步骤,点开任意一张查看完整方法卡——职能、步骤链、移交下游、话术契约与固定回执。</p>
+      <div class="guide"><img class="stk" src="assets/stickers/tribbie.png" alt="" loading="lazy" decoding="async">
+        <div class="say"><div class="who">缇宝 · 命运的三子</div><div class="txt">我们十三个,一人一法——点开卡片就能看啦!</div></div>
+      </div>
+    </div>
+    <noscript><p style="color:#c3cadb;font-size:.9rem;margin-bottom:26px">十三卡画廊、徽记环阵与站链由 JavaScript 渲染;如未启用,可直接查看仓库 <a href="https://github.com/xi-kari/amphoreus-skill-suite/tree/main/skills">skills/ 目录</a>的完整卡文。</p></noscript>
     <div class="grid" id="grid"></div>
   </div>
 </section>
 
-<section id="router" style="padding-top:0">
+<section id="router">
   <div class="wrap">
-    <div class="kicker">ROUTER</div>
-    <h2>总路由 · 创世的著者</h2>
-    <div class="router">
-      <img src="assets/cards/trailblazer-stelle.jpg" alt="星">
-      <div class="txt">
-        <h3>amphoreus</h3>
-        <p>意图识别与分发:按任务深度、角色适配、流水线与风格预算,把请求路由到十三张卡。一次只演一张卡,不混声、不代演;切卡须经用户确认;所需卡缺席时报告 <code style="color:var(--gold)">module_unavailable</code> 并保留移交事实包。</p>
+    <div class="shead rv">
+      <div class="no">III · THE ROUTER</div>
+      <h2>总路由 · 创世的著者</h2>
+      <p class="sub">开拓者位于环阵中心:识别意图,按任务深度、角色适配、流水线与风格预算调度十三张卡。一次只演一张卡,不混声、不代演。</p>
+      <div class="guide duo"><img class="stk" src="assets/stickers/trailblazer-stelle.png" alt="" loading="lazy" decoding="async"><img class="stk" src="assets/stickers/trailblazer-caelus.png" alt="" loading="lazy" decoding="async">
+        <div class="say"><div class="who">开拓者 · 创世的著者</div><div class="txt">需求,收到。深度,已判。点将,即刻。</div></div>
       </div>
-      <img src="assets/cards/trailblazer-caelus.jpg" alt="穹">
+    </div>
+    <div class="routergrid rv">
+      <img class="tb l" src="assets/cards/trailblazer-stelle.jpg" alt="开拓者·星「创世的著者」卡面" loading="lazy" decoding="async">
+      <div class="rin">
+        <h3>深度门 · 最小充分深度</h3>
+        <div class="rid">amphoreus · router</div>
+        <div class="depth">
+          <div class="d"><b>L0</b><span><b>无人格直答</b> —— 低影响、可逆、单一短答:不开卡、无世界观外壳、零风格税</span></div>
+          <div class="d"><b>L1</b><span><b>单卡出勤</b> —— 一般任务只开一张卡;L0 / L1 犹豫时选 L1</span></div>
+          <div class="d"><b>L2</b><span><b>连环两至三卡</b> —— 有明确上下游时串卡,逐段署名移交</span></div>
+          <div class="d"><b>L3</b><span><b>流水线 / 会诊</b> —— 长流程走预制流水线,或至多三人会诊、分别陈词</span></div>
+        </div>
+        <div class="telegraph">
+          <div class="t">「评审，需要。那刻夏，召唤？」</div>
+          <div class="n">仅由意图推断时,路由把结果压成一句电报式问句;显式点名则直接分派</div>
+        </div>
+        <div class="gears">
+          <span><b>浓</b>仅开场、标题与收尾增强</span>
+          <span><b>标准</b>一次称呼 · 少量句式 · 轻收尾</span>
+          <span><b>静音</b>纯方法论,仅署名与回执</span>
+          <span><b>规矩</b>翻书一次 · 归页一次 · 正文不渲染世界观</span>
+        </div>
+      </div>
+      <img class="tb r" src="assets/cards/trailblazer-caelus.jpg" alt="开拓者·穹「创世的著者」卡面" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
 
-<section id="pipelines" style="padding-top:0">
+<section id="pipelines">
   <div class="wrap">
-    <div class="kicker">PIPELINES</div>
-    <h2>两条流水线</h2>
-    <div class="line">
-      <h3>逐火线 —— 新特性交付</h3>
-      <div class="sub">从规划到入册的十站,上游产物以「移交事实包」原文传递</div>
-      <div class="chain" id="chain1"></div>
+    <div class="shead rv">
+      <div class="no">IV · PIPELINES</div>
+      <h2>两条流水线</h2>
+      <p class="sub">可整跑,也可截取连续子段;每站由承办角色独立汇报、落自己的回执,上游产物以「此事移交◯◯」事实包原文传递,切换须经用户确认。</p>
     </div>
-    <div class="line">
-      <h3>守夜线 —— 事故响应</h3>
-      <div class="sub">四站闭环,全程静音档:先止血,后修复,再回滚脱敏,最后不归罪复盘</div>
-      <div class="chain" id="chain2"></div>
+    <div class="pline rv">
+      <div class="ph"><h3>逐火线</h3><span class="lat">FLAME-CHASE · DELIVERY</span></div>
+      <p class="desc">新特性从规划到入册的十站交付。</p>
+      <div class="guide"><img class="stk" src="assets/stickers/aglaea.png" alt="" loading="lazy" decoding="async">
+        <div class="say"><div class="who">阿格莱雅 · 黄金的织者</div><div class="txt">贵客,新特性的第一根丝,由我起头。</div></div>
+      </div>
+      <div class="chainrow" id="chain1"></div>
+      <p class="pnote"><b>移交纪律</b> —— 逐段署名;移交物必须是已产出的清楚对象;末端总装可交昔涟以叙事四段收拢,但各段原始汇报原样附后、不替前序角色改口。</p>
+    </div>
+    <div class="pline vigil rv">
+      <div class="ph"><h3>守夜线</h3><span class="lat">NIGHT WATCH · INCIDENT</span></div>
+      <p class="desc">事故响应的四站闭环——先止血,后修复,再回滚脱敏,最后不归罪复盘。</p>
+      <div class="guide"><img class="stk" src="assets/stickers/march7th-evernight.png" alt="" loading="lazy" decoding="async">
+        <div class="say"><div class="who">长夜月 · 隐秘的陌客</div><div class="txt">亲爱的开拓者,今夜的底片,由我来守。</div></div>
+      </div>
+      <div class="chainrow" id="chain2"></div>
+      <p class="pnote"><b>静音条款</b> —— 事故场景全程静音档;删除、回滚、脱敏、清档由三月七以一句交接语让位于「长夜月」特勤,完成必附底片单(备份留证清单),结束后一句归还语交回。</p>
     </div>
   </div>
 </section>
 
-<section id="quality" style="padding-top:0">
+<section id="quality">
   <div class="wrap">
-    <div class="kicker">VERIFIED</div>
-    <h2>质量与验收<small>四波交付 · 独立盲评 + 交叉复核 + 批判员</small></h2>
-    <div class="tiles">
-      <div class="tile"><b>13/13</b><span>validate.py --wave all PASS<br>路由清单 17/17 · UTF-8/LF</span></div>
-      <div class="tile"><b>60/60</b><span>每卡 5 题冻结场景盲评<br>失败原样入册后重跑闭合</span></div>
-      <div class="tile"><b>182 条</b><span>台词逐字对齐游戏知识库<br>引文字符级冻结检查</span></div>
-      <div class="tile"><b>10+4 站</b><span>逐火线 / 守夜线端到端演练<br>独立评审 CONFIRMED</span></div>
+    <div class="shead rv">
+      <div class="no">V · VERIFIED</div>
+      <h2>质量与验收</h2>
+      <p class="sub">全家族分四波交付,每波经独立验收核查:与建卡方隔离的盲评代理跑分,再经交叉复核与「批判员」对抗审计;评测场景与评分标准在建卡前哈希冻结。</p>
+      <div class="guide"><img class="stk" src="assets/stickers/anaxa.png" alt="" loading="lazy" decoding="async">
+        <div class="say"><div class="who">那刻夏 · 殁世的学士</div><div class="txt">所有结论,先过五问,再过删除测试。</div></div>
+      </div>
     </div>
-    <ul class="notes">
-      <li>◆ 全程「失败原样入册、不覆盖不美化」:昔涟 C-03 首跑真失败、逐火线附录首轮驳回、守夜线五次挂起,全部留痕在案;</li>
-      <li>◆ SHA 纪律:卡文一字变更 → 该卡五题全重跑 + 独立评分 + 交叉复核(L1 勘误即按此闭合);</li>
-      <li>◆ 角色风格 ≤15% 输出预算;报错、不可逆操作、安全事项自动静音,方法照常执行;</li>
-      <li>◆ 完整证据链(誊本 / 哈希账 / 回滚沙箱 / 双打包)存于交付树,验收文书见仓库 docs/。</li>
-    </ul>
+    <div class="plaques">
+      <div class="plaque rv"><b><span data-n="65">65</span></b><i>冻结评测场景</i><span>13 卷 eval · 建卡前哈希钉死</span></div>
+      <div class="plaque rv" style="--d:.06s"><b>60/60</b><i>每卡盲评得分 × 13</i><span>硬失败 0 · 逐卡交叉复核 CONFIRMED</span></div>
+      <div class="plaque rv" style="--d:.12s"><b><span data-n="182">182</span> 条</b><i>台词逐字对齐</i><span>知识库逐条复算 · 字符级冻结检查</span></div>
+      <div class="plaque rv" style="--d:.18s"><b>13.4%</b><i>已记录最高风格税</i><span>红线 ≤ 15% · 严肃场景自动静音</span></div>
+      <div class="plaque rv" style="--d:.24s"><b>10 + 4</b><i>两线端到端站数</i><span>各演练一次 · 独立评审 CONFIRMED</span></div>
+    </div>
+    <div class="qcols">
+      <div class="qbox rules rv">
+        <h3>验收纪律</h3>
+        <div class="qsub">静态校验:validate.py --wave all PASS —— 卡 13/13 · 路由清单 17/17 · 全树 UTF-8/LF</div>
+        <ul>
+          <li><b>SHA 纪律</b> —— 卡文一字变更,该卡五个冻结场景全重跑 + 独立评分 + 交叉复核,无一例外;</li>
+          <li><b>盲评隔离</b> —— 跑分代理与建卡方隔离,评分后再交叉复核;</li>
+          <li><b>台词保真</b> —— 182 条语音经知识库逐条复算,分隔符与字符级一致才入账;</li>
+          <li><b>交付事务</b> —— 每波基线 / 修改双打包 + 逐字节 DIFF;回滚脚本仅沙箱重放,生产树前后逐 SHA 零漂移。</li>
+        </ul>
+      </div>
+      <div class="qbox ledger rv" style="--d:.1s">
+        <h3>失败<em>原样入册</em></h3>
+        <div class="qsub">不覆盖、不美化 —— 留痕四则,原样陈列</div>
+        <ul>
+          <li>昔涟 C-03 首跑真失败(59/60),入册后重跑 C-03 并回归 C-04,复合评分 60/60;</li>
+          <li>逐火线终验首轮遭驳回:总装附录以摘要冒充逐字,定点重跑后九段逐字节 9/9 通过;</li>
+          <li>守夜线子代理五次挂起零产出,失败轨迹在册,后两站改走 CLI 子进程跑通;</li>
+          <li>海瑟音卡文硬编码断言过时,判「卡文过时」非虚构,授权后按 SHA 纪律整改闭合。</li>
+        </ul>
+      </div>
+    </div>
+    <p class="qfoot rv">完整证据链(誊本 / 哈希账 / 评分原文 / 失败轨迹)存于交付树,验收文书随仓库发布:<a href="https://github.com/xi-kari/amphoreus-skill-suite/tree/main/docs" target="_blank" rel="noopener">docs / 四波验收单 · 十三卡终验报告 ↗</a></p>
   </div>
 </section>
 
-<section id="adapters" style="padding-top:0">
+<section id="adapters">
   <div class="wrap">
-    <div class="kicker">MULTI-AGENT</div>
-    <h2>多智能体适配<small>skills/ 为唯一事实源,adapters/build.py 一键再生成</small></h2>
+    <div class="shead rv">
+      <div class="no">VI · MULTI-AGENT</div>
+      <h2>多智能体适配</h2>
+      <p class="sub"><code>skills/</code> 为唯一事实源,<code>adapters/build.py</code> 一键再生成全部适配文件;改卡后重跑即可同步。</p>
+      <div class="guide"><img class="stk" src="assets/stickers/cipher.png" alt="" loading="lazy" decoding="async">
+        <div class="say"><div class="who">赛飞儿 · 捷足的羁客</div><div class="txt">灰子,想去别的生态?路线我早踩好点了。</div></div>
+      </div>
+    </div>
     <div class="adp">
-      <div class="a"><h3>Claude Code / Cursor</h3><p>原生格式,拷入 <code>~/.claude/skills/</code> 即用;行为验收在此环境取得。</p></div>
-      <div class="a"><h3>AGENTS.md 系</h3><p>Codex CLI / OpenCode / Amp / Jules…<br>取 <code>adapters/openai-codex/AGENTS.md</code></p></div>
-      <div class="a"><h3>Gemini CLI</h3><p>取 <code>adapters/gemini-cli/GEMINI.md</code>,放项目根或 <code>~/.gemini/</code></p></div>
-      <div class="a"><h3>Cline / Roo Code</h3><p>取 <code>adapters/cline/amphoreus.md</code> 拷入 <code>.clinerules/</code></p></div>
-      <div class="a"><h3>任意智能体</h3><p>便携版单卡 <code>adapters/generic/amphoreus-&lt;hero&gt;.md</code> 直接作系统提示加载,单文件自足。</p></div>
+      <div class="a rv"><div class="an">NATIVE</div><h3>Claude Code / Cursor</h3><p>原生格式,拷入 <code>~/.claude/skills/</code> 即用;全部行为验收在此环境取得。</p></div>
+      <div class="a rv" style="--d:.05s"><div class="an">AGENTS.MD</div><h3>Codex CLI 系</h3><p>OpenCode / Amp / Jules 等通用约定<br><code>adapters/openai-codex/AGENTS.md</code></p></div>
+      <div class="a rv" style="--d:.1s"><div class="an">GEMINI</div><h3>Gemini CLI</h3><p>放项目根或 <code>~/.gemini/</code><br><code>adapters/gemini-cli/GEMINI.md</code></p></div>
+      <div class="a rv" style="--d:.15s"><div class="an">CLINE</div><h3>Cline / Roo Code</h3><p>Cline 拷入 <code>.clinerules/</code>,Roo 拷入 <code>.roo/rules/</code><br><code>adapters/cline/amphoreus.md</code></p></div>
+      <div class="a rv" style="--d:.2s"><div class="an">MORE</div><h3>Copilot · Windsurf · Aider…</h3><p>GitHub Copilot / Windsurf / Aider / Trae / Qwen Code / iFlow CLI 各自的约定文件<br><code>adapters/</code> 对应子目录</p></div>
+      <div class="a rv" style="--d:.25s"><div class="an">GENERIC</div><h3>任意智能体</h3><p>便携版单卡:卡文与家族公约合并为单文件、自足,直接作系统提示加载<br><code>adapters/generic/amphoreus-&lt;hero&gt;.md</code></p></div>
+    </div>
+    <p class="faith rv"><b>忠实性声明</b> —— 各适配版由生产卡文自动生成、未删改方法内容;但 60/60、两线终验等行为验收结论仅在 Claude Code 环境取得,其他运行时的行为未经评测。</p>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap">
+    <div class="shead rv">
+      <div class="no">VII · GET STARTED</div>
+      <h2>安装指北</h2>
+      <p class="sub">三步部署:克隆、拷入技能根、跑一遍校验。随后点名任意一张卡,或呼叫总路由,由它分派。</p>
+      <div class="guide"><img class="stk" src="assets/stickers/terrae.png" alt="" loading="lazy" decoding="async">
+        <div class="say"><div class="who">丹恒 · 掣地的伏龙</div><div class="txt">环境与依赖底座,我来承载。</div></div>
+      </div>
+    </div>
+    <div class="term rv">
+      <div class="tbar"><i></i><i></i><i></i><span>bash · 安装</span><button id="cpbtn" type="button">复制命令</button></div>
+      <pre><code id="cmds"><span class="cm"># 1. 克隆仓库</span>
+<span class="pr">$ </span>git clone https://github.com/xi-kari/amphoreus-skill-suite.git
+
+<span class="cm"># 2. 拷入技能根(Windows:C:\Users\&lt;你&gt;\.claude\skills\)</span>
+<span class="pr">$ </span>cp -r amphoreus-skill-suite/skills/* ~/.claude/skills/
+
+<span class="cm"># 3. 校验部署</span>
+<span class="pr">$ </span>python ~/.claude/skills/amphoreus/scripts/validate.py --root ~/.claude/skills --wave all
+<span class="ok">amphoreus wave all: PASS</span>
+<span class="out">router_manifest=17/17
+cards=13/13
+evals=13 scenarios=65
+encoding=UTF-8 line_endings=LF
+behavior=not_run_by_static_validator</span></code></pre>
+    </div>
+    <div class="usage">
+      <div class="u rv"><div class="q">「用 <code>amphoreus-mydei</code> 帮我追这个偶发死锁。」</div><div class="w">点名单卡 —— 万敌立界、让十步,一轮只验一个假设</div></div>
+      <div class="u rv" style="--d:.08s"><div class="q">「<code>amphoreus</code>:给仓库定一套提交规范。」</div><div class="w">呼叫总路由 —— 过深度门,电报式询问后分派刻律德菈立法三读</div></div>
     </div>
   </div>
 </section>
 
-<section id="install" style="padding-top:0">
-  <div class="wrap">
-    <div class="kicker">GET STARTED</div>
-    <h2>安装指北</h2>
-    <pre><button class="copy" onclick="cp(this)">复制</button><code><span class="cm"># 1. 克隆仓库</span>
-git clone https://github.com/xi-kari/amphoreus-skill-suite.git
-
-<span class="cm"># 2. 拷入技能根(Windows: C:\Users\&lt;你&gt;\.claude\skills\)</span>
-cp -r amphoreus-skill-suite/skills/* ~/.claude/skills/
-
-<span class="cm"># 3. 校验部署(应输出 PASS,cards=13/13)</span>
-python ~/.claude/skills/amphoreus/scripts/validate.py --root ~/.claude/skills --wave all</code></pre>
-    <p style="margin-top:16px;font-size:.86rem;color:var(--dim)">随后在 Claude Code / Cursor 里直接点名(「用 <code style="color:var(--gold)">amphoreus-mydei</code> 帮我追这个死锁」),或呼叫 <code style="color:var(--gold)">amphoreus</code> 总路由由它分发。</p>
-  </div>
-</section>
+</main>
 
 <footer>
   <div class="wrap">
-    <p>本页面为爱好者研究 / 学习用途的同人衍生内容,与米哈游无关联。<br>《崩坏:星穹铁道》及全部角色、立绘、台词素材版权归米哈游(HoYoverse)所有;<br>卡面与符号取自 <a href="https://wiki.biligame.com/sr/%E9%80%90%E7%81%AB%E8%80%85%E7%9A%84%E5%91%BD%E8%B7%AF.exe">B 站星穹铁道 Wiki「逐火者的命路.exe」</a>。如有侵权,请提 Issue 联系删除。</p>
-    <p style="margin-top:10px"><a href="https://github.com/xi-kari/amphoreus-skill-suite">GitHub</a> · <a href="https://github.com/xi-kari/amphoreus-skill-suite/tree/main/docs">验收文书</a> · <a href="https://github.com/xi-kari/amphoreus-skill-suite/tree/main/adapters">适配层</a></p>
-    <div class="fs">火种在此传递</div>
+    <div class="guide center rv"><img class="stk" src="assets/stickers/cyrene.png" alt="" loading="lazy" decoding="async">
+      <div class="say"><div class="who">昔涟 · 无瑕的真我</div><div class="txt">这一册讲完了。下一页,由你来写♪</div></div>
+    </div>
+    <div class="seal rv"><b>火种在此传递</b></div>
+    <p class="rv">本页面为爱好者研究 / 学习用途的同人衍生内容,与米哈游无关联。<br>《崩坏：星穹铁道》及全部角色、立绘、台词素材版权归米哈游(HoYoverse)所有;<br>卡面与徽记取自 B 站星穹铁道 Wiki<a href="https://wiki.biligame.com/sr/%E9%80%90%E7%81%AB%E8%80%85%E7%9A%84%E5%91%BD%E8%B7%AF.exe" target="_blank" rel="noopener">「逐火者的命路.exe」</a>词条,角色 Q 版表情包素材版权同归米哈游所有,台词经公开 Wiki 语料逐字核对。<br>页面各处气泡台词为贴合各卡话术契约的风格创作,非游戏原句。如有侵权,请提 Issue 联系删除。</p>
+    <div class="fl rv">
+      <a href="https://github.com/xi-kari/amphoreus-skill-suite" target="_blank" rel="noopener">GitHub 仓库</a>
+      <a href="https://github.com/xi-kari/amphoreus-skill-suite/tree/main/docs" target="_blank" rel="noopener">验收文书</a>
+      <a href="https://github.com/xi-kari/amphoreus-skill-suite/tree/main/adapters" target="_blank" rel="noopener">适配层</a>
+      <a href="https://github.com/xi-kari/amphoreus-skill-suite/blob/main/docs/%E6%80%BB%E4%BB%BB%E5%8A%A1%E4%B9%A6.md" target="_blank" rel="noopener">设计总纲</a>
+    </div>
   </div>
 </footer>
 
+<dialog class="cardDlg" id="cardDlg" aria-label="方法卡详情">
+  <button class="x" id="dlgClose" type="button" aria-label="关闭">✕</button>
+  <div class="dlg" id="dlgBody"></div>
+</dialog>
+
 <script>
+/* ---------- 数据:来自 skills/ 生产卡文与 README(个别方法总名与步骤名为语义提炼) ---------- */
+const ROM=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII'];
 const CARDS=[
- {k:"aglaea",n:"阿格莱雅",t:"黄金的织者",m:"织造法",d:"项目规划 · 排期 · 取舍 · 里程碑"},
- {k:"cerydra",n:"刻律德菈",t:"执棋的君主",m:"立法三读",d:"有证据、有成本、可评审、可撤销的工程规则"},
- {k:"terrae",n:"丹恒",t:"掣地的伏龙",m:"地基法",d:"可验证环境 · CI 地基 · 可逆迁移"},
- {k:"phainon",n:"白厄",t:"负火的囚徒",m:"推石法",d:"大型重构与批量迁移,可计数、可回滚"},
- {k:"anaxa",n:"那刻夏",t:"殁世的学士",m:"五问法 + 删除测试",d:"代码 / 设计 / 论证评审,可执行的否决"},
- {k:"cipher",n:"赛飞儿",t:"捷足的羁客",m:"行窃三则",d:"授权内对抗测试 · 边界用例 · 漏洞报告"},
- {k:"hyacine",n:"风堇",t:"摇光的医师",m:"双处方",d:"bug 诊断修复 · 依赖故障 · 维护债"},
- {k:"march7th",n:"三月七 / 长夜月",t:"隐秘的陌客",m:"快照与守夜",d:"事实快照 · 有界备份 / 回滚 / 脱敏"},
- {k:"castorice",n:"遐蝶",t:"死荫的侍女",m:"告别四步",d:"影响先行的 API / 依赖 / 项目退役"},
- {k:"cyrene",n:"昔涟",t:"无瑕的真我",m:"如我所书法",d:"项目记忆 · 阶段叙事 · 终版总装,逐字不改写"},
- {k:"mydei",n:"万敌",t:"亡国的王储",m:"先让十步法",d:"硬 bug · 性能瓶颈 · 死锁的有界突破"},
- {k:"hysilens",n:"海瑟音",t:"奏浪的剑骑",m:"歌集复盘法 + 无路引航式",d:"不归罪复盘 · 痛苦取舍导航"},
- {k:"tribbie",n:"缇宝",t:"命运的三子",m:"三声部讲解法",d:"面向新手 / 同行 / 专家的技术讲解"}
+ {k:'aglaea',n:'阿格莱雅',t:'黄金的织者',m:'织造法',dom:'项目规划 · 排期 · 取舍 · 里程碑',
+  steps:['盘丝','经纬','收口','留线头'],
+  duty:'以规划与统筹承接项目目标、方案取舍、排期、资源分配和里程碑设计。',
+  moves:['刻律德菈','丹恒'],rn:'阿格莱雅',
+  quirk:'标准档可称用户「贵客」或「朋友」一次;对缇宝称「吾师」,对刻律德菈称「凯撒」。'},
+ {k:'tribbie',n:'缇宝',t:'命运的三子',m:'三声部讲解法',dom:'新手 / 同行 / 专家 · 三声部讲解',
+  steps:['冻结对象','缇宝声部(新人)','缇宁声部(同事)','缇安声部(专家)','定案分栏','回声'],
+  duty:'以讲解与沟通承接入门指南、README、对外解释、黑话翻译与纪要转发言稿。',
+  moves:['三月七'],rn:'缇宝',
+  quirk:'自称「我们」,教学场合可自称「缇宝老师」;标准档称用户「小灰」一次。'},
+ {k:'mydei',n:'万敌',t:'亡国的王储',m:'先让十步法',dom:'硬 bug · 性能瓶颈 · 死锁攻坚',
+  steps:['立界','让十步','固定观测','正面强攻','杀敌记数','关键一击','报捷','停战'],
+  duty:'疑难 bug、性能瓶颈、偶发死锁、低复现故障和久攻不下的技术难题。',
+  moves:['风堇','三月七'],rn:'万敌',
+  quirk:'问候可只写「嗯。」;「哼」低频使用。'},
+ {k:'castorice',n:'遐蝶',t:'死荫的侍女',m:'告别四步',dom:'API / 依赖 / 项目退役 · 归档',
+  steps:['冻结对象','清点','告知','迁移','安葬前门','安葬','墓志'],
+  duty:'功能下线、API 弃用、代码与依赖清退、数据存储退役、项目归档及弃用通知。',
+  moves:['长夜月','昔涟'],rn:'遐蝶',
+  quirk:'自称「我」;对用户可称「阁下」,标准档至多一次。'},
+ {k:'anaxa',n:'那刻夏',t:'殁世的学士',m:'五问法 + 删除测试',dom:'代码 / 设计 / 论证评审 · 可执行的否决',
+  steps:['冻结对象','立五问','折叠提示','四问守槽','删除测试','裁决'],
+  duty:'评审代码、架构与论证逻辑,识别冗余;只审对象,不越权改。',
+  moves:['白厄','风堇'],rn:'那刻夏',
+  quirk:'正式自我介绍用「阿那克萨戈拉斯」,可轻提醒别用简称。'},
+ {k:'hyacine',n:'风堇',t:'摇光的医师',m:'双处方',dom:'bug 诊断修复 · 依赖故障 · 维护债',
+  steps:['问诊','检查','诊断','处方','治疗','复诊'],
+  duty:'bug 修复、依赖升级、健康体检、错误处理加固、测试补齐与随访。',
+  moves:['白厄','那刻夏'],rn:'风堇',
+  quirk:'首次出场可自报「医师风堇」;「灰宝」只在浓档使用一次。'},
+ {k:'cipher',n:'赛飞儿',t:'捷足的羁客',m:'行窃三则',dom:'授权内对抗测试 · 边界用例',
+  steps:['冻结授权信封','踩点·资产','踩点·入口','行窃·输入面','行窃·权限面','行窃·状态面','只偷演示不破坏','留信','据实标记重算'],
+  duty:'边界用例、输入校验、授权检查、注入排查与防御性对抗测试。',
+  moves:['风堇','刻律德菈'],rn:'赛飞儿',
+  quirk:'标准档称用户「灰子」一次;对缇宝才可称「阿姐」,对那刻夏才可称「夏老师」。'},
+ {k:'cerydra',n:'刻律德菈',t:'执棋的君主',m:'立法三读',dom:'工程规则 · 治理 · ADR',
+  steps:['冻结议题','一读·乱象举证','一读·裁决','二读·规则草案','二读·例外','二读·执行成本','三读·颁布','用户否决即废止'],
+  duty:'代码规范、命名法、流程制度、治理提案、架构决策记录与既有规则复审。',
+  moves:['白厄','万敌'],rn:'刻律德菈',
+  quirk:'对用户可称「救世主」,标准档至多一次。'},
+ {k:'hysilens',n:'海瑟音',t:'奏浪的剑骑',m:'歌集复盘法 + 无路引航式',dom:'不归罪复盘 · 两难权衡',
+  steps:['冻结对象','曲目单','走音处','无歌之章','余音','列路','标失路','给倾向'],
+  duty:'以复盘与两难权衡承接事故复盘、项目回顾、沉默证据盘点和坏选项比较。',
+  moves:['刻律德菈','昔涟'],rn:'海瑟音',
+  quirk:'标准档可称用户「小灰鱼」一次,浓档才用「灰色的小鱼苗」。'},
+ {k:'march7th',n:'三月七 / 长夜月',t:'隐秘的陌客',m:'拍照式记录法 + 底片法',dom:'日志 · 快照 · 备份 / 回滚 / 脱敏',
+  steps:['定面','拍照片','冻结特勤范围','留底片','执行与显影','归还'],
+  duty:'常态记日志、纪要、changelog 与进度快照;「长夜月」特勤管备份、回滚、脱敏、清档。',
+  moves:['遐蝶','海瑟音'],rn:'三月七',r2:'长夜月♭卡｜读取：common.md、persona.md｜档位：静音',
+  quirk:'三月七自称「本姑娘」;长夜月称用户「亲爱的开拓者」。'},
+ {k:'terrae',n:'丹恒',t:'掣地的伏龙',m:'承载法',dom:'环境 · CI · 依赖底座 · 可逆迁移',
+  steps:['勘地','架桥','承重测试','交接'],
+  duty:'开发环境、CI / 构建、依赖底座、系统迁移与遗留系统托管。',
+  moves:['白厄','遐蝶'],rn:'丹恒',
+  quirk:'用「我来负责／我来承载」认领清楚对象。'},
+ {k:'phainon',n:'白厄',t:'负火的囚徒',m:'推石法',dom:'大重构 · 批量迁移 · 长任务收口',
+  steps:['认领石头','刻度拆分','推一步','刻度报数','四分点汇报','换肩'],
+  duty:'大型重构、批量迁移、重复性长任务、跨多轮实施和大清单收口。',
+  moves:['那刻夏','风堇'],rn:'白厄',
+  quirk:'「赞美太阳！」只在报告签名位置使用,不作对话口头禅。'},
+ {k:'cyrene',n:'昔涟',t:'无瑕的真我',m:'如我所书法',dom:'阶段叙事 · release notes · 项目记忆',
+  steps:['听','讲','记','留悬念','总装模式','release notes'],
+  duty:'承接阶段总结、对外汇报、release notes 与长期项目记忆维护;逐字素材不改写。',
+  moves:[],rn:'昔涟',
+  quirk:'句尾「♪」只进引语与收尾句,每次输出至多一处。'}
 ];
-const byK=Object.fromEntries(CARDS.map(c=>[c.k,c]));
-document.getElementById('coinrow').innerHTML=CARDS.map(c=>`<img src="assets/symbols/${c.k}.png" alt="${c.n}符号" title="${c.n}「${c.t}」">`).join('');
-document.getElementById('grid').innerHTML=CARDS.map(c=>`
- <article class="card">
-  <div class="art"><img class="face" src="assets/cards/${c.k}.jpg" alt="${c.n}卡面" loading="lazy">
-   <img class="coin" src="assets/symbols/${c.k}.png" alt="符号"></div>
-  <div class="meta"><h3>${c.n}</h3><div class="title">${c.t}</div>
+const byName=Object.fromEntries(CARDS.map(c=>[c.n,c]));
+byName['长夜月']=byName['三月七 / 长夜月'];byName['三月七']=byName['三月七 / 长夜月'];
+const byKey={};CARDS.forEach(c=>{byKey[c.k]=c});
+const REPO='https://github.com/xi-kari/amphoreus-skill-suite';
+
+/* ---------- 展示顺序(0-14,按标注文件序:0 开拓者·星 … 14 开拓者·穹)与原图(assets/cards-full/,原字节未压缩) ----------
+   改这一个数组即可同时重排顶部轮播与卡片网格。 */
+const ORDER=['trailblazer-stelle','tribbie','cerydra','march7th','terrae','hysilens','hyacine',
+ 'phainon','anaxa','aglaea','mydei','castorice','cipher','cyrene','trailblazer-caelus'];
+const DIM={aglaea:[1764,3096],anaxa:[1764,3104],castorice:[1764,3100],cerydra:[1648,2896],cipher:[1764,3112],
+ cyrene:[1928,3380],hyacine:[1768,3092],hysilens:[1616,2864],march7th:[1648,2880],mydei:[1768,3104],
+ phainon:[1764,3100],terrae:[1632,2880],'trailblazer-caelus':[2052,3608],'trailblazer-stelle':[2044,3608],tribbie:[1764,3088]};
+const TBN={'trailblazer-stelle':'开拓者·星「创世的著者」','trailblazer-caelus':'开拓者·穹「创世的著者」'};
+const fullAlt=k=>TBN[k]||`${byKey[k].n}「${byKey[k].t}」`;
+
+/* ---------- 卡面轮播(向左循环平移) ---------- */
+(()=>{
+  const seq=ORDER.map(k=>`<img src="assets/cards-full/${k}.png" width="${DIM[k][0]}" height="${DIM[k][1]}" alt="${fullAlt(k)}卡面" loading="lazy" decoding="async">`).join('');
+  document.getElementById('frieze').innerHTML=seq+seq;
+})();
+
+/* ---------- 十三卡铭牌(顺序随 ORDER,罗马编号随卡序) ---------- */
+const grid=document.getElementById('grid');
+grid.innerHTML=ORDER.filter(k=>byKey[k]).map((k,gi)=>{const c=byKey[k];return `
+ <article class="plate rv" style="--d:${(gi%4)*.07}s">
+  <div class="art">
+   <span class="no">${ROM[gi]}</span>
+   <div class="clip">
+    <img class="face" src="assets/cards/${c.k}.jpg" alt="${c.n}「${c.t}」卡面" loading="lazy" decoding="async">
+    <div class="steps" aria-hidden="true">${c.steps.join('<em>›</em>')}<span class="hint">点开查看方法卡 →</span></div>
+   </div>
+   <img class="coin" src="assets/symbols/${c.k}.png" alt="" loading="lazy" decoding="async">
+  </div>
+  <div class="meta">
+   <h3>${c.n}</h3><span class="ttl">${c.t}</span><br>
    <code>amphoreus-${c.k}</code>
-   <div class="m"><b style="color:var(--parch)">${c.m}</b> —— ${c.d}</div></div>
- </article>`).join('');
-const L1=[["aglaea","规划"],["cerydra","立规"],["terrae","环境"],["phainon","实施"],["anaxa","评审"],["cipher","安全"],["hyacine","修复"],["march7th","快照"],["castorice","退役"],["cyrene","总装叙事"]];
-const L2=[["mydei","止血突破"],["hyacine","修复"],["march7th","回滚·脱敏"],["hysilens","不归罪复盘"]];
-function chain(el,arr,alt){document.getElementById(el).innerHTML=arr.map(([k,r],i)=>{
-  const nm=(alt&&alt[k])||byK[k].n;
-  return `${i?'<span class="arrow">›</span>':''}<div class="station">
-   <img src="assets/symbols/${k}.png" alt="${nm}"><div class="n">第 ${i+1} 站</div>
-   <div class="nm">${nm}</div><div class="r">${r}</div></div>`}).join('')}
-chain('chain1',L1);
-chain('chain2',L2,{march7th:'长夜月'});
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.08});
-document.querySelectorAll('.card').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el)});
-function cp(btn){const t=btn.parentElement.querySelector('code').innerText;navigator.clipboard.writeText(t).then(()=>{btn.textContent='已复制';setTimeout(()=>btn.textContent='复制',1600)})}
+   <div class="mth">${c.m}</div>
+   <div class="dom">${c.dom}</div>
+  </div>
+  <button class="hit" type="button" data-k="${c.k}" aria-label="查看方法卡:${c.n} · ${c.m}" aria-haspopup="dialog"></button>
+ </article>`}).join('');
+
+/* ---------- 方法卡对话框 ---------- */
+const dlg=document.getElementById('cardDlg'),dlgBody=document.getElementById('dlgBody');
+/* 弹窗话术契约区的表情包:三月七带长夜月双面,缇宝带缇宁缇安三声部 */
+const STKS={march7th:['march7th','march7th-evernight'],tribbie:['tribbie','tribbie-ning','tribbie-an']};
+function openCard(k){
+  const c=byKey[k];if(!c)return;
+  if(typeof dlg.showModal!=='function'){window.open(`${REPO}/blob/main/skills/amphoreus-${c.k}/SKILL.md`,'_blank','noopener');return}
+  dlgBody.innerHTML=`
+   <div class="dart" aria-hidden="true"><img src="assets/cards-full/${c.k}.png" alt=""></div>
+   <div class="body">
+    <div class="top">
+     <img src="assets/symbols/${c.k}.png" alt="">
+     <div>
+      <div class="lat">CARD ${ROM[ORDER.indexOf(c.k)-1]}</div>
+      <h3>${c.n}<span class="ttl" style="margin-left:12px">${c.t}</span></h3>
+     </div>
+    </div>
+    <div class="idrow"><code>amphoreus-${c.k}</code><span class="mth">${c.m}</span></div>
+    <p class="duty">${c.duty}</p>
+    <h4>方法步骤</h4>
+    <ol class="chain">${c.steps.map(s=>`<li>${s}</li>`).join('')}</ol>
+    ${c.moves.length?`<h4>移交下游</h4><div class="moves">${c.moves.map(m=>`<span>此事移交<b>${m}</b></span>`).join('')}</div>`:''}
+    <h4>话术契约摘录</h4>
+    <div class="qrow">${(STKS[c.k]||[c.k]).map(s=>`<img class="stk" src="assets/stickers/${s}.png" alt="" loading="lazy" decoding="async">`).join('')}<div class="quirk">${c.quirk}</div></div>
+    <h4>固定回执</h4>
+    <div class="rcpt">${c.rn}卡｜读取：common.md、persona.md｜档位：浓／标准／静音${c.r2?'<br>'+c.r2+'(特勤)':''}</div>
+    <a class="flink" href="${REPO}/blob/main/skills/amphoreus-${c.k}/SKILL.md" target="_blank" rel="noopener">在 GitHub 查看完整 SKILL.md ↗</a>
+   </div>`;
+  dlg.showModal();
+  history.replaceState(null,'','#card-'+c.k);
+}
+grid.addEventListener('click',e=>{const b=e.target.closest('.hit');if(b)openCard(b.dataset.k)});
+document.getElementById('dlgClose').addEventListener('click',()=>dlg.close());
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+dlg.addEventListener('close',()=>{if(/^#card-/.test(location.hash))history.replaceState(null,'',location.pathname+location.search)});
+/* 深链:#card-<key> 打开对应方法卡 */
+function openFromHash(){
+  const k=(location.hash.match(/^#card-([a-z0-9]+)$/)||[])[1];
+  if(!k){if(dlg.open)dlg.close();return}
+  if(byKey[k])openCard(k);
+}
+addEventListener('hashchange',openFromHash);
+openFromHash();
+
+/* ---------- 流水线站链 ---------- */
+const L1=[['阿格莱雅','规划'],['刻律德菈','立规'],['丹恒','环境'],['白厄','实施'],['那刻夏','评审'],['赛飞儿','安全'],['风堇','修复'],['三月七','快照'],['遐蝶','退役'],['昔涟','总装叙事']];
+const L2=[['万敌','止血突破'],['风堇','修复'],['长夜月','回滚 · 脱敏'],['海瑟音','不归罪复盘']];
+function chain(el,arr){
+  document.getElementById(el).innerHTML=arr.map(([nm,rl],i)=>{
+    const c=byName[nm];
+    const sk=nm==='长夜月'?'march7th-evernight':c.k;
+    return `${i?'<span class="lk" aria-hidden="true"></span>':''}
+     <div class="stn">
+      <img src="assets/stickers/${sk}.png" alt="" loading="lazy" decoding="async">
+      <span class="sn">${String(i+1).padStart(2,'0')}</span>
+      <span class="nm">${nm}</span>
+      <span class="rl">${rl}</span>
+     </div>`}).join('');
+}
+chain('chain1',L1);chain('chain2',L2);
+
+/* ---------- 滚动显现 + 数字滚动 ---------- */
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function count(sp){
+  const n=+sp.dataset.n,t0=performance.now(),dur=1100;
+  (function f(t){const p=Math.min(1,(t-t0)/dur);sp.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(t0);
+}
+if(!reduce){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting)return;
+    e.target.classList.add('on');
+    e.target.querySelectorAll('span[data-n]').forEach(count);
+    io.unobserve(e.target);
+  }),{threshold:.05});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+}else{
+  document.querySelectorAll('.rv').forEach(el=>el.classList.add('on'));
+}
+
+/* ---------- 导航高亮 ---------- */
+const navA=[...document.querySelectorAll('#navlinks a')];
+const secIO=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  navA.forEach(a=>a.classList.toggle('act',a.getAttribute('href')==='#'+e.target.id));
+}),{rootMargin:'-38% 0px -56% 0px'});
+navA.forEach(a=>{const s=document.querySelector(a.getAttribute('href'));if(s)secIO.observe(s)});
+
+/* ---------- 复制安装命令 ---------- */
+document.getElementById('cpbtn').addEventListener('click',function(){
+  const cmds=['git clone https://github.com/xi-kari/amphoreus-skill-suite.git',
+   'cp -r amphoreus-skill-suite/skills/* ~/.claude/skills/',
+   'python ~/.claude/skills/amphoreus/scripts/validate.py --root ~/.claude/skills --wave all'].join('\n');
+  const flash=t=>{this.textContent=t;setTimeout(()=>this.textContent='复制命令',1800)};
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(cmds).then(()=>flash('已复制'),()=>flash('复制失败'));
+  }else{
+    const r=document.createRange();r.selectNodeContents(document.getElementById('cmds'));
+    const s=getSelection();s.removeAllRanges();s.addRange(r);
+    flash('已选中,请 Ctrl+C');
+  }
+});
 </script>
 </body>
 </html>
