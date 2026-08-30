@@ -13,8 +13,16 @@ python adapters/build.py
 | **Claude Code / Cursor**(原生) | `skills/` 整树 | 拷入 `~/.claude/skills/`,见仓库主 README |
 | **OpenAI Codex CLI / OpenCode / Amp / Jules** 等 AGENTS.md 系 | `adapters/openai-codex/AGENTS.md` | 放项目根或全局(如 `~/.codex/AGENTS.md`),连同 `adapters/generic/` 一起携带 |
 | **Gemini CLI** | `adapters/gemini-cli/GEMINI.md` | 放项目根或 `~/.gemini/GEMINI.md`,连同 `adapters/generic/` 携带 |
-| **Cline / Roo Code** | `adapters/cline/amphoreus.md` | 拷入项目 `.clinerules/`,连同 `adapters/generic/` 携带 |
+| **Cline / Roo Code** | `adapters/cline/amphoreus.md` | Cline 拷入 `.clinerules/`;Roo Code 拷入 `.roo/rules/`(Roo 不读目录形态的 `.clinerules/`);连同 `adapters/generic/` 携带 |
+| **GitHub Copilot** | `adapters/github-copilot/copilot-instructions.md` | 拷为项目 `.github/copilot-instructions.md`,连同 `adapters/generic/` 携带 |
+| **Windsurf(Cascade)** | `adapters/windsurf/amphoreus.md` | 拷入项目 `.windsurf/rules/`,连同 `adapters/generic/` 携带 |
+| **Aider** | `adapters/aider/CONVENTIONS.md` | 放项目根,`aider --read CONVENTIONS.md` 加载(或写入 `.aider.conf.yml` 的 `read:`) |
+| **Trae** | `adapters/trae/project_rules.md` | 拷为项目 `.trae/rules/project_rules.md`,连同 `adapters/generic/` 携带 |
+| **Qwen Code** | `adapters/qwen-code/QWEN.md` | 放项目根或 `~/.qwen/QWEN.md`,连同 `adapters/generic/` 携带 |
+| **iFlow CLI** | `adapters/iflow-cli/IFLOW.md` | 放项目根或 `~/.iflow/IFLOW.md`,连同 `adapters/generic/` 携带 |
 | **任意可加载系统提示的智能体** | `adapters/generic/amphoreus-<hero>.md`(单卡便携版) | 直接把单卡文件作为 system prompt / 自定义指令加载 |
+
+> 约定型生态(AGENTS.md / GEMINI.md / Copilot / Windsurf / Aider / Trae / QWEN / IFLOW / Cline)共用同一份约定正文,只是落点与安装方式不同;它们负责"何时召唤哪张卡",实际卡文一律回读 `adapters/generic/` 便携版。
 
 ## 便携版单卡的构成
 

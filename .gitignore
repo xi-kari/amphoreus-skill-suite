@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 本地杂物
+*.log
+*.tmp

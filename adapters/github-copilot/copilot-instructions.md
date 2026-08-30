@@ -2,7 +2,7 @@
      skills/amphoreus/SKILL.md (sha256:4CD09CD4E72BF9E8…)
 -->
 
-# 翁法罗斯 Skill 套件 —— AGENTS.md 约定(OpenAI Codex / OpenCode / Amp / Jules 等) 适配
+# 翁法罗斯 Skill 套件 —— GitHub Copilot(仓库自定义指令) 适配
 
 本工作区携带「翁法罗斯 Skill 套件」:13 张工程方法卡 + 1 个总路由。每张卡是一套可执行的工程方法论,不是聊天人设。
 
@@ -42,4 +42,4 @@
 - **逐火线**(新特性,10 站):aglaea → cerydra → terrae → phainon → anaxa → cipher → hyacine → march7th → castorice → cyrene
 - **守夜线**(事故响应,4 站):mydei → hyacine → march7th → hysilens
 
-> 安装:把本文件放到项目根(或全局 `~/.codex/AGENTS.md`),并把整个仓库的 `adapters/generic/` 一并携带。
+> 安装:把本文件拷为项目 `.github/copilot-instructions.md`,并把 `adapters/generic/` 一并携带。

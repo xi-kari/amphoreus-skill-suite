@@ -2,11 +2,19 @@
 """从 skills/ 单一事实源生成其他智能体生态的适配文件。
 
 生成物(全部带 GENERATED 头,勿手改;重跑本脚本即同步):
-  adapters/generic/amphoreus-router.md      便携版总路由(含卡索引)
-  adapters/generic/amphoreus-<hero>.md      便携版单卡 = 家族公约 + 卡文原文
-  adapters/openai-codex/AGENTS.md           AGENTS.md 约定(Codex / OpenCode / Amp / Jules 等)
-  adapters/gemini-cli/GEMINI.md             Gemini CLI 约定
-  adapters/cline/amphoreus.md               Cline / Roo Code 规则文件(拷入 .clinerules/)
+  adapters/generic/amphoreus-router.md          便携版总路由(含卡索引)
+  adapters/generic/amphoreus-<hero>.md          便携版单卡 = 家族公约 + 卡文原文
+  adapters/openai-codex/AGENTS.md               AGENTS.md 约定(Codex / OpenCode / Amp / Jules 等)
+  adapters/gemini-cli/GEMINI.md                 Gemini CLI 约定
+  adapters/cline/amphoreus.md                   Cline(.clinerules/)/ Roo Code(.roo/rules/)规则文件
+  adapters/github-copilot/copilot-instructions.md  GitHub Copilot 仓库自定义指令
+  adapters/windsurf/amphoreus.md                Windsurf(Cascade)规则文件
+  adapters/aider/CONVENTIONS.md                 Aider 约定文件(--read 加载)
+  adapters/trae/project_rules.md                Trae 项目规则
+  adapters/qwen-code/QWEN.md                    Qwen Code 约定
+  adapters/iflow-cli/IFLOW.md                   iFlow CLI 约定
+
+CI 会重跑本脚本并要求零 diff(适配层不得手改漂移)。
 """
 from __future__ import annotations
 
@@ -21,12 +29,12 @@ ADP = ROOT / "adapters"
 HEROES = [
     ("aglaea", "阿格莱雅", "黄金的织者", "织造法:项目规划/排期/取舍/里程碑"),
     ("cerydra", "刻律德菈", "执棋的君主", "立法三读:可评审、可撤销的工程规则"),
-    ("terrae", "丹恒", "掣地的伏龙", "地基法:可验证环境/CI 地基/可逆迁移"),
+    ("terrae", "丹恒", "掣地的伏龙", "承载法:开发环境/CI 构建/依赖底座/可逆迁移"),
     ("phainon", "白厄", "负火的囚徒", "推石法:大型重构与批量迁移"),
     ("anaxa", "那刻夏", "殁世的学士", "五问法+删除测试:代码/设计/论证评审"),
     ("cipher", "赛飞儿", "捷足的羁客", "行窃三则:授权内对抗测试与漏洞报告"),
     ("hyacine", "风堇", "摇光的医师", "双处方:bug 诊断修复与维护债"),
-    ("march7th", "三月七/长夜月", "隐秘的陌客", "快照与守夜:事实快照;备份/回滚/脱敏"),
+    ("march7th", "三月七/长夜月", "隐秘的陌客", "拍照式记录法+底片法:日志与快照;备份/回滚/脱敏"),
     ("castorice", "遐蝶", "死荫的侍女", "告别四步:API/依赖/项目退役"),
     ("cyrene", "昔涟", "无瑕的真我", "如我所书法:项目记忆/阶段叙事/终版总装"),
     ("mydei", "万敌", "亡国的王储", "先让十步法:硬 bug/瓶颈/死锁突破"),
@@ -129,26 +137,48 @@ CONVENTION_BODY = """# 翁法罗斯 Skill 套件 —— {tool} 适配
 """
 
 
+CONVENTION_TARGETS = [
+    # (输出相对路径, 工具名, 安装说明)
+    ("openai-codex/AGENTS.md",
+     "AGENTS.md 约定(OpenAI Codex / OpenCode / Amp / Jules 等)",
+     "把本文件放到项目根(或全局 `~/.codex/AGENTS.md`),并把整个仓库的 `adapters/generic/` 一并携带。"),
+    ("gemini-cli/GEMINI.md",
+     "Gemini CLI",
+     "把本文件放到项目根或 `~/.gemini/GEMINI.md`,并把 `adapters/generic/` 一并携带。"),
+    ("cline/amphoreus.md",
+     "Cline / Roo Code",
+     "Cline 拷入项目 `.clinerules/` 目录;Roo Code 拷入项目 `.roo/rules/` 目录(Roo 不读目录形态的 `.clinerules/`)。两者均把 `adapters/generic/` 一并携带。"),
+    ("github-copilot/copilot-instructions.md",
+     "GitHub Copilot(仓库自定义指令)",
+     "把本文件拷为项目 `.github/copilot-instructions.md`,并把 `adapters/generic/` 一并携带。"),
+    ("windsurf/amphoreus.md",
+     "Windsurf(Cascade 规则)",
+     "把本文件拷入项目 `.windsurf/rules/` 目录,并把 `adapters/generic/` 一并携带。"),
+    ("aider/CONVENTIONS.md",
+     "Aider(约定文件)",
+     "把本文件放到项目根,启动时 `aider --read CONVENTIONS.md` 加载(或写入 `.aider.conf.yml` 的 `read:`),并把 `adapters/generic/` 一并携带。"),
+    ("trae/project_rules.md",
+     "Trae(项目规则)",
+     "把本文件拷为项目 `.trae/rules/project_rules.md`,并把 `adapters/generic/` 一并携带。"),
+    ("qwen-code/QWEN.md",
+     "Qwen Code",
+     "把本文件放到项目根或 `~/.qwen/QWEN.md`,并把 `adapters/generic/` 一并携带。"),
+    ("iflow-cli/IFLOW.md",
+     "iFlow CLI",
+     "把本文件放到项目根或 `~/.iflow/IFLOW.md`,并把 `adapters/generic/` 一并携带。"),
+]
+
+
 def build_conventions() -> None:
     index = card_index()
-    write(
-        ADP / "openai-codex" / "AGENTS.md",
-        gen_header(SKILLS / "amphoreus" / "SKILL.md")
-        + CONVENTION_BODY.format(tool="AGENTS.md 约定(OpenAI Codex / OpenCode / Amp / Jules 等)", index=index)
-        + "\n> 安装:把本文件放到项目根(或全局 `~/.codex/AGENTS.md`),并把整个仓库的 `adapters/generic/` 一并携带。\n",
-    )
-    write(
-        ADP / "gemini-cli" / "GEMINI.md",
-        gen_header(SKILLS / "amphoreus" / "SKILL.md")
-        + CONVENTION_BODY.format(tool="Gemini CLI", index=index)
-        + "\n> 安装:把本文件放到项目根或 `~/.gemini/GEMINI.md`,并把 `adapters/generic/` 一并携带。\n",
-    )
-    write(
-        ADP / "cline" / "amphoreus.md",
-        gen_header(SKILLS / "amphoreus" / "SKILL.md")
-        + CONVENTION_BODY.format(tool="Cline / Roo Code(.clinerules)", index=index)
-        + "\n> 安装:把本文件拷入项目 `.clinerules/` 目录,并把 `adapters/generic/` 一并携带。\n",
-    )
+    src = SKILLS / "amphoreus" / "SKILL.md"
+    for rel, tool, install in CONVENTION_TARGETS:
+        write(
+            ADP / Path(rel),
+            gen_header(src)
+            + CONVENTION_BODY.format(tool=tool, index=index)
+            + f"\n> 安装:{install}\n",
+        )
 
 
 def main() -> None:

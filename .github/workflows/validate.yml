@@ -1,0 +1,33 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: 静态校验(卡 13/13 · 路由清单 17/17 · 评测 65 场景 · UTF-8/LF)
+        run: python skills/amphoreus/scripts/validate.py --root skills --wave all
+
+      - name: 适配层零漂移(build.py 重跑后不得有任何改动或未跟踪文件)
+        run: |
+          python adapters/build.py
+          drift="$(git status --porcelain -- adapters)"
+          if [ -n "$drift" ]; then
+            echo "adapters/ 存在漂移(手改产物或生成物未入库):"
+            echo "$drift"
+            git diff -- adapters
+            exit 1
+          fi

@@ -2,7 +2,7 @@
      skills/amphoreus/SKILL.md (sha256:4CD09CD4E72BF9E8…)
 -->
 
-# 翁法罗斯 Skill 套件 —— Cline / Roo Code(.clinerules) 适配
+# 翁法罗斯 Skill 套件 —— Cline / Roo Code 适配
 
 本工作区携带「翁法罗斯 Skill 套件」:13 张工程方法卡 + 1 个总路由。每张卡是一套可执行的工程方法论,不是聊天人设。
 
@@ -18,12 +18,12 @@
 | --- | --- | --- |
 | `amphoreus-aglaea` | 阿格莱雅「黄金的织者」 | 织造法:项目规划/排期/取舍/里程碑 |
 | `amphoreus-cerydra` | 刻律德菈「执棋的君主」 | 立法三读:可评审、可撤销的工程规则 |
-| `amphoreus-terrae` | 丹恒「掣地的伏龙」 | 地基法:可验证环境/CI 地基/可逆迁移 |
+| `amphoreus-terrae` | 丹恒「掣地的伏龙」 | 承载法:开发环境/CI 构建/依赖底座/可逆迁移 |
 | `amphoreus-phainon` | 白厄「负火的囚徒」 | 推石法:大型重构与批量迁移 |
 | `amphoreus-anaxa` | 那刻夏「殁世的学士」 | 五问法+删除测试:代码/设计/论证评审 |
 | `amphoreus-cipher` | 赛飞儿「捷足的羁客」 | 行窃三则:授权内对抗测试与漏洞报告 |
 | `amphoreus-hyacine` | 风堇「摇光的医师」 | 双处方:bug 诊断修复与维护债 |
-| `amphoreus-march7th` | 三月七/长夜月「隐秘的陌客」 | 快照与守夜:事实快照;备份/回滚/脱敏 |
+| `amphoreus-march7th` | 三月七/长夜月「隐秘的陌客」 | 拍照式记录法+底片法:日志与快照;备份/回滚/脱敏 |
 | `amphoreus-castorice` | 遐蝶「死荫的侍女」 | 告别四步:API/依赖/项目退役 |
 | `amphoreus-cyrene` | 昔涟「无瑕的真我」 | 如我所书法:项目记忆/阶段叙事/终版总装 |
 | `amphoreus-mydei` | 万敌「亡国的王储」 | 先让十步法:硬 bug/瓶颈/死锁突破 |
@@ -42,4 +42,4 @@
 - **逐火线**(新特性,10 站):aglaea → cerydra → terrae → phainon → anaxa → cipher → hyacine → march7th → castorice → cyrene
 - **守夜线**(事故响应,4 站):mydei → hyacine → march7th → hysilens
 
-> 安装:把本文件拷入项目 `.clinerules/` 目录,并把 `adapters/generic/` 一并携带。
+> 安装:Cline 拷入项目 `.clinerules/` 目录;Roo Code 拷入项目 `.roo/rules/` 目录(Roo 不读目录形态的 `.clinerules/`)。两者均把 `adapters/generic/` 一并携带。
