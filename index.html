@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>翁法罗斯 Skill 套件 · Amphoreus Skill Suite</title>
+<meta name="description" content="以《崩坏:星穹铁道》翁法罗斯篇十三位角色为人格外壳的 13 张工程方法卡 + 1 个总路由,面向 Claude Code / Cursor 及多智能体生态。">
+<link rel="icon" href="assets/symbols/trailblazer-stelle.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0e14;--bg2:#11141d;--panel:#161a26;--line:#2a2f3e;
+  --gold:#e3b341;--gold2:#caa14a;--parch:#f2e7cd;--ink:#c9cfdd;--dim:#8b93a7;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Noto Sans SC',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+h1,h2,h3{font-family:'Noto Serif SC',serif;color:var(--parch)}
+a{color:var(--gold);text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+section{padding:72px 0}
+.kicker{letter-spacing:.35em;font-size:.78rem;color:var(--gold2);text-transform:uppercase}
+h2{font-size:1.9rem;margin:.4em 0 1.2em;font-weight:900}
+h2 small{display:block;font-size:.8rem;color:var(--dim);font-family:'Noto Sans SC';letter-spacing:.2em;margin-top:.4em}
+
+/* hero */
+.hero{position:relative;padding:96px 0 40px;text-align:center;
+  background:
+    radial-gradient(1200px 500px at 50% -10%,rgba(227,179,65,.14),transparent 62%),
+    radial-gradient(2px 2px at 18% 32%,rgba(242,231,205,.5),transparent 60%),
+    radial-gradient(1.5px 1.5px at 82% 22%,rgba(242,231,205,.4),transparent 60%),
+    radial-gradient(1.5px 1.5px at 66% 60%,rgba(242,231,205,.28),transparent 60%),
+    radial-gradient(2px 2px at 30% 74%,rgba(242,231,205,.22),transparent 60%),
+    linear-gradient(180deg,#0d1019,var(--bg))}
+.hero h1{font-size:clamp(2.2rem,5.4vw,3.6rem);font-weight:900;letter-spacing:.08em}
+.hero .en{color:var(--gold);font-size:clamp(.9rem,2vw,1.1rem);letter-spacing:.5em;margin-top:10px;text-transform:uppercase}
+.hero p.tag{max-width:660px;margin:22px auto 0;color:var(--dim)}
+.coinrow{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:34px}
+.coinrow img{width:44px;height:44px;border-radius:50%;border:1px solid rgba(227,179,65,.55);
+  box-shadow:0 0 12px rgba(227,179,65,.22);transition:transform .25s}
+.coinrow img:hover{transform:scale(1.22) rotate(6deg)}
+.chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:30px 0 34px}
+.chip{border:1px solid var(--line);background:rgba(22,26,38,.75);border-radius:999px;padding:7px 16px;
+  font-size:.82rem;color:var(--parch)}
+.chip b{color:var(--gold)}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{padding:12px 26px;border-radius:8px;font-weight:700;font-size:.95rem;transition:all .25s}
+.btn.gold{background:linear-gradient(135deg,var(--gold),#b78528);color:#151000}
+.btn.gold:hover{box-shadow:0 6px 24px rgba(227,179,65,.4);transform:translateY(-2px)}
+.btn.ghost{border:1px solid var(--gold2);color:var(--gold)}
+.btn.ghost:hover{background:rgba(227,179,65,.1)}
+.banner{margin-top:56px}
+.banner img{width:100%;display:block;border-radius:10px;border:1px solid var(--line);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.credit{font-size:.75rem;color:var(--dim);margin-top:10px}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(236px,1fr));gap:22px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  position:relative;transition:transform .3s,box-shadow .3s,border-color .3s;opacity:0;transform:translateY(24px)}
+.card.on{opacity:1;transform:none}
+.card:hover{transform:translateY(-8px);border-color:rgba(227,179,65,.6);box-shadow:0 14px 40px rgba(0,0,0,.5),0 0 24px rgba(227,179,65,.12)}
+.card .art{position:relative}
+.card .art img.face{width:100%;display:block;aspect-ratio:4/7;object-fit:cover}
+.card .art img.coin{position:absolute;right:10px;bottom:-24px;width:52px;height:52px;border-radius:50%;
+  border:2px solid var(--gold2);box-shadow:0 4px 14px rgba(0,0,0,.55)}
+.card .meta{padding:20px 16px 18px}
+.card .meta h3{font-size:1.12rem}
+.card .meta .title{color:var(--gold2);font-size:.8rem;letter-spacing:.14em;margin-top:2px}
+.card .meta code{display:inline-block;margin:10px 0 8px;font-size:.74rem;color:var(--gold);
+  background:rgba(227,179,65,.08);border:1px solid rgba(227,179,65,.25);border-radius:6px;padding:2px 8px}
+.card .meta .m{font-size:.82rem;color:var(--dim)}
+
+/* router */
+.router{display:flex;gap:34px;align-items:center;justify-content:center;flex-wrap:wrap;
+  background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:34px}
+.router img{width:150px;border-radius:10px;border:1px solid var(--line)}
+.router .txt{max-width:420px}
+.router .txt h3{font-size:1.3rem;margin-bottom:8px}
+.router .txt p{font-size:.9rem;color:var(--dim)}
+
+/* pipelines */
+.line{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 22px;margin-bottom:26px}
+.line h3{font-size:1.15rem;margin-bottom:4px}
+.line .sub{font-size:.8rem;color:var(--dim);margin-bottom:18px}
+.chain{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.station{display:flex;flex-direction:column;align-items:center;gap:6px;width:88px;text-align:center}
+.station img{width:54px;height:54px;border-radius:50%;border:1.5px solid rgba(227,179,65,.5);transition:transform .25s}
+.station:hover img{transform:scale(1.15)}
+.station .n{font-size:.66rem;color:var(--gold2)}
+.station .nm{font-size:.8rem;color:var(--parch);line-height:1.3}
+.station .r{font-size:.68rem;color:var(--dim)}
+.arrow{color:var(--gold2);font-size:1.1rem;margin-top:-30px}
+
+/* metrics */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;margin-bottom:26px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px 18px;text-align:center}
+.tile b{display:block;font-size:1.7rem;color:var(--gold);font-family:'Noto Serif SC'}
+.tile span{font-size:.8rem;color:var(--dim)}
+.notes{font-size:.86rem;color:var(--dim);border-left:3px solid var(--gold2);padding-left:16px}
+.notes li{margin:6px 0;list-style:none}
+
+/* adapters */
+.adp{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.adp .a{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 18px}
+.adp .a h3{font-size:1rem;margin-bottom:6px}
+.adp .a p{font-size:.8rem;color:var(--dim)}
+.adp .a code{color:var(--gold);font-size:.76rem}
+
+/* install */
+pre{background:#0d1019;border:1px solid var(--line);border-radius:12px;padding:22px;overflow:auto;position:relative}
+pre code{font-size:.85rem;color:#d8deed;font-family:Consolas,monospace;line-height:1.8}
+pre .cm{color:#6d7690}
+.copy{position:absolute;top:12px;right:12px;background:rgba(227,179,65,.12);border:1px solid rgba(227,179,65,.4);
+  color:var(--gold);border-radius:6px;padding:4px 12px;font-size:.75rem;cursor:pointer}
+.copy:hover{background:rgba(227,179,65,.25)}
+
+footer{border-top:1px solid var(--line);padding:44px 0 56px;text-align:center;font-size:.8rem;color:var(--dim)}
+footer .fs{margin-top:14px;letter-spacing:.3em;color:var(--gold2)}
+@media (max-width:560px){.station{width:72px}.hero{padding-top:64px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="coinrow" id="coinrow"></div>
+    <h1>翁法罗斯 Skill 套件</h1>
+    <div class="en">Amphoreus Skill Suite</div>
+    <p class="tag">以《崩坏:星穹铁道》翁法罗斯篇十三位角色为人格外壳的 <b style="color:var(--gold)">13 张工程方法卡 + 1 个总路由</b>。<br>每张卡不是聊天人设,而是一套可执行、可验收的工程方法论。</p>
+    <div class="chips">
+      <span class="chip"><b>13/13</b> 卡在产</span>
+      <span class="chip"><b>65</b> 冻结评测场景</span>
+      <span class="chip">每卡 <b>60/60</b></span>
+      <span class="chip"><b>182</b> 条台词逐字对齐</span>
+      <span class="chip">两线端到端 <b>CONFIRMED</b></span>
+    </div>
+    <div class="btns">
+      <a class="btn gold" href="https://github.com/xi-kari/amphoreus-skill-suite">GitHub 仓库</a>
+      <a class="btn ghost" href="#install">安装指北</a>
+    </div>
+    <div class="banner">
+      <img src="assets/banner.jpg" alt="十三卡「逐火者的命录」横幅">
+      <div class="credit">卡面与符号:「逐火者的命录」系列 · 取自 B 站星穹铁道 Wiki · 版权归米哈游所有</div>
+    </div>
+  </div>
+</header>
+
+<section id="cards">
+  <div class="wrap">
+    <div class="kicker">CHRYSOS HEIRS</div>
+    <h2>十三卡画廊<small>每位黄金裔一枚符号 · 一套方法 · 一张卡</small></h2>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section id="router" style="padding-top:0">
+  <div class="wrap">
+    <div class="kicker">ROUTER</div>
+    <h2>总路由 · 创世的著者</h2>
+    <div class="router">
+      <img src="assets/cards/trailblazer-stelle.jpg" alt="星">
+      <div class="txt">
+        <h3>amphoreus</h3>
+        <p>意图识别与分发:按任务深度、角色适配、流水线与风格预算,把请求路由到十三张卡。一次只演一张卡,不混声、不代演;切卡须经用户确认;所需卡缺席时报告 <code style="color:var(--gold)">module_unavailable</code> 并保留移交事实包。</p>
+      </div>
+      <img src="assets/cards/trailblazer-caelus.jpg" alt="穹">
+    </div>
+  </div>
+</section>
+
+<section id="pipelines" style="padding-top:0">
+  <div class="wrap">
+    <div class="kicker">PIPELINES</div>
+    <h2>两条流水线</h2>
+    <div class="line">
+      <h3>逐火线 —— 新特性交付</h3>
+      <div class="sub">从规划到入册的十站,上游产物以「移交事实包」原文传递</div>
+      <div class="chain" id="chain1"></div>
+    </div>
+    <div class="line">
+      <h3>守夜线 —— 事故响应</h3>
+      <div class="sub">四站闭环,全程静音档:先止血,后修复,再回滚脱敏,最后不归罪复盘</div>
+      <div class="chain" id="chain2"></div>
+    </div>
+  </div>
+</section>
+
+<section id="quality" style="padding-top:0">
+  <div class="wrap">
+    <div class="kicker">VERIFIED</div>
+    <h2>质量与验收<small>四波交付 · 独立盲评 + 交叉复核 + 批判员</small></h2>
+    <div class="tiles">
+      <div class="tile"><b>13/13</b><span>validate.py --wave all PASS<br>路由清单 17/17 · UTF-8/LF</span></div>
+      <div class="tile"><b>60/60</b><span>每卡 5 题冻结场景盲评<br>失败原样入册后重跑闭合</span></div>
+      <div class="tile"><b>182 条</b><span>台词逐字对齐游戏知识库<br>引文字符级冻结检查</span></div>
+      <div class="tile"><b>10+4 站</b><span>逐火线 / 守夜线端到端演练<br>独立评审 CONFIRMED</span></div>
+    </div>
+    <ul class="notes">
+      <li>◆ 全程「失败原样入册、不覆盖不美化」:昔涟 C-03 首跑真失败、逐火线附录首轮驳回、守夜线五次挂起,全部留痕在案;</li>
+      <li>◆ SHA 纪律:卡文一字变更 → 该卡五题全重跑 + 独立评分 + 交叉复核(L1 勘误即按此闭合);</li>
+      <li>◆ 角色风格 ≤15% 输出预算;报错、不可逆操作、安全事项自动静音,方法照常执行;</li>
+      <li>◆ 完整证据链(誊本 / 哈希账 / 回滚沙箱 / 双打包)存于交付树,验收文书见仓库 docs/。</li>
+    </ul>
+  </div>
+</section>
+
+<section id="adapters" style="padding-top:0">
+  <div class="wrap">
+    <div class="kicker">MULTI-AGENT</div>
+    <h2>多智能体适配<small>skills/ 为唯一事实源,adapters/build.py 一键再生成</small></h2>
+    <div class="adp">
+      <div class="a"><h3>Claude Code / Cursor</h3><p>原生格式,拷入 <code>~/.claude/skills/</code> 即用;行为验收在此环境取得。</p></div>
+      <div class="a"><h3>AGENTS.md 系</h3><p>Codex CLI / OpenCode / Amp / Jules…<br>取 <code>adapters/openai-codex/AGENTS.md</code></p></div>
+      <div class="a"><h3>Gemini CLI</h3><p>取 <code>adapters/gemini-cli/GEMINI.md</code>,放项目根或 <code>~/.gemini/</code></p></div>
+      <div class="a"><h3>Cline / Roo Code</h3><p>取 <code>adapters/cline/amphoreus.md</code> 拷入 <code>.clinerules/</code></p></div>
+      <div class="a"><h3>任意智能体</h3><p>便携版单卡 <code>adapters/generic/amphoreus-&lt;hero&gt;.md</code> 直接作系统提示加载,单文件自足。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="install" style="padding-top:0">
+  <div class="wrap">
+    <div class="kicker">GET STARTED</div>
+    <h2>安装指北</h2>
+    <pre><button class="copy" onclick="cp(this)">复制</button><code><span class="cm"># 1. 克隆仓库</span>
+git clone https://github.com/xi-kari/amphoreus-skill-suite.git
+
+<span class="cm"># 2. 拷入技能根(Windows: C:\Users\&lt;你&gt;\.claude\skills\)</span>
+cp -r amphoreus-skill-suite/skills/* ~/.claude/skills/
+
+<span class="cm"># 3. 校验部署(应输出 PASS,cards=13/13)</span>
+python ~/.claude/skills/amphoreus/scripts/validate.py --root ~/.claude/skills --wave all</code></pre>
+    <p style="margin-top:16px;font-size:.86rem;color:var(--dim)">随后在 Claude Code / Cursor 里直接点名(「用 <code style="color:var(--gold)">amphoreus-mydei</code> 帮我追这个死锁」),或呼叫 <code style="color:var(--gold)">amphoreus</code> 总路由由它分发。</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>本页面为爱好者研究 / 学习用途的同人衍生内容,与米哈游无关联。<br>《崩坏:星穹铁道》及全部角色、立绘、台词素材版权归米哈游(HoYoverse)所有;<br>卡面与符号取自 <a href="https://wiki.biligame.com/sr/%E9%80%90%E7%81%AB%E8%80%85%E7%9A%84%E5%91%BD%E8%B7%AF.exe">B 站星穹铁道 Wiki「逐火者的命路.exe」</a>。如有侵权,请提 Issue 联系删除。</p>
+    <p style="margin-top:10px"><a href="https://github.com/xi-kari/amphoreus-skill-suite">GitHub</a> · <a href="https://github.com/xi-kari/amphoreus-skill-suite/tree/main/docs">验收文书</a> · <a href="https://github.com/xi-kari/amphoreus-skill-suite/tree/main/adapters">适配层</a></p>
+    <div class="fs">火种在此传递</div>
+  </div>
+</footer>
+
+<script>
+const CARDS=[
+ {k:"aglaea",n:"阿格莱雅",t:"黄金的织者",m:"织造法",d:"项目规划 · 排期 · 取舍 · 里程碑"},
+ {k:"cerydra",n:"刻律德菈",t:"执棋的君主",m:"立法三读",d:"有证据、有成本、可评审、可撤销的工程规则"},
+ {k:"terrae",n:"丹恒",t:"掣地的伏龙",m:"地基法",d:"可验证环境 · CI 地基 · 可逆迁移"},
+ {k:"phainon",n:"白厄",t:"负火的囚徒",m:"推石法",d:"大型重构与批量迁移,可计数、可回滚"},
+ {k:"anaxa",n:"那刻夏",t:"殁世的学士",m:"五问法 + 删除测试",d:"代码 / 设计 / 论证评审,可执行的否决"},
+ {k:"cipher",n:"赛飞儿",t:"捷足的羁客",m:"行窃三则",d:"授权内对抗测试 · 边界用例 · 漏洞报告"},
+ {k:"hyacine",n:"风堇",t:"摇光的医师",m:"双处方",d:"bug 诊断修复 · 依赖故障 · 维护债"},
+ {k:"march7th",n:"三月七 / 长夜月",t:"隐秘的陌客",m:"快照与守夜",d:"事实快照 · 有界备份 / 回滚 / 脱敏"},
+ {k:"castorice",n:"遐蝶",t:"死荫的侍女",m:"告别四步",d:"影响先行的 API / 依赖 / 项目退役"},
+ {k:"cyrene",n:"昔涟",t:"无瑕的真我",m:"如我所书法",d:"项目记忆 · 阶段叙事 · 终版总装,逐字不改写"},
+ {k:"mydei",n:"万敌",t:"亡国的王储",m:"先让十步法",d:"硬 bug · 性能瓶颈 · 死锁的有界突破"},
+ {k:"hysilens",n:"海瑟音",t:"奏浪的剑骑",m:"歌集复盘法 + 无路引航式",d:"不归罪复盘 · 痛苦取舍导航"},
+ {k:"tribbie",n:"缇宝",t:"命运的三子",m:"三声部讲解法",d:"面向新手 / 同行 / 专家的技术讲解"}
+];
+const byK=Object.fromEntries(CARDS.map(c=>[c.k,c]));
+document.getElementById('coinrow').innerHTML=CARDS.map(c=>`<img src="assets/symbols/${c.k}.png" alt="${c.n}符号" title="${c.n}「${c.t}」">`).join('');
+document.getElementById('grid').innerHTML=CARDS.map(c=>`
+ <article class="card">
+  <div class="art"><img class="face" src="assets/cards/${c.k}.jpg" alt="${c.n}卡面" loading="lazy">
+   <img class="coin" src="assets/symbols/${c.k}.png" alt="符号"></div>
+  <div class="meta"><h3>${c.n}</h3><div class="title">${c.t}</div>
+   <code>amphoreus-${c.k}</code>
+   <div class="m"><b style="color:var(--parch)">${c.m}</b> —— ${c.d}</div></div>
+ </article>`).join('');
+const L1=[["aglaea","规划"],["cerydra","立规"],["terrae","环境"],["phainon","实施"],["anaxa","评审"],["cipher","安全"],["hyacine","修复"],["march7th","快照"],["castorice","退役"],["cyrene","总装叙事"]];
+const L2=[["mydei","止血突破"],["hyacine","修复"],["march7th","回滚·脱敏"],["hysilens","不归罪复盘"]];
+function chain(el,arr,alt){document.getElementById(el).innerHTML=arr.map(([k,r],i)=>{
+  const nm=(alt&&alt[k])||byK[k].n;
+  return `${i?'<span class="arrow">›</span>':''}<div class="station">
+   <img src="assets/symbols/${k}.png" alt="${nm}"><div class="n">第 ${i+1} 站</div>
+   <div class="nm">${nm}</div><div class="r">${r}</div></div>`}).join('')}
+chain('chain1',L1);
+chain('chain2',L2,{march7th:'长夜月'});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.card').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el)});
+function cp(btn){const t=btn.parentElement.querySelector('code').innerText;navigator.clipboard.writeText(t).then(()=>{btn.textContent='已复制';setTimeout(()=>btn.textContent='复制',1600)})}
+</script>
+</body>
+</html>

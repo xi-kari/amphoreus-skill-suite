@@ -13,6 +13,8 @@
 
 <br>
 
+**[在线介绍页 →](https://xi-kari.github.io/amphoreus-skill-suite/)**
+
 <img src="assets/banner.jpg" alt="十三卡横幅" width="100%">
 
 <sub>卡面:「逐火者的命录」系列 · 取自 <a href="https://wiki.biligame.com/sr/%E9%80%90%E7%81%AB%E8%80%85%E7%9A%84%E5%91%BD%E8%B7%AF.exe">B 站星穹铁道 Wiki</a> · 版权归米哈游所有</sub>
@@ -116,14 +118,27 @@ flowchart LR
 
 </details>
 
+## 多智能体适配
+
+`skills/` 为唯一事实源;`adapters/build.py` 一键生成其他生态的适配文件(详见 [adapters/README](adapters/README.md)):
+
+| 生态 | 文件 |
+| --- | --- |
+| Claude Code / Cursor(原生,验收环境) | `skills/` 整树 |
+| AGENTS.md 系(Codex CLI / OpenCode / Amp / Jules…) | [`adapters/openai-codex/AGENTS.md`](adapters/openai-codex/AGENTS.md) |
+| Gemini CLI | [`adapters/gemini-cli/GEMINI.md`](adapters/gemini-cli/GEMINI.md) |
+| Cline / Roo Code | [`adapters/cline/amphoreus.md`](adapters/cline/amphoreus.md) |
+| 任意可加载系统提示的智能体 | [`adapters/generic/`](adapters/generic/) 便携版单卡(卡文+家族公约,单文件自足) |
+
 ## 仓库结构
 
 ```
-├── README.md
-├── assets/                # 横幅 + 15 张卡面(400px)
-├── skills/                # 14 目录 43 文件 = 总路由 + 13 卡(生产验收态)
-│   ├── amphoreus/         #   路由 SKILL + common.md + evals/(13 卷)+ scripts/validate.py
+├── README.md · index.html # 本说明 + 在线介绍页(GitHub Pages)
+├── assets/                # 横幅 + 15 张卡面 + 15 枚黄金裔符号(裁自命录卡面)
+├── skills/                # 14 目录 43 文件 = 总路由 + 13 卡(生产验收态,唯一事实源)
+│   ├── amphoreus/         #   路由 SKILL + references/common.md + evals/(13 卷)+ scripts/validate.py
 │   └── amphoreus-<hero>/  #   各卡 SKILL.md + persona.md
+├── adapters/              # 多智能体适配(build.py 生成:AGENTS.md / GEMINI.md / Cline / 通用单卡)
 └── docs/                  # 验收文书与设计
     ├── 总任务书.md · 设计分册/(00–04)
     ├── 波1–4验收单.md · 波3独立核查报告.md
