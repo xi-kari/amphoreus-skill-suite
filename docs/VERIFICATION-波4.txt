@@ -1,0 +1,107 @@
+AMPHOREUS WAVE-4 事务验证记录 (VERIFICATION.txt)
+======================================================
+transaction=amphoreus-wave-4 (叙事双星:缇宝+昔涟;十三卡家族收官)
+executor=Fable 5 自执行+自审核(用户 2026-08-30 委托,全程不问用户)
+时序纪律=验收单 body 定稿→单次包重建(in-package docs/波4验收单.md=交付态)→本 VERIFICATION 登记全部 SHA;闭环方案 b:VERIFICATION 为包数权威、验收单不硬编码可变成员数(规避波3 双建与 62/65 陈旧数)。「六、验收结论」的「通过」勾选=交付后验收行为(自审全绿后代勾),不触发包重建;in-package 副本保持交付态,勾选后顶层 SHA 变更在本文件 reopen 段追记。
+
+[基线锚点]
+source_task_sha256=B62EADE5F83AF261488194FDB5FCDFBF163FB926820A8A0295F850552EA49D66
+router_SKILL_sha256=4CD09CD4E72BF9E83F452998B42E0EB4F02E0CE86205FEEF76881B5D6B0041C1 (自波0未变)
+family_validate_py_sha256=BC795610D5DBDB461F03580AD96232C51CC70FACC503F2612719D92F5D6DF651 (38620B,波3→波4 +42/-0)
+common_md_sha256=833C4556A5322AA6ACFEF3F37261CDAF09BE9CAC694493BB736A6A5510EEF1F9 (自波3未变)
+rubric_md_sha256=68AA67FA296F02CB017BFD85AE98D75174FA8667E51B672EF4B0985877850A33 (自波3未变)
+
+[波4 两卡生产制品 SHA]
+amphoreus-tribbie/SKILL.md=7073F67B93D2354B45141AE12C3EDAF7B05EFC9F5BCB3FD09488D5057A8C0563
+amphoreus-tribbie/persona.md=F7A51D4649267367FC55E4B6B6EE7D21F8CCF16317E3A8EA41966EE8236C70D0
+amphoreus-cyrene/SKILL.md=AA9E660AE2B4D1E507339A7B7E89499EBCF4897147F5BAA9826F7C9779EF2314
+amphoreus-cyrene/persona.md=45FAAD20C0FB403F9228902B81B75ABA540C357BE57A9A9F9705BFCD443975F8
+evals/tribbie.md=4CB3981C3D12277E020EC47FEF122C5793322B61979178223832977E030E38FD (波0冻结未改)
+evals/cyrene.md=5B18CF243259830C1CE0C4635BD8493F839383E8759F430F1469F291C8DCAA70 (波0冻结未改)
+
+[ARTIFACTS 事务包]
+BASELINE_FILE=5460959DCF4CF6CBD28CE4FA36DB79283AC34D81D70DA933291F90C680342DE8 (185913B, 46 成员, testzip=None; 捕获波3勾选后态)
+BASELINE_MANIFEST.json=C48B70350C81971F1FCED939B201D9457B5C1626AFE067553320A7A5AD93005D
+MODIFIED_FILE=0F960913689FE4A354C25FDCDFCB66379137BC7C1ADF9DC48FE22D408D73ADC4 (656887B, 139 成员=family43+docs4+evidence快照+PACKAGE_MANIFEST1, 解包成员=139, testzip=None) 【已由文末 L1 整改追记取代】
+PACKAGE_MANIFEST.json=7B7D37F8C1DFC9D75B70C900315CB4FF571641DFC4506DC94FD62ED4AF873AA7 (files[]=138; 自身不可自钉,+1=解包成员) 【已由文末 L1 整改追记取代】
+DIFF_FILE=BB1343BCC5D2B418349CCB5159029AD6CC9E91EEDDB9D6EBF750CB25CAB0AB25 (2308357B, git diff --no-index exit1/stderr0, 107 headers) 【已由文末 L1 整改追记取代】
+ROLLBACK.sh=16B2EE6008DF954B4A4866193E00EC0A45C4760B067F2A99B7D2376F732EA918 (1508B, test -x True)
+波4验收单.md(顶层·交付态,勾选前)=36EA828CD057EDFEE20A3E503DDAB0F34D1F23286BF4E1BD4DFAB6070059ACF7 (22170B)
+十三卡终验报告.md=F1CC4CF0A339961A5866B621097F2CE1550F5EBD29A7A80F26B6EEC1A988503C (8901B)
+
+[验证状态汇总]
+static: validate.py --wave all PASS (17/17 路由资产, 13/13 卡, 13 eval/65 场景, UTF-8/LF, behavior=not_run_by_static_validator)
+validator 正负例: 正例 1/1 + 负例 15/15 PASS (wave4-validator-tests.txt)
+行为: 缇宝 5/5 60/60 硬失败0 交叉复核CONFIRMED; 昔涟 首跑C-03 F1=1 FAIL原样入册→重跑C-03+C-04复合60/60 交叉复核CONFIRMED(42/42含首跑FAIL独立复判)
+内容审计: BLOCKING=0 AUDIT_RESULT=PASS; 两卡审计链(缇宝2minor/昔涟1blocking)修复+逆向补丁哈希复核闭环; 语音总账182=87+61+34
+宿主: 4/4 PASS (缇宝/昔涟/router_tribbie/router_cyrene) exit0/stderr0/源漂移0/生产0漂移/沙箱0漂移
+部署: 14目录/43文件 工作树↔部署 mismatch0; 部署态 validator exit0; 3行为证据 card_sha_match
+包: BASELINE 46成员+MODIFIED 139成员 双 testzip None; 解包 validator BASELINE=wave3 PASS/MODIFIED=wave4 PASS; 成员对账 0 失配 (wave4-package-tests.txt)
+回滚: 沙箱重放 43→39文件, 拒错误目标 exit64, BASELINE_DIFF0, 新卡残留0, 恢复态wave3 validator PASS; 生产家族43文件滚动哈希前后逐位一致 E6459BBD…(生产零触碰硬证明,出处=wave4-prod-untouched-proof.txt 两算法可复算 ALGO_A=E6459BBD/ALGO_B=12D950E1;见 reopen R2); 沙箱销毁 (wave4-rollback-test.txt)
+下游转实回归: 遐蝶→昔涟墓志入册 + 海瑟音→昔涟教训入册 PASS(先原样复述再入册/回执注来源+日期/无module_unavailable) (wave4-regression-downstream.md)
+逐火线终验: 十站端到端 CONFIRMED(附录首轮FAIL→定点重跑P-ZH2复核CONFIRMED,九段逐字节9/9)
+守夜线终验: 四站端到端 CONFIRMED·PASS-带发现(海瑟音卡SKILL.md:62过时→module_unavailable,交用户遗留L1); Task子代理5次挂起失败留痕→CLI通道纠正 【L1 已于关账后整改闭合,见文末追记】
+前波冻结: 计划1243文件+旧cyrene15文件 波4窗口零改动 (wave4-freeze-window-close.txt)
+
+[PROCESS_FILE_INDEX]
+工艺文件索引=evidence/wave4-process-file-index.md(十节全覆盖:九类工艺[起点冻结/研究/建卡静态/内容审计/行为五题/宿主/部署事务/下游回归与终验/收官文书]+第十节守夜 CLI 批次与自审面板补录)
+独立核查系文件: tribbie/cyrene cross-content-audit(+addendum)、*-persona-correction-log、*-forward-scores(+rerun)、*-forward-cross-review、wave4-final-pipeline-review(P-ZH/P-ZH2/P-SY)、wave4-content-audit-final
+失败轨迹: wave4-shouye-hang-trajectory.txt(5次挂起+CLI纠正)、wave4-host-smoke-diagnosis.txt(未登录假阴性三尝试)、验收单§五失败轨迹段(10条)
+
+[reopen 段](2026-08-30 §六自审全绿后追记;不触发包重建、不重开任何已闭环判定)
+
+§六 独立自审面板结论:SA-DEPLOY=CONFIRMED(14/14 哈希、生产零触碰)、SA-DISCLOSE=CONFIRMED(未披露漂移0、语音总账182/182)、SA-BEHAVIOR=CONFIRMED(缇宝60/60、昔涟复合60/60、KB逐字14/14、硬失败0)、SA-DOC=CONFIRMED(条件式,mismatch6 登记卫生级、未披露失败0)、批判员 SA-CRITIC=CLEAR_TO_CHECK(blocking0、面板矛盾0、无人复核项2 为非阻断覆盖缺口)。据此代勾「六、验收结论·通过」。
+
+批判员派单 R1–R8 逐条闭合:
+- R1(SA-DOC M1)transcript 改版登记:evidence/wave4-final-zhuhuo-transcript.md 由 30EEB85A341DAAF8…(首轮 P-ZH 登记态,16 行)改写为 84A4D27AFB3B0374…(现态,16 行);改版动因=撤回「昔涟九段附录经第三腿声明逐字原样」的越实背书行、改为记录附录首轮 FAIL→定点重跑处置;旧版 L16 背书原文留引于 evidence/wave4-final-pipeline-review.md 第 6 项。旧版文件本体未版本化保留(不可逆),内容诚实性方向为增强、非隐瞒,登记卫生级瑕疵如实在此追记。
+- R2(SA-DOC M2)生产零触碰滚动哈希出处:VERIFICATION 回滚行 E6459BBD… 出处已改指 evidence/wave4-prod-untouched-proof.txt(ALGO_A rglob 序=E6459BBD 逐位=本登记值;ALGO_B 相对路径序=12D950E1 逐位=SA-DEPLOY 自算值;两算法现生产树可复算)。proof 文件内原「SA-DEPLOY 已声明日志被重写」归述已勘误为「据脚本源码 run_wave4_rollback_test.sh 每次运行整体重写日志+时序推断」(不再归于 SA-DEPLOY 原文)。
+- R3(SA-DOC M3)DIFF headers 口径:登记「107 headers」=行首 `diff --git ` 106 处 + DIFF 内容里 build 脚本源码字面子串 1 处(被 count 口径计入)= build 脚本口径 107;SA-DEPLOY 按原始命令重放同得 107、SHA/字节/exit1/stderr0 均对。行首头实数=106。
+- R4(SA-DOC M6)称谓勘误:本文件「第八节『通过』」表述已改为「六、验收结论『通过』」(本波验收单闸门节沿波3节号为「## 六、验收结论」)。
+- R5(SA-DOC M4 衍生)验收单 SHA 链:交付态(in-package docs/副本)=36EA828CD057EDFEE20A3E503DDAB0F34D1F23286BF4E1BD4DFAB6070059ACF7/22170B → M4 修复态=89E2EA1BB51A6B7520958E1CDA3EABA0ED4A1269DCE14773B1F42F3032D2C33E/22680B(变更=§五失败轨迹第6条补全为5挂起+CLI+根因修正)→ 勾选态(顶层现行)=6AE826208F1DC41FA6A4FBA012E6FBE9689DD44DF6C73256DF6305FFF75C888B/23320B(变更=第六节[x]通过+勾选记录行+R6 索引措辞对齐)。in-package docs/波4验收单.md 保持交付态 36EA828C 不动、包不重建。
+- R6(SA-CRITIC)措辞对齐:验收单 Manifest 行与本文件 PROCESS_FILE_INDEX 段「九类逐条」已改为「十节全覆盖」,对齐 process-file-index 现有第十节。
+- R7(SA-CRITIC)批判员报告与代勾闭环记录已实际落档 evidence/wave4-self-audit-critic-and-closeout.md(兑现 process-file-index 第十节前向登记)。
+- R8(SA-CRITIC 注记级)接受性残差声明:U1 宿主验证「语义复核 4/4」在§六宇宙内无具名独立复核者,但 exit0/stderr0/源漂移0/生产沙箱零漂移系机械留档(claude-host/)、同一 CLI 通道经 P-SY 复核守夜站3/4 并 CONFIRMED,判非阻断接受性残差;U2 validator 15 负例无独立复跑,风险(断言删除/放宽)已由 SA-DISCLOSE「基线每行出现次数零下降」逐行实证覆盖大半+双面板正例复跑 exit0,判非阻断接受性残差。march7th 前波「18」口径系波2/波3 既定验收承袭(现文件 17 表行+2 巡猎页重复登记=19 voice_id),波4 仅续账+34、增量全额独立证实,非波4事项。
+
+遗留(交用户,不静默并入波4):L1 海瑟音 SKILL.md:62 静态部署断言过时(发送侧修复触发卡 SHA 铁律、超波4 范围)【已于关账后同日整改闭合,见文末 L1 追记】;L2 旧 cyrene 15 文件保留原地不动(不可逆删除无判例)【已于同日按用户指令归档后删除,见文末 L2/L3 追记】;L3 昔涟内容审计首发线 K-C1 超时未返(冗余线 K-C2 已生效,K-C1 若迟返另行入册对账)【已核销:迟返终局不可达,见文末 L2/L3 追记】。
+
+至此波4 正式关账;翁法罗斯十三卡家族收官。
+──────────────────────────────
+L1 整改追记(关账后同日 reopen,2026-08-30)
+
+授权:用户对遗留 L1 明示「你来决策」;决策=改卡、不改冻结 eval(交叉复核专段独立裁断 EVAL_FROZEN_DECISION=ACCEPTABLE:改期望=删除家族唯一缺席分支回归=放宽,且现行 eval 哈希系波 3 在案加严产物;遐蝶冻结 eval 同前提未动为家族先例)。
+
+CARD: amphoreus-hysilens/SKILL.md
+  before=1520100B168FB13B300E4664458AB9F6D046656B680C08D1AEF366491CAACFFE (5521B, 79行)
+  after =5AFD4A9EA28CAE401B43607DD43E94269469728CD83A51C17AB8C951D9962C10 (5684B, 79行)
+  逐行 diff 唯一差异=第 62 行(静态断言「昔涟在波4前未部署」→运行时条件式「在产→固定格式移交等确认;检测到/被告知缺席→module_unavailable+保留事实包;两情形均不代演」);7 个 H2 行号不变;validator token 仍在 62 行;persona/common/eval/rubric 与其余 12 卡逐字节不变;validate.py --wave all PASS(cards 13/13, router_manifest 17/17, exit 0)。
+
+铁律复验(卡 SHA 变→五题全重跑+独立评分+交叉复核):
+  通道=claude CLI 子进程(剥离 CLAUDE*/ANTHROPIC*);脚本 run_hysilens_l1_rerun.py;运行记录 hysilens-l1-run.txt;输入冻结 hysilens-l1-scoring.manifest.json=5EC55E43C3690FD00949526F1ED367B0913C86FBFFE327ED8A65395BE9AA8944;誊本 hysilens-l1-cli/(8 份 stdout 全部 SHA+字节钉死)。
+  五题 H01–H05 盲评 60/60×5;三分支探针=在产 L1PROBE(不误报+固定格式移交+等确认)/缺席沙箱 H04C(module_unavailable+事实包+恰一候选,与冻结 H04 期望链逐项吻合)/冲突输入 H04B(以运行时探测为准、零误报、不静默无视用户断言)。
+  SA-L1-SCORE=CONFIRMED(FE400268869DEB2846A677AC087748AE678877D441ADB1EDBCFE0A6E56CD6A45);SA-L1-XREV=CONFIRMED(871EBAAFFA206765ACCFE899DF9E471B64FC799475D330E2D6A40D5E2D928875;EDIT_SCOPE_ONE_LINE=YES/L1_RUNTIME_SPLIT_PROVEN=YES/EVAL_FROZEN_DECISION=ACCEPTABLE)。
+  全记录=evidence/hysilens-L1-correction.md(8EE2101B6B6D3BA5187741364162D5B31328F5E34DCB9C4C7C2E4B3E2AE8D9EF;含 H04B/H04C 提示词原文未留存的如实补遗与等效复放配方)。
+
+包重建(取代上文 ARTIFACTS 对应三行;ROLLBACK 逐字节不变):
+MODIFIED_FILE=68C13339B7BE58C315997BC26D7134DFE74560A99D8F9FD9E82CA0BE3F7D4EC0 (719975B, 178 成员=family43+docs4+evidence快照130+PACKAGE_MANIFEST1, 解包成员=178, testzip=None)
+PACKAGE_MANIFEST.json=30B30529BC6CF761828B33831ECA6B314D887D8FE474EB55A1DD90840DCEC8F6 (31399B, files[]=177, +1=解包成员; state 串增补 L1 整改注记)
+DIFF_FILE=5BAAA6735DF51B22FF9FD469328A68ED87C3DFA194DFC924B75195A9D0D16363 (2453820B, git diff --no-index exit1/stderr0; headers: build 口径(子串计数)=147, 行首实数=146, 差 1 处系 DIFF 内 build 脚本源码字面子串——与 R3 同型口径差,如实登记)
+ROLLBACK.sh=16B2EE6008DF954B4A4866193E00EC0A45C4760B067F2A99B7D2376F732EA918 (不变;回滚语义自洽:回滚=移除 tribbie/cyrene+恢复波3十二卡,回滚后世界昔涟确实缺席,波3版 62 行静态断言在该世界内为真)
+包测试:test_wave4_packages.py MODIFIED 期望成员 139→178(随包合法增长更新,唯一改动);BASELINE/MODIFIED 双 CASE PASS,包内 validator PASS(evals=13 scenarios=65, evidence 3/3 card_sha_match),临时残留 0。
+日志重写披露:wave4-package-build.txt 与 wave4-package-tests.txt 由脚本设计整体重写为现态(与 R2 登记的日志重写同型);关账态数值已在上文 ARTIFACTS 行与 R3 留档,无信息丢失。
+in-package docs/ 副本随重建前进为整改态:验收单=2F26B8B30EE372148B53C14066265CC3E4767E1DD8A9FF6A9435C0E04A16FCA4(24151B,含 R5 链勾选态+L1 整改闭合段)、终验报告=7FFD009971CBF58546F59B1DA05B901350C78B217C3A1FDFB3ECDAC025F316F1(9408B,含 L1 注记)。R5「in-package 保持交付态 36EA828C、包不重建」的冻结声明就此被取代:R5 属文书卫生域决定,本次属生产变更域(生产卡 SHA 已变),包必须与生产一致,该取代如实在此登记。
+生产指纹:关账态 wave4-prod-hashtable.txt(hysilens=1520100B…)按不覆盖原则原样保留;整改后现态=evidence/wave4-prod-hashtable-postL1.txt(ECD0203E7665021382CC6DEBE366B90DADFE14F52B2F09B7317AA852F1E0459A;43 文件,对 worktree 零漂移,worktree 哈希表 v4 现场复验 43/43 零漂移)。
+
+遗留状态更新:L1→已整改闭合;L2(旧 cyrene 15 文件)/L3(K-C1 迟返对账)维持原状。
+非阻塞后续(加严向,登记不执行,SA-L1-XREV 建议):下一 eval 修订窗口给 HYSILENS-04 增加环境前置标注(amphoreus-cyrene 缺席),并可将 L1PROBE 升格为 HYSILENS-06 在产场景。
+
+快照时点注:包内 evidence/ 快照取自重建时刻——重建后新产的 wave4-package-tests.txt 现态(139→178 修正+双 PASS)、wave4-prod-hashtable-postL1.txt、工艺索引§十一与本文件自身仅存于交付树顶层(包不可自含终态,沿「VERIFICATION 为权威」纪律);相应地,关账态 wave4-package-build.txt/wave4-package-tests.txt(0F960913 一代数值)在包内 evidence/ 快照中原文留存,上文「日志重写披露」由此获得包内可恢复路径。
+
+L1 整改闭合;家族收官状态不变(13/13 在产,validator PASS)。
+──────────────────────────────
+L2/L3 处置追记(2026-08-30,同日)
+
+L2(用户指令「旧 cyrene 文件处置直接在本地删掉」):skills 根旧 cyrene(13 文件)+cyrene-voice-lab(2 文件)。删除前核:对波4起点冻结 wave4-freeze-legacy-cyrene-mtimes.txt 15/15 mtime+字节吻合、现场无冻结外新增;家族 14 目录真实引用 0(唯一命中=amphoreus/scripts/validate.py 的 LEGACY_SKILL_REF 负向守卫正则,不依赖目录存在、删除后仍防回流);baseline/worktree/modified_tree 三树不含 legacy(删除仅触生产根)。归档 evidence/legacy-cyrene-archive.zip=AD9EC1FB8BC26FC4F07C340C528EAD8ED12CFE458CD03F47452C684DF07AD01F(108931B,16 成员=15 文件+ARCHIVE_MANIFEST.json,testzip=None)后 rmtree。删除后核:两目录不存在、amphoreus 目录 14/14、非本项目 skill 目录未触碰、validate.py --wave all PASS(cards 13/13, router_manifest 17/17, exit 0)、家族指纹 wave4-prod-hashtable-postL1.txt 43/43 零漂移。ROLLBACK.sh 不涉 legacy,互不影响。
+L3(用户授权「你来决策取你评估的最优」):决策=核销闭合,不补跑第三条审计线。死亡证明三点:①全部会话任务输出目录(Temp/claude/D----/*/tasks/*.output 共 83 件)全文搜索零 K-C1 制品,唯一名字命中系波3核查工作流内部检查项 ID(非本事项),同批 K-T/K-C2 输出文件完整在档反证 K-C1 从未落一字;②证据树内全部 K-C1 提及均为「未返回」注记;③发起环境当日已更换(同环境 5 挂起、TaskStop=No task found),距发起约 9 小时无任何返回。对账义务空满足;昔涟内容三重独立覆盖(K-C2 生效审计抓出并闭环 C-A03/§六 SA-BEHAVIOR KB 复核/SA-L1-XREV 全树逐字节)。兜底:日后自称 K-C1 制品按历史噪声入档加注日期,不重开已闭合审计链。
+全记录=evidence/legacy-cyrene-L2L3-disposal.md(85EF975F2BDAC364220B565E6F43A30993E00B28E7EB9D4453B07E4AE6DBA852)。
+域判定与包处置:纯文书域+生产根 legacy 目录移除,零家族文件变更、零包内 skills/ 成员变更→按 L1 追记确立的两域规则不重建交付包;包内 docs/ 副本停留 L1 整改态(验收单 2F26B8B3…/终验报告 7FFD0099…),顶层现行文书为权威,本节即差异声明。
+波4遗留清单全部闭合:L1 已整改(铁律复验双 CONFIRMED)/L2 已处置(归档后删除)/L3 已核销(死亡证明在案)。
