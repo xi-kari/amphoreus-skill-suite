@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>闪卡画廊 · 翁法罗斯 Skill 套件</title>
 <meta name="description" content="逐火者的命录 · 三层互斥分区立体闪卡:拱窗背景 / 边框人物 / 徽记,正面合成逐像素还原原图,倾斜见景深与全息箔光。">
+<meta name="theme-color" content="#f4f2f8">
 <link rel="icon" href="assets/symbols/trailblazer-stelle.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,31 +13,47 @@
 <style>
 /* ============ tokens(与 index.html 同源) ============ */
 :root{
-  --void:#07080d; --bg:#0b0d15;
-  --hair:rgba(240,230,205,.10); --hair2:rgba(240,230,205,.055);
-  --goldline:rgba(201,162,75,.32);
-  --gold:#e8b54a; --gold2:#c9a24b; --gold3:#9c7a2e;
-  --parch:#f0e6cd; --ink:#c3cadb; --dim:#8f97ab; --faint:#7f88a0;
+  /* 昔涟卡配色(与 index.html 同源):珍珠白底 / 黛紫墨字 / 藕粉·淡紫点缀 / 沉金收边 */
+  --void:#e9e5f0; --bg:#f4f2f8; --bg2:#edeaf3;
+  --hair:rgba(59,45,107,.16); --hair2:rgba(59,45,107,.09);
+  --goldline:rgba(150,114,31,.42);
+  --gold:#8a681c; --gold2:#826722; --gold3:#b99a4e;
+  --parch:#37305e; --ink:#4c4670; --dim:#6f6a8e; --faint:#8b86a6;
   --serif:'Noto Serif SC',serif; --sans:'Noto Sans SC',system-ui,sans-serif;
   --lat:'Cinzel',serif;
+  --grad-gold:linear-gradient(135deg,#d9b258,#a8842e 48%,#7c5e17);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{overflow-x:hidden;overflow-x:clip}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;overflow-x:hidden;overflow-x:clip;-webkit-font-smoothing:antialiased}
-::selection{background:rgba(232,181,74,.32);color:#fff8e7}
+::selection{background:rgba(216,120,164,.32);color:#2b2450}
 a{color:var(--gold);text-decoration:none}
-a:hover{color:#f4d488}
+a:hover{color:#6b4f12}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
 .wrap{max-width:1180px;margin:0 auto;padding:0 26px}
 .sky{position:fixed;inset:0;z-index:-2;background:
-  radial-gradient(1100px 560px at 18% -6%,rgba(201,162,75,.13),transparent 62%),
-  radial-gradient(900px 620px at 88% 12%,rgba(120,132,180,.08),transparent 60%),
-  radial-gradient(1.6px 1.6px at 12% 24%,rgba(242,231,205,.5),transparent 55%),
-  radial-gradient(1.2px 1.2px at 34% 12%,rgba(242,231,205,.34),transparent 55%),
-  radial-gradient(1.8px 1.8px at 58% 30%,rgba(242,231,205,.28),transparent 55%),
-  radial-gradient(1.2px 1.2px at 76% 8%,rgba(242,231,205,.4),transparent 55%),
-  radial-gradient(1.4px 1.4px at 92% 42%,rgba(242,231,205,.3),transparent 55%),
-  var(--bg)}
+  radial-gradient(1100px 560px at 16% -6%,rgba(242,169,189,.2),transparent 62%),
+  radial-gradient(940px 620px at 88% 10%,rgba(205,184,236,.26),transparent 60%),
+  radial-gradient(1000px 560px at 6% 104%,rgba(116,200,242,.14),transparent 60%),
+  radial-gradient(820px 500px at 96% 86%,rgba(242,169,189,.12),transparent 62%),
+  radial-gradient(2px 2px at 12% 24%,rgba(216,120,164,.3),transparent 55%),
+  radial-gradient(1.6px 1.6px at 34% 12%,rgba(143,124,201,.26),transparent 55%),
+  radial-gradient(2.2px 2.2px at 58% 30%,rgba(216,120,164,.18),transparent 55%),
+  radial-gradient(1.6px 1.6px at 76% 8%,rgba(143,124,201,.28),transparent 55%),
+  radial-gradient(1.8px 1.8px at 90% 42%,rgba(216,120,164,.18),transparent 55%),
+  radial-gradient(1.6px 1.6px at 22% 58%,rgba(143,124,201,.16),transparent 55%),
+  radial-gradient(2px 2px at 47% 74%,rgba(216,120,164,.14),transparent 55%),
+  linear-gradient(180deg,#f7f5fa,var(--bg) 42%,var(--bg2))}
+.sky::after{content:'';position:absolute;inset:0;opacity:.3;mix-blend-mode:multiply;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='.03'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='140' height='140' fill='%23f4f2f8' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* 昔涟竖版底图:固定于视口右下,顶部与左侧白纱渐融;卡片与文字衬其上 */
+.cybg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.cybg img{position:absolute;right:0;bottom:0;height:min(92vh,1180px);width:auto;
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 26%);
+  mask-image:linear-gradient(180deg,transparent,#000 26%)}
+.cybg::after{content:'';position:absolute;inset:0;background:
+  linear-gradient(90deg,var(--bg) 30%,rgba(244,242,248,.46) 56%,rgba(244,242,248,.08) 78%,rgba(244,242,248,.22)),
+  linear-gradient(180deg,rgba(244,242,248,.4),transparent 36%,transparent 82%,rgba(244,242,248,.24))}
+@media (max-width:840px){.cybg img{height:50vh;right:-12vw}}
 
 /* ============ header ============ */
 header{padding:64px 0 6px;text-align:center}
@@ -49,19 +66,19 @@ h1{font-family:var(--serif);font-weight:900;color:var(--parch);font-size:clamp(2
 .ctrl{margin:30px 0 4px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .tbtn{border:1px solid var(--goldline);background:transparent;color:var(--gold);border-radius:999px;
   padding:8px 24px;font-size:.85rem;cursor:pointer;font-family:inherit;transition:all .25s}
-.tbtn:hover{background:rgba(232,181,74,.1)}
-.tbtn.on{background:linear-gradient(135deg,#f4d488,#e0ab3a 48%,#a97f2f);color:#151000;font-weight:700;border-color:transparent}
+.tbtn:hover{background:rgba(150,114,31,.1)}
+.tbtn.on{background:var(--grad-gold);color:#fff6e0;font-weight:700;border-color:transparent}
 .legend{display:none;font-size:.78rem;color:var(--dim);text-align:center;margin-top:10px}
 body.explode .legend{display:block}
 .legend i{font-style:normal;padding:0 2px}
-.legend .c1{color:#8fb6e8}.legend .c2{color:#e8d48f}.legend .c3{color:#e8a68f}
+.legend .c1{color:#4a6fa5}.legend .c2{color:#8a681c}.legend .c3{color:#b0563a}
 
 /* ============ grid ============ */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:52px 32px;padding:54px 0 80px}
 @media (max-width:560px){.grid{gap:44px 20px;padding-top:40px}}
 .slot{text-align:center}
 .cap{margin-top:16px}
-.cap .no{font-family:var(--lat);font-size:.72rem;letter-spacing:.3em;color:var(--gold3)}
+.cap .no{font-family:var(--lat);font-size:.72rem;letter-spacing:.3em;color:var(--gold2)}
 .cap .nm{font-family:var(--serif);font-weight:900;color:var(--parch);font-size:1.02rem;margin-top:2px}
 .cap .nm small{font-weight:600;font-size:.78rem;color:var(--gold2);margin-left:8px;letter-spacing:.08em}
 .cap code{display:block;margin-top:3px;font-size:.72rem;color:var(--faint);font-family:Consolas,monospace}
@@ -81,7 +98,7 @@ body.explode .legend{display:block}
 .tilt{position:absolute;inset:0;border-radius:4.4%/2.6%;overflow:hidden;
   transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));
   transition:transform .55s cubic-bezier(.2,.8,.25,1);
-  box-shadow:0 24px 54px rgba(0,0,0,.55),0 6px 18px rgba(0,0,0,.4)}
+  box-shadow:0 24px 54px rgba(59,45,107,.3),0 6px 18px rgba(59,45,107,.16)}
 .hcard.live .tilt{transition:transform .08s linear}
 .l{position:absolute;inset:0;pointer-events:none;transition:transform .55s cubic-bezier(.2,.8,.25,1)}
 .hcard.live .l{transition:transform .08s linear}
@@ -92,7 +109,7 @@ img.l{width:100%;height:100%;object-fit:cover}
 .crestw{position:absolute;inset:0;pointer-events:none;transition:transform .55s cubic-bezier(.2,.8,.25,1);
   transform:translate(calc(var(--dx,0)*var(--u,3.4px)*2.5),calc(var(--dy,0)*var(--u,3.4px)*1.9))}
 .hcard.live .crestw{transition:transform .08s linear}
-.crestw img{position:absolute;filter:drop-shadow(0 3px 7px rgba(0,0,0,.45))}
+.crestw img{position:absolute;filter:drop-shadow(0 3px 7px rgba(59,45,107,.32))}
 /* 箔光三件套:静止 opacity 0,不碰正视还原 */
 .l.foil{mix-blend-mode:color-dodge;opacity:calc(var(--o,0)*.85);
   background:
@@ -116,19 +133,19 @@ body:not(.explode) .hcard:not(.live):not(.still) .sway{animation:sway 7.5s ease-
 body.explode .hcard .tilt{overflow:visible;transform-style:preserve-3d;
   transform:rotateX(26deg) rotateY(-18deg);box-shadow:none}
 body.explode .l,body.explode .crestw{transition:transform .55s cubic-bezier(.2,.8,.25,1)}
-body.explode .l.back{transform:translateZ(calc(var(--u,3.4px)*-26));outline:1px dashed rgba(143,182,232,.65);outline-offset:-1px}
-body.explode .l.front{transform:translateZ(0);outline:1px dashed rgba(232,212,143,.6);outline-offset:-1px}
+body.explode .l.back{transform:translateZ(calc(var(--u,3.4px)*-26));outline:1px dashed rgba(74,111,165,.8);outline-offset:-1px}
+body.explode .l.front{transform:translateZ(0);outline:1px dashed rgba(150,114,31,.7);outline-offset:-1px}
 body.explode .crestw{transform:translateZ(calc(var(--u,3.4px)*26))}
-body.explode .crestw img{outline:1px dashed rgba(232,166,143,.75);outline-offset:2px;border-radius:50%}
+body.explode .crestw img{outline:1px dashed rgba(176,86,58,.8);outline-offset:2px;border-radius:50%}
 body.explode .l.foil,body.explode .l.spark,body.explode .l.glare{opacity:0}
 body.explode .l.rim{opacity:.2}
 
 /* ============ 放大查看 ============ */
-.overlay{position:fixed;inset:0;background:rgba(5,7,12,.88);backdrop-filter:blur(6px);z-index:50;
+.overlay{position:fixed;inset:0;background:rgba(52,44,94,.46);backdrop-filter:blur(9px);z-index:50;
   display:none;align-items:center;justify-content:center}
 .overlay.on{display:flex}
 .overlay .stage{width:min(88vw,46vh,440px)}
-.overlay .hint{text-align:center;color:var(--dim);font-size:.78rem;margin-top:18px}
+.overlay .hint{text-align:center;color:var(--parch);font-size:.78rem;margin-top:18px}
 
 /* ============ footer ============ */
 footer{border-top:1px solid var(--hair);padding:40px 0 52px;text-align:center;font-size:.78rem;color:var(--faint);line-height:2.05}
@@ -138,6 +155,11 @@ footer a:hover{color:var(--gold)}
 </head>
 <body>
 <div class="sky" aria-hidden="true"></div>
+<div class="cybg" aria-hidden="true">
+  <img src="assets/mag/cyrene-side.webp"
+    srcset="assets/mag/cyrene-side-s.webp 640w, assets/mag/cyrene-side.webp 1100w"
+    sizes="(max-width:840px) 38vh, 70vh" width="1100" height="1467" alt="" decoding="async">
+</div>
 
 <header class="wrap">
   <a class="back" href="index.html">← 返回介绍页</a>
@@ -160,7 +182,7 @@ footer a:hover{color:var(--gold)}
 </div></div>
 
 <footer>
-  <div class="wrap">卡面素材:「逐火者的命录」系列 · 取自 <a href="https://wiki.biligame.com/sr/%E9%80%90%E7%81%AB%E8%80%85%E7%9A%84%E5%91%BD%E8%B7%AF.exe">B 站星穹铁道 Wiki</a> · 版权归米哈游所有<br>
+  <div class="wrap">卡面素材:「逐火者的命录」系列 · 取自 <a href="https://wiki.biligame.com/sr/%E9%80%90%E7%81%AB%E8%80%85%E7%9A%84%E5%91%BD%E8%B7%AF.exe">B 站星穹铁道 Wiki</a> · 页面底图为委托人提供的昔涟立绘 · 版权归米哈游及原作者所有<br>
   分层:三层互斥分区(背景邻域修补 / isnet 抠像近二值化+不稳定区整块归并+徽记挖空 / Hough 圆检测徽记),正面合成逐像素还原原图(内存与编码后双重校验) · 详见 <a href="https://github.com/xi-kari/amphoreus-skill-suite/blob/main/tools/make_layers.py">tools/make_layers.py</a></div>
 </footer>
 
