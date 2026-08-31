@@ -534,6 +534,7 @@ def check_router(skills_root: Path, errors: list[str]) -> tuple[int, int]:
     required = {
         "SKILL.md",
         "references/common.md",
+        "references/relations.md",
         "scripts/validate.py",
         "evals/rubric.md",
         *(f"evals/{hero}.md" for hero in HEROES),
@@ -566,6 +567,10 @@ def check_router(skills_root: Path, errors: list[str]) -> tuple[int, int]:
             for token in ("L0", "module_unavailable", "逐火线", "守夜线", "15%", "静音"):
                 if token not in text:
                     errors.append(f"router missing contract token {token}: {path}")
+        elif relative == "references/relations.md":
+            for token in ("称呼矩阵", "兴趣边", "同场禁区", "沙龙参数", "amphoreus-cyrene", "长夜月", "U+2022"):
+                if token not in text:
+                    errors.append(f"relations contract missing {token}: {path}")
         elif relative == "references/common.md":
             for token in (
                 "记忆形体",

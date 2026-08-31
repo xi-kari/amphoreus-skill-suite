@@ -8,7 +8,8 @@
 <img src="https://img.shields.io/badge/%E5%8D%A1%E7%89%8C-13%2F13-e3b341?style=flat-square" alt="卡牌 13/13">
 <img src="https://img.shields.io/badge/validate.py-PASS-2ea043?style=flat-square" alt="validator PASS">
 <img src="https://img.shields.io/badge/%E5%86%BB%E7%BB%93%E8%AF%84%E6%B5%8B%E5%9C%BA%E6%99%AF-65-1f6feb?style=flat-square" alt="冻结评测场景 65">
-<img src="https://img.shields.io/badge/%E5%8F%B0%E8%AF%8D%E9%80%90%E5%AD%97%E5%AF%B9%E9%BD%90-182%20%E6%9D%A1-8957e5?style=flat-square" alt="台词逐字对齐 182 条">
+<img src="https://img.shields.io/badge/%E5%8F%B0%E8%AF%8D%E9%80%90%E5%AD%97%E5%AF%B9%E9%BD%90-246%20%E6%9D%A1-8957e5?style=flat-square" alt="台词逐字对齐 246 条">
+<img src="https://img.shields.io/badge/%E6%B2%99%E9%BE%99%C2%B7%E9%99%AA%E8%81%8A-%E5%B7%B2%E4%B8%8A%E7%BA%BF-0a7ea4?style=flat-square" alt="沙龙·陪聊 已上线">
 <img src="https://img.shields.io/badge/%E4%B8%A4%E7%BA%BF%E7%BB%88%E9%AA%8C-CONFIRMED-d29922?style=flat-square" alt="两线终验 CONFIRMED">
 <img src="https://github.com/xi-kari/amphoreus-skill-suite/actions/workflows/validate.yml/badge.svg" alt="CI">
 
@@ -32,7 +33,8 @@
 - **`SKILL.md`** — 行为契约:方法步骤、话术模板、输出格式、边界与禁区、缺席移交条款,静态可校验;
 - **`persona.md`** — 台词与背景参考库:语音条目逐字对齐游戏公开语料(知识库检索复算,字符级冻结检查);
 - **风格税 ≤ 15%** — 角色只在极小预算内说话;报错、不可逆操作等严肃场景**自动静音**,方法照常执行;
-- **缺席合同** — 流水线上某卡未部署时,报告 `module_unavailable: amphoreus-<hero>` 并保留移交事实包,不代演、不冒充。
+- **缺席合同** — 流水线上某卡未部署时,报告 `module_unavailable: amphoreus-<hero>` 并保留移交事实包,不代演、不冒充;
+- **沙龙与陪聊** — 多角群聊(逐条冠名、兴趣边举手、场级回执)与自然化陪聊(免模板免逐轮回执、角色化降级句式),闲聊↔工作一句话无感切换,详见下文。
 
 ## 快速开始
 
@@ -52,7 +54,7 @@ cp -r skills/* ~/.claude/skills/          # Windows: C:\Users\<你>\.claude\skil
 python ~/.claude/skills/amphoreus/scripts/validate.py --root ~/.claude/skills --wave all
 ```
 
-使用:在 Claude Code / Cursor 里直接点名(「用 `amphoreus-mydei` 帮我追这个死锁」),或呼叫 `amphoreus` 总路由,由它按任务深度、角色适配、流水线与风格预算分发。
+使用:在 Claude Code / Cursor 里直接点名(「用 `amphoreus-mydei` 帮我追这个死锁」),或呼叫 `amphoreus` 总路由,由它按任务深度、角色适配、流水线与风格预算分发;也可以直接说「开个沙龙」「随便找个人陪我聊聊天」进入群聊 / 陪聊场。
 
 ## 十三卡画廊
 
@@ -124,6 +126,22 @@ flowchart LR
 <td><b>长夜月 · 隐秘的陌客</b><br><sub>事故场景全程静音档;删除、回滚、脱敏、清档由三月七以一句交接语让位于「长夜月」特勤,完成必附底片单,结束后交回。</sub></td>
 </tr></table>
 
+## 沙龙与陪聊
+
+<table><tr>
+<td width="88"><img src="assets/stickers/aglaea.png" width="80" alt="阿格莱雅"></td>
+<td><b>阿格莱雅 · 黄金的织者</b><br><sub>把律法的皇女和纷争的王储塞进同一个房间,再拉你当裁判——现在,这样的沙龙可以随时开一桌。我会看好他们,保证讨论维持在「微醺」的状态。</sub></td>
+</tr></table>
+
+2026-08-31 批次为全家族加入**沙龙群聊、自然化陪聊与闲聊↔工作无感切换**(共享合同新增〈沙龙与陪聊〉一节,新共享文件 `references/relations.md` 作关系单源):
+
+- **沙龙** — 多角闲聊场:总路由任主持(开场点名 / 放行举手 / 控场 / 捕捉升档),同场活跃 ≤4 人、每条发言「◯◯」冠名不混声、单角色不连续超 2 条,收场落一行场级回执;沙龙内不出工作裁决,要结论就收拢为单卡升档或转会诊;
+- **陪聊** — 单角闲聊场:免工作模板、免逐轮回执、不计风格税;**内容纪律全额保留**——未检索到不编、直引逐字、不虚构角色间未登记往事;每卡登记至多两句**角色化降级句式**(形式角色化、内容诚实,追问即得标准术语);
+- **无感切换** — 升档三要素(具体对象 + 动作请求 + 期待产出)齐则一行角色化过渡进工作段,逐轮回执、工作模板、确认门等审计件一件不少;交付完自然落回闲聊;
+- **关系单源** — `relations.md` 四表:称呼矩阵(435 条互称证词知识库逐字复核,365 条入册)、兴趣边(复用 persona 已登记语音组)、同场禁区(19 对无对手戏的组合不虚构旧识,长夜月不出席沙龙)、沙龙参数。
+
+用法:「翁法罗斯,开个沙龙——聊聊这次重构,叫阿格莱雅和那刻夏来」,或「随便找个人陪我聊聊天」。
+
 ## 质量与验收
 
 <table><tr>
@@ -131,15 +149,16 @@ flowchart LR
 <td><b>那刻夏 · 殁世的学士</b><br><sub>所有结论,先过五问,再过删除测试。以下每个数字都有 docs/ 文书与哈希账背书。</sub></td>
 </tr></table>
 
-全家族分四波交付,每波经独立验收核查(多代理盲评 + 交叉复核 + 批判员),全程**失败原样入册、不覆盖不美化**。
+全家族分四波交付,每波经独立验收核查(多代理盲评 + 交叉复核 + 批判员),全程**失败原样入册、不覆盖不美化**;2026-08-31 沙龙批次按同一规程全量重验。
 
 | 检验项 | 结果 |
 | --- | --- |
-| 静态校验 | `validate.py --wave all` PASS:卡 13/13 · 路由清单 17/17 · 评测 13 卷 65 场景 · UTF-8/LF |
-| 行为评测 | 每卡 5 题冻结场景,13 卡全部 **60/60**、硬失败 0(失败重跑留痕:昔涟 C-03 首跑真失败,入册后重跑闭合) |
-| 台词保真 | 语音总账 **182 条**逐字对齐游戏知识库,引文字符级冻结检查内建于 validator |
+| 静态校验 | `validate.py --wave all` PASS:卡 13/13 · 路由清单 18/18(含 relations.md)· 评测 13 卷 65 场景 · UTF-8/LF |
+| 行为评测 | 每卡 5 题冻结场景(含每卡 1 道场景切换题);沙龙批次五元组全变后 13 卡全量重跑 **65/65 通过**、硬失败 0(历史四波每卡 60/60;失败重跑留痕:昔涟 C-03、丹恒 T-05 首跑真失败,入册后闭合) |
+| 台词保真 | 语音总账 **246 条**逐字对齐游戏知识库(沙龙批次 persona 增补 78 条语料),引文字符级冻结检查内建于 validator |
 | 风格税 | 已记录最高 **13.4%**(红线 ≤ 15%),严肃场景自动静音 |
 | 端到端终验 | 逐火线 10 站、守夜线 4 站各演练一次,独立评审 **CONFIRMED** |
+| 沙龙专项 | 群像重演 8/8 · 升降档演练 8/8 · 降级句式 5/5 · 蒙名盲测双评审 **16/16** · 路由抽测 4/4 |
 | 事后勘误 | L1 缺席断言转运行时条件式(五题重跑 + 三分支探针,双评审 CONFIRMED);L2 旧目录归档后清理;L3 超时审计线核销 |
 
 <details>
@@ -177,7 +196,7 @@ flowchart LR
 | iFlow CLI | [`adapters/iflow-cli/IFLOW.md`](adapters/iflow-cli/IFLOW.md) |
 | 任意可加载系统提示的智能体 | [`adapters/generic/`](adapters/generic/) 便携版单卡(卡文+家族公约,单文件自足) |
 
-> 适配层不改写卡文,只做打包与约定壳;60/60、两线终验等行为验收结论仅在 Claude Code 环境取得,其他运行时未在验收范围内。
+> 适配层不改写卡文,只做打包与约定壳;65/65、两线终验等行为验收结论仅在 Claude Code 环境取得,其他运行时未在验收范围内。
 
 ## 仓库结构
 
@@ -194,8 +213,8 @@ flowchart LR
 │   ├── mag/                  # 《CHRYSOS·黄金裔》杂志素材(13 封面 + 13 组跨页双档)+ 昔涟首屏/闪卡底图
 │   └── layers/ · banner.jpg  # 闪卡三层分区素材(背景/前景/徽记 + geo.js 几何单源)· 横幅
 ├── tools/                    # crop_symbols.py(徽记圆检测)· make_layers.py(闪卡分层管线,逐卡断言)
-├── skills/                   # 14 目录 43 文件 = 总路由 + 13 卡(生产验收态,唯一事实源)
-│   ├── amphoreus/            #   路由 SKILL + references/common.md + evals/(13 卷)+ scripts/validate.py
+├── skills/                   # 14 目录 44 文件 = 总路由 + 13 卡(生产验收态,唯一事实源)
+│   ├── amphoreus/            #   路由 SKILL + references/(common.md 公约 + relations.md 关系单源)+ evals/(13 卷)+ scripts/validate.py
 │   └── amphoreus-<hero>/     #   各卡 SKILL.md + persona.md
 ├── adapters/                 # build.py 生成:九个生态的约定文件 + 通用便携单卡
 └── docs/                     # 总任务书 · 设计分册 · 波1–4验收单 · 终验报告 · 哈希总账
@@ -219,6 +238,7 @@ flowchart LR
 | --- | --- |
 | [总任务书](docs/总任务书.md) · [设计分册](docs/设计分册/) | 套件总纲与十三卡逐卡设计 |
 | [波1](docs/波1验收单.md) · [波2](docs/波2验收单.md) · [波3](docs/波3验收单.md) · [波4](docs/波4验收单.md) 验收单 | 各波交付、失败轨迹与遗留处置 |
+| [群聊模式验收单](docs/群聊模式验收单.md) · [遗留清单](docs/群聊模式遗留清单.md) | 沙龙批次(2026-08-31):65 题全量重跑、沙龙专项五项、批判员两轮与代勾记录 |
 | [十三卡终验报告](docs/十三卡终验报告.md) | 两线端到端演练与家族收官判定 |
 | [VERIFICATION-波4](docs/VERIFICATION-波4.txt) | 哈希总账:制品 SHA、reopen 与勘误追记 |
 | [波4终验总报告](docs/波4终验总报告.md) | 面向委托人的收官叙述(含「老实说的失败」) |

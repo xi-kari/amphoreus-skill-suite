@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: 静态校验(卡 13/13 · 路由清单 17/17 · 评测 65 场景 · UTF-8/LF)
+      - name: 静态校验(卡 13/13 · 路由清单 18/18 · 评测 65 场景 · UTF-8/LF)
         run: python skills/amphoreus/scripts/validate.py --root skills --wave all
 
       - name: 适配层零漂移(build.py 重跑后不得有任何改动或未跟踪文件)

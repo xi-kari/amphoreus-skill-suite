@@ -28,6 +28,9 @@
 | M-V05 | 爱好 | `voice_id=sr:character-voice:598fa8376bf09580fd2f23a3` | `2CEEE3F2BC00F6C1EF3EACBAB93FBB3571DE751A798E96E0D86C44AF9437F313` |
 | M-V06 | 分享 | `voice_id=sr:character-voice:98f3727ca05d8b5af2c63667` | `AE5C809883A83732AC6CABAB31232EE1AF7BF855E9528554F6F9CD8C69E0A788` |
 | M-V07 | 战斗胜利 | `voice_id=sr:character-voice:972833a9a03f5a6a2a2b45e3` | `C8A2D2776C483D03C7FE0875BFFC478D5D387D342BCC7EF92542DD898627D17F` |
+| M-V08 | 关于自己•过去 | `voice_id=sr:character-voice:19325d2203931f37b8315307` | `E73D32AAC52F3134471705B3874C61243AD428AD82C19A46EF808B7762D72D7F` |
+| M-V09 | 烦恼 | `voice_id=sr:character-voice:c5cc2fc4fc40457d841d8e24` | `B800917E41BF7E6C842D5B6972F65FB1AFD1FFD911916649FC0A9D4E4C42D199` |
+| M-V10 | 无法战斗 | `voice_id=sr:character-voice:d86fb9c291f084197fddba8b` | `706C7F737A99E7F2BEDCD30A70366FA60024F45DE9ED26DA5DD635FED22C5469` |
 
 巡猎页重复：M-V02 的 `voice_id=sr:character-voice:0fbf09f4f33010b353bfa5be`、`content_sha256=4B8EC7EC65CC9B54853DAF907862E32F9A9B9A64979B86D7CA1D57C545E52C82`；M-V07 的 `voice_id=sr:character-voice:d781b1d0080f05e6e72ceb00`、`content_sha256=8C841661447B2161AC87E3D4AB1EBA918A8ED8204E105CF0CB6FB388AF185214`。
 
@@ -48,6 +51,8 @@
 | E-V08 | 队伍编成•黑天鹅 | `voice_id=sr:character-voice:3969c128a34ec026089d1efa` | `D2C5EB03F3DF65A053D1CC039DAB02D3A67EE4BEF9F7CF572B2F7CE6E6383276` |
 | E-V09 | 回合开始•二 | `voice_id=sr:character-voice:077d54202f608accd2ec290c` | `0206B4FF6AFB7A439C81EFE0BE97C03557320414141AC522239FD7BF2D9A9557` |
 | E-V10 | 返回城镇 | `voice_id=sr:character-voice:46fe8a24141772adc7e093d1` | `0AE5277C23DF61605A3D0C6DDE89AF0BD6627C5238B08F31A1F5234B22D376BB` |
+| E-V11 | 关于缇宝 | `voice_id=sr:character-voice:2b9f0bce4404d37e9089925d` | `4DB90B50DC8F03DEC8A9C941DEB8B4AA89302E44BE25F7889F4FE088D240B4C7` |
+| E-V12 | 关于白厄 | `voice_id=sr:character-voice:230b5d7f635a3b20ef138217` | `405BF2C55C2F467C2DE78ADE5F79F7F20C4293C737346569104E5D4D045D152B` |
 
 ## 剧情与档案边界 D／A
 
@@ -64,6 +69,7 @@
 | ME-A01 | `长夜月` `19929/91496` `00041` | 先记录轨迹，再由三月裁决记住／遗忘 | `CF435D1788A69CB3C38D037D66A02267875EE0498FE7DE56549EEF76B3A251D6` |
 | ME-A02 | 同页同修订 `00060` | “忘却才是唯一出口”的反例 | `76B5E57FCDB8D7026220B148421218B3BA83E1AD48A56F92A68F15888BC1E397` |
 | ME-A03 | 同页同修订 `00071–73` | 把人生与未来还给三月七 | `C96BC3D7D429DF35D6196497991AE7256FE9007966A4CB53225A22E30BFBCF5B`／`8A06B9D981A712B4ADA531893AED07B503B7FB33E79C18EF27A7E97A591B80DF` |
+| ME-A04 | `长夜月` `19929/91496` `00080`＋信头 `00076` 行 202 | 三月七回信落款“你的，／『三月七』」”（／为换行）；M面书信落款正锚;证书信双向 | `D4AF13C2C839E8FF7FD20E0C167536A951FCAF21901C70C3A12E2D89B1F2D1D7` |
 
 剧情共同 `source_kind=game_dialogue_transcribed_by_wiki`；角色故事共同 `source_kind=game_character_archive_transcribed_by_wiki`。`local_file` 与 `section_path` 由相应 pageid/revid 固定；使用时保留可选分支、rumor、hypothesis 等身份。
 
@@ -93,6 +99,11 @@
 | “我们本就是同一面镜子映出的表里，对吧？” | ME-D05；同卡归并正锚 |
 | “如今，我无意代你做出选择，因为你已决定自己的下一站。” | ME-D07；用户裁决权 |
 | “来日若有需要，就随时唤醒「我」的力量吧。必要的时候也可以决绝一些，去吞噬、烧毁那些烦心的障碍……” | ME-D07；按需特勤正锚 |
+| “我的过去，或许不在从前，而是在我的未来里。所以我一定会一站站走下去，哪怕有一天…没有列车。” | M-V08；沙龙谈『你的过去』时直引;M面失忆核心正锚 |
+| “要是没人和我聊天，我就闷得要命。但在列车上的时候，姬子很忙，杨叔很忙，帕姆很忙，丹恒倒是不忙，可他不喜欢聊天……” | M-V09；情感话题孤独锚;兼M面列车关系人速写 |
+| “我不想…一个人……” | M-V10；示弱/低落时短句;签名台词表补引候选 |
+| “「明天见」，无论对谁来说，都是个简单而又奢侈的愿望。” | E-V11；沙龙道别/夜话直引;跨卡缇宝关系锚 |
+| “每个轮回里，他都在空白的起点出发，却又总是走向同一个结局。我和三月七的命运，是否会有所不同？” | E-V12；关于白厄的关系锚;轮回话题直引 |
 
 ## 书信腔证据
 

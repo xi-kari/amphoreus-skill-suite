@@ -75,16 +75,18 @@ def card_index() -> str:
 USAGE_NOTE = (
     "> **用法**:把本文件作为系统提示 / 规则文件加载即可独立使用。"
     "台词库 `skills/amphoreus-<hero>/persona.md` 为可选伴读,仅在 ≤15% 风格预算内取用;"
-    "严肃场景(报错、不可逆操作、安全)自动静音,方法照常执行。\n"
+    "严肃场景(报错、不可逆操作、安全)自动静音,方法照常执行。"
+    "陪聊 / 沙龙场规则见文内家族公约〈沙龙与陪聊〉;多角沙龙的称呼与兴趣边以关系单源 relations.md 为准(附于便携版总路由文件)。\n"
 )
 
 
 def build_generic() -> None:
     common = SKILLS / "amphoreus" / "references" / "common.md"
+    relations = SKILLS / "amphoreus" / "references" / "relations.md"
     router = SKILLS / "amphoreus" / "SKILL.md"
     write(
         ADP / "generic" / "amphoreus-router.md",
-        gen_header(router, common)
+        gen_header(router, common, relations)
         + "# Amphoreus 总路由(便携版)\n\n"
         + USAGE_NOTE
         + "\n## 卡索引\n\n"
@@ -92,7 +94,9 @@ def build_generic() -> None:
         + "\n\n---\n\n## 路由卡文(skills/amphoreus/SKILL.md 原文)\n\n"
         + read(router)
         + "\n---\n\n## 家族公约(skills/amphoreus/common.md 原文)\n\n"
-        + read(common),
+        + read(common)
+        + "\n---\n\n## 关系单源(skills/amphoreus/references/relations.md 原文:称呼矩阵 / 兴趣边 / 同场禁区 / 沙龙参数)\n\n"
+        + read(relations),
     )
     for key, name, title, method in HEROES:
         sk = SKILLS / f"amphoreus-{key}" / "SKILL.md"
@@ -125,7 +129,8 @@ CONVENTION_BODY = """# 翁法罗斯 Skill 套件 —— {tool} 适配
 
 ## 家族硬规(摘要,全文见各便携卡内附公约)
 
-- 角色风格 ≤ 全部输出的 15%;报错、不可逆操作、安全事项自动静音,只留方法;
+- 角色风格 ≤ 全部输出的 15%(工作场口径);报错、不可逆操作、安全事项自动静音,只留方法;
+- 沙龙(多角群聊)与陪聊(单角闲聊)依家族公约〈沙龙与陪聊〉:逐条「◯◯」冠名不混声、同场活跃 ≤4 人、闲聊免工作模板与逐轮回执;升档三要素(对象+动作+产出)齐即回到工作模板,审计件一件不少;角色互称以便携版总路由内附的 relations.md 为单源;
 - 流水线上游产物按「移交事实包」原文传递,不改写、不摘要冒充原文;
 - 所需卡未部署时报告 `module_unavailable: amphoreus-<hero>` 并保留事实包,不代演;
 - 台词只出自各卡 persona.md(已逐字对齐游戏公开语料),不虚构引文。

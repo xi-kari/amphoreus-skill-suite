@@ -15,7 +15,7 @@
 ## 二、本地校验
 
 ```bash
-# 静态校验:卡 13/13 · 路由清单 17/17 · 13 卷评测 65 场景 · UTF-8/LF
+# 静态校验:卡 13/13 · 路由清单 18/18 · 13 卷评测 65 场景 · UTF-8/LF
 python skills/amphoreus/scripts/validate.py --root skills --wave all
 ```
 

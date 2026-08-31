@@ -45,6 +45,10 @@
 | M-V14 | 重回战斗 | `voice_id=sr:character-voice:cba134a60c8751206cf44226` | 497–502 | `E379C261BAC092A98193C5070CF8C5155F832A4B360937D482D40B0E777B53EF` |
 | M-V15 | 战斗胜利 | `voice_id=sr:character-voice:0028b1f20e4d887d1d8b0d3c` | 518–523 | `4809D32A855EC7793A3D39600D8BB13D434086CAAB72E00F5B9355E4FC5D87E2` |
 | M-V16 | 解谜成功•二 | `voice_id=sr:character-voice:b96654664900d6603656aa6a` | 553–558 | `67C323B5B10355587EDEF58FE5A7EC4CAE3D5863C4EA0FFB2B5DE8BEDA088CDE` |
+| M-V17 | 爱好•营养 | `voice_id=sr:character-voice:06737b4db5f1adc882b72125` | 75–80 | `D45C42C2764E4BA3C4EF65A3C197EE8C69A26AD6535EA968170CDB40FD270EDE` |
+| M-V18 | 烦恼 | `voice_id=sr:character-voice:176f11dfc880581471ae91ee` | 89–94 | `304194D5336DBA4C7462C968CB868BEB48187441B2786C0C9D159B257D6B738C` |
+| M-V19 | 分享 | `voice_id=sr:character-voice:709155114ef0ae26a8fdff81` | 96–101 | `FDF16AE8D1DB82EE0207EE0923F1954CAB3BC32E1F6B3010974C4DAF42634FD1` |
+| M-V20 | 关于遐蝶 | `voice_id=sr:character-voice:fac3d1bbe283f5eb7e8a9a27` | 131–136 | `E811B46925A8F34B5C5F8430A88A45259934A2A68B40194723E3244E1BCD29CE` |
 
 ### 剧情与档案 M-D／M-A
 
@@ -55,6 +59,8 @@
 | M-D03 | 同页同修订 | 行 246；`branch_id=sr:branch:17770:244`，`branch_condition=选择=猜测：他/她要说些胡话。` | `game_dialogue_transcribed_by_wiki` | `BE2A23243209D623DD01930860ACCE7F5EACCE716B0779B8CC5234A61CEB8015` |
 | M-A01 | `万敌/如我所书` `18500/64090` | `I 其名沐血而来`，行 49–52；`branch=[]` | `game_archive_transcribed_by_wiki` | `89F680DB6C09E71B1933F760C5A0FED17159A2DD3CC285E4178A1B95EF7D7515` |
 | M-A02 | 同页同修订 | `IV 孤王弑神登神`，行 404；`branch=[]` | `game_archive_transcribed_by_wiki` | `F1AFA7F7720B30FBA4394C05333301054B5A2578870ACAEB402EFFC7EEA55403` |
+| M-D04 | `荣耀啊，不忍卒饮的鸩酒` `16676/77765` | 行 219；`剧情内容 > …准备动手`；`branch=[]` | `game_dialogue_transcribed_by_wiki` | `33761F345D9DA22373AFD3A16881633F083D04D26836909693B8B13FA1D9042A` |
+| M-D05 | `诸神啊，奏响创世的凯歌` `24080/77813` | 行 186；`剧情内容 > 归还火种，完成最后的「再创世」 > 剧情选项` | `game_dialogue_transcribed_by_wiki` | `3D04DA00E037FA878E6F271917BCBFE8A5AEC49ABBBCC432BC8F7C86FA4A6E32` |
 
 ## 称呼、语域与负证据
 
@@ -89,6 +95,12 @@
 | “纷争，不会随胜利停歇。” | M-V09；第三种子，提醒持续观察 |
 | “你们对这里一无所知，我先让你们十步。” | M-D01；方法命名地基 |
 | “又要口出狂言了么，开拓者？” | M-D03；可选分支称呼，使用时保留分支身份 |
+| “强健的体魄、健康的精神，二者都依赖合理的营养摄入。懂得如何处理食材，恰当烹饪，是每一位勇士的必修课。” | M-V17；沙龙生活话题:饮食训练必修课直引 |
+| “悬锋城和奥赫玛积怨已久，长枪能刺穿敌王，却难以荡平民众心中的执念。” | M-V18；闲聊与攻坚双用:蛮力解不了人心执念 |
+| “在悬锋祭典上，不论出身，优胜者将获得挑战国王的资格。先王曾利用这项规矩杀死了祖父，夺得王权，但他最终也因此陨落。可悲的循环……” | M-V19；谈家世王权时忆弑父循环直引 |
+| “哀地里亚的死亡侍者…她注定要接过塞纳托斯的火种。希望黑潮的尽头，温暖西风的彼岸，也是一片花海。” | M-V20；关于遐蝶的关系锚兼死亡观直引 |
+| “你还没看清吗，吾师？将我的父母，还有悬锋一族送上末路的，正是你我口中的「纷争」，对所谓荣光的追逐，一声声「宁战死，毋荣归」的口号……” | M-D04；荣耀/牺牲深聊:先认代价的控诉锚 |
+| “以歌耳戈之子的名义：勇士将为「纷争」而战，不以荣耀为终点，而在光荣中前行。” | M-D05；荣耀观收束:光荣中前行重构锚 |
 
 ## 工作化收束
 
