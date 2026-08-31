@@ -4,189 +4,320 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>闪卡画廊 · 翁法罗斯 Skill 套件</title>
-<meta name="description" content="逐火者的命录 · 分层立体闪卡:底片 / 框窗人物 / 徽记三层视差 + 全息箔光。">
+<meta name="description" content="逐火者的命录 · 三层互斥分区立体闪卡:拱窗背景 / 边框人物 / 徽记,正面合成逐像素还原原图,倾斜见景深与全息箔光。">
 <link rel="icon" href="assets/symbols/trailblazer-stelle.png">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Noto+Serif+SC:wght@600;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0b0e14;--panel:#161a26;--line:#2a2f3e;--gold:#e3b341;--gold2:#caa14a;--parch:#f2e7cd;--ink:#c9cfdd;--dim:#8b93a7}
+/* ============ tokens(与 index.html 同源) ============ */
+:root{
+  --void:#07080d; --bg:#0b0d15;
+  --hair:rgba(240,230,205,.10); --hair2:rgba(240,230,205,.055);
+  --goldline:rgba(201,162,75,.32);
+  --gold:#e8b54a; --gold2:#c9a24b; --gold3:#9c7a2e;
+  --parch:#f0e6cd; --ink:#c3cadb; --dim:#8f97ab; --faint:#7f88a0;
+  --serif:'Noto Serif SC',serif; --sans:'Noto Sans SC',system-ui,sans-serif;
+  --lat:'Cinzel',serif;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font-family:'Noto Sans SC',system-ui,sans-serif;line-height:1.7;overflow-x:hidden;
-  background-image:radial-gradient(900px 420px at 50% -8%,rgba(227,179,65,.12),transparent 60%),
-   radial-gradient(2px 2px at 16% 28%,rgba(242,231,205,.45),transparent 60%),
-   radial-gradient(1.5px 1.5px at 78% 16%,rgba(242,231,205,.35),transparent 60%),
-   radial-gradient(2px 2px at 34% 68%,rgba(242,231,205,.2),transparent 60%)}
-h1,h2{font-family:'Noto Serif SC',serif;color:var(--parch)}
+html{overflow-x:hidden;overflow-x:clip}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;overflow-x:hidden;overflow-x:clip;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(232,181,74,.32);color:#fff8e7}
 a{color:var(--gold);text-decoration:none}
-.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
-header{padding:54px 0 8px;text-align:center}
+a:hover{color:#f4d488}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+.sky{position:fixed;inset:0;z-index:-2;background:
+  radial-gradient(1100px 560px at 18% -6%,rgba(201,162,75,.13),transparent 62%),
+  radial-gradient(900px 620px at 88% 12%,rgba(120,132,180,.08),transparent 60%),
+  radial-gradient(1.6px 1.6px at 12% 24%,rgba(242,231,205,.5),transparent 55%),
+  radial-gradient(1.2px 1.2px at 34% 12%,rgba(242,231,205,.34),transparent 55%),
+  radial-gradient(1.8px 1.8px at 58% 30%,rgba(242,231,205,.28),transparent 55%),
+  radial-gradient(1.2px 1.2px at 76% 8%,rgba(242,231,205,.4),transparent 55%),
+  radial-gradient(1.4px 1.4px at 92% 42%,rgba(242,231,205,.3),transparent 55%),
+  var(--bg)}
+
+/* ============ header ============ */
+header{padding:64px 0 6px;text-align:center}
 header .back{font-size:.85rem;color:var(--dim)}
 header .back:hover{color:var(--gold)}
-h1{font-size:clamp(1.9rem,4.6vw,3rem);font-weight:900;letter-spacing:.08em;margin-top:14px}
-.sub{color:var(--dim);font-size:.92rem;max-width:640px;margin:14px auto 0}
-.ctrl{margin:26px 0 8px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.tbtn{border:1px solid var(--gold2);background:transparent;color:var(--gold);border-radius:999px;
-  padding:8px 22px;font-size:.85rem;cursor:pointer;font-family:inherit;transition:all .25s}
-.tbtn:hover{background:rgba(227,179,65,.12)}
-.tbtn.on{background:linear-gradient(135deg,var(--gold),#b78528);color:#151000;font-weight:700}
-.legend{display:none;font-size:.78rem;color:var(--dim);text-align:center;margin-top:6px}
+.kicker{font-family:var(--lat);letter-spacing:.42em;text-indent:.42em;font-size:.78rem;color:var(--gold2);margin-top:26px;text-transform:uppercase}
+h1{font-family:var(--serif);font-weight:900;color:var(--parch);font-size:clamp(2rem,4.8vw,3.1rem);letter-spacing:.1em;margin-top:10px}
+.sub{color:var(--dim);font-size:.92rem;max-width:700px;margin:16px auto 0}
+.sub b{color:var(--gold);font-weight:500}
+.ctrl{margin:30px 0 4px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.tbtn{border:1px solid var(--goldline);background:transparent;color:var(--gold);border-radius:999px;
+  padding:8px 24px;font-size:.85rem;cursor:pointer;font-family:inherit;transition:all .25s}
+.tbtn:hover{background:rgba(232,181,74,.1)}
+.tbtn.on{background:linear-gradient(135deg,#f4d488,#e0ab3a 48%,#a97f2f);color:#151000;font-weight:700;border-color:transparent}
+.legend{display:none;font-size:.78rem;color:var(--dim);text-align:center;margin-top:10px}
 body.explode .legend{display:block}
+.legend i{font-style:normal;padding:0 2px}
+.legend .c1{color:#8fb6e8}.legend .c2{color:#e8d48f}.legend .c3{color:#e8a68f}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:34px 26px;padding:44px 0 70px}
+/* ============ grid ============ */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:52px 32px;padding:54px 0 80px}
+@media (max-width:560px){.grid{gap:44px 20px;padding-top:40px}}
 .slot{text-align:center}
-.cap{margin-top:14px;font-size:.9rem;color:var(--parch)}
-.cap .t{color:var(--gold2);font-size:.76rem;letter-spacing:.14em}
-.cap code{display:block;margin-top:3px;font-size:.72rem;color:var(--dim)}
+.cap{margin-top:16px}
+.cap .no{font-family:var(--lat);font-size:.72rem;letter-spacing:.3em;color:var(--gold3)}
+.cap .nm{font-family:var(--serif);font-weight:900;color:var(--parch);font-size:1.02rem;margin-top:2px}
+.cap .nm small{font-weight:600;font-size:.78rem;color:var(--gold2);margin-left:8px;letter-spacing:.08em}
+.cap code{display:block;margin-top:3px;font-size:.72rem;color:var(--faint);font-family:Consolas,monospace}
 
-.hcard{position:relative;aspect-ratio:640/1123;width:100%;cursor:pointer;
-  perspective:900px;-webkit-tap-highlight-color:transparent}
-.layers{position:absolute;inset:0;transform-style:preserve-3d;border-radius:4.4%/2.6%;
+/* ============ 闪卡引擎 ============
+   卡面拆成三个互斥分区层(内容零重复,正面合成=原图):
+     back  背景层(不透明;被盖区域为隐藏修补,仅倾斜露出)
+     front 前景层(边框+人物 RGBA,徽记位挖空)
+     crest 徽记层(圆片,浮于最上)
+   容器做 3D 倾斜,层在容器内做 2D 视差平移:静止平移全为 0 → 逐像素还原;
+   容器 overflow:hidden + 圆角,层永不探出卡边(旧版 scale(1.14) 底片的病根)。 */
+.hcard{position:relative;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent;
+  touch-action:pan-y;perspective:calc(var(--u,3.4px)*240)}
+/* .sway 只承担待机摇摆,.tilt 承担指针旋转:两个 transform 复合,互不覆盖
+   (动画来源优先级高于普通声明,若同元素则摇摆会盖死指针旋转) */
+.sway{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .7s ease}
+.tilt{position:absolute;inset:0;border-radius:4.4%/2.6%;overflow:hidden;
+  transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));
   transition:transform .55s cubic-bezier(.2,.8,.25,1);
-  transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
-.hcard.live .layers{transition:transform .08s linear}
-.l{position:absolute;inset:0;border-radius:inherit;pointer-events:none}
+  box-shadow:0 24px 54px rgba(0,0,0,.55),0 6px 18px rgba(0,0,0,.4)}
+.hcard.live .tilt{transition:transform .08s linear}
+.l{position:absolute;inset:0;pointer-events:none;transition:transform .55s cubic-bezier(.2,.8,.25,1)}
+.hcard.live .l{transition:transform .08s linear}
 img.l{width:100%;height:100%;object-fit:cover}
-.l.base{transform:translateZ(-40px) scale(1.14) translate(calc(var(--dx,0)*-9px),calc(var(--dy,0)*-7px))}
-.l.front{transform:translateZ(30px) scale(1.005) translate(calc(var(--dx,0)*8px),calc(var(--dy,0)*6px));
-  filter:drop-shadow(0 10px 18px rgba(0,0,0,.45))}
-img.coin{position:absolute;left:50%;top:1.1%;width:19.5%;height:auto;aspect-ratio:1;border-radius:50%;
-  margin-left:-9.75%;transform:translateZ(64px) translate(calc(var(--dx,0)*15px),calc(var(--dy,0)*11px));
-  box-shadow:0 4px 16px rgba(0,0,0,.5),0 0 14px rgba(227,179,65,.35);pointer-events:none}
-.l.foil{mix-blend-mode:color-dodge;opacity:calc(var(--o,0)*.9);transform:translateZ(34px);
+/* 视差:背景随视线反向退,徽记正向浮;系数 × --u(=卡宽/100) */
+.l.back{transform:translate(calc(var(--dx,0)*var(--u,3.4px)*-3.1),calc(var(--dy,0)*var(--u,3.4px)*-2.3))}
+.l.front{transform:none}
+.crestw{position:absolute;inset:0;pointer-events:none;transition:transform .55s cubic-bezier(.2,.8,.25,1);
+  transform:translate(calc(var(--dx,0)*var(--u,3.4px)*2.5),calc(var(--dy,0)*var(--u,3.4px)*1.9))}
+.hcard.live .crestw{transition:transform .08s linear}
+.crestw img{position:absolute;filter:drop-shadow(0 3px 7px rgba(0,0,0,.45))}
+/* 箔光三件套:静止 opacity 0,不碰正视还原 */
+.l.foil{mix-blend-mode:color-dodge;opacity:calc(var(--o,0)*.85);
   background:
-   repeating-linear-gradient(115deg,rgba(255,60,60,.16) 0%,rgba(255,220,90,.2) 6%,rgba(90,255,150,.16) 12%,rgba(80,200,255,.2) 18%,rgba(190,90,255,.16) 24%,rgba(255,60,60,.16) 30%),
-   radial-gradient(farthest-corner circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.55) 4%,rgba(255,255,255,.12) 26%,transparent 60%);
+   repeating-linear-gradient(115deg,rgba(255,60,60,.15) 0%,rgba(255,220,90,.19) 6%,rgba(90,255,150,.15) 12%,rgba(80,200,255,.19) 18%,rgba(190,90,255,.15) 24%,rgba(255,60,60,.15) 30%),
+   radial-gradient(farthest-corner circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.5) 4%,rgba(255,255,255,.1) 26%,transparent 60%);
   background-size:280% 280%,100% 100%;
-  background-position:calc(var(--fx,50%)) calc(var(--fy,50%)),0 0}
-.l.spark{mix-blend-mode:screen;opacity:calc(var(--o,0)*.75);transform:translateZ(40px);
+  background-position:var(--fx,50%) var(--fy,50%),0 0}
+.l.spark{mix-blend-mode:screen;opacity:calc(var(--o,0)*.7);
   background:url(assets/layers/sparkle.png) repeat;background-size:190px;
   background-position:calc(var(--dx,0)*-26px) calc(var(--dy,0)*-20px)}
-.l.glare{mix-blend-mode:overlay;opacity:calc(var(--o,0)*.95);transform:translateZ(46px);
-  background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.5) 0%,rgba(255,255,255,.08) 32%,transparent 55%)}
-.l.rim{box-shadow:inset 0 0 0 1px rgba(227,179,65,.5),inset 0 0 26px rgba(227,179,65,.12),0 22px 50px rgba(0,0,0,.55);
-  transform:translateZ(48px)}
-@keyframes sway{0%,100%{transform:rotateX(2.2deg) rotateY(-3.6deg)}50%{transform:rotateX(-2.2deg) rotateY(3.6deg)}}
-.hcard:not(.live):not(.still) .layers{animation:sway 7s ease-in-out infinite}
-@media (prefers-reduced-motion:reduce){.hcard .layers{animation:none!important}}
+.l.glare{mix-blend-mode:overlay;opacity:calc(var(--o,0)*.95);
+  background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.48) 0%,rgba(255,255,255,.08) 32%,transparent 55%)}
+.l.rim{border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(232,181,74,.42),inset 0 0 26px rgba(232,181,74,.1)}
+@keyframes sway{0%,100%{transform:rotateX(2.4deg) rotateY(-3.8deg)}50%{transform:rotateX(-2.4deg) rotateY(3.8deg)}}
+body:not(.explode) .hcard:not(.live):not(.still) .sway{animation:sway 7.5s ease-in-out infinite;animation-delay:calc(var(--i,0)*-1.15s)}
+@media (prefers-reduced-motion:reduce){
+  .sway,.tilt,.l,.crestw{animation:none!important;transition:none!important}
+}
 
-/* 拆层视图 */
-body.explode .hcard .layers{animation:none;transform:rotateX(22deg) rotateY(-16deg)}
-body.explode .l.base{transform:translateZ(-110px) scale(1.02);outline:1px dashed rgba(227,179,65,.55);outline-offset:-1px}
-body.explode .l.front{transform:translateZ(30px);outline:1px dashed rgba(140,220,255,.5);outline-offset:-1px}
-body.explode img.coin{transform:translateZ(170px)}
+/* ============ 拆层视图:切回真 3D,三层摊开 ============ */
+body.explode .hcard .tilt{overflow:visible;transform-style:preserve-3d;
+  transform:rotateX(26deg) rotateY(-18deg);box-shadow:none}
+body.explode .l,body.explode .crestw{transition:transform .55s cubic-bezier(.2,.8,.25,1)}
+body.explode .l.back{transform:translateZ(calc(var(--u,3.4px)*-26));outline:1px dashed rgba(143,182,232,.65);outline-offset:-1px}
+body.explode .l.front{transform:translateZ(0);outline:1px dashed rgba(232,212,143,.6);outline-offset:-1px}
+body.explode .crestw{transform:translateZ(calc(var(--u,3.4px)*26))}
+body.explode .crestw img{outline:1px dashed rgba(232,166,143,.75);outline-offset:2px;border-radius:50%}
 body.explode .l.foil,body.explode .l.spark,body.explode .l.glare{opacity:0}
-body.explode .l.rim{opacity:.25}
+body.explode .l.rim{opacity:.2}
 
-/* 放大查看 */
-.overlay{position:fixed;inset:0;background:rgba(5,7,12,.86);backdrop-filter:blur(6px);z-index:50;
+/* ============ 放大查看 ============ */
+.overlay{position:fixed;inset:0;background:rgba(5,7,12,.88);backdrop-filter:blur(6px);z-index:50;
   display:none;align-items:center;justify-content:center}
 .overlay.on{display:flex}
-.overlay .stage{width:min(88vw,400px)}
-.overlay .hint{text-align:center;color:var(--dim);font-size:.78rem;margin-top:16px}
-footer{border-top:1px solid var(--line);padding:34px 0 46px;text-align:center;font-size:.78rem;color:var(--dim)}
+.overlay .stage{width:min(88vw,46vh,440px)}
+.overlay .hint{text-align:center;color:var(--dim);font-size:.78rem;margin-top:18px}
+
+/* ============ footer ============ */
+footer{border-top:1px solid var(--hair);padding:40px 0 52px;text-align:center;font-size:.78rem;color:var(--faint);line-height:2.05}
+footer a{color:var(--dim)}
+footer a:hover{color:var(--gold)}
 </style>
 </head>
 <body>
+<div class="sky" aria-hidden="true"></div>
+
 <header class="wrap">
   <a class="back" href="index.html">← 返回介绍页</a>
+  <div class="kicker">Chartae Ignis Sequentium</div>
   <h1>闪卡画廊</h1>
-  <p class="sub">「逐火者的命录」十五张卡面,每张拆为 <b style="color:var(--gold)">底片 / 框窗人物 / 徽记</b> 三层——移动指针(或触摸拖动)倾斜卡片,窗内景深与全息箔光随之流动;点按卡片放大把玩。</p>
+  <p class="sub">「逐火者的命录」十五张卡面,每张拆成互不重叠的三层——<b>拱窗背景 / 边框人物 / 徽记</b>。
+  正面看,三层刚好拼回一张完整原图;移动指针(或触摸拖动)倾斜卡片,背景后退、徽记浮起,景深与全息箔光才显现。点按卡片放大把玩。</p>
   <div class="ctrl">
-    <button class="tbtn" id="explodeBtn">拆层视图</button>
+    <button class="tbtn" id="explodeBtn" aria-pressed="false">拆层视图</button>
     <a class="tbtn" href="https://github.com/xi-kari/amphoreus-skill-suite/blob/main/tools/make_layers.py">分层管线 ↗</a>
   </div>
-  <div class="legend">金虚线=底片层(完整卡面) · 蓝虚线=前景层(边框+人物,拱窗透空) · 悬浮圆=徽记层</div>
+  <div class="legend">三层互斥分区:<i class="c1">蓝虚线=背景层</i>(被盖区域为隐藏修补,仅倾斜露出) · <i class="c2">金虚线=前景层</i>(边框+人物,徽记位挖空) · <i class="c3">红虚线=徽记层</i> —— 合拢即原图,无一重复,无一缺失</div>
 </header>
 
 <main class="wrap"><div class="grid" id="grid"></div></main>
 
-<div class="overlay" id="overlay"><div>
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="放大查看闪卡"><div>
   <div class="stage" id="stage"></div>
-  <div class="hint">移动指针倾斜 · 点击空白处关闭</div>
+  <div class="hint">移动指针倾斜 · 点击空白处或按 Esc 关闭</div>
 </div></div>
 
 <footer>
   <div class="wrap">卡面素材:「逐火者的命录」系列 · 取自 <a href="https://wiki.biligame.com/sr/%E9%80%90%E7%81%AB%E8%80%85%E7%9A%84%E5%91%BD%E8%B7%AF.exe">B 站星穹铁道 Wiki</a> · 版权归米哈游所有<br>
-  分层:rembg(isnet-general-use)整卡抠像成前景层 + 徽记几何裁切,详见 <a href="https://github.com/xi-kari/amphoreus-skill-suite/blob/main/tools/make_layers.py">tools/make_layers.py</a></div>
+  分层:三层互斥分区(背景邻域修补 / isnet 抠像近二值化+不稳定区整块归并+徽记挖空 / Hough 圆检测徽记),正面合成逐像素还原原图(内存与编码后双重校验) · 详见 <a href="https://github.com/xi-kari/amphoreus-skill-suite/blob/main/tools/make_layers.py">tools/make_layers.py</a></div>
 </footer>
 
+<script src="assets/layers/geo.js"></script>
 <script>
+/* 展示顺序与编号 = 用户标注件(0 开拓者·星 … 14 开拓者·穹),与 index.html ORDER 同源 */
 const CARDS=[
- {k:"aglaea",n:"阿格莱雅",t:"黄金的织者"},{k:"cerydra",n:"刻律德菈",t:"执棋的君主"},
- {k:"terrae",n:"丹恒",t:"掣地的伏龙"},{k:"phainon",n:"白厄",t:"负火的囚徒"},
- {k:"anaxa",n:"那刻夏",t:"殁世的学士"},{k:"cipher",n:"赛飞儿",t:"捷足的羁客"},
- {k:"hyacine",n:"风堇",t:"摇光的医师"},{k:"march7th",n:"三月七 / 长夜月",t:"隐秘的陌客"},
- {k:"castorice",n:"遐蝶",t:"死荫的侍女"},{k:"cyrene",n:"昔涟",t:"无瑕的真我"},
- {k:"mydei",n:"万敌",t:"亡国的王储"},{k:"hysilens",n:"海瑟音",t:"奏浪的剑骑"},
+ {k:"trailblazer-stelle",n:"开拓者·星",t:"创世的著者"},
  {k:"tribbie",n:"缇宝",t:"命运的三子"},
- {k:"trailblazer-stelle",n:"开拓者·星",t:"创世的著者"},{k:"trailblazer-caelus",n:"开拓者·穹",t:"创世的著者"}];
+ {k:"cerydra",n:"刻律德菈",t:"执棋的君主"},
+ {k:"march7th",n:"三月七",t:"隐秘的陌客"},
+ {k:"terrae",n:"丹恒",t:"掣地的伏龙"},
+ {k:"hysilens",n:"海瑟音",t:"奏浪的剑骑"},
+ {k:"hyacine",n:"风堇",t:"摇光的医师"},
+ {k:"phainon",n:"白厄",t:"负火的囚徒"},
+ {k:"anaxa",n:"那刻夏",t:"殁世的学士"},
+ {k:"aglaea",n:"阿格莱雅",t:"黄金的织者"},
+ {k:"mydei",n:"万敌",t:"亡国的王储"},
+ {k:"castorice",n:"遐蝶",t:"死荫的侍女"},
+ {k:"cipher",n:"赛飞儿",t:"捷足的羁客"},
+ {k:"cyrene",n:"昔涟",t:"无瑕的真我"},
+ {k:"trailblazer-caelus",n:"开拓者·穹",t:"创世的著者"}];
 
-function cardHTML(c){return `
- <div class="hcard" data-k="${c.k}">
-  <div class="layers">
-   <img class="l base" src="assets/layers/${c.k}-base.webp" alt="${c.n}底片层" loading="lazy">
-   <img class="l front" src="assets/layers/${c.k}-front.webp" alt="${c.n}前景层" loading="lazy">
+/* 几何(GEO)由 assets/layers/geo.js 提供——make_layers.py 生成的单一事实源:
+   h=层高(宽恒 768),c=徽记盒 [x,y,w,h](宽高分数) */
+const pct=v=>(v*100).toFixed(3)+'%';
+function cardHTML(c,eager){
+  const g=GEO[c.k],b=g.c,lz=eager?'':' loading="lazy"';
+  return `
+ <div class="hcard" data-k="${c.k}" tabindex="0" role="button" aria-label="放大查看 ${c.n}闪卡"
+      style="aspect-ratio:768/${g.h}">
+  <div class="sway"><div class="tilt">
+   <img class="l back" src="assets/layers/${c.k}-back.webp" alt="" decoding="async"${lz}>
+   <img class="l front" src="assets/layers/${c.k}-front.webp" alt="${c.n}「${c.t}」卡面" decoding="async"${lz}>
+   <div class="crestw"><img src="assets/layers/${c.k}-crest.webp" alt="" decoding="async"${lz}
+     style="left:${pct(b[0])};top:${pct(b[1])};width:${pct(b[2])};height:${pct(b[3])}"></div>
    <div class="l foil"></div>
    <div class="l spark"></div>
    <div class="l glare"></div>
    <div class="l rim"></div>
-   <img class="coin" src="assets/symbols/${c.k}.png" alt="${c.n}徽记" loading="lazy">
-  </div>
+  </div></div>
  </div>`}
 
 const grid=document.getElementById('grid');
-grid.innerHTML=CARDS.map(c=>`
- <div class="slot">${cardHTML(c)}
-  <div class="cap"><b>${c.n}</b> <span class="t">${c.t}</span><code>${c.k.startsWith('trailblazer')?'amphoreus(总路由)':'amphoreus-'+c.k}</code></div>
+grid.innerHTML=CARDS.map((c,i)=>`
+ <div class="slot" style="--i:${i}">${cardHTML(c,i<4)}
+  <div class="cap">
+   <div class="no">N°${String(i).padStart(2,'0')}</div>
+   <div class="nm">${c.n}<small>${c.t}</small></div>
+   <code>${c.k.startsWith('trailblazer')?'amphoreus(总路由)':'amphoreus-'+c.k}</code>
+  </div>
  </div>`).join('');
 
+/* --u = 卡宽/100,视差与透视随尺寸缩放 */
+const ro=new ResizeObserver(es=>{
+  for(const e of es)e.target.style.setProperty('--u',(e.contentRect.width/100)+'px');
+});
+/* 离屏卡片停摆(加 .still,摇摆选择器本就排除),省合成器与电量 */
+const io=new IntersectionObserver(es=>{
+  for(const e of es)e.target.classList.toggle('still',!e.isIntersecting);
+},{rootMargin:'90px'});
+
 function bind(card){
-  const el=card, MAX=13;
-  let raf=0,px=.5,py=.5;
+  const MAX=13;
+  let raf=0,cx=0,cy=0;
+  ro.observe(card);
   function apply(){
     raf=0;
-    const dx=(px-.5)*2, dy=(py-.5)*2;
-    el.style.setProperty('--ry',(dx*MAX)+'deg');
-    el.style.setProperty('--rx',(-dy*MAX)+'deg');
-    el.style.setProperty('--dx',dx.toFixed(3));
-    el.style.setProperty('--dy',dy.toFixed(3));
-    el.style.setProperty('--mx',(px*100)+'%');
-    el.style.setProperty('--my',(py*100)+'%');
-    el.style.setProperty('--fx',(30+dx*55)+'%');
-    el.style.setProperty('--fy',(30+dy*55)+'%');
-    el.style.setProperty('--o',Math.min(1,Math.hypot(dx,dy)*1.15+.15).toFixed(3));
+    const r=card.getBoundingClientRect();          // rAF 内每帧至多读一次
+    const px=(cx-r.left)/r.width,py=(cy-r.top)/r.height;
+    const dx=(px-.5)*2,dy=(py-.5)*2;
+    card.style.setProperty('--ry',(dx*MAX)+'deg');
+    card.style.setProperty('--rx',(-dy*MAX)+'deg');
+    card.style.setProperty('--dx',dx.toFixed(3));
+    card.style.setProperty('--dy',dy.toFixed(3));
+    card.style.setProperty('--mx',(px*100)+'%');
+    card.style.setProperty('--my',(py*100)+'%');
+    card.style.setProperty('--fx',(30+dx*55)+'%');
+    card.style.setProperty('--fy',(30+dy*55)+'%');
+    card.style.setProperty('--o',Math.min(1,Math.hypot(dx,dy)*1.2+.12).toFixed(3));
   }
-  el.addEventListener('pointermove',e=>{
+  card.addEventListener('pointermove',e=>{
     if(document.body.classList.contains('explode'))return;
-    const r=el.getBoundingClientRect();
-    px=(e.clientX-r.left)/r.width; py=(e.clientY-r.top)/r.height;
-    el.classList.add('live');
+    cx=e.clientX;cy=e.clientY;
+    card.classList.add('live');
     if(!raf)raf=requestAnimationFrame(apply);
   });
-  el.addEventListener('pointerleave',()=>{
-    el.classList.remove('live');
-    ['--rx','--ry','--dx','--dy','--o'].forEach(v=>el.style.removeProperty(v));
+  card.addEventListener('pointerleave',()=>{
+    if(raf){cancelAnimationFrame(raf);raf=0}       // 竞态:挂起帧晚于清理执行会把箔光写回
+    card.classList.remove('live');
+    ['--rx','--ry','--dx','--dy','--o'].forEach(v=>card.style.removeProperty(v));
   });
 }
-document.querySelectorAll('.hcard').forEach(bind);
+document.querySelectorAll('.hcard').forEach(el=>{bind(el);io.observe(el)});
 
 /* 拆层视图 */
 const eb=document.getElementById('explodeBtn');
 eb.addEventListener('click',()=>{
-  document.body.classList.toggle('explode');
-  eb.classList.toggle('on');
+  const on=document.body.classList.toggle('explode');
+  eb.classList.toggle('on',on);
+  eb.setAttribute('aria-pressed',on);
 });
 
 /* 放大查看 */
 const overlay=document.getElementById('overlay'),stage=document.getElementById('stage');
+const HOVERLESS=matchMedia('(hover:none)').matches;
+document.querySelector('.overlay .hint').textContent=
+  HOVERLESS?'拖动倾斜 · 点按空白处关闭':'移动指针倾斜 · 点击空白处或按 Esc 关闭';
+let lastFocus=null;
+function openCard(k){
+  const c=CARDS.find(x=>x.k===k);if(!c)return;
+  lastFocus=document.activeElement;
+  stage.innerHTML=cardHTML(c,true);
+  const big=stage.querySelector('.hcard');big.classList.add('still');bind(big);
+  big.removeAttribute('role');
+  big.setAttribute('aria-label',`${c.n}闪卡(已放大,${HOVERLESS?'点按空白处关闭':'按 Esc 或点击空白处关闭'})`);
+  overlay.classList.add('on');big.focus();
+}
+function closeOverlay(){
+  stage.querySelectorAll('.hcard').forEach(el=>{ro.unobserve(el);io.unobserve(el)});
+  overlay.classList.remove('on');stage.innerHTML='';
+  if(lastFocus)lastFocus.focus();
+}
 grid.addEventListener('click',e=>{
-  const hc=e.target.closest('.hcard'); if(!hc)return;
-  const c=CARDS.find(x=>x.k===hc.dataset.k);
-  stage.innerHTML=cardHTML(c);
-  const big=stage.querySelector('.hcard'); big.classList.add('still'); bind(big);
-  overlay.classList.add('on');
+  const hc=e.target.closest('.hcard');if(hc)openCard(hc.dataset.k);
 });
-overlay.addEventListener('click',e=>{if(!e.target.closest('.hcard'))overlay.classList.remove('on')});
-addEventListener('keydown',e=>{if(e.key==='Escape')overlay.classList.remove('on')});
+grid.addEventListener('keydown',e=>{
+  if(e.key!=='Enter'&&e.key!==' ')return;
+  const hc=e.target.closest('.hcard');if(hc){e.preventDefault();openCard(hc.dataset.k)}
+});
+overlay.addEventListener('click',e=>{if(!e.target.closest('.hcard'))closeOverlay()});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay.classList.contains('on'))closeOverlay()});
+
+/* QA 钩子(须在全部声明之后):?pose=dx,dy 固定视差姿态并停摆;?explode=1 直接进拆层视图;
+   ?solo=<key> 单卡钉在 (40,40) 宽 600 处渲染,截图坐标与字体/布局无关 */
+{
+  const q=new URLSearchParams(location.search),pose=q.get('pose'),solo=q.get('solo');
+  if(solo&&GEO[solo]){
+    const c=CARDS.find(x=>x.k===solo);
+    document.body.innerHTML=`<div style="position:fixed;left:40px;top:40px;width:600px">${cardHTML(c,true)}</div>`;
+    const el=document.querySelector('.hcard');el.classList.add('still');bind(el);
+  }
+  if(pose){
+    io.disconnect();                       // 姿态冻结不受离屏停摆开关干扰
+    const[dx,dy]=pose.split(',').map(Number);
+    document.querySelectorAll('.hcard').forEach(el=>{
+      el.classList.add('still');
+      el.style.setProperty('--ry',(dx*13)+'deg');
+      el.style.setProperty('--rx',(-dy*13)+'deg');
+      el.style.setProperty('--dx',dx);el.style.setProperty('--dy',dy);
+      if(dx||dy)el.style.setProperty('--o',Math.min(1,Math.hypot(dx,dy)*1.2+.12));
+      el.style.setProperty('--mx',(50+dx*50)+'%');el.style.setProperty('--my',(50+dy*50)+'%');
+      el.style.setProperty('--fx',(30+dx*55)+'%');el.style.setProperty('--fy',(30+dy*55)+'%');
+    });
+  }
+  if(q.get('explode'))eb.click();
+}
 </script>
 </body>
 </html>
