@@ -38,7 +38,7 @@ python adapters/build.py
 | 目录 | 来源与纪律 |
 | --- | --- |
 | `assets/cards-full/` | patchwiki 原尺寸卡面,**原字节入库**(SHA 校验、零压缩;文件名 `.png` 但内容为 JPEG,浏览器按魔数解码无碍) |
-| `assets/cards/` | 640px 缩略 JPG,供网格铭牌 |
+| `assets/cards/` | 400×702 等尺寸缩略 JPG(`tools` 无脚本,由 cards-full 等比 cover 裁切;README 画廊与介绍页网格共用,**必须保持 15 张同尺寸**,否则画廊排版会大小不一) |
 | `assets/symbols/` | 15 枚徽记,由 `tools/crop_symbols.py` 对 cards-full 做 HoughCircles 圆检测裁切(勿再用旧固定常数) |
 | `assets/stickers/` | 官方 Q 版表情包,原字节入库;文件名为 ASCII 键名(`tribbie-ning`=缇宁、`tribbie-an`=缇安、`march7th-evernight`=长夜月) |
 | `assets/layers/` + `cards.html` | 闪卡视差分层实验(`tools/make_layers.py`),暂存档,待按新参考重做 |

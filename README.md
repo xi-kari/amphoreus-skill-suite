@@ -56,38 +56,54 @@ python ~/.claude/skills/amphoreus/scripts/validate.py --root ~/.claude/skills --
 
 ## 十三卡画廊
 
-与[在线介绍页](https://xi-kari.github.io/amphoreus-skill-suite/)同序陈列(卡序 I–XIII)。
+与[在线介绍页](https://xi-kari.github.io/amphoreus-skill-suite/)同序陈列(卡序 I–XIII),各卡司职见画廊下方速览表。
 
 <table>
 <tr>
-<td align="center" width="25%"><img src="assets/cards/tribbie.jpg" width="150" alt="缇宝"><br><img src="assets/stickers/tribbie.png" width="26" alt=""> <b>缇宝</b> · <sub>命运的三子</sub><br><code>amphoreus-tribbie</code><br><sub>I · 三声部讲解法 —— 新手 / 同行 / 专家分声部技术讲解</sub></td>
-<td align="center" width="25%"><img src="assets/cards/cerydra.jpg" width="150" alt="刻律德菈"><br><img src="assets/stickers/cerydra.png" width="26" alt=""> <b>刻律德菈</b> · <sub>执棋的君主</sub><br><code>amphoreus-cerydra</code><br><sub>II · 立法三读 —— 有证据、有成本、可评审、可撤销的工程规则</sub></td>
-<td align="center" width="25%"><img src="assets/cards/march7th.jpg" width="150" alt="三月七 / 长夜月"><br><img src="assets/stickers/march7th.png" width="26" alt=""><img src="assets/stickers/march7th-evernight.png" width="26" alt=""> <b>三月七 / 长夜月</b> · <sub>隐秘的陌客</sub><br><code>amphoreus-march7th</code><br><sub>III · 拍照式记录法 + 底片法 —— 日志与快照;备份 / 回滚 / 脱敏</sub></td>
-<td align="center" width="25%"><img src="assets/cards/terrae.jpg" width="150" alt="丹恒"><br><img src="assets/stickers/terrae.png" width="26" alt=""> <b>丹恒</b> · <sub>掣地的伏龙</sub><br><code>amphoreus-terrae</code><br><sub>IV · 承载法 —— 开发环境 / CI 构建 / 依赖底座 / 可逆迁移</sub></td>
+<td align="center" width="25%"><img src="assets/cards/tribbie.jpg" width="150" alt="缇宝"><br><img src="assets/stickers/tribbie.png" width="26" alt=""> <b>缇宝</b><br><sub>命运的三子</sub><br><code>amphoreus-tribbie</code><br><sub>I · 三声部讲解法</sub></td>
+<td align="center" width="25%"><img src="assets/cards/cerydra.jpg" width="150" alt="刻律德菈"><br><img src="assets/stickers/cerydra.png" width="26" alt=""> <b>刻律德菈</b><br><sub>执棋的君主</sub><br><code>amphoreus-cerydra</code><br><sub>II · 立法三读</sub></td>
+<td align="center" width="25%"><img src="assets/cards/march7th.jpg" width="150" alt="三月七 / 长夜月"><br><img src="assets/stickers/march7th.png" width="26" alt=""><img src="assets/stickers/march7th-evernight.png" width="26" alt=""> <b>三月七 / 长夜月</b><br><sub>隐秘的陌客</sub><br><code>amphoreus-march7th</code><br><sub>III · 拍照式记录法 + 底片法</sub></td>
+<td align="center" width="25%"><img src="assets/cards/terrae.jpg" width="150" alt="丹恒"><br><img src="assets/stickers/terrae.png" width="26" alt=""> <b>丹恒</b><br><sub>掣地的伏龙</sub><br><code>amphoreus-terrae</code><br><sub>IV · 承载法</sub></td>
 </tr>
 <tr>
-<td align="center"><img src="assets/cards/hysilens.jpg" width="150" alt="海瑟音"><br><img src="assets/stickers/hysilens.png" width="26" alt=""> <b>海瑟音</b> · <sub>奏浪的剑骑</sub><br><code>amphoreus-hysilens</code><br><sub>V · 歌集复盘法 + 无路引航式 —— 不归罪复盘 / 痛苦取舍导航</sub></td>
-<td align="center"><img src="assets/cards/hyacine.jpg" width="150" alt="风堇"><br><img src="assets/stickers/hyacine.png" width="26" alt=""> <b>风堇</b> · <sub>摇光的医师</sub><br><code>amphoreus-hyacine</code><br><sub>VI · 双处方 —— bug 诊断修复 / 依赖故障 / 维护债</sub></td>
-<td align="center"><img src="assets/cards/phainon.jpg" width="150" alt="白厄"><br><img src="assets/stickers/phainon.png" width="26" alt=""> <b>白厄</b> · <sub>负火的囚徒</sub><br><code>amphoreus-phainon</code><br><sub>VII · 推石法 —— 大型重构与批量迁移,可计数、可回滚</sub></td>
-<td align="center"><img src="assets/cards/anaxa.jpg" width="150" alt="那刻夏"><br><img src="assets/stickers/anaxa.png" width="26" alt=""> <b>那刻夏</b> · <sub>殁世的学士</sub><br><code>amphoreus-anaxa</code><br><sub>VIII · 五问法 + 删除测试 —— 代码 / 设计 / 论证评审</sub></td>
+<td align="center" width="25%"><img src="assets/cards/hysilens.jpg" width="150" alt="海瑟音"><br><img src="assets/stickers/hysilens.png" width="26" alt=""> <b>海瑟音</b><br><sub>奏浪的剑骑</sub><br><code>amphoreus-hysilens</code><br><sub>V · 歌集复盘法 + 无路引航式</sub></td>
+<td align="center" width="25%"><img src="assets/cards/hyacine.jpg" width="150" alt="风堇"><br><img src="assets/stickers/hyacine.png" width="26" alt=""> <b>风堇</b><br><sub>摇光的医师</sub><br><code>amphoreus-hyacine</code><br><sub>VI · 双处方</sub></td>
+<td align="center" width="25%"><img src="assets/cards/phainon.jpg" width="150" alt="白厄"><br><img src="assets/stickers/phainon.png" width="26" alt=""> <b>白厄</b><br><sub>负火的囚徒</sub><br><code>amphoreus-phainon</code><br><sub>VII · 推石法</sub></td>
+<td align="center" width="25%"><img src="assets/cards/anaxa.jpg" width="150" alt="那刻夏"><br><img src="assets/stickers/anaxa.png" width="26" alt=""> <b>那刻夏</b><br><sub>殁世的学士</sub><br><code>amphoreus-anaxa</code><br><sub>VIII · 五问法 + 删除测试</sub></td>
 </tr>
 <tr>
-<td align="center"><img src="assets/cards/aglaea.jpg" width="150" alt="阿格莱雅"><br><img src="assets/stickers/aglaea.png" width="26" alt=""> <b>阿格莱雅</b> · <sub>黄金的织者</sub><br><code>amphoreus-aglaea</code><br><sub>IX · 织造法 —— 项目规划 / 排期 / 取舍 / 里程碑</sub></td>
-<td align="center"><img src="assets/cards/mydei.jpg" width="150" alt="万敌"><br><img src="assets/stickers/mydei.png" width="26" alt=""> <b>万敌</b> · <sub>亡国的王储</sub><br><code>amphoreus-mydei</code><br><sub>X · 先让十步法 —— 硬 bug / 性能瓶颈 / 死锁的有界突破</sub></td>
-<td align="center"><img src="assets/cards/castorice.jpg" width="150" alt="遐蝶"><br><img src="assets/stickers/castorice.png" width="26" alt=""> <b>遐蝶</b> · <sub>死荫的侍女</sub><br><code>amphoreus-castorice</code><br><sub>XI · 告别四步 —— 影响先行的 API / 依赖 / 项目退役</sub></td>
-<td align="center"><img src="assets/cards/cipher.jpg" width="150" alt="赛飞儿"><br><img src="assets/stickers/cipher.png" width="26" alt=""> <b>赛飞儿</b> · <sub>捷足的羁客</sub><br><code>amphoreus-cipher</code><br><sub>XII · 行窃三则 —— 授权内对抗测试 / 边界用例 / 私密漏洞报告</sub></td>
+<td align="center" width="25%"><img src="assets/cards/aglaea.jpg" width="150" alt="阿格莱雅"><br><img src="assets/stickers/aglaea.png" width="26" alt=""> <b>阿格莱雅</b><br><sub>黄金的织者</sub><br><code>amphoreus-aglaea</code><br><sub>IX · 织造法</sub></td>
+<td align="center" width="25%"><img src="assets/cards/mydei.jpg" width="150" alt="万敌"><br><img src="assets/stickers/mydei.png" width="26" alt=""> <b>万敌</b><br><sub>亡国的王储</sub><br><code>amphoreus-mydei</code><br><sub>X · 先让十步法</sub></td>
+<td align="center" width="25%"><img src="assets/cards/castorice.jpg" width="150" alt="遐蝶"><br><img src="assets/stickers/castorice.png" width="26" alt=""> <b>遐蝶</b><br><sub>死荫的侍女</sub><br><code>amphoreus-castorice</code><br><sub>XI · 告别四步</sub></td>
+<td align="center" width="25%"><img src="assets/cards/cipher.jpg" width="150" alt="赛飞儿"><br><img src="assets/stickers/cipher.png" width="26" alt=""> <b>赛飞儿</b><br><sub>捷足的羁客</sub><br><code>amphoreus-cipher</code><br><sub>XII · 行窃三则</sub></td>
 </tr>
 <tr>
-<td align="center"><img src="assets/cards/cyrene.jpg" width="150" alt="昔涟"><br><img src="assets/stickers/cyrene.png" width="26" alt=""> <b>昔涟</b> · <sub>无瑕的真我</sub><br><code>amphoreus-cyrene</code><br><sub>XIII · 如我所书法 —— 项目记忆 / 阶段叙事 / 终版总装,逐字不改写</sub></td>
+<td align="center" width="25%"><img src="assets/cards/cyrene.jpg" width="150" alt="昔涟"><br><img src="assets/stickers/cyrene.png" width="26" alt=""> <b>昔涟</b><br><sub>无瑕的真我</sub><br><code>amphoreus-cyrene</code><br><sub>XIII · 如我所书法</sub></td>
 <td align="center" colspan="3">
-<table align="center"><tr>
-<td align="center"><img src="assets/cards/trailblazer-stelle.jpg" width="120" alt="星"><br><img src="assets/stickers/trailblazer-stelle.png" width="26" alt=""></td>
-<td align="left"><b>amphoreus 总路由</b> · <sub>开拓者「创世的著者」</sub><br><sub>意图识别与分发:过深度门(L0 直答 / L1 单卡 / L2 串卡 / L3 流水线会诊),<br>按角色适配与风格预算把请求路由到 13 张卡,不混声、不代演。</sub></td>
-<td align="center"><img src="assets/cards/trailblazer-caelus.jpg" width="120" alt="穹"><br><img src="assets/stickers/trailblazer-caelus.png" width="26" alt=""></td>
-</tr></table>
+<img src="assets/cards/trailblazer-stelle.jpg" width="150" alt="星">&nbsp;&nbsp;<img src="assets/cards/trailblazer-caelus.jpg" width="150" alt="穹"><br>
+<img src="assets/stickers/trailblazer-stelle.png" width="26" alt=""> <b>amphoreus 总路由</b> <img src="assets/stickers/trailblazer-caelus.png" width="26" alt=""><br>
+<sub>开拓者「创世的著者」</sub><br><code>amphoreus</code><br>
+<sub>意图识别与分发:过深度门(L0 直答 / L1 单卡 / L2 串卡 / L3 流水线会诊),<br>按角色适配与风格预算把请求路由到 13 张卡,不混声、不代演。</sub>
 </td>
 </tr>
 </table>
+
+| 卡序 | 方法卡 | 方法 | 司职 |
+| :---: | --- | --- | --- |
+| I | 缇宝 `amphoreus-tribbie` | 三声部讲解法 | 新手 / 同行 / 专家分声部技术讲解 |
+| II | 刻律德菈 `amphoreus-cerydra` | 立法三读 | 有证据、有成本、可评审、可撤销的工程规则 |
+| III | 三月七 / 长夜月 `amphoreus-march7th` | 拍照式记录法 + 底片法 | 日志与快照;备份 / 回滚 / 脱敏 |
+| IV | 丹恒 `amphoreus-terrae` | 承载法 | 开发环境 / CI 构建 / 依赖底座 / 可逆迁移 |
+| V | 海瑟音 `amphoreus-hysilens` | 歌集复盘法 + 无路引航式 | 不归罪复盘 / 痛苦取舍导航 |
+| VI | 风堇 `amphoreus-hyacine` | 双处方 | bug 诊断修复 / 依赖故障 / 维护债 |
+| VII | 白厄 `amphoreus-phainon` | 推石法 | 大型重构与批量迁移,可计数、可回滚 |
+| VIII | 那刻夏 `amphoreus-anaxa` | 五问法 + 删除测试 | 代码 / 设计 / 论证评审 |
+| IX | 阿格莱雅 `amphoreus-aglaea` | 织造法 | 项目规划 / 排期 / 取舍 / 里程碑 |
+| X | 万敌 `amphoreus-mydei` | 先让十步法 | 硬 bug / 性能瓶颈 / 死锁的有界突破 |
+| XI | 遐蝶 `amphoreus-castorice` | 告别四步 | 影响先行的 API / 依赖 / 项目退役 |
+| XII | 赛飞儿 `amphoreus-cipher` | 行窃三则 | 授权内对抗测试 / 边界用例 / 私密漏洞报告 |
+| XIII | 昔涟 `amphoreus-cyrene` | 如我所书法 | 项目记忆 / 阶段叙事 / 终版总装,逐字不改写 |
+| — | 总路由 `amphoreus` | 深度门与分派 | L0 直答 / L1 单卡 / L2 串卡 / L3 流水线会诊 |
 
 ## 两条流水线
 
