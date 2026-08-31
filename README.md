@@ -79,12 +79,9 @@ python ~/.claude/skills/amphoreus/scripts/validate.py --root ~/.claude/skills --
 </tr>
 <tr>
 <td align="center" width="25%"><img src="assets/cards/cyrene.jpg" width="150" alt="昔涟"><br><img src="assets/stickers/cyrene.png" width="26" alt=""> <b>昔涟</b><br><sub>无瑕的真我</sub><br><code>amphoreus-cyrene</code><br><sub>XIII · 如我所书法</sub></td>
-<td align="center" colspan="3">
-<img src="assets/cards/trailblazer-stelle.jpg" width="150" alt="星">&nbsp;&nbsp;<img src="assets/cards/trailblazer-caelus.jpg" width="150" alt="穹"><br>
-<img src="assets/stickers/trailblazer-stelle.png" width="26" alt=""> <b>amphoreus 总路由</b> <img src="assets/stickers/trailblazer-caelus.png" width="26" alt=""><br>
-<sub>开拓者「创世的著者」</sub><br><code>amphoreus</code><br>
-<sub>意图识别与分发:过深度门(L0 直答 / L1 单卡 / L2 串卡 / L3 流水线会诊),<br>按角色适配与风格预算把请求路由到 13 张卡,不混声、不代演。</sub>
-</td>
+<td align="center" width="25%"><img src="assets/cards/trailblazer-stelle.jpg" width="150" alt="开拓者·星"><br><img src="assets/stickers/trailblazer-stelle.png" width="26" alt=""> <b>开拓者 · 星</b><br><sub>创世的著者</sub></td>
+<td align="center" width="25%"><b>amphoreus 总路由</b><br><sub>开拓者「创世的著者」</sub><br><code>amphoreus</code><br><sub>意图识别与分发:<br>深度门 L0 直答 / L1 单卡<br>L2 串卡 / L3 流水线会诊<br>按角色适配与风格预算<br>路由至十三卡,<br>不混声、不代演</sub></td>
+<td align="center" width="25%"><img src="assets/cards/trailblazer-caelus.jpg" width="150" alt="开拓者·穹"><br><img src="assets/stickers/trailblazer-caelus.png" width="26" alt=""> <b>开拓者 · 穹</b><br><sub>创世的著者</sub></td>
 </tr>
 </table>
 
@@ -191,7 +188,7 @@ flowchart LR
 ├── .github/                  # CI(validate + 适配零漂移)+ Issue 模板(卡文问题 / 素材下架)
 ├── assets/
 │   ├── cards-full/           # 15 张原尺寸卡面(原字节入库,SHA 校验)
-│   ├── cards/                # 640px 缩略卡面
+│   ├── cards/                # 400×702 等尺寸缩略卡面(README 画廊 / 介绍页网格共用)
 │   ├── symbols/              # 15 枚黄金裔徽记(tools/crop_symbols.py 圆检测重裁)
 │   ├── stickers/             # 18 枚官方 Q 版表情包(原字节入库)
 │   └── layers/ · banner.jpg  # 闪卡分层素材(实验)· 横幅
