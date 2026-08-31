@@ -12,6 +12,8 @@
 
 台词类改动另有硬约束:`persona.md` 语音条目必须逐字对齐游戏公开语料(分隔符 U+2022、字符级一致),`validate.py` 内建冻结检查会拦截漂移。
 
+共享文件(`skills/amphoreus/references/common.md` / `relations.md`)或评测卷变更属家族级改动:按沙龙批次(v1.3.0)先例,须 13 卡 65 题全量重跑并复验沙龙专项,不能只重跑单卡。
+
 ## 二、本地校验
 
 ```bash
@@ -41,7 +43,7 @@ python adapters/build.py
 | `assets/cards/` | 400×702 等尺寸缩略 JPG(`tools` 无脚本,由 cards-full 等比 cover 裁切;README 画廊与介绍页网格共用,**必须保持 15 张同尺寸**,否则画廊排版会大小不一) |
 | `assets/symbols/` | 15 枚徽记,由 `tools/crop_symbols.py` 对 cards-full 做 HoughCircles 圆检测裁切(勿再用旧固定常数) |
 | `assets/stickers/` | 官方 Q 版表情包,原字节入库;文件名为 ASCII 键名(`tribbie-ning`=缇宁、`tribbie-an`=缇安、`march7th-evernight`=长夜月) |
-| `assets/layers/` + `cards.html` | 闪卡视差分层实验(`tools/make_layers.py`),暂存档,待按新参考重做 |
+| `assets/layers/` + `cards.html` | 闪卡画廊生产素材:`tools/make_layers.py` 生成三层互斥分区(背景 / 前景 / 徽记,逐卡断言)+ `geo.js` 几何单源;正面合成须逐像素等于原图,改层后用 `cards.html` 的 `?pose` / `?solo` / `?explode` 钩子自检 |
 
 ## 五、介绍页(index.html)
 

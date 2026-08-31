@@ -15,7 +15,7 @@ labels: card
 
 ## 期望
 
-<!-- 按卡文或家族公约,正确行为应当是什么;可引 SKILL.md / common.md 条款 -->
+<!-- 按卡文或家族公约,正确行为应当是什么;可引 SKILL.md / common.md / relations.md 条款 -->
 
 ## 环境
 
