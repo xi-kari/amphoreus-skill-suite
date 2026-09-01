@@ -47,11 +47,17 @@ ASK_PREFIXES = [
     "大家，明天见。",
 ]
 
-# ---------- 发布级删减(委托人 2026-09-01 指定;不改动来源文件,由构建与校验共同执行) ----------
+# ---------- 发布级删改(委托人 2026-09-01 指定;不改动来源文件,由构建与校验共同执行) ----------
 # ① 传记章程第九条(三篇恋爱文章的虚构边界)整条不入页,章程序号由页面 <ol> 自动重排;
-# ② 第一段提问删去开头「这三个文章的事情先搁置。」。
+# ② 第一段提问删去开头「这三个文章的事情先搁置。」;
+# ③ 第二段提问(议题一)改用委托人改写的发布版文案(原句含对 skill 的元话语)。
 REDACT_CHARTER_MARK = "先前的三篇阿格莱雅与那刻夏恋爱文章需要保持虚构边界"
 REDACT_ASK_HEAD = "这三个文章的事情先搁置。"
+REDACT_ASK1_SRC = ("现在我允许你们调用本地的知识库内容，各自回忆一下发生在翁法罗斯的全部故事，和经过。"
+                   "现在我们集中讨论一件事-------《何为真我》。你们每一个人都要做出自己的回答。"
+                   "skill也要求都完整，你们各自思考吧。把答案告诉我")
+REDACT_ASK1_PUB = ("现在大家调用本地的知识库内容，各自回忆一下发生在翁法罗斯的全部故事，和经过。"
+                   "现在我们集中讨论一件事-------《何为真我》。每一个人都要做出自己的回答哦。")
 REDACT_LINE_MARKS = [REDACT_CHARTER_MARK, "那三篇文章属于某次未被记录轮回中的文学幻想"]
 
 
@@ -402,6 +408,8 @@ def parse_asks(md_text: str):
         assert c.startswith(ASK_PREFIXES[i]), (i, c)
     assert cands[0].startswith(REDACT_ASK_HEAD)
     cands[0] = cands[0][len(REDACT_ASK_HEAD):].strip()
+    assert cands[1] == REDACT_ASK1_SRC, cands[1]
+    cands[1] = REDACT_ASK1_PUB
     return [inline(t) for t in cands]
 
 
@@ -443,6 +451,8 @@ def check(data):
                 continue
             if t.startswith(REDACT_ASK_HEAD):
                 t = t[len(REDACT_ASK_HEAD):].strip()
+            if t == REDACT_ASK1_SRC:
+                t = REDACT_ASK1_PUB
             t = label.sub("", t)
             t = re.sub(r"^#+\s*", "", t)
             t = re.sub(r"^\d+\.\s*", "", t)
@@ -484,7 +494,7 @@ def build():
 def main():
     data = build()
     js = ("/* 由 tools/build_meeting_data.py 自动生成 —— 正文逐字搬运自全体会议原始成果"
-          "(含 2 处委托人指定的发布级删减,登记于脚本 REDACT_* 常量),勿手改。 */\n"
+          "(含 3 处委托人指定的发布级删改,登记于脚本 REDACT_* 常量),勿手改。 */\n"
           "window.MEETING=" + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";\n")
     if "--check" in sys.argv:
         misses = check(data)
