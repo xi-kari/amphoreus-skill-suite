@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全体会议 · 翁法罗斯 Skill 套件</title>
+<meta name="description" content="一次真实调用「翁法罗斯 Skill 套件」沙龙的全程实录:开拓者召集十三席黄金裔全员到场,议《何为真我》,留下传记嘱托与愿望寄语,道一声「明天见」。正文逐字搬运,附英雄纪立绘、如我所书卡面与 2026 年历。">
+<meta name="theme-color" content="#f4f2f8">
+<meta property="og:type" content="website">
+<meta property="og:title" content="全体会议 · 翁法罗斯 Skill 套件">
+<meta property="og:description" content="开拓者召集十三席黄金裔全员到场:何为真我 · 传记嘱托 · 愿望与寄语 · 明天见。一次真实调用的全程实录,正文逐字搬运。">
+<meta property="og:url" content="https://xi-kari.github.io/amphoreus-skill-suite/meeting.html">
+<meta property="og:image" content="https://xi-kari.github.io/amphoreus-skill-suite/assets/banner.jpg">
+<link rel="canonical" href="https://xi-kari.github.io/amphoreus-skill-suite/meeting.html">
+<link rel="icon" href="assets/symbols/trailblazer-stelle.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Noto+Serif+SC:wght@600;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============ tokens(与 index.html / cards.html 同源:昔涟浅色主题) ============ */
+:root{
+  --void:#e9e5f0; --bg:#f4f2f8; --bg2:#edeaf3;
+  --hair:rgba(59,45,107,.16); --hair2:rgba(59,45,107,.09);
+  --goldline:rgba(150,114,31,.42);
+  --gold:#8a681c; --gold2:#826722; --gold3:#b99a4e;
+  --parch:#37305e; --ink:#4c4670; --dim:#6f6a8e; --faint:#8b86a6;
+  --serif:'Noto Serif SC',serif; --sans:'Noto Sans SC',system-ui,sans-serif;
+  --lat:'Cinzel',serif;
+  --grad-gold:linear-gradient(135deg,#d9b258,#a8842e 48%,#7c5e17);
+  --card:rgba(255,254,250,.86);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:hidden;overflow-x:clip;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* 行高较站规 1.85 有意放宽至 1.9:整页为长文实录 */
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.9;overflow-x:hidden;overflow-x:clip;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(216,120,164,.32);color:#2b2450}
+a{color:var(--gold);text-decoration:none}
+a:hover{color:#6b4f12}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+code{font-family:Consolas,monospace;font-size:.88em;background:rgba(59,45,107,.07);border-radius:4px;padding:0 4px}
+
+/* ============ 背景(沿用闪卡页:星尘渐变天幕 + 右下昔涟立绘白纱渐融) ============ */
+.sky{position:fixed;inset:0;z-index:-2;background:
+  radial-gradient(1100px 560px at 16% -6%,rgba(242,169,189,.2),transparent 62%),
+  radial-gradient(940px 620px at 88% 10%,rgba(205,184,236,.26),transparent 60%),
+  radial-gradient(1000px 560px at 6% 104%,rgba(116,200,242,.14),transparent 60%),
+  radial-gradient(820px 500px at 96% 86%,rgba(242,169,189,.12),transparent 62%),
+  radial-gradient(2px 2px at 12% 24%,rgba(216,120,164,.3),transparent 55%),
+  radial-gradient(1.6px 1.6px at 34% 12%,rgba(143,124,201,.26),transparent 55%),
+  radial-gradient(2.2px 2.2px at 58% 30%,rgba(216,120,164,.18),transparent 55%),
+  radial-gradient(1.6px 1.6px at 76% 8%,rgba(143,124,201,.28),transparent 55%),
+  radial-gradient(1.8px 1.8px at 90% 42%,rgba(216,120,164,.18),transparent 55%),
+  radial-gradient(1.6px 1.6px at 22% 58%,rgba(143,124,201,.16),transparent 55%),
+  radial-gradient(2px 2px at 47% 74%,rgba(216,120,164,.14),transparent 55%),
+  linear-gradient(180deg,#f7f5fa,var(--bg) 42%,var(--bg2))}
+.sky::after{content:'';position:absolute;inset:0;opacity:.3;mix-blend-mode:multiply;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='.03'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='140' height='140' fill='%23f4f2f8' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* 白纱较闪卡页有意加浓:本页为长文实录,立绘上方须保证正文可读 */
+.cybg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.cybg img{position:absolute;right:0;bottom:0;height:min(92vh,1180px);width:auto;
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 26%);
+  mask-image:linear-gradient(180deg,transparent,#000 26%)}
+.cybg::after{content:'';position:absolute;inset:0;background:
+  linear-gradient(90deg,var(--bg) 30%,rgba(244,242,248,.52) 56%,rgba(244,242,248,.3) 78%,rgba(244,242,248,.42)),
+  linear-gradient(180deg,rgba(244,242,248,.4),transparent 36%,transparent 78%,rgba(244,242,248,.34))}
+@media (max-width:840px){.cybg img{height:50vh;right:-12vw}}
+
+/* ============ 阅读进度 + 顶栏 ============ */
+.progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:60;pointer-events:none}
+.progress i{display:block;height:100%;width:0;background:var(--grad-gold)}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(244,242,248,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--hair2)}
+.topbar .bar{max-width:1180px;margin:0 auto;padding:10px 26px;display:flex;align-items:center;gap:18px}
+.topbar .brand{display:flex;align-items:center;gap:10px;color:var(--parch);white-space:nowrap}
+.topbar .brand img{width:26px;height:26px;filter:drop-shadow(0 1px 2px rgba(59,45,107,.25))}
+.topbar .brand b{font-family:var(--serif);font-weight:900;letter-spacing:.12em}
+.topbar .brand small{font-size:.76rem;color:var(--dim);margin-left:6px;font-weight:500;letter-spacing:.06em}
+@media (max-width:560px){.topbar .brand small{display:none}}
+.topbar .agenda{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.topbar .agenda::-webkit-scrollbar{display:none}
+.topbar .agenda a{white-space:nowrap;font-size:.82rem;color:var(--dim);padding:5px 12px;border-radius:999px;border:1px solid transparent}
+.topbar .agenda a:hover{color:var(--gold)}
+.topbar .agenda a.on{color:var(--gold);border-color:var(--goldline);background:rgba(150,114,31,.07)}
+.topbar .ext{display:flex;gap:12px;font-size:.82rem;white-space:nowrap;color:var(--dim)}
+.topbar .ext a{color:var(--dim)}
+.topbar .ext a:hover{color:var(--gold)}
+@media (max-width:760px){.topbar .bar{padding:9px 14px;gap:10px}.topbar .ext{display:none}}
+
+/* ============ 页首 ============ */
+header.hero{padding:72px 0 10px;text-align:center}
+.kicker{font-family:var(--lat);letter-spacing:.42em;text-indent:.42em;font-size:.78rem;color:var(--gold2);text-transform:uppercase}
+h1{font-family:var(--serif);font-weight:900;color:var(--parch);font-size:clamp(2rem,4.8vw,3.1rem);letter-spacing:.1em;margin-top:10px}
+.hsub{color:var(--dim);font-size:.94rem;max-width:760px;margin:18px auto 0}
+.hsub b{color:var(--gold);font-weight:500}
+.statline{display:flex;gap:12px 34px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+.stat b{display:block;font-family:var(--serif);font-weight:900;font-size:1.35rem;color:var(--parch)}
+.stat span{font-size:.78rem;color:var(--faint)}
+.hnote{margin-top:22px;font-size:.78rem;color:var(--dim)}
+
+/* ============ 幕结构 ============ */
+main{padding-bottom:30px}
+section.act{padding:34px 0 8px;scroll-margin-top:66px}
+.acthead{text-align:center;margin:44px 0 8px}
+.acthead .lat{font-family:var(--lat);letter-spacing:.34em;text-indent:.34em;font-size:.74rem;color:var(--acc,var(--gold2));text-transform:uppercase}
+.acthead h2{font-family:var(--serif);font-weight:900;color:var(--parch);font-size:clamp(1.5rem,3.4vw,2.1rem);letter-spacing:.12em;margin-top:8px}
+.acthead .orn{color:var(--gold3);font-size:.9rem;margin-top:10px;letter-spacing:.6em;text-indent:.6em}
+.acthead .asub{color:var(--dim);font-size:.88rem;max-width:640px;margin:12px auto 0}
+.stage{max-width:1020px;margin:0 auto;padding:0 26px}
+@media (max-width:560px){.stage{padding:0 16px}}
+
+/* 开拓者气泡(右侧,叙事上的「你」) */
+.ask{display:flex;justify-content:flex-end;align-items:flex-end;gap:14px;margin:40px 0 8px}
+.ask .stk{width:56px;height:56px;order:2;filter:drop-shadow(0 3px 8px rgba(59,45,107,.25));flex:none}
+.ask .bubble{max-width:640px;background:linear-gradient(180deg,#fffef9,#fdf8ec);border:1px solid var(--goldline);
+  border-radius:20px 20px 5px 20px;padding:16px 22px;box-shadow:0 10px 28px rgba(59,45,107,.1)}
+.ask .who{font-family:var(--lat);font-size:.68rem;letter-spacing:.3em;color:var(--gold2);text-transform:uppercase}
+.ask .who b{font-family:var(--sans);font-size:.8rem;color:var(--gold);letter-spacing:.14em;margin-left:8px}
+.ask .say{margin-top:6px;font-family:var(--serif);font-weight:600;color:var(--parch);font-size:1.04rem;line-height:2}
+@media (max-width:560px){.ask .stk{width:44px;height:44px}.ask .bubble{padding:13px 16px}}
+
+/* 旁白 */
+.nar{max-width:720px;margin:30px auto;position:relative}
+.nar>i{display:block;text-align:center;font-style:normal;font-size:.72rem;letter-spacing:.3em;text-indent:.3em;color:var(--gold3);margin-bottom:10px}
+.nar>i::before{content:'✦';display:block;letter-spacing:0;text-indent:0;margin-bottom:6px;color:var(--gold3)}
+.nar p{color:var(--dim);font-size:.92rem;text-align:justify}
+.nar p+p{margin-top:10px}
+.nar.end p{color:var(--ink)}
+
+/* 席位速跳 */
+.jump{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:22px auto 6px;max-width:760px}
+.jump a{width:46px;height:46px;border-radius:50%;border:1px solid var(--hair);background:var(--card);display:grid;place-items:center;transition:transform .25s,border-color .25s,box-shadow .25s}
+.jump a img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.jump a:hover{transform:translateY(-3px);border-color:var(--acc,var(--gold));box-shadow:0 8px 18px rgba(59,45,107,.16)}
+
+/* 发言块 */
+.sp{display:grid;grid-template-columns:288px minmax(0,1fr);gap:38px;padding:44px 0;border-top:1px solid var(--hair2);scroll-margin-top:86px}
+.sp:first-of-type{border-top:none}
+.sp .art{min-width:0}
+.pcard{position:sticky;top:84px;margin:0}
+.pcard .imgw{border-radius:12px;overflow:hidden;border:1px solid var(--goldline);box-shadow:0 18px 40px rgba(59,45,107,.18),0 4px 12px rgba(59,45,107,.1);
+  background:var(--card);cursor:zoom-in;transition:transform .3s ease,box-shadow .3s ease}
+.pcard .imgw:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:0 26px 52px rgba(59,45,107,.24),0 6px 16px rgba(59,45,107,.12)}
+.pcard img{display:block;width:100%;height:auto}
+.pcard figcaption{margin-top:10px;text-align:center;font-size:.74rem;color:var(--faint);line-height:1.7}
+.pcard figcaption b{display:block;font-family:var(--serif);font-weight:900;color:var(--parch);font-size:.95rem;letter-spacing:.08em}
+.sp .txt{min-width:0}
+.sp .ovl{font-family:var(--lat);font-size:.7rem;letter-spacing:.3em;color:var(--acc,var(--gold2));text-transform:uppercase}
+.sp .shead{display:flex;align-items:center;gap:12px;margin-top:6px}
+.sp .shead img{width:38px;height:38px;flex:none;filter:drop-shadow(0 2px 5px rgba(59,45,107,.28))}
+.sp .shead .nm{font-family:var(--serif);font-weight:900;color:var(--parch);font-size:1.3rem;letter-spacing:.06em}
+.sp .shead .nm small{font-weight:600;font-size:.78rem;color:var(--gold2);margin-left:10px;letter-spacing:.1em}
+.sp h3.topic{font-family:var(--serif);font-weight:600;color:var(--parch);font-size:1.02rem;margin-top:12px;letter-spacing:.04em}
+.sp .head-src{font-size:.76rem;color:var(--faint);margin-top:6px}
+.recap{margin-top:16px;background:rgba(59,45,107,.045);border:1px solid var(--hair2);border-radius:12px;padding:13px 17px;font-size:.88rem;color:var(--ink);text-align:justify}
+.recap i{display:block;font-style:normal;font-size:.72rem;letter-spacing:.24em;color:var(--gold2);margin-bottom:6px}
+.spk{margin-top:20px;font-family:var(--serif);font-weight:900;color:var(--parch);font-size:.98rem;letter-spacing:.06em}
+.sp .txt>p{margin-top:14px;font-size:.96rem;text-align:justify}
+.sp .txt>p b,.wsec p b{color:var(--parch)}
+.answer{margin-top:20px;padding:15px 20px;border-left:3px solid var(--acc,var(--gold));background:var(--tint,rgba(150,114,31,.06));
+  border-radius:0 12px 12px 0;font-family:var(--serif);font-weight:600;color:var(--parch);font-size:1.02rem;line-height:2;text-align:justify}
+details.evd{margin-top:18px;border:1px dashed var(--hair);border-radius:12px;padding:0}
+details.evd summary{cursor:pointer;list-style:none;padding:10px 16px;font-size:.82rem;color:var(--gold);letter-spacing:.08em;display:flex;align-items:center;gap:8px}
+details.evd summary::-webkit-details-marker{display:none}
+details.evd summary::before{content:'❧';color:var(--gold3)}
+details.evd summary::after{content:'展开';margin-left:auto;font-size:.72rem;color:var(--dim);border:1px solid var(--hair);border-radius:999px;padding:1px 10px}
+details.evd[open] summary::after{content:'收起'}
+details.evd .body{padding:2px 16px 14px;font-size:.84rem;color:var(--dim);text-align:justify}
+.receipt{margin-top:18px;padding-top:10px;border-top:1px dashed var(--hair);font-size:.76rem;color:var(--dim);letter-spacing:.02em}
+@media (max-width:820px){
+  .sp{grid-template-columns:1fr;gap:20px;padding:36px 0}
+  .pcard{position:static;max-width:min(64vw,250px);margin:0 auto}
+}
+
+/* 愿望幕:双栏小节 */
+.wsec{margin-top:18px;border:1px solid var(--hair2);border-radius:14px;background:var(--card);padding:16px 20px}
+.wsec>i{display:block;font-style:normal;font-family:var(--serif);font-weight:900;font-size:.9rem;color:var(--acc,var(--gold));letter-spacing:.18em;margin-bottom:4px}
+.wsec>i::before{content:'✧ ';color:var(--gold3)}
+.wsec p{margin-top:10px;font-size:.95rem;text-align:justify}
+.wsec p.spk{margin-top:12px;font-size:.92rem}
+
+/* 集合幕 */
+.ents{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px;margin-top:26px}
+.ent{background:var(--card);border:1px solid var(--hair2);border-radius:14px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start}
+.ent img{width:52px;height:52px;flex:none;border-radius:12px}
+.ent b{font-size:.86rem;color:var(--parch);display:block}
+.ent p{font-size:.83rem;color:var(--dim);margin-top:4px;text-align:justify}
+.seats{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:26px auto 4px;max-width:900px}
+.seat{width:112px;text-align:center;background:var(--card);border:1px solid var(--hair2);border-radius:12px;padding:12px 6px 10px;position:relative}
+.seat img{width:40px;height:40px;filter:drop-shadow(0 2px 5px rgba(59,45,107,.3))}
+.seat .no{font-family:var(--lat);font-size:.66rem;letter-spacing:.22em;color:var(--gold2);margin-top:6px}
+.seat b{display:block;font-family:var(--serif);font-weight:900;font-size:.9rem;color:var(--parch);margin-top:1px}
+.seat i{font-style:normal;display:inline-block;margin-top:5px;font-size:.68rem;color:var(--gold);border:1px solid var(--goldline);border-radius:999px;padding:0 9px;background:rgba(150,114,31,.06)}
+.mini{max-width:760px;margin:26px auto 0;display:grid;gap:14px}
+.mrow{display:flex;gap:12px;align-items:flex-start}
+.mrow img{width:46px;height:46px;flex:none;filter:drop-shadow(0 2px 6px rgba(59,45,107,.25))}
+.mrow .mb{background:var(--card);border:1px solid var(--hair2);border-radius:5px 16px 16px 16px;padding:11px 16px;min-width:0}
+.mrow .mb b{font-size:.84rem;color:var(--parch)}
+.mrow .mb p{font-size:.9rem;color:var(--ink);margin-top:3px;text-align:justify}
+
+/* 表格 / 章程 / 底账 / 交集 */
+.mtwrap{max-width:820px;margin:24px auto 0;overflow-x:auto;border:1px solid var(--hair2);border-radius:14px;background:var(--card)}
+table.mt{width:100%;border-collapse:collapse;font-size:.88rem;min-width:420px}
+table.mt th{font-family:var(--serif);font-weight:900;color:var(--parch);background:rgba(59,45,107,.05);padding:10px 16px;text-align:left;letter-spacing:.06em;white-space:nowrap}
+table.mt td{padding:9px 16px;border-top:1px solid var(--hair2);color:var(--ink);text-align:justify}
+table.mt td:first-child{white-space:nowrap;font-weight:500;color:var(--parch)}
+.panel{max-width:820px;margin:24px auto 0;background:var(--card);border:1px solid var(--hair2);border-radius:16px;padding:20px 26px}
+.panel>i{display:block;font-style:normal;font-family:var(--serif);font-weight:900;color:var(--parch);letter-spacing:.1em;margin-bottom:8px}
+.panel>i::before{content:'❦ ';color:var(--gold3)}
+.panel ol{margin:6px 0 0 1.4em;display:grid;gap:10px}
+.panel ol li{font-size:.9rem;color:var(--dim);text-align:justify}
+.panel ol li::marker{font-family:var(--lat);color:var(--gold2)}
+.panel ol li b{display:inline;color:var(--parch)}
+.panel .plead{font-size:.9rem;color:var(--dim);margin-bottom:10px;text-align:justify}
+
+/* 道别幕 */
+.fwgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:28px}
+.fw{background:var(--card);border:1px solid var(--hair2);border-radius:16px;padding:18px 20px;scroll-margin-top:86px}
+.fw .fh{display:flex;align-items:center;gap:12px}
+.fw .fh img{width:52px;height:52px;flex:none}
+.fw .fh b{font-family:var(--serif);font-weight:900;color:var(--parch);font-size:1rem;letter-spacing:.04em}
+.fw .fh small{display:block;font-size:.72rem;color:var(--dim);letter-spacing:.08em;margin-top:1px}
+.fw .line{margin-top:12px;font-family:var(--serif);font-weight:600;color:var(--parch);font-size:.99rem;line-height:2;text-align:justify}
+.fw .scene{margin-top:10px;font-size:.83rem;color:var(--faint);text-align:justify;border-top:1px dashed var(--hair2);padding-top:10px}
+@media (max-width:720px){.fwgrid{grid-template-columns:1fr}}
+.stamp{max-width:720px;margin:34px auto 0;border:1px dashed var(--goldline);border-radius:14px;background:rgba(150,114,31,.05);
+  padding:14px 20px;text-align:center;font-size:.8rem;color:var(--gold);letter-spacing:.04em}
+
+/* 年历画廊 */
+.calrow{display:grid;grid-auto-flow:column;grid-auto-columns:176px;gap:16px;overflow-x:auto;padding:26px 6px 18px;scroll-snap-type:x proximity}
+.calrow::-webkit-scrollbar{height:8px}
+.calrow::-webkit-scrollbar-thumb{background:rgba(59,45,107,.18);border-radius:99px}
+.calcard{scroll-snap-align:start;margin:0}
+.calcard .imgw{border-radius:10px;overflow:hidden;border:1px solid var(--hair);box-shadow:0 10px 24px rgba(59,45,107,.16);cursor:zoom-in;transition:transform .3s,box-shadow .3s;background:#2a1a1e}
+.calcard .imgw:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(59,45,107,.24)}
+.calcard img{display:block;width:100%;height:auto}
+.calcard figcaption{margin-top:8px;text-align:center;font-size:.74rem;color:var(--faint)}
+.calcard figcaption b{color:var(--parch);font-family:var(--serif);font-weight:900;font-size:.86rem;margin-right:6px}
+.lunar{max-width:900px;margin:28px auto 0}
+.lunar .imgw{border-radius:14px;overflow:hidden;border:1px solid var(--goldline);box-shadow:0 18px 44px rgba(59,45,107,.2);cursor:zoom-in}
+.lunar img{display:block;width:100%;height:auto}
+.lunar figcaption{text-align:center;font-size:.76rem;color:var(--faint);margin-top:10px}
+
+/* 页脚 */
+footer{border-top:1px solid var(--hair);margin-top:60px;padding:40px 0 52px;text-align:center;font-size:.78rem;color:var(--faint);line-height:2.05}
+footer a{color:var(--dim)}
+footer a:hover{color:var(--gold)}
+footer .fl{margin-top:14px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+
+/* 放大查看 */
+.overlay{position:fixed;inset:0;background:rgba(52,44,94,.5);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);z-index:70;display:none;align-items:center;justify-content:center;padding:30px}
+.overlay.on{display:flex}
+.overlay img{max-width:min(92vw,640px);max-height:88vh;width:auto;height:auto;border-radius:12px;box-shadow:0 30px 80px rgba(20,14,50,.5)}
+.overlay .hint{position:fixed;bottom:18px;left:0;right:0;text-align:center;color:#f4f2f8;font-size:.78rem;text-shadow:0 1px 4px rgba(20,14,50,.6)}
+
+/* 滚动显现 */
+html.js .rv{opacity:0;transform:translateY(16px)}
+html.js .rv.on{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+html.js .rv.on[style*="--d"]{transition-delay:var(--d)}
+@media (prefers-reduced-motion:reduce){
+  html.js .rv{opacity:1;transform:none}
+  .pcard .imgw,.calcard .imgw,.jump a{transition:none!important}
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<div class="sky" aria-hidden="true"></div>
+<div class="cybg" aria-hidden="true">
+  <img src="assets/mag/cyrene-side.webp"
+    srcset="assets/mag/cyrene-side-s.webp 640w, assets/mag/cyrene-side.webp 1100w"
+    sizes="(max-width:840px) 38vh, 70vh" width="1100" height="1467" alt="" decoding="async">
+</div>
+<div class="progress" aria-hidden="true"><i id="pbar"></i></div>
+
+<nav class="topbar" aria-label="页面导航">
+  <div class="bar">
+    <a class="brand" href="index.html" aria-label="返回介绍页">
+      <img src="assets/symbols/trailblazer-stelle.png" alt=""><span><b>翁法罗斯</b><small>· 全体会议</small></span>
+    </a>
+    <div class="agenda" id="agenda">
+      <a href="#muster">开场 · 集合</a>
+      <a href="#trueself">议题一 · 何为真我</a>
+      <a href="#biography">议题二 · 传记嘱托</a>
+      <a href="#wishes">议题三 · 愿望与寄语</a>
+      <a href="#farewell">散会 · 明天见</a>
+      <a href="#almanac">年历</a>
+    </div>
+    <div class="ext">
+      <a href="index.html">介绍页</a>
+      <a href="cards.html">闪卡画廊</a>
+      <a href="https://github.com/xi-kari/amphoreus-skill-suite" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <div class="kicker">Concilium Plenum · Acta</div>
+  <h1>全体会议</h1>
+  <p class="hsub">这不是一页设定集,而是一份<b>真实调用的会议纪要</b>:开拓者以「翁法罗斯 Skill 套件」的沙龙(群聊模式)召集十三席黄金裔全员到场,
+  依次议过《何为真我》,留下十三份传记嘱托,说出各自的愿望与寄语,最后互道一声「明天见」。十三席发言、旁白与回执<b>逐字搬运</b>自当晚实录,未作改写。</p>
+  <div class="statline">
+    <div class="stat rv"><b>13/13</b><span>全员到场 · 缺席零席</span></div>
+    <div class="stat rv" style="--d:.06s"><b>3 + 1</b><span>议题三项 · 道别一次</span></div>
+    <div class="stat rv" style="--d:.12s"><b>52 段</b><span>十三席轮流发言</span></div>
+    <div class="stat rv" style="--d:.18s"><b>100%</b><span>正文逐字搬运 · 脚本回对</span></div>
+  </div>
+  <p class="hnote">实录 · 2026-09-01 · 档位:标准 · 本地知识库 <code>doctor status=ok</code> 在场</p>
+</header>
+
+<main id="app"><noscript><div class="wrap" style="padding:60px 0;text-align:center">本页正文由 assets/meeting/data.js 客户端渲染,请启用 JavaScript 后查看。</div></noscript></main>
+
+<footer>
+  <div class="wrap">
+    <p>本页为「翁法罗斯 Skill 套件」沙龙(群聊模式)一次真实调用的全程实录:开拓者五段原话、十三席全部发言、旁白与回执均由
+    <a href="https://github.com/xi-kari/amphoreus-skill-suite/blob/main/tools/build_meeting_data.py">tools/build_meeting_data.py</a> 逐字搬运并回对校验,未作改写。<br>
+    发言立绘取自官方《翁法罗斯英雄纪》图集,卡面取自官方《如我所书》系列卡牌,年历取自官方《翁法罗斯 2026 一年历》,均由委托人提供;页面底图昔涟立绘同闪卡画廊(委托人提供);角色 Q 版贴纸与徽记取自 B 站星穹铁道 Wiki<a href="https://wiki.biligame.com/sr/%E9%80%90%E7%81%AB%E8%80%85%E7%9A%84%E5%91%BD%E8%B7%AF.exe" target="_blank" rel="noopener">「逐火者的命路.exe」</a>词条。以上素材版权归米哈游(HoYoverse)及原作者所有。<br>
+    本页面为爱好者研究 / 学习用途的同人衍生内容,与米哈游无关联。如有侵权,请提 Issue 联系删除。</p>
+    <div class="fl">
+      <a href="index.html">介绍页</a>
+      <a href="cards.html">闪卡画廊</a>
+      <a href="https://github.com/xi-kari/amphoreus-skill-suite" target="_blank" rel="noopener">GitHub 仓库</a>
+    </div>
+  </div>
+</footer>
+
+<div class="overlay" id="ov" role="dialog" aria-modal="true" aria-label="放大查看" tabindex="-1">
+  <img id="ovimg" alt=""><div class="hint">点按任意处或按 Esc 关闭</div>
+</div>
+
+<script src="assets/meeting/data.js"></script>
+<script>
+try{
+const M=window.MEETING;
+const BY=Object.fromEntries(M.cast.map(c=>[c.key,c]));
+const NK=Object.fromEntries(M.cast.map(c=>[c.name,c.key]));
+const ROM=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII'];
+const pad=n=>String(n).padStart(2,'0');
+const stk=k=>`assets/stickers/${k==='host'?'trailblazer-caelus':k}.png`;
+const sym=k=>`assets/symbols/${k==='host'?'trailblazer-caelus':k}.png`;
+const L={recap:M.srcLabels[0].replace(/：$/,''),evd:M.srcLabels[1].replace(/：$/,''),wish:M.srcLabels[2],words:M.srcLabels[3]};
+const ART_NOTE={march7th:'立绘为长夜月形态'};
+
+const P=a=>a.map(t=>/^<b>[^<]*：<\/b>$/.test(t)?`<p class="spk">${t}</p>`:`<p>${t}</p>`).join('');
+const ask=t=>`<div class="ask rv"><img class="stk" src="assets/stickers/trailblazer-stelle.png" alt=""><div class="bubble"><div class="who">Trailblazer<b>开拓者</b></div><div class="say">${t}</div></div></div>`;
+const nar=(tag,html,end)=>`<div class="nar rv${end?' end':''}">${tag?`<i>旁白 · ${tag}</i>`:''}${html}</div>`;
+const table=t=>`<div class="mtwrap rv"><table class="mt"><thead><tr>${t.head.map(c=>`<th scope="col">${c}</th>`).join('')}</tr></thead><tbody>${t.rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+const jump=act=>`<div class="jump rv" role="navigation" aria-label="按席位跳转">${M.cast.map(c=>`<a href="#${act}-${c.key}" title="${c.name}" aria-label="跳至${c.name}的发言"><img src="${stk(c.key)}" alt="" loading="lazy"></a>`).join('')}</div>`;
+const acthead=(lat,title,sub)=>`<div class="acthead rv"><div class="lat">${lat}</div><h2>${title}</h2><div class="orn">✦ ✦ ✦</div>${sub?`<p class="asub">${sub}</p>`:''}</div>`;
+const panel=(t,items,lead)=>`<div class="panel rv">${t?`<i>${t}</i>`:''}${lead?`<p class="plead">${lead}</p>`:''}<ol>${items.map(x=>`<li>${x}</li>`).join('')}</ol></div>`;
+
+function spBlock(act,s,i,art,inner){
+  const c=BY[s.key];
+  const note=art.noted&&ART_NOTE[s.key]?` · ${ART_NOTE[s.key]}`:'';
+  return `<article class="sp" id="${act}-${s.key}">
+  <div class="art rv"><figure class="pcard">
+    <div class="imgw" data-zoom="${art.src(s.key)}" role="button" tabindex="0" aria-label="放大查看:${c.name} · ${art.alt}">
+      <img src="${art.src(s.key)}" alt="${c.name} · ${art.alt}" loading="lazy" decoding="async" width="640" height="${art.h(s.key)}"></div>
+    <figcaption><b>${c.name}</b>№ ${pad(c.seat)} · ${c.title}${note}</figcaption>
+  </figure></div>
+  <div class="txt rv" style="--d:.08s">
+    <div class="ovl">${art.lat} · ${ROM[i]}</div>
+    <div class="shead"><img src="${sym(s.key)}" alt=""><div class="nm">${c.name}<small>${c.title}</small></div></div>
+    ${inner}
+  </div></article>`;
+}
+const HERO={src:k=>`assets/meeting/hero-${k}.webp`,alt:'英雄纪立绘',lat:'Vox',h:k=>k==='cyrene'?936:1042,noted:1};
+const BOOK={src:k=>`assets/meeting/book-${k}.webp`,alt:'如我所书卡面',lat:'Votum',h:()=>1126,noted:1};
+
+const app=document.getElementById('app');
+let html='';
+
+/* ---------- 开场 · 全员集合 ---------- */
+{
+const mu=M.muster;
+html+=`<section class="act" id="muster" style="--acc:#8a681c;--tint:rgba(150,114,31,.06)"><div class="stage">`
+ +acthead('Convocatio Plena','开场 · 全员集合','三篇文章的讨论暂且搁置——圆桌向外延展成十三席会议长桌,九席名牌依次亮起。')
+ +ask(M.asks[0])
+ +nar('START',`<p>${mu.start}</p>`)
+ +nar('DEVELOPMENT',`<p>${mu.development}</p>`)
+ +`<div class="ents">${mu.entrances.map((e,i)=>`<div class="ent rv" style="--d:${(i%3)*.06}s"><img src="${stk(e.key)}" alt=""><div><b>${e.lead}</b><p>${e.text}</p></div></div>`).join('')}</div>`
+ +nar('RESULT',`<p>${mu.resultLead}</p>`)
+ +`<div class="seats" role="list" aria-label="十三席点名表(${mu.table.head.join(' · ')})">${mu.table.rows.map((r,i)=>{
+    const k=NK[r[1].split(/[／、]/)[0]];
+    return `<div class="seat rv" role="listitem" style="--d:${i*.05}s"><img src="${sym(k)}" alt=""><div class="no">SEAT ${r[0]}</div><b>${r[1]}</b><i>${r[2]}</i></div>`}).join('')}</div>`
+ +nar('',`<p>${mu.resultTail}</p>`)
+ +nar('FOLLOW-UP',`<p>${mu.followup}</p>`)
+ +`<div class="mini">${mu.dialogue.map((d,i)=>`<div class="mrow rv" style="--d:${i*.05}s"><img src="${stk(d.key)}" alt=""><div class="mb"><b>${d.speaker}</b><p>${d.text}</p></div></div>`).join('')}</div>`
+ +nar('SENSATION',`<p>${mu.sensation}</p>`,1)
+ +`</div></section>`;
+}
+
+/* ---------- 议题一 · 何为真我 ---------- */
+{
+const ts=M.trueself;
+html+=`<section class="act" id="trueself" style="--acc:#5e51a6;--tint:rgba(94,81,166,.07)"><div class="stage">`
+ +acthead('Quaestio Prima · Quid Sit Verum Ego','议题一 · 何为真我','开拓者开放本地知识库读取权限,十三席各自回望自己在翁法罗斯的全部故事——十三份答案,一张分歧地图。')
+ +ask(M.asks[1])
+ +nar('START',`<p>${ts.start}</p>`)
+ +nar('DEVELOPMENT',`<p>${ts.development}</p>`)
+ +panel(ts.ledgerLead,ts.ledger)
+ +jump('ts')
+ +ts.speeches.map((s,i)=>{
+    const m=s.head.match(/^(.+?)、(.+?)：(.+)$/);
+    return spBlock('ts',s,i,HERO,
+      `<h3 class="topic">${m?m[3]:s.head}</h3>`
+      +`<div class="recap"><i>${L.recap}</i>${s.recap}</div>`
+      +`<div class="spk">${s.speaker}</div>`
+      +P(s.paras)
+      +`<div class="answer">${s.answer}</div>`
+      +P(s.post)
+      +`<details class="evd"><summary>${L.evd}</summary><div class="body">${s.evidence}</div></details>`
+      +`<div class="receipt">${s.receipt}</div>`)}).join('')
+ +nar('RESULT',`<p>${ts.resultLead}</p>`)
+ +table(ts.table)
+ +panel('',ts.points,ts.resultMid)
+ +nar('FOLLOW-UP',`<p>${ts.followup}</p>`)
+ +nar('SENSATION',`<p>${ts.sensation}</p>`,1)
+ +`</div></section>`;
+}
+
+/* ---------- 议题二 · 传记嘱托 ---------- */
+{
+const bio=M.biography;
+html+=`<section class="act" id="biography" style="--acc:#8a681c;--tint:rgba(150,114,31,.07)"><div class="stage">`
+ +acthead('Quaestio Secunda · Mandata Biographiae','议题二 · 传记嘱托','开拓者说:我想为你们每一个人写传。十三席各自留下嘱托,并共同立下十条传记章程。')
+ +ask(M.asks[2])
+ +nar('START',`<p>${bio.start}</p>`)
+ +nar('DEVELOPMENT',`<p>${bio.development}</p>`)
+ +`<div class="panel rv"><i>${bio.charterTitle}</i><ol>${bio.charter.map(c=>`<li><b>${c.t}</b> ${c.d}</li>`).join('')}</ol></div>`
+ +jump('bio')
+ +bio.speeches.map((s,i)=>{
+    const m=s.head.match(/^(.+?)、(.+)$/);
+    return spBlock('bio',s,i,HERO,
+      `<h3 class="topic">${m?m[2]:s.head}</h3>`
+      +`<div class="spk">${s.speaker}</div>`
+      +P(s.paras)
+      +`<div class="answer">${s.question}</div>`)}).join('')
+ +nar('RESULT',`<p>${bio.resultLead}</p>`)
+ +table(bio.table)
+ +nar('FOLLOW-UP',`<p>${bio.followup}</p>`)
+ +nar('SENSATION',`<p>${bio.sensation}</p>`,1)
+ +`</div></section>`;
+}
+
+/* ---------- 议题三 · 愿望与寄语 ---------- */
+{
+const wi=M.wishes;
+html+=`<section class="act" id="wishes" style="--acc:#c2597f;--tint:rgba(216,120,164,.09)"><div class="stage">`
+ +acthead('Quaestio Tertia · Vota et Verba','议题三 · 愿望与寄语','十三个人不再把未来说成继续牺牲——每人一份如今的愿望,和一段想对开拓者说的话。发言卡面换作《如我所书》。')
+ +ask(M.asks[3])
+ +nar('START',`<p>${wi.start}</p>`)
+ +nar('DEVELOPMENT',`<p>${wi.development}</p>`)
+ +jump('wish')
+ +wi.speeches.map((s,i)=>spBlock('wish',s,i,BOOK,
+      `<div class="wsec"><i>${L.wish}</i>${P(s.wish)}</div>`
+      +`<div class="wsec"><i>${L.words}</i>${P(s.words)}</div>`)).join('')
+ +nar('RESULT',`<p>${wi.resultLead}</p>`)
+ +table(wi.table)
+ +nar('FOLLOW-UP',`<p>${wi.followup}</p>`)
+ +nar('SENSATION',`<p>${wi.sensation}</p>`,1)
+ +`</div></section>`;
+}
+
+/* ---------- 散会 · 明天见 ---------- */
+{
+const fw=M.farewell;
+html+=`<section class="act" id="farewell" style="--acc:#b0702a;--tint:rgba(176,112,42,.08)"><div class="stage">`
+ +acthead('Vale · Cras Iterum Videbimus','散会 · 明天见','所有成员起身。没有人再增加新的议题,也没有人把这次告别说成终局。')
+ +ask(M.asks[4])
+ +nar('START',`<p>${fw.start}</p>`)
+ +nar('DEVELOPMENT',`<p>${fw.development}</p>`)
+ +`<div class="fwgrid">${fw.speeches.map((s,i)=>{
+    const c=BY[s.key];
+    return `<article class="fw rv" id="fw-${s.key}" style="--d:${(i%2)*.07}s">
+      <div class="fh"><img src="${stk(s.key)}" alt=""><div><b>${s.speaker.replace(/：$/,'')}</b><small>№ ${pad(c.seat)} · ${c.title}</small></div></div>
+      <div class="line">${s.line}</div><div class="scene">${s.scene}</div></article>`}).join('')}</div>`
+ +nar('RESULT',`<p>${fw.result}</p>`)
+ +nar('FOLLOW-UP',`<p>${fw.followup}</p>`)
+ +nar('SENSATION',`<p>${fw.sensation}</p>`,1)
+ +`<div class="stamp rv">${fw.receipt}</div>`
+ +`</div></section>`;
+}
+
+/* ---------- 附录 · 年历 ---------- */
+{
+const ALM=[
+ {k:'cyrene',m:'封面',mn:'翁法罗斯 2026 一年历',n:'昔涟'},
+ {k:'tribbie',m:'1月',mn:'门关月',n:'缇宝'},{k:'cerydra',m:'2月',mn:'平衡月',n:'刻律德菈'},
+ {k:'march7th',m:'3月',mn:'长夜月',n:'三月七(长夜月)'},{k:'terrae',m:'4月',mn:'耕耘月',n:'丹恒'},
+ {k:'hysilens',m:'5月',mn:'欢喜月',n:'海瑟音'},{k:'hyacine',m:'6月',mn:'长昼月',n:'风堇'},
+ {k:'phainon',m:'7月',mn:'自由月',n:'白厄'},{k:'anaxa',m:'8月',mn:'收获月',n:'那刻夏'},
+ {k:'aglaea',m:'9月',mn:'拾线月',n:'阿格莱雅'},{k:'mydei',m:'10月',mn:'纷争月',n:'万敌'},
+ {k:'castorice',m:'11月',mn:'哀悼月',n:'遐蝶'},{k:'cipher',m:'12月',mn:'机缘月',n:'赛飞儿'}];
+html+=`<section class="act" id="almanac" style="--acc:#8a681c"><div class="stage">`
+ +acthead('Kalendarium MMXXVI','附录 · 与明天的约定','散会之后,十三个人的「明天」住进了同一本年历。一月「门关月」页上写着:「不论晴天还是雨天,进入梦乡以前,记得和自己说一声:『明天见』!」')
+ +`<div class="calrow rv">${ALM.map((a,i)=>`<figure class="calcard rv" style="--d:${i*.03}s">
+     <div class="imgw" data-zoom="assets/meeting/cal-${a.k}-full.webp" role="button" tabindex="0" aria-label="放大查看:${a.m} ${a.mn} · ${a.n}">
+       <img src="assets/meeting/cal-${a.k}.webp" alt="${a.m} ${a.mn} · ${a.n} 月历页" loading="lazy" decoding="async" width="420" height="909"></div>
+     <figcaption><b>${a.m}</b>${a.m==='封面'?a.n:a.mn+' · '+a.n}</figcaption></figure>`).join('')}</div>`
+ +`<figure class="lunar rv"><div class="imgw" data-zoom="assets/meeting/cal-lunar-full.webp" role="button" tabindex="0" aria-label="放大查看:阴历版全年历">
+     <img src="assets/meeting/cal-lunar.webp" alt="翁法罗斯 2026 阴历版全年历" loading="lazy" decoding="async" width="1600" height="1155"></div>
+   <figcaption>《翁法罗斯 2026 一年历》阴历版 · 点按放大</figcaption></figure>`
+ +`</div></section>`;
+}
+
+app.innerHTML=html;
+}catch(err){
+  /* data.js 缺失或渲染异常:给出可见回退,不留白页 */
+  document.getElementById('app').innerHTML='<div class="wrap" style="padding:70px 0;text-align:center;color:var(--dim)">正文数据(assets/meeting/data.js)加载失败,请刷新重试;或到 <a href="https://github.com/xi-kari/amphoreus-skill-suite">GitHub 仓库</a> 查看来源与脚本。</div>';
+  console.error(err);
+}
+
+/* ---------- 交互:显现 / 议程高亮 / 进度 / 放大 ---------- */
+const REDUCED=matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(REDUCED){document.querySelectorAll('.rv').forEach(el=>el.classList.add('on'))}
+else{
+  const io=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}},{rootMargin:'0px 0px -7% 0px'});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+}
+
+const pbar=document.getElementById('pbar');
+const pairs=[...document.querySelectorAll('#agenda a')]
+  .map(a=>({a,s:document.querySelector(a.getAttribute('href'))})).filter(p=>p.s);
+let raf=0,lastCur=null;
+function onScroll(){
+  raf=0;
+  const h=document.documentElement.scrollHeight-innerHeight;
+  pbar.style.width=(h>0?Math.min(100,scrollY/h*100):0)+'%';
+  let cur=null;
+  for(const p of pairs){if(p.s.getBoundingClientRect().top<=innerHeight*.34)cur=p}
+  if(cur===lastCur)return;
+  lastCur=cur;
+  pairs.forEach(p=>p.a.classList.toggle('on',cur===p));
+  if(cur)cur.a.scrollIntoView({block:'nearest',inline:'nearest'});
+}
+addEventListener('scroll',()=>{if(!raf)raf=requestAnimationFrame(onScroll)},{passive:true});
+onScroll();
+
+const ov=document.getElementById('ov'),ovimg=document.getElementById('ovimg');
+let lastFocus=null;
+function openZoom(el){
+  lastFocus=el;
+  ovimg.src=el.dataset.zoom;
+  ovimg.alt=(el.getAttribute('aria-label')||'').replace(/^放大查看:?/,'');
+  ov.classList.add('on');document.body.style.overflow='hidden';
+  ov.focus();
+}
+function closeZoom(){
+  ov.classList.remove('on');ovimg.src='';document.body.style.overflow='';
+  if(lastFocus){lastFocus.focus();lastFocus=null}
+}
+app.addEventListener('click',e=>{const z=e.target.closest('[data-zoom]');if(z)openZoom(z)});
+app.addEventListener('keydown',e=>{
+  if(e.key!=='Enter'&&e.key!==' ')return;
+  const z=e.target.closest('[data-zoom]');if(z){e.preventDefault();openZoom(z)}
+});
+ov.addEventListener('click',closeZoom);
+addEventListener('keydown',e=>{
+  if(!ov.classList.contains('on'))return;
+  if(e.key==='Escape')closeZoom();
+  else if(e.key==='Tab')e.preventDefault();   /* 模态内无其他可聚焦项,圈禁在遮罩上 */
+});
+</script>
+</body>
+</html>

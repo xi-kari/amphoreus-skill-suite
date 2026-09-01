@@ -15,7 +15,7 @@
 
 <br>
 
-**[在线介绍页 →](https://xi-kari.github.io/amphoreus-skill-suite/)** · **[闪卡画廊 →](https://xi-kari.github.io/amphoreus-skill-suite/cards.html)**
+**[在线介绍页 →](https://xi-kari.github.io/amphoreus-skill-suite/)** · **[闪卡画廊 →](https://xi-kari.github.io/amphoreus-skill-suite/cards.html)** · **[全体会议实录 →](https://xi-kari.github.io/amphoreus-skill-suite/meeting.html)**
 
 <img src="assets/banner.jpg" alt="十三卡横幅" width="100%">
 
@@ -210,6 +210,7 @@ flowchart LR
 ├── README.md · CHANGELOG.md · CONTRIBUTING.md · LICENSE
 ├── index.html                # 在线介绍页(杂志跨页首屏 + 卡面轮播 + 方法卡弹窗 + 十三册陈列)
 ├── cards.html                # 闪卡画廊(三层互斥分区立体闪卡:正面=原图,倾斜见景深+箔光)
+├── meeting.html              # 全体会议实录(一次真实沙龙调用:集合 + 三议题 + 道别,正文逐字搬运)
 ├── .github/                  # CI(validate + 适配零漂移)+ Issue 模板(卡文问题 / 素材下架)
 ├── assets/
 │   ├── cards-full/           # 15 张原尺寸卡面(原字节入库,SHA 校验)
@@ -217,8 +218,9 @@ flowchart LR
 │   ├── symbols/              # 15 枚黄金裔徽记(tools/crop_symbols.py 圆检测重裁)
 │   ├── stickers/             # 18 枚官方 Q 版表情包(原字节入库)
 │   ├── mag/                  # 《CHRYSOS·黄金裔》杂志素材(13 封面 + 13 组跨页双档)+ 昔涟首屏/闪卡底图
+│   ├── meeting/              # 全体会议页素材(英雄纪 / 如我所书 / 2026 年历 webp)+ data.js(正文单源,逐字搬运)
 │   └── layers/ · banner.jpg  # 闪卡三层分区素材(背景/前景/徽记 + geo.js 几何单源)· 横幅
-├── tools/                    # crop_symbols.py(徽记圆检测)· make_layers.py(闪卡分层管线,逐卡断言)
+├── tools/                    # crop_symbols.py(徽记)· make_layers.py(闪卡分层)· make_meeting_assets.py / build_meeting_data.py(会议页素材与正文,--check 回对)
 ├── skills/                   # 14 目录 44 文件 = 总路由 + 13 卡(生产验收态,唯一事实源)
 │   ├── amphoreus/            #   路由 SKILL + references/(common.md 公约 + relations.md 关系单源)+ evals/(13 卷)+ scripts/validate.py
 │   └── amphoreus-<hero>/     #   各卡 SKILL.md + persona.md
