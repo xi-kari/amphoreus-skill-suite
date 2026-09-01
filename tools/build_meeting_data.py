@@ -47,6 +47,13 @@ ASK_PREFIXES = [
     "大家，明天见。",
 ]
 
+# ---------- 发布级删减(委托人 2026-09-01 指定;不改动来源文件,由构建与校验共同执行) ----------
+# ① 传记章程第九条(三篇恋爱文章的虚构边界)整条不入页,章程序号由页面 <ol> 自动重排;
+# ② 第一段提问删去开头「这三个文章的事情先搁置。」。
+REDACT_CHARTER_MARK = "先前的三篇阿格莱雅与那刻夏恋爱文章需要保持虚构边界"
+REDACT_ASK_HEAD = "这三个文章的事情先搁置。"
+REDACT_LINE_MARKS = [REDACT_CHARTER_MARK, "那三篇文章属于某次未被记录轮回中的文学幻想"]
+
 
 def inline(s: str) -> str:
     """markdown 行内 -> HTML:仅转义 + **粗体** + `代码`,不改一字。"""
@@ -204,6 +211,8 @@ def parse_biography(text: str):
         charter.append({"t": inline(m.group(2)), "d": inline(body)})
         i += 1
     assert len(charter) == 10
+    charter = [c for c in charter if REDACT_CHARTER_MARK not in c["t"]]
+    assert len(charter) == 9
     assert bs[i][0].startswith("DIALOGUE:"); i += 1
 
     speeches = []
@@ -391,6 +400,8 @@ def parse_asks(md_text: str):
     assert len(cands) == 5, cands
     for i, c in enumerate(cands):
         assert c.startswith(ASK_PREFIXES[i]), (i, c)
+    assert cands[0].startswith(REDACT_ASK_HEAD)
+    cands[0] = cands[0][len(REDACT_ASK_HEAD):].strip()
     return [inline(t) for t in cands]
 
 
@@ -428,6 +439,10 @@ def check(data):
                 t = t[2:].strip()
             if not t or skip.match(t):
                 continue
+            if any(m in t for m in REDACT_LINE_MARKS):
+                continue
+            if t.startswith(REDACT_ASK_HEAD):
+                t = t[len(REDACT_ASK_HEAD):].strip()
             t = label.sub("", t)
             t = re.sub(r"^#+\s*", "", t)
             t = re.sub(r"^\d+\.\s*", "", t)
@@ -468,7 +483,8 @@ def build():
 
 def main():
     data = build()
-    js = ("/* 由 tools/build_meeting_data.py 自动生成 —— 正文逐字搬运自全体会议原始成果,勿手改。 */\n"
+    js = ("/* 由 tools/build_meeting_data.py 自动生成 —— 正文逐字搬运自全体会议原始成果"
+          "(含 2 处委托人指定的发布级删减,登记于脚本 REDACT_* 常量),勿手改。 */\n"
           "window.MEETING=" + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";\n")
     if "--check" in sys.argv:
         misses = check(data)

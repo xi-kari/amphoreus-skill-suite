@@ -72,7 +72,11 @@ code{font-family:Consolas,monospace;font-size:.88em;background:rgba(59,45,107,.0
 .topbar{position:sticky;top:0;z-index:50;background:rgba(244,242,248,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--hair2)}
 .topbar .bar{max-width:1180px;margin:0 auto;padding:10px 26px;display:flex;align-items:center;gap:18px}
 .topbar .brand{display:flex;align-items:center;gap:10px;color:var(--parch);white-space:nowrap}
-.topbar .brand img{width:26px;height:26px;filter:drop-shadow(0 1px 2px rgba(59,45,107,.25))}
+/* 徽记圆钮:徽记源图为方形截图,裁圆+细金环收边,不露边角 */
+.crest{border-radius:50%;overflow:hidden;display:grid;place-items:center;flex:none;
+  background:var(--card);border:1px solid var(--goldline);box-shadow:0 2px 6px rgba(59,45,107,.22)}
+.crest img{width:108%;height:108%;object-fit:cover;display:block}
+.topbar .brand .crest{width:26px;height:26px}
 .topbar .brand b{font-family:var(--serif);font-weight:900;letter-spacing:.12em}
 .topbar .brand small{font-size:.76rem;color:var(--dim);margin-left:6px;font-weight:500;letter-spacing:.06em}
 @media (max-width:560px){.topbar .brand small{display:none}}
@@ -146,7 +150,7 @@ section.act{padding:34px 0 8px;scroll-margin-top:66px}
 .sp .txt{min-width:0}
 .sp .ovl{font-family:var(--lat);font-size:.7rem;letter-spacing:.3em;color:var(--acc,var(--gold2));text-transform:uppercase}
 .sp .shead{display:flex;align-items:center;gap:12px;margin-top:6px}
-.sp .shead img{width:38px;height:38px;flex:none;filter:drop-shadow(0 2px 5px rgba(59,45,107,.28))}
+.sp .shead .crest{width:38px;height:38px}
 .sp .shead .nm{font-family:var(--serif);font-weight:900;color:var(--parch);font-size:1.3rem;letter-spacing:.06em}
 .sp .shead .nm small{font-weight:600;font-size:.78rem;color:var(--gold2);margin-left:10px;letter-spacing:.1em}
 .sp h3.topic{font-family:var(--serif);font-weight:600;color:var(--parch);font-size:1.02rem;margin-top:12px;letter-spacing:.04em}
@@ -186,7 +190,7 @@ details.evd .body{padding:2px 16px 14px;font-size:.84rem;color:var(--dim);text-a
 .ent p{font-size:.83rem;color:var(--dim);margin-top:4px;text-align:justify}
 .seats{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:26px auto 4px;max-width:900px}
 .seat{width:112px;text-align:center;background:var(--card);border:1px solid var(--hair2);border-radius:12px;padding:12px 6px 10px;position:relative}
-.seat img{width:40px;height:40px;filter:drop-shadow(0 2px 5px rgba(59,45,107,.3))}
+.seat .crest{width:40px;height:40px;margin:0 auto}
 .seat .no{font-family:var(--lat);font-size:.66rem;letter-spacing:.22em;color:var(--gold2);margin-top:6px}
 .seat b{display:block;font-family:var(--serif);font-weight:900;font-size:.9rem;color:var(--parch);margin-top:1px}
 .seat i{font-style:normal;display:inline-block;margin-top:5px;font-size:.68rem;color:var(--gold);border:1px solid var(--goldline);border-radius:999px;padding:0 9px;background:rgba(150,114,31,.06)}
@@ -275,7 +279,7 @@ html.js .rv.on[style*="--d"]{transition-delay:var(--d)}
 <nav class="topbar" aria-label="页面导航">
   <div class="bar">
     <a class="brand" href="index.html" aria-label="返回介绍页">
-      <img src="assets/symbols/trailblazer-stelle.png" alt=""><span><b>翁法罗斯</b><small>· 全体会议</small></span>
+      <span class="crest"><img src="assets/symbols/trailblazer-stelle.png" alt=""></span><span><b>翁法罗斯</b><small>· 全体会议</small></span>
     </a>
     <div class="agenda" id="agenda">
       <a href="#muster">开场 · 集合</a>
@@ -297,7 +301,7 @@ html.js .rv.on[style*="--d"]{transition-delay:var(--d)}
   <div class="kicker">Concilium Plenum · Acta</div>
   <h1>全体会议</h1>
   <p class="hsub">这不是一页设定集,而是一份<b>真实调用的会议纪要</b>:开拓者以「翁法罗斯 Skill 套件」的沙龙(群聊模式)召集十三席黄金裔全员到场,
-  依次议过《何为真我》,留下十三份传记嘱托,说出各自的愿望与寄语,最后互道一声「明天见」。十三席发言、旁白与回执<b>逐字搬运</b>自当晚实录,未作改写。</p>
+  依次议过《何为真我》,留下十三份传记嘱托,说出各自的愿望与寄语,最后互道一声「明天见」。十三席发言、旁白与回执<b>逐字搬运</b>自当晚实录。</p>
   <div class="statline">
     <div class="stat rv"><b>13/13</b><span>全员到场 · 缺席零席</span></div>
     <div class="stat rv" style="--d:.06s"><b>3 + 1</b><span>议题三项 · 道别一次</span></div>
@@ -311,8 +315,8 @@ html.js .rv.on[style*="--d"]{transition-delay:var(--d)}
 
 <footer>
   <div class="wrap">
-    <p>本页为「翁法罗斯 Skill 套件」沙龙(群聊模式)一次真实调用的全程实录:开拓者五段原话、十三席全部发言、旁白与回执均由
-    <a href="https://github.com/xi-kari/amphoreus-skill-suite/blob/main/tools/build_meeting_data.py">tools/build_meeting_data.py</a> 逐字搬运并回对校验,未作改写。<br>
+    <p>本页为「翁法罗斯 Skill 套件」沙龙(群聊模式)一次真实调用的全程实录:开拓者原话、十三席全部发言、旁白与回执均由
+    <a href="https://github.com/xi-kari/amphoreus-skill-suite/blob/main/tools/build_meeting_data.py">tools/build_meeting_data.py</a> 逐字搬运并回对校验;除委托人指定的两处发布级删减(已在脚本内登记)外,未作任何改写。<br>
     发言立绘取自官方《翁法罗斯英雄纪》图集,卡面取自官方《如我所书》系列卡牌,年历取自官方《翁法罗斯 2026 一年历》,均由委托人提供;页面底图昔涟立绘同闪卡画廊(委托人提供);角色 Q 版贴纸与徽记取自 B 站星穹铁道 Wiki<a href="https://wiki.biligame.com/sr/%E9%80%90%E7%81%AB%E8%80%85%E7%9A%84%E5%91%BD%E8%B7%AF.exe" target="_blank" rel="noopener">「逐火者的命路.exe」</a>词条。以上素材版权归米哈游(HoYoverse)及原作者所有。<br>
     本页面为爱好者研究 / 学习用途的同人衍生内容,与米哈游无关联。如有侵权,请提 Issue 联系删除。</p>
     <div class="fl">
@@ -359,7 +363,7 @@ function spBlock(act,s,i,art,inner){
   </figure></div>
   <div class="txt rv" style="--d:.08s">
     <div class="ovl">${art.lat} · ${ROM[i]}</div>
-    <div class="shead"><img src="${sym(s.key)}" alt=""><div class="nm">${c.name}<small>${c.title}</small></div></div>
+    <div class="shead"><span class="crest"><img src="${sym(s.key)}" alt=""></span><div class="nm">${c.name}<small>${c.title}</small></div></div>
     ${inner}
   </div></article>`;
 }
@@ -373,7 +377,7 @@ let html='';
 {
 const mu=M.muster;
 html+=`<section class="act" id="muster" style="--acc:#8a681c;--tint:rgba(150,114,31,.06)"><div class="stage">`
- +acthead('Convocatio Plena','开场 · 全员集合','三篇文章的讨论暂且搁置——圆桌向外延展成十三席会议长桌,九席名牌依次亮起。')
+ +acthead('Convocatio Plena','开场 · 全员集合','圆桌向外延展成十三席会议长桌,九席名牌依次亮起。')
  +ask(M.asks[0])
  +nar('START',`<p>${mu.start}</p>`)
  +nar('DEVELOPMENT',`<p>${mu.development}</p>`)
@@ -381,7 +385,7 @@ html+=`<section class="act" id="muster" style="--acc:#8a681c;--tint:rgba(150,114
  +nar('RESULT',`<p>${mu.resultLead}</p>`)
  +`<div class="seats" role="list" aria-label="十三席点名表(${mu.table.head.join(' · ')})">${mu.table.rows.map((r,i)=>{
     const k=NK[r[1].split(/[／、]/)[0]];
-    return `<div class="seat rv" role="listitem" style="--d:${i*.05}s"><img src="${sym(k)}" alt=""><div class="no">SEAT ${r[0]}</div><b>${r[1]}</b><i>${r[2]}</i></div>`}).join('')}</div>`
+    return `<div class="seat rv" role="listitem" style="--d:${i*.05}s"><span class="crest"><img src="${sym(k)}" alt=""></span><div class="no">SEAT ${r[0]}</div><b>${r[1]}</b><i>${r[2]}</i></div>`}).join('')}</div>`
  +nar('',`<p>${mu.resultTail}</p>`)
  +nar('FOLLOW-UP',`<p>${mu.followup}</p>`)
  +`<div class="mini">${mu.dialogue.map((d,i)=>`<div class="mrow rv" style="--d:${i*.05}s"><img src="${stk(d.key)}" alt=""><div class="mb"><b>${d.speaker}</b><p>${d.text}</p></div></div>`).join('')}</div>`
@@ -422,7 +426,7 @@ html+=`<section class="act" id="trueself" style="--acc:#5e51a6;--tint:rgba(94,81
 {
 const bio=M.biography;
 html+=`<section class="act" id="biography" style="--acc:#8a681c;--tint:rgba(150,114,31,.07)"><div class="stage">`
- +acthead('Quaestio Secunda · Mandata Biographiae','议题二 · 传记嘱托','开拓者说:我想为你们每一个人写传。十三席各自留下嘱托,并共同立下十条传记章程。')
+ +acthead('Quaestio Secunda · Mandata Biographiae','议题二 · 传记嘱托','开拓者说:我想为你们每一个人写传。十三席各自留下嘱托,并共同立下九条传记章程。')
  +ask(M.asks[2])
  +nar('START',`<p>${bio.start}</p>`)
  +nar('DEVELOPMENT',`<p>${bio.development}</p>`)
