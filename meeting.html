@@ -185,7 +185,7 @@ details.evd .body{padding:2px 16px 14px;font-size:.84rem;color:var(--dim);text-a
 /* 集合幕 */
 .ents{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px;margin-top:26px}
 .ent{background:var(--card);border:1px solid var(--hair2);border-radius:14px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start}
-.ent img{width:52px;height:52px;flex:none;border-radius:12px}
+.ent img{width:56px;height:56px;flex:none;object-fit:contain;filter:drop-shadow(0 3px 8px rgba(59,45,107,.22))}
 .ent b{font-size:.86rem;color:var(--parch);display:block}
 .ent p{font-size:.83rem;color:var(--dim);margin-top:4px;text-align:justify}
 .seats{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:26px auto 4px;max-width:900px}
@@ -233,7 +233,9 @@ table.mt td:first-child{white-space:nowrap;font-weight:500;color:var(--parch)}
 .calrow{display:grid;grid-auto-flow:column;grid-auto-columns:176px;gap:16px;overflow-x:auto;padding:26px 6px 18px;scroll-snap-type:x proximity}
 .calrow::-webkit-scrollbar{height:8px}
 .calrow::-webkit-scrollbar-thumb{background:rgba(59,45,107,.18);border-radius:99px}
-.calcard{scroll-snap-align:start;margin:0}
+.calcard{scroll-snap-align:start;margin:0;position:relative}
+.calcard .calpet{position:absolute;right:-8px;top:-18px;width:58px;height:58px;object-fit:contain;filter:drop-shadow(0 4px 8px rgba(59,45,107,.25));transition:transform .3s;pointer-events:none}
+.calcard:hover .calpet{transform:translateY(-4px) rotate(8deg) scale(1.1)}
 .calcard .imgw{border-radius:10px;overflow:hidden;border:1px solid var(--hair);box-shadow:0 10px 24px rgba(59,45,107,.16);cursor:zoom-in;transition:transform .3s,box-shadow .3s;background:#2a1a1e}
 .calcard .imgw:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(59,45,107,.24)}
 .calcard img{display:block;width:100%;height:auto}
@@ -262,7 +264,8 @@ html.js .rv.on{opacity:1;transform:none;transition:opacity .7s ease,transform .7
 html.js .rv.on[style*="--d"]{transition-delay:var(--d)}
 @media (prefers-reduced-motion:reduce){
   html.js .rv{opacity:1;transform:none}
-  .pcard .imgw,.calcard .imgw,.jump a{transition:none!important}
+  .pcard .imgw,.calcard .imgw,.calcard .calpet,.jump a{transition:none!important}
+  .calcard:hover .calpet{transform:none}
 }
 </style>
 <script>document.documentElement.classList.add('js')</script>
@@ -317,7 +320,7 @@ html.js .rv.on[style*="--d"]{transition-delay:var(--d)}
   <div class="wrap">
     <p>本页为「翁法罗斯 Skill 套件」沙龙(群聊模式)一次真实调用的全程实录:开拓者原话、十三席全部发言、旁白与回执均由
     <a href="https://github.com/xi-kari/amphoreus-skill-suite/blob/main/tools/build_meeting_data.py">tools/build_meeting_data.py</a> 逐字搬运并回对校验;除委托人指定的三处发布级删改(已在脚本内登记)外,未作任何改写。<br>
-    发言立绘取自官方《翁法罗斯英雄纪》图集,卡面取自官方《如我所书》系列卡牌,年历取自官方《翁法罗斯 2026 一年历》,均由委托人提供;页面底图昔涟立绘同闪卡画廊(委托人提供);角色 Q 版贴纸与徽记取自 B 站星穹铁道 Wiki<a href="https://wiki.biligame.com/sr/%E9%80%90%E7%81%AB%E8%80%85%E7%9A%84%E5%91%BD%E8%B7%AF.exe" target="_blank" rel="noopener">「逐火者的命路.exe」</a>词条。以上素材版权归米哈游(HoYoverse)及原作者所有。<br>
+    发言立绘取自官方《翁法罗斯英雄纪》图集,卡面取自官方《如我所书》系列卡牌,年历取自官方《翁法罗斯 2026 一年历》,均由委托人提供;页面底图昔涟立绘同闪卡画廊(委托人提供);角色 Q 版表情 96 枚为官方素材(首批 18 枚取自 B 站星穹铁道 Wiki,78 枚由委托人 2026-09-02 提供);徽记取自 B 站星穹铁道 Wiki<a href="https://wiki.biligame.com/sr/%E9%80%90%E7%81%AB%E8%80%85%E7%9A%84%E5%91%BD%E8%B7%AF.exe" target="_blank" rel="noopener">「逐火者的命路.exe」</a>词条。以上素材版权归米哈游(HoYoverse)及原作者所有。<br>
     本页面为爱好者研究 / 学习用途的同人衍生内容,与米哈游无关联。如有侵权,请提 Issue 联系删除。</p>
     <div class="fl">
       <a href="index.html">介绍页</a>
@@ -339,13 +342,21 @@ const BY=Object.fromEntries(M.cast.map(c=>[c.key,c]));
 const NK=Object.fromEntries(M.cast.map(c=>[c.name,c.key]));
 const ROM=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII'];
 const pad=n=>String(n).padStart(2,'0');
-const stk=k=>`assets/stickers/${k==='host'?'trailblazer-caelus':k}.png`;
+const stk=k=>`assets/stickers/w/${k==='host'?'trailblazer-caelus':k}.webp`;
+/* 入场 / 道别各配一枚情绪相称的表情(assets/stickers/w/<key>.webp,2026-09-02 批次) */
+const ENT_STK={tribbie:'tribbie-wise',mydei:'mydei-frenzy',hyacine:'hyacine-diagnose',cipher:'cipher-cute',cerydra:'cerydra-fair',
+  hysilens:'hysilens-humming',march7th:'march7th',terrae:'terrae-listen',phainon:'phainon-fine',aglaea:'aglaea-design',castorice:'castorice-butterfly',anaxa:'anaxa-what',cyrene:'cyrene-glance'};
+const FW_STK={aglaea:'aglaea-generous',tribbie:'tribbie-an-goodnight',mydei:'mydei-flushed',castorice:'castorice-blush',anaxa:'anaxa-im-fine',hyacine:'mimi-sleep',
+  cipher:'cipher-fortune',cerydra:'cerydra-checkmate',hysilens:'hysilens-loyalty',march7th:'chimera-march7th',terrae:'terrae-hesitate',phainon:'phainon-bye',cyrene:'cyrene-love'};
+const MINI_STK={tribbie:'tribbie-boom',mydei:'mydei-what-to-eat',hyacine:'hyacine-like',cipher:'cipher-please',cerydra:'cerydra-veto',hysilens:'hysilens-shh',
+  march7th:'march7th',terrae:'terrae-king-of-earth',phainon:'phainon-ehe',aglaea:'aglaea-no',castorice:'castorice-create',anaxa:'anaxa-bring-it',cyrene:'cyrene-roger',host:'trailblazer-caelus-rewrite'};
+const pick=(m,k)=>stk(m[k]||k);
 const sym=k=>`assets/symbols/${k==='host'?'trailblazer-caelus':k}.png`;
 const L={recap:M.srcLabels[0].replace(/：$/,''),evd:M.srcLabels[1].replace(/：$/,''),wish:M.srcLabels[2],words:M.srcLabels[3]};
 const ART_NOTE={march7th:'立绘为长夜月形态'};
 
 const P=a=>a.map(t=>/^<b>[^<]*：<\/b>$/.test(t)?`<p class="spk">${t}</p>`:`<p>${t}</p>`).join('');
-const ask=t=>`<div class="ask rv"><img class="stk" src="assets/stickers/trailblazer-stelle.png" alt=""><div class="bubble"><div class="who">Trailblazer<b>开拓者</b></div><div class="say">${t}</div></div></div>`;
+const ask=t=>`<div class="ask rv"><img class="stk" src="${stk('trailblazer-stelle-record')}" alt=""><div class="bubble"><div class="who">Trailblazer<b>开拓者</b></div><div class="say">${t}</div></div></div>`;
 const nar=(tag,html,end)=>`<div class="nar rv${end?' end':''}">${tag?`<i>旁白 · ${tag}</i>`:''}${html}</div>`;
 const table=t=>`<div class="mtwrap rv"><table class="mt"><thead><tr>${t.head.map(c=>`<th scope="col">${c}</th>`).join('')}</tr></thead><tbody>${t.rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
 const jump=act=>`<div class="jump rv" role="navigation" aria-label="按席位跳转">${M.cast.map(c=>`<a href="#${act}-${c.key}" title="${c.name}" aria-label="跳至${c.name}的发言"><img src="${stk(c.key)}" alt="" loading="lazy"></a>`).join('')}</div>`;
@@ -381,14 +392,14 @@ html+=`<section class="act" id="muster" style="--acc:#8a681c;--tint:rgba(150,114
  +ask(M.asks[0])
  +nar('START',`<p>${mu.start}</p>`)
  +nar('DEVELOPMENT',`<p>${mu.development}</p>`)
- +`<div class="ents">${mu.entrances.map((e,i)=>`<div class="ent rv" style="--d:${(i%3)*.06}s"><img src="${stk(e.key)}" alt=""><div><b>${e.lead}</b><p>${e.text}</p></div></div>`).join('')}</div>`
+ +`<div class="ents">${mu.entrances.map((e,i)=>`<div class="ent rv" style="--d:${(i%3)*.06}s"><img src="${pick(ENT_STK,e.key)}" alt=""><div><b>${e.lead}</b><p>${e.text}</p></div></div>`).join('')}</div>`
  +nar('RESULT',`<p>${mu.resultLead}</p>`)
  +`<div class="seats" role="list" aria-label="十三席点名表(${mu.table.head.join(' · ')})">${mu.table.rows.map((r,i)=>{
     const k=NK[r[1].split(/[／、]/)[0]];
     return `<div class="seat rv" role="listitem" style="--d:${i*.05}s"><span class="crest"><img src="${sym(k)}" alt=""></span><div class="no">SEAT ${r[0]}</div><b>${r[1]}</b><i>${r[2]}</i></div>`}).join('')}</div>`
  +nar('',`<p>${mu.resultTail}</p>`)
  +nar('FOLLOW-UP',`<p>${mu.followup}</p>`)
- +`<div class="mini">${mu.dialogue.map((d,i)=>`<div class="mrow rv" style="--d:${i*.05}s"><img src="${stk(d.key)}" alt=""><div class="mb"><b>${d.speaker}</b><p>${d.text}</p></div></div>`).join('')}</div>`
+ +`<div class="mini">${mu.dialogue.map((d,i)=>`<div class="mrow rv" style="--d:${i*.05}s"><img src="${pick(MINI_STK,d.key)}" alt=""><div class="mb"><b>${d.speaker}</b><p>${d.text}</p></div></div>`).join('')}</div>`
  +nar('SENSATION',`<p>${mu.sensation}</p>`,1)
  +`</div></section>`;
 }
@@ -476,7 +487,7 @@ html+=`<section class="act" id="farewell" style="--acc:#b0702a;--tint:rgba(176,1
  +`<div class="fwgrid">${fw.speeches.map((s,i)=>{
     const c=BY[s.key];
     return `<article class="fw rv" id="fw-${s.key}" style="--d:${(i%2)*.07}s">
-      <div class="fh"><img src="${stk(s.key)}" alt=""><div><b>${s.speaker.replace(/：$/,'')}</b><small>№ ${pad(c.seat)} · ${c.title}</small></div></div>
+      <div class="fh"><img src="${pick(FW_STK,s.key)}" alt=""><div><b>${s.speaker.replace(/：$/,'')}</b><small>№ ${pad(c.seat)} · ${c.title}</small></div></div>
       <div class="line">${s.line}</div><div class="scene">${s.scene}</div></article>`}).join('')}</div>`
  +nar('RESULT',`<p>${fw.result}</p>`)
  +nar('FOLLOW-UP',`<p>${fw.followup}</p>`)
@@ -500,7 +511,8 @@ html+=`<section class="act" id="almanac" style="--acc:#8a681c"><div class="stage
  +`<div class="calrow rv">${ALM.map((a,i)=>`<figure class="calcard rv" style="--d:${i*.03}s">
      <div class="imgw" data-zoom="assets/meeting/cal-${a.k}-full.webp" role="button" tabindex="0" aria-label="放大查看:${a.m} ${a.mn} · ${a.n}">
        <img src="assets/meeting/cal-${a.k}.webp" alt="${a.m} ${a.mn} · ${a.n} 月历页" loading="lazy" decoding="async" width="420" height="909"></div>
-     <figcaption><b>${a.m}</b>${a.m==='封面'?a.n:a.mn+' · '+a.n}</figcaption></figure>`).join('')}</div>`
+     <figcaption><b>${a.m}</b>${a.m==='封面'?a.n:a.mn+' · '+a.n}</figcaption>
+     <img class="calpet" src="${stk(a.k==='cyrene'?'cyrene-young-hehe':'chimera-'+a.k)}" alt="" loading="lazy" decoding="async"></figure>`).join('')}</div>`
  +`<figure class="lunar rv"><div class="imgw" data-zoom="assets/meeting/cal-lunar-full.webp" role="button" tabindex="0" aria-label="放大查看:阴历版全年历">
      <img src="assets/meeting/cal-lunar.webp" alt="翁法罗斯 2026 阴历版全年历" loading="lazy" decoding="async" width="1600" height="1155"></div>
    <figcaption>《翁法罗斯 2026 一年历》阴历版 · 点按放大</figcaption></figure>`

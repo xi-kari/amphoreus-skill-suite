@@ -42,7 +42,7 @@ python adapters/build.py
 | `assets/cards-full/` | patchwiki 原尺寸卡面,**原字节入库**(SHA 校验、零压缩;文件名 `.png` 但内容为 JPEG,浏览器按魔数解码无碍) |
 | `assets/cards/` | 400×702 等尺寸缩略 JPG(`tools` 无脚本,由 cards-full 等比 cover 裁切;README 画廊与介绍页网格共用,**必须保持 15 张同尺寸**,否则画廊排版会大小不一) |
 | `assets/symbols/` | 15 枚徽记,由 `tools/crop_symbols.py` 对 cards-full 做 HoughCircles 圆检测裁切(勿再用旧固定常数) |
-| `assets/stickers/` | 官方 Q 版表情包,原字节入库;文件名为 ASCII 键名(`tribbie-ning`=缇宁、`tribbie-an`=缇安、`march7th-evernight`=长夜月) |
+| `assets/stickers/` | 官方 Q 版表情包 96 枚:`<key>.png` 存档件(首批 18 枚原字节;2026-09-02 批次 78 枚经 `tools/make_stickers.py` 归一化,最长边 ≤ 512,原图 ≤ 512 者原字节)+ `w/<key>.webp` 显示件(256,q88,三页与 README 只引显示件)+ `manifest.js` / `manifest.json` 清单(owner / label / note / kind / batch)。键名为 ASCII(`tribbie-ning`=缇宁、`march7th-evernight-*`=长夜月、`chimera-<hero>`=奇美拉、`mimi-*`=迷迷、`cyrene-young-*`=小昔涟);新增表情只改脚本 `MAP` 后重跑,`--check` 回对清单与文件一一对应、无孤儿 |
 | `assets/layers/` + `cards.html` | 闪卡画廊生产素材:`tools/make_layers.py` 生成三层互斥分区(背景 / 前景 / 徽记,逐卡断言)+ `geo.js` 几何单源;正面合成须逐像素等于原图,改层后用 `cards.html` 的 `?pose` / `?solo` / `?explode` 钩子自检 |
 
 ## 五、介绍页(index.html)

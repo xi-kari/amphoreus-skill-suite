@@ -429,6 +429,57 @@ footer p a{color:var(--dim)}
 footer p a:hover{color:var(--gold)}
 footer .fl{margin-top:22px;display:flex;gap:26px;justify-content:center;flex-wrap:wrap;font-size:.82rem}
 
+/* ============ 表情包点缀:支柱 / 用例 / 铭牌 ============ */
+.pillar{padding-right:110px}
+.pillar .pstk{position:absolute;right:18px;top:18px;width:84px;height:84px;object-fit:contain;
+  filter:drop-shadow(0 6px 12px rgba(59,45,107,.22));transition:transform .35s;pointer-events:none}
+.pillar:hover .pstk{transform:translateY(-4px) rotate(5deg) scale(1.06)}
+.usage .u{position:relative;padding-right:92px}
+.usage .u .ustk{position:absolute;right:14px;top:50%;width:66px;height:66px;object-fit:contain;transform:translateY(-50%);
+  filter:drop-shadow(0 5px 10px rgba(59,45,107,.22));transition:transform .3s}
+.usage .u .ustk+.ustk{right:60px;transform:translateY(-50%) rotate(-8deg) scale(.9)}
+.usage .u:hover .ustk{transform:translateY(-54%) rotate(-4deg)}
+.usage .u:hover .ustk+.ustk{transform:translateY(-52%) rotate(-12deg) scale(.92)}
+.usage .u:has(.ustk+.ustk){padding-right:140px}
+.plaque{padding-top:22px}
+.plaque .qstk{position:absolute;right:10px;top:8px;width:46px;height:46px;object-fit:contain;opacity:.92;
+  filter:drop-shadow(0 3px 7px rgba(59,45,107,.2));transition:transform .3s}
+.plaque:hover .qstk{transform:scale(1.15) rotate(-6deg)}
+
+/* ============ 表情包墙 ============ */
+.wall{background:linear-gradient(170deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:6px;padding:26px 28px 30px;position:relative}
+.wall::before{content:'';position:absolute;left:10px;top:10px;width:16px;height:16px;border-left:1px solid var(--goldline);border-top:1px solid var(--goldline)}
+.wall::after{content:'';position:absolute;right:10px;bottom:10px;width:16px;height:16px;border-right:1px solid var(--goldline);border-bottom:1px solid var(--goldline)}
+.wall .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.wall .chips button{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--hair);background:#fff;border-radius:999px;padding:4px 12px 4px 5px;
+  font-family:var(--sans);font-size:.78rem;color:var(--ink);cursor:pointer;transition:border-color .25s,background .25s,transform .25s}
+.wall .chips button img{width:24px;height:24px;object-fit:contain}
+.wall .chips button:hover{border-color:var(--goldline);transform:translateY(-1px)}
+.wall .chips button[aria-pressed="true"]{background:var(--grad-gold);color:#fff8e6;border-color:transparent;font-weight:700}
+.wall .chips button .n{font-family:var(--lat);font-size:.66rem;opacity:.7;margin-left:2px}
+.wall .sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:14px 8px}
+.wall .s{display:grid;justify-items:center;gap:6px;text-align:center;background:none;border:0;padding:8px 4px 6px;border-radius:8px;cursor:pointer;
+  font-family:var(--sans);transition:background .25s;position:relative}
+.wall .s img{width:76px;height:76px;object-fit:contain;filter:drop-shadow(0 6px 12px rgba(59,45,107,.22));transition:transform .3s cubic-bezier(.2,.8,.2,1.2)}
+.wall .s:hover{background:rgba(150,114,31,.06)}
+.wall .s:hover img{transform:scale(1.2) rotate(-6deg)}
+.wall .s .lb{font-size:.74rem;color:var(--parch);line-height:1.35}
+.wall .s .ow{font-size:.64rem;color:var(--faint);letter-spacing:.04em}
+.wall .s .tag{position:absolute;right:6px;top:6px;font-size:.58rem;letter-spacing:.06em;color:var(--gold2);border:1px solid var(--goldline2);border-radius:999px;padding:0 6px;background:#fff}
+.wall .s.hide{display:none}
+.wall .s.nocard{cursor:default}.wall .s.nocard:hover{background:none}
+.wall .wfoot{margin-top:20px;font-size:.78rem;color:var(--faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.wall .wfoot b{color:var(--parch);font-weight:500}
+@media (max-width:840px){.pillar{padding-right:26px}.pillar .pstk{position:static;width:64px;height:64px;float:right;margin:-6px 0 0 10px}
+  .wall .sgrid{grid-template-columns:repeat(auto-fill,minmax(82px,1fr))}.wall .s img{width:64px;height:64px}}
+@media (max-width:1020px){.plaque{padding-top:46px}.plaque .qstk{width:38px;height:38px;right:8px;top:6px}}
+@media (prefers-reduced-motion:reduce){
+  .pillar .pstk,.usage .u .ustk,.plaque .qstk,.wall .chips button,.wall .s img,.guide img.stk,.stn img{transition:none}
+  .pillar:hover .pstk,.plaque:hover .qstk,.wall .s:hover img,.wall .chips button:hover{transform:none}
+  .usage .u:hover .ustk{transform:translateY(-50%)}.usage .u:hover .ustk+.ustk{transform:translateY(-50%) rotate(-8deg) scale(.9)}}
+@media (max-width:560px){.usage .u{padding-right:82px}.usage .u:has(.ustk+.ustk){padding-right:118px}.usage .u .ustk{width:54px;height:54px}.usage .u .ustk+.ustk{right:50px}
+  .wall{padding:20px 14px 24px}.wall .sgrid{grid-template-columns:repeat(4,1fr);gap:12px 4px}.wall .s img{width:58px;height:58px}.wall .s .lb{font-size:.68rem}.wall .s .ow{display:none}}
+
 /* ============ 角色讲解员(表情包气泡) ============ */
 .guide{display:flex;align-items:flex-end;gap:16px;margin-top:26px}
 .guide img.stk{width:86px;height:86px;flex:none;object-fit:contain;
@@ -474,7 +525,10 @@ footer .fl{margin-top:22px;display:flex;gap:26px;justify-content:center;flex-wra
   .plaques{grid-template-columns:repeat(2,1fr)}
   .guide img.stk{width:68px;height:68px}
   .guide .txt{font-size:.84rem}
-  .dlg .qrow{flex-wrap:wrap}
+  .dlg .qrow{flex-wrap:wrap;gap:10px 8px}
+  .dlg .qrow img.stk{width:56px;height:56px}
+  .dlg .qrow img.stk+img.stk{margin-left:-18px}
+  .dlg .qrow .quirk{flex:1 1 100%}
   .statline{gap:12px 0}
   .stat{padding-right:16px;margin-right:16px}
   nav .links a{padding:8px 8px;font-size:.8rem}
@@ -508,6 +562,7 @@ footer .fl{margin-top:22px;display:flex;gap:26px;justify-content:center;flex-wra
       <a href="#idea">理念</a>
       <a href="#cards">十三卡</a>
       <a href="#mag">十三册</a>
+      <a href="#stickers">表情</a>
       <a href="#router">总路由</a>
       <a href="#pipelines">流水线</a>
       <a href="#quality">验收</a>
@@ -551,7 +606,7 @@ footer .fl{margin-top:22px;display:flex;gap:26px;justify-content:center;flex-wra
   <div class="frieze rv" aria-label="「逐火者的命录」十五张卡面向左循环轮播,悬停暂停">
     <div class="inner"><div class="track" id="frieze"></div></div>
   </div>
-  <div class="credit">卡面与徽记「逐火者的命录」系列 · 取自 <a href="https://wiki.biligame.com/sr/%E9%80%90%E7%81%AB%E8%80%85%E7%9A%84%E5%91%BD%E8%B7%AF.exe" target="_blank" rel="noopener">B 站星穹铁道 Wiki</a> · 首屏横幅与闪卡画廊底图为委托人提供的昔涟立绘 · 版权归米哈游及原作者所有</div>
+  <div class="credit">卡面与徽记「逐火者的命录」系列 · 取自 <a href="https://wiki.biligame.com/sr/%E9%80%90%E7%81%AB%E8%80%85%E7%9A%84%E5%91%BD%E8%B7%AF.exe" target="_blank" rel="noopener">B 站星穹铁道 Wiki</a> · 首屏横幅与闪卡画廊底图为委托人提供的昔涟立绘 · 角色 Q 版表情 96 枚为官方素材(首批 18 枚取自 Wiki,78 枚由委托人提供)· 版权归米哈游及原作者所有</div>
 </header>
 
 <main>
@@ -562,30 +617,34 @@ footer .fl{margin-top:22px;display:flex;gap:26px;justify-content:center;flex-wra
       <div class="no">I · CONTRACT</div>
       <h2>方法即人格</h2>
       <p class="sub">每张卡由两份文件构成:<code>SKILL.md</code> 是静态可校验的行为契约,<code>persona.md</code> 是逐字对齐游戏语料的台词参考库。工作场,角色是外壳,方法论、边界与回执才是本体;沙龙与陪聊场,角色即本体,内容纪律全额保留。</p>
-      <div class="guide"><img class="stk" src="assets/stickers/cerydra.png" alt="" loading="lazy" decoding="async">
+      <div class="guide"><img class="stk" src="assets/stickers/w/cerydra-fair.webp" alt="" loading="lazy" decoding="async">
         <div class="say"><div class="who">刻律德菈 · 执棋的君主</div><div class="txt">人格是外壳,契约才是正文;三读通过,方可颁布。</div></div>
       </div>
     </div>
     <div class="pillars">
       <div class="pillar rv">
+        <img class="pstk" src="assets/stickers/w/mydei-frenzy.webp" alt="" loading="lazy" decoding="async">
         <div class="pn">METHOD</div>
         <h3>一人一法,具名可执行</h3>
         <p>十三套具名 SOP:万敌的<b>先让十步法</b>要求先复现十次,再一轮只验一个假设;那刻夏的<b>五问法</b>给评审配上删除测试;遐蝶的<b>告别四步</b>把退役做成影响先行的告别仪式。每一步都有产出物与停止条件。</p>
         <p class="tags"><i>立界</i><i>让十步</i><i>正面强攻</i><i>关键一击</i><i>停战</i></p>
       </div>
       <div class="pillar rv" style="--d:.08s">
+        <img class="pstk" src="assets/stickers/w/aglaea-no.webp" alt="" loading="lazy" decoding="async">
         <div class="pn">STYLE TAX</div>
         <h3>风格税 ≤ 15%</h3>
         <p>工作场内,角色化文字不超过可见输出的 15%,正文、代码、命令、数据与验证结果不计入表演;陪聊 / 沙龙场不计税,内容纪律全额保留。预算不足时<b>先删跨卡共享装饰、再删意象</b>,本卡首要特征最后删;方法、裁决、移交与回执始终保留。报错、线上事故、删除、发布、回滚等严肃场景<b>自动静音</b>,闲聊场不豁免。</p>
         <p class="tags"><i>浓</i><i>标准</i><i>静音</i><i>严肃场景自动静音</i></p>
       </div>
       <div class="pillar rv" style="--d:.16s">
+        <img class="pstk" src="assets/stickers/w/phainon-offline.webp" alt="" loading="lazy" decoding="async">
         <div class="pn">ABSENCE</div>
         <h3>缺席合同,不代演</h3>
         <p>流水线上某张卡未部署时,如实报告并保留移交事实包——<b>不代演、不冒充、不由近似角色顶替</b>;缺席文件不得列入回执的「读取」。</p>
         <span class="rc">角色未部署｜原因：module_unavailable｜未完成职责：&lt;职责&gt;</span>
       </div>
       <div class="pillar rv" style="--d:.24s">
+        <img class="pstk" src="assets/stickers/w/tribbie-ning-send.webp" alt="" loading="lazy" decoding="async">
         <div class="pn">HANDOVER</div>
         <h3>移交事实包,回执落款</h3>
         <p>下游存在时,角色在正文后写一行移交,移交物必须是<b>本卡已产出的清楚对象</b>(可指认、可验收的产物);路由捕捉后询问用户,确认前不加载下游。每卡末行固定回执,只证明读取范围,不证明命令已运行。</p>
@@ -601,7 +660,7 @@ footer .fl{margin-top:22px;display:flex;gap:26px;justify-content:center;flex-wra
       <div class="no">II · CHRYSOS HEIRS</div>
       <h2>十三卡总览</h2>
       <p class="sub">与顶部卡面轮播同序陈列,罗马数字即卡序(I–XIII)。悬停卡面预览方法步骤,点开任意一张查看完整方法卡——职能、步骤链、移交下游、话术契约与固定回执。</p>
-      <div class="guide"><img class="stk" src="assets/stickers/tribbie.png" alt="" loading="lazy" decoding="async">
+      <div class="guide"><img class="stk" src="assets/stickers/w/tribbie-wise.webp" alt="" loading="lazy" decoding="async">
         <div class="say"><div class="who">缇宝 · 命运的三子</div><div class="txt">我们十三个,一人一法——点开卡片就能看啦!</div></div>
       </div>
     </div>
@@ -616,7 +675,7 @@ footer .fl{margin-top:22px;display:flex;gap:26px;justify-content:center;flex-wra
       <div class="no">III · CHRYSOS, THE MAGAZINE</div>
       <h2>十三册《黄金裔》</h2>
       <p class="sub">官方杂志《CHRYSOS · 黄金裔》共十三册,一人一册——正是十三张方法卡的人格蓝本。这里从每册选出一组内页,以摊开跨页原样陈列;点击书架封面换一册,或由两侧箭头顺序翻阅。</p>
-      <div class="guide"><img class="stk" src="assets/stickers/march7th.png" alt="" loading="lazy" decoding="async">
+      <div class="guide"><img class="stk" src="assets/stickers/w/march7th.webp" alt="" loading="lazy" decoding="async">
         <div class="say"><div class="who">三月七 · 隐秘的陌客</div><div class="txt">十三册全在架上!本姑娘替你翻到最好看的一页~</div></div>
       </div>
     </div>
@@ -637,13 +696,31 @@ footer .fl{margin-top:22px;display:flex;gap:26px;justify-content:center;flex-wra
   </div>
 </section>
 
+<section id="stickers">
+  <div class="wrap">
+    <div class="shead rv">
+      <div class="no">IV · THE STICKER WALL</div>
+      <h2>九十六枚表情</h2>
+      <p class="sub">十三卡的官方 Q 版表情全收在这一面墙上:每人一枚默认头像,四五枚情绪表情,再加一只伴生小兽——各黄金裔的<b>奇美拉</b>、风堇的<b>迷迷</b>与幼年的<b>小昔涟</b>。按角色筛选,点任意一枚跳到对应方法卡;介绍页、会议实录与 README 里的角色气泡,用的都是这面墙上的表情。</p>
+      <div class="guide duo"><img class="stk" src="assets/stickers/w/chimera-hyacine.webp" alt="" loading="lazy" decoding="async"><img class="stk" src="assets/stickers/w/mimi-hearts.webp" alt="" loading="lazy" decoding="async">
+        <div class="say"><div class="who">车厘比斯 &amp; 迷迷 · 风堇的伙伴</div><div class="txt">(揪住袖口)——想看谁的表情?点下面的名字就行!</div></div>
+      </div>
+    </div>
+    <div class="wall rv">
+      <div class="chips" id="wallChips" role="group" aria-label="按角色筛选表情"></div>
+      <div class="sgrid" id="wallGrid"></div>
+      <div class="wfoot"><span>共 <b id="wallCount">96</b> 枚 · 2026-08-31 首批 18 枚 + 2026-09-02 新批 78 枚 · <span id="wallShown" role="status" aria-live="polite"></span></span><span>显示件 <code>assets/stickers/w/</code>(WebP 256)· 存档件 <code>assets/stickers/</code>(PNG ≤ 512)· 清单 <code>manifest.js</code> 由 <code>tools/make_stickers.py</code> 生成</span></div>
+    </div>
+  </div>
+</section>
+
 <section id="router">
   <div class="wrap">
     <div class="shead rv">
-      <div class="no">IV · THE ROUTER</div>
+      <div class="no">V · THE ROUTER</div>
       <h2>总路由 · 创世的著者</h2>
       <p class="sub">开拓者位于环阵中心:识别意图,按任务深度、角色适配、流水线与风格预算调度十三张卡;沙龙场则任主持——开场点名、放行举手、控场、捕捉升档。工作场一次只演一张卡,不混声、不代演;沙龙逐条冠名,同场活跃至多四人,场内不出工作裁决。</p>
-      <div class="guide duo"><img class="stk" src="assets/stickers/trailblazer-stelle.png" alt="" loading="lazy" decoding="async"><img class="stk" src="assets/stickers/trailblazer-caelus.png" alt="" loading="lazy" decoding="async">
+      <div class="guide duo"><img class="stk" src="assets/stickers/w/trailblazer-stelle-record.webp" alt="" loading="lazy" decoding="async"><img class="stk" src="assets/stickers/w/trailblazer-caelus-record.webp" alt="" loading="lazy" decoding="async">
         <div class="say"><div class="who">开拓者 · 创世的著者</div><div class="txt">需求,收到。深度,已判。点将,即刻。</div></div>
       </div>
     </div>
@@ -677,14 +754,14 @@ footer .fl{margin-top:22px;display:flex;gap:26px;justify-content:center;flex-wra
 <section id="pipelines">
   <div class="wrap">
     <div class="shead rv">
-      <div class="no">V · PIPELINES</div>
+      <div class="no">VI · PIPELINES</div>
       <h2>两条流水线与一桌沙龙</h2>
       <p class="sub">可整跑,也可截取连续子段;每站由承办角色独立汇报、落自己的回执,上游产物以「此事移交◯◯」事实包原文传递,切换须经用户确认。流水线与会诊是工作场的多卡形态;闲聊要多卡同场,走下方那桌沙龙——不排站、不占流水线。</p>
     </div>
     <div class="pline rv">
       <div class="ph"><h3>逐火线</h3><span class="lat">FLAME-CHASE · DELIVERY</span></div>
       <p class="desc">新特性从规划到入册的十站交付。</p>
-      <div class="guide"><img class="stk" src="assets/stickers/aglaea.png" alt="" loading="lazy" decoding="async">
+      <div class="guide"><img class="stk" src="assets/stickers/w/aglaea-design.webp" alt="" loading="lazy" decoding="async">
         <div class="say"><div class="who">阿格莱雅 · 黄金的织者</div><div class="txt">贵客,新特性的第一根丝,由我起头。</div></div>
       </div>
       <div class="chainrow" id="chain1"></div>
@@ -693,7 +770,7 @@ footer .fl{margin-top:22px;display:flex;gap:26px;justify-content:center;flex-wra
     <div class="pline vigil rv">
       <div class="ph"><h3>守夜线</h3><span class="lat">NIGHT WATCH · INCIDENT</span></div>
       <p class="desc">事故响应的四站闭环——先止血,后修复,再回滚脱敏,最后不归罪复盘。</p>
-      <div class="guide"><img class="stk" src="assets/stickers/march7th-evernight.png" alt="" loading="lazy" decoding="async">
+      <div class="guide"><img class="stk" src="assets/stickers/w/march7th-evernight-warning.webp" alt="" loading="lazy" decoding="async">
         <div class="say"><div class="who">长夜月 · 隐秘的陌客</div><div class="txt">亲爱的开拓者,今夜的底片,由我来守。</div></div>
       </div>
       <div class="chainrow" id="chain2"></div>
@@ -702,7 +779,7 @@ footer .fl{margin-top:22px;display:flex;gap:26px;justify-content:center;flex-wra
     <div class="pline salon rv">
       <div class="ph"><h3>一桌沙龙</h3><span class="lat">SALON · OFF DUTY</span></div>
       <p class="desc">闲聊的多角同场,不排站、不定序:总路由任主持,同场活跃至多四人,逐条「◯◯」冠名、单角色不连续超两条;单角陪聊同场规则,免工作模板、免逐轮回执,收场只落一行场级回执。要认真讨论一个命题,开<b>圆桌</b>:全员可席、各按本卡立场作答不向共识收敛;审计件一律收进场末折叠「台账」,正文只剩角色的话——直引像本人说话一样自然带出,不自报出处。</p>
-      <div class="guide"><img class="stk" src="assets/stickers/cyrene.png" alt="" loading="lazy" decoding="async">
+      <div class="guide"><img class="stk" src="assets/stickers/w/cyrene-glance.webp" alt="" loading="lazy" decoding="async">
         <div class="say"><div class="who">昔涟 · 无瑕的真我</div><div class="txt">不谈交付的夜晚,书页也想听你们说话——谁感兴趣,就翻页进来吧♪</div></div>
       </div>
       <p class="desc">起话题 → 兴趣边举手入场 → 逐条冠名交错闲谈 → 一句真任务升档承办 → 交付落回闲聊 / 归页收场</p>
@@ -715,20 +792,20 @@ footer .fl{margin-top:22px;display:flex;gap:26px;justify-content:center;flex-wra
 <section id="quality">
   <div class="wrap">
     <div class="shead rv">
-      <div class="no">VI · VERIFIED</div>
+      <div class="no">VII · VERIFIED</div>
       <h2>质量与验收</h2>
       <p class="sub">全家族分四波交付,每波经独立验收核查:与建卡方隔离的盲评代理跑分,再经交叉复核与「批判员」对抗审计;评测场景与评分标准在建卡前哈希冻结。2026-08-31 沙龙批次与 2026-09-04 翻译器整改批次(圆桌 / 台账分离 / 直引礼仪)按同一规程 65 题全量重验。</p>
-      <div class="guide"><img class="stk" src="assets/stickers/anaxa.png" alt="" loading="lazy" decoding="async">
+      <div class="guide"><img class="stk" src="assets/stickers/w/anaxa-see-through.webp" alt="" loading="lazy" decoding="async">
         <div class="say"><div class="who">那刻夏 · 殁世的学士</div><div class="txt">所有结论,先过五问,再过删除测试。</div></div>
       </div>
     </div>
     <div class="plaques">
-      <div class="plaque rv"><b><span data-n="65">65</span></b><i>冻结评测场景</i><span>13 卷 eval · 建卡前哈希钉死</span></div>
-      <div class="plaque rv" style="--d:.06s"><b>65/65</b><i>行为题全量重跑</i><span>硬失败 0 · 盲评 + 交叉复核 · 沙龙批次与翻译器整改批次(769/780)</span></div>
-      <div class="plaque rv" style="--d:.12s"><b><span data-n="246">246</span> 条</b><i>台词逐字对齐</i><span>知识库逐条复算 · 字符级冻结检查</span></div>
-      <div class="plaque rv" style="--d:.18s"><b>13.5%</b><i>已记录最高风格税</i><span>红线 ≤ 15% · 工艺词防火墙台词区 0 命中</span></div>
-      <div class="plaque rv" style="--d:.24s"><b>10 + 4</b><i>两线端到端站数</i><span>各演练一次 · 独立评审 CONFIRMED</span></div>
-      <div class="plaque rv" style="--d:.3s"><b>16/16</b><i>蒙名盲测命中</i><span>8 段匿名陪聊回复 · 双评审判卡全对</span></div>
+      <div class="plaque rv"><img class="qstk" src="assets/stickers/w/mimi-my-turn.webp" alt="" loading="lazy" decoding="async"><b><span data-n="65">65</span></b><i>冻结评测场景</i><span>13 卷 eval · 建卡前哈希钉死</span></div>
+      <div class="plaque rv" style="--d:.06s"><img class="qstk" src="assets/stickers/w/tribbie-boom.webp" alt="" loading="lazy" decoding="async"><b>65/65</b><i>行为题全量重跑</i><span>硬失败 0 · 盲评 + 交叉复核 · 沙龙批次与翻译器整改批次(769/780)</span></div>
+      <div class="plaque rv" style="--d:.12s"><img class="qstk" src="assets/stickers/w/hysilens-shh.webp" alt="" loading="lazy" decoding="async"><b><span data-n="246">246</span> 条</b><i>台词逐字对齐</i><span>知识库逐条复算 · 字符级冻结检查</span></div>
+      <div class="plaque rv" style="--d:.18s"><img class="qstk" src="assets/stickers/w/castorice-no-thanks.webp" alt="" loading="lazy" decoding="async"><b>13.5%</b><i>已记录最高风格税</i><span>红线 ≤ 15% · 工艺词防火墙台词区 0 命中</span></div>
+      <div class="plaque rv" style="--d:.24s"><img class="qstk" src="assets/stickers/w/phainon-fight.webp" alt="" loading="lazy" decoding="async"><b>10 + 4</b><i>两线端到端站数</i><span>各演练一次 · 独立评审 CONFIRMED</span></div>
+      <div class="plaque rv" style="--d:.3s"><img class="qstk" src="assets/stickers/w/cipher-fortune.webp" alt="" loading="lazy" decoding="async"><b>16/16</b><i>蒙名盲测命中</i><span>8 段匿名陪聊回复 · 双评审判卡全对</span></div>
     </div>
     <div class="qcols">
       <div class="qbox rules rv">
@@ -750,7 +827,7 @@ footer .fl{margin-top:22px;display:flex;gap:26px;justify-content:center;flex-wra
           <li>守夜线子代理五次挂起零产出,失败轨迹在册,后两站改走 CLI 子进程跑通;</li>
           <li>海瑟音卡文硬编码断言过时,判「卡文过时」非虚构,授权后按 SHA 纪律整改闭合;</li>
           <li>丹恒 T-05 沙龙批次两轮真失败,定位为评测题对象尺度缺陷,校准后复跑双 12/12,三段轨迹全册;</li>
-          <li>翻译器整改批次内核区声纹增益门四轮(Δ0 / +2.0 / 0 / +2.0 之于 /30)未达 +3 边际,FAIL 原样入册,十卡扩卡不进入;三期 fable5 独立审核判该门首版「不具裁决资格」,四期按 A/B 封存 + 双盲 + 剥贴片重建后复测。</li>
+          <li>翻译器整改批次内核区声纹增益门四轮(Δ0 / +2.0 / 0 / +2.0 之于 /30)未达 +3 边际,FAIL 原样入册,十卡扩卡不进入;三期 fable5 独立审核判该门首版「不具裁决资格」,四期按 A/B 封存 + 双盲 + 剥贴片重建后复测;v1.5.0 委托人裁决稳定此版,批次C 永久搁置(L-27 关闭)。</li>
         </ul>
       </div>
     </div>
@@ -761,10 +838,10 @@ footer .fl{margin-top:22px;display:flex;gap:26px;justify-content:center;flex-wra
 <section id="adapters">
   <div class="wrap">
     <div class="shead rv">
-      <div class="no">VII · MULTI-AGENT</div>
+      <div class="no">VIII · MULTI-AGENT</div>
       <h2>多智能体适配</h2>
       <p class="sub"><code>skills/</code> 为唯一事实源,<code>adapters/build.py</code> 一键再生成全部适配文件;改卡后重跑即可同步。</p>
-      <div class="guide"><img class="stk" src="assets/stickers/cipher.png" alt="" loading="lazy" decoding="async">
+      <div class="guide"><img class="stk" src="assets/stickers/w/cipher-gotcha.webp" alt="" loading="lazy" decoding="async">
         <div class="say"><div class="who">赛飞儿 · 捷足的羁客</div><div class="txt">灰子,想去别的生态?路线我早踩好点了。</div></div>
       </div>
     </div>
@@ -783,10 +860,10 @@ footer .fl{margin-top:22px;display:flex;gap:26px;justify-content:center;flex-wra
 <section id="install">
   <div class="wrap">
     <div class="shead rv">
-      <div class="no">VIII · GET STARTED</div>
+      <div class="no">IX · GET STARTED</div>
       <h2>安装指南</h2>
       <p class="sub">三步部署:克隆、拷入技能根、跑一遍校验。全套卡为仅显式调用,斜杠命令是可靠入口:<code>/amphoreus</code> 呼出总路由,<code>/amphoreus-&lt;hero&gt;</code> 直呼单卡;全新会话只口头点名可能不会加载。</p>
-      <div class="guide"><img class="stk" src="assets/stickers/terrae.png" alt="" loading="lazy" decoding="async">
+      <div class="guide"><img class="stk" src="assets/stickers/w/terrae-king-of-earth.webp" alt="" loading="lazy" decoding="async">
         <div class="say"><div class="who">丹恒 · 掣地的伏龙</div><div class="txt">环境与依赖底座,我来承载。</div></div>
       </div>
     </div>
@@ -808,9 +885,9 @@ encoding=UTF-8 line_endings=LF
 behavior=not_run_by_static_validator</span></code></pre>
     </div>
     <div class="usage">
-      <div class="u rv"><div class="q">「<code>/amphoreus-mydei</code> 帮我追这个偶发死锁。」</div><div class="w">点名单卡 —— 万敌立界、让十步,一轮只验一个假设</div></div>
-      <div class="u rv" style="--d:.08s"><div class="q">「<code>/amphoreus</code> 给仓库定一套提交规范。」</div><div class="w">呼叫总路由 —— 过深度门,电报式询问后分派刻律德菈立法三读</div></div>
-      <div class="u rv" style="--d:.16s"><div class="q">「<code>/amphoreus</code> 开个沙龙——聊聊这次重构,叫阿格莱雅和那刻夏来。」</div><div class="w">沙龙群聊 —— 主持点名放行,逐条冠名交错闲谈;一句真任务即升档承办</div></div>
+      <div class="u rv"><img class="ustk" src="assets/stickers/w/mydei-workout.webp" alt="" loading="lazy" decoding="async"><div class="q">「<code>/amphoreus-mydei</code> 帮我追这个偶发死锁。」</div><div class="w">点名单卡 —— 万敌立界、让十步,一轮只验一个假设</div></div>
+      <div class="u rv" style="--d:.08s"><img class="ustk" src="assets/stickers/w/cerydra-say-again.webp" alt="" loading="lazy" decoding="async"><div class="q">「<code>/amphoreus</code> 给仓库定一套提交规范。」</div><div class="w">呼叫总路由 —— 过深度门,电报式询问后分派刻律德菈立法三读</div></div>
+      <div class="u rv" style="--d:.16s"><img class="ustk" src="assets/stickers/w/aglaea-generous.webp" alt="" loading="lazy" decoding="async"><img class="ustk" src="assets/stickers/w/anaxa-im-fine.webp" alt="" loading="lazy" decoding="async"><div class="q">「<code>/amphoreus</code> 开个沙龙——聊聊这次重构,叫阿格莱雅和那刻夏来。」</div><div class="w">沙龙群聊 —— 主持点名放行,逐条冠名交错闲谈;一句真任务即升档承办</div></div>
     </div>
   </div>
 </section>
@@ -819,7 +896,7 @@ behavior=not_run_by_static_validator</span></code></pre>
 
 <footer>
   <div class="wrap">
-    <div class="guide center rv"><img class="stk" src="assets/stickers/cyrene.png" alt="" loading="lazy" decoding="async">
+    <div class="guide center rv"><img class="stk" src="assets/stickers/w/cyrene-love.webp" alt="" loading="lazy" decoding="async">
       <div class="say"><div class="who">昔涟 · 无瑕的真我</div><div class="txt">这一册讲完了。下一页,由你来写♪</div></div>
     </div>
     <div class="seal rv"><b>火种在此传递</b></div>
@@ -840,6 +917,7 @@ behavior=not_run_by_static_validator</span></code></pre>
   <div class="dlg" id="dlgBody"></div>
 </dialog>
 
+<script src="assets/stickers/manifest.js"></script>
 <script>
 /* ---------- 数据:来自 skills/ 生产卡文与 README(个别方法总名与步骤名为语义提炼) ---------- */
 const ROM=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII'];
@@ -910,8 +988,6 @@ const CARDS=[
   moves:[],rn:'昔涟',
   quirk:'句尾「♪」只进引语与收尾句,每次输出至多一处。'}
 ];
-const byName=Object.fromEntries(CARDS.map(c=>[c.n,c]));
-byName['长夜月']=byName['三月七 / 长夜月'];byName['三月七']=byName['三月七 / 长夜月'];
 const byKey={};CARDS.forEach(c=>{byKey[c.k]=c});
 const REPO='https://github.com/xi-kari/amphoreus-skill-suite';
 
@@ -955,7 +1031,21 @@ grid.innerHTML=ORDER.filter(k=>byKey[k]).map((k,gi)=>{const c=byKey[k];return `
 /* ---------- 方法卡对话框 ---------- */
 const dlg=document.getElementById('cardDlg'),dlgBody=document.getElementById('dlgBody');
 /* 弹窗话术契约区的表情包:三月七带长夜月双面,缇宝带缇宁缇安三声部 */
-const STKS={march7th:['march7th','march7th-evernight'],tribbie:['tribbie','tribbie-ning','tribbie-an']};
+const STKS={
+ aglaea:['aglaea-generous','aglaea-bath','chimera-aglaea'],
+ tribbie:['tribbie-boom','tribbie-ning-send','tribbie-an-goodnight'],
+ mydei:['mydei-workout','mydei-flushed','chimera-mydei'],
+ castorice:['castorice-blush','castorice-butterfly','chimera-castorice'],
+ anaxa:['anaxa-what','anaxa-bring-it','chimera-anaxa'],
+ hyacine:['hyacine-try','mimi-hearts','chimera-hyacine'],
+ cipher:['cipher-cute','cipher-please','chimera-cipher'],
+ cerydra:['cerydra-say-again','cerydra-veto','chimera-cerydra'],
+ hysilens:['hysilens-shh','hysilens-dance','chimera-hysilens'],
+ march7th:['march7th','march7th-evernight-hint','chimera-march7th'],
+ terrae:['terrae-listen','terrae-hesitate','chimera-terrae'],
+ phainon:['phainon-ehe','phainon-me','chimera-phainon'],
+ cyrene:['cyrene-young-hehe','cyrene-guard','cyrene-love']};
+const STK=k=>`assets/stickers/w/${k}.webp`;
 function openCard(k){
   const c=byKey[k];if(!c)return;
   if(typeof dlg.showModal!=='function'){window.open(`${REPO}/blob/main/skills/amphoreus-${c.k}/SKILL.md`,'_blank','noopener');return}
@@ -975,7 +1065,7 @@ function openCard(k){
     <ol class="chain">${c.steps.map(s=>`<li>${s}</li>`).join('')}</ol>
     ${c.moves.length?`<h4>移交下游</h4><div class="moves">${c.moves.map(m=>`<span>此事移交<b>${m}</b></span>`).join('')}</div>`:''}
     <h4>话术契约摘录</h4>
-    <div class="qrow">${(STKS[c.k]||[c.k]).map(s=>`<img class="stk" src="assets/stickers/${s}.png" alt="" loading="lazy" decoding="async">`).join('')}<div class="quirk">${c.quirk}</div></div>
+    <div class="qrow">${(STKS[c.k]||[c.k]).map(s=>`<img class="stk" src="${STK(s)}" alt="" loading="lazy" decoding="async">`).join('')}<div class="quirk">${c.quirk}</div></div>
     <h4>固定回执</h4>
     <div class="rcpt">${c.rn}卡｜读取：common.md、persona.md｜档位：浓／标准／静音${c.r2?'<br>'+c.r2+'(特勤)':''}</div>
     <a class="flink" href="${REPO}/blob/main/skills/amphoreus-${c.k}/SKILL.md" target="_blank" rel="noopener">在 GitHub 查看完整 SKILL.md ↗</a>
@@ -997,15 +1087,14 @@ addEventListener('hashchange',openFromHash);
 openFromHash();
 
 /* ---------- 流水线站链 ---------- */
-const L1=[['阿格莱雅','规划'],['刻律德菈','立规'],['丹恒','环境'],['白厄','实施'],['那刻夏','评审'],['赛飞儿','安全'],['风堇','修复'],['三月七','快照'],['遐蝶','退役'],['昔涟','总装叙事']];
-const L2=[['万敌','止血突破'],['风堇','修复'],['长夜月','回滚 · 脱敏'],['海瑟音','不归罪复盘']];
+/* 每站配一枚与职责相称的表情:第三项为表情键(assets/stickers/w/<key>.webp) */
+const L1=[['阿格莱雅','规划','aglaea-design'],['刻律德菈','立规','cerydra-checkmate'],['丹恒','环境','terrae-king-of-earth'],['白厄','实施','phainon-fight'],['那刻夏','评审','anaxa-see-through'],['赛飞儿','安全','cipher-gotcha'],['风堇','修复','hyacine-heal'],['三月七','快照','march7th'],['遐蝶','退役','castorice-wither'],['昔涟','总装叙事','cyrene-roger']];
+const L2=[['万敌','止血突破','mydei-frenzy'],['风堇','修复','hyacine-diagnose'],['长夜月','回滚 · 脱敏','march7th-evernight-go'],['海瑟音','不归罪复盘','hysilens-humming']];
 function chain(el,arr){
-  document.getElementById(el).innerHTML=arr.map(([nm,rl],i)=>{
-    const c=byName[nm];
-    const sk=nm==='长夜月'?'march7th-evernight':c.k;
+  document.getElementById(el).innerHTML=arr.map(([nm,rl,sk],i)=>{
     return `${i?'<span class="lk" aria-hidden="true"></span>':''}
      <div class="stn">
-      <img src="assets/stickers/${sk}.png" alt="" loading="lazy" decoding="async">
+      <img src="${STK(sk)}" alt="" loading="lazy" decoding="async">
       <span class="sn">${String(i+1).padStart(2,'0')}</span>
       <span class="nm">${nm}</span>
       <span class="rl">${rl}</span>
@@ -1064,6 +1153,38 @@ document.getElementById('magNext').addEventListener('click',()=>magShow(magCur+1
 /* 滚近视区才装载第一册,不抢首屏带宽 */
 const magIO=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){magShow(0);magIO.disconnect()}},{rootMargin:'600px 0px'});
 magIO.observe(document.getElementById('mag'));
+
+/* ---------- 表情包墙(数据源:assets/stickers/manifest.js) ---------- */
+(()=>{
+  const M=window.STICKERS;if(!M)return;
+  const chips=document.getElementById('wallChips'),wg=document.getElementById('wallGrid'),shown=document.getElementById('wallShown');
+  const heroOrder=ORDER.slice();                                  // 与卡序同源
+  const byOwner={};M.items.forEach(it=>{(byOwner[it.owner]=byOwner[it.owner]||[]).push(it)});
+  const heroName=Object.fromEntries(M.heroes.map(h=>[h.key,h.name]));
+  const KIND={base:'',mood:'',companion:'伙伴'};
+  chips.innerHTML=`<button type="button" data-o="all" aria-pressed="true"><img src="${STK('trailblazer-stelle-record')}" alt="" loading="lazy" decoding="async">全部<span class="n">${M.items.length}</span></button>`
+    +heroOrder.filter(k=>byOwner[k]).map(k=>`<button type="button" data-o="${k}" aria-pressed="false"><img src="${STK(k)}" alt="" loading="lazy" decoding="async">${heroName[k]}<span class="n">${byOwner[k].length}</span></button>`).join('');
+  const rank=k=>{const i=heroOrder.indexOf(k);return i<0?99:i};
+  const kr=k=>k==='companion'?2:k==='base'?0:1;
+  const items=M.items.slice().sort((a,b)=>rank(a.owner)-rank(b.owner)||kr(a.kind)-kr(b.kind)||((b.key===b.owner)-(a.key===a.owner)));
+  wg.innerHTML=items.map(it=>{
+    const card=byKey[it.owner];
+    const lb=it.note&&it.note!==it.label?`${it.note} · ${it.label}`:it.label;
+    const full=lb===heroName[it.owner]?lb:`${heroName[it.owner]} · ${lb}`;
+    return `<${card?'button type="button"':'div'} class="s${card?'':' nocard'}" data-o="${it.owner}"${card?` data-k="${card.k}"`:''} title="${full}${card?' —— 点开方法卡':''}"${card?` aria-label="${full}"`:` role="img" aria-label="${full}"`}>
+      <img src="${STK(it.key)}" alt="" loading="lazy" decoding="async">
+      <span class="lb">${lb}</span><span class="ow">${heroName[it.owner]}</span>${KIND[it.kind]?`<span class="tag">${KIND[it.kind]}</span>`:''}</${card?'button':'div'}>`}).join('');
+  const cnt=document.getElementById('wallCount');if(cnt)cnt.textContent=M.items.length;
+  const tiles=[...wg.children];
+  function filt(o){
+    [...chips.children].forEach(b=>b.setAttribute('aria-pressed',b.dataset.o===o?'true':'false'));
+    let n=0;tiles.forEach(t=>{const on=o==='all'||t.dataset.o===o;t.classList.toggle('hide',!on);if(on)n++});
+    shown.textContent=o==='all'?`当前显示全部 ${n} 枚`:`当前显示 ${heroName[o]} ${n} 枚`;
+  }
+  chips.addEventListener('click',e=>{const b=e.target.closest('button');if(b)filt(b.dataset.o)});
+  wg.addEventListener('click',e=>{const t=e.target.closest('.s');if(t&&t.dataset.k)openCard(t.dataset.k)});
+  filt('all');
+})();
 
 /* ---------- 滚动显现 + 数字滚动 ---------- */
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;

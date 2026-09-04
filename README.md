@@ -24,7 +24,7 @@
 </div>
 
 <table><tr>
-<td width="88"><img src="assets/stickers/tribbie.png" width="80" alt="缇宝"></td>
+<td width="88"><img src="assets/stickers/w/tribbie-wise.webp" width="80" alt="缇宝"></td>
 <td><b>缇宝 · 命运的三子</b><br><sub>我们十三个,一人一法——工作时,每张卡都是一套<b>可执行、可验收的工程方法论</b>;闲下来,也能陪你聊天、开一桌沙龙。往下看啦!</sub></td>
 </tr></table>
 
@@ -39,7 +39,7 @@
 ## 快速开始
 
 <table><tr>
-<td width="88"><img src="assets/stickers/terrae.png" width="80" alt="丹恒"></td>
+<td width="88"><img src="assets/stickers/w/terrae-king-of-earth.webp" width="80" alt="丹恒"></td>
 <td><b>丹恒 · 掣地的伏龙</b><br><sub>环境与依赖底座,我来承载。三步部署,如下。</sub></td>
 </tr></table>
 
@@ -66,28 +66,28 @@ python ~/.claude/skills/amphoreus/scripts/validate.py --root ~/.claude/skills --
 
 <table>
 <tr>
-<td align="center" width="25%"><img src="assets/cards/tribbie.jpg" width="150" alt="缇宝"><br><img src="assets/stickers/tribbie.png" width="26" alt=""> <b>缇宝</b><br><sub>命运的三子</sub><br><code>amphoreus-tribbie</code><br><sub>I · 三声部讲解法</sub></td>
-<td align="center" width="25%"><img src="assets/cards/cerydra.jpg" width="150" alt="刻律德菈"><br><img src="assets/stickers/cerydra.png" width="26" alt=""> <b>刻律德菈</b><br><sub>执棋的君主</sub><br><code>amphoreus-cerydra</code><br><sub>II · 立法三读</sub></td>
-<td align="center" width="25%"><img src="assets/cards/march7th.jpg" width="150" alt="三月七 / 长夜月"><br><img src="assets/stickers/march7th.png" width="26" alt=""><img src="assets/stickers/march7th-evernight.png" width="26" alt=""> <b>三月七 / 长夜月</b><br><sub>隐秘的陌客</sub><br><code>amphoreus-march7th</code><br><sub>III · 拍照式记录法 + 底片法</sub></td>
-<td align="center" width="25%"><img src="assets/cards/terrae.jpg" width="150" alt="丹恒"><br><img src="assets/stickers/terrae.png" width="26" alt=""> <b>丹恒</b><br><sub>掣地的伏龙</sub><br><code>amphoreus-terrae</code><br><sub>IV · 承载法</sub></td>
+<td align="center" width="25%"><img src="assets/cards/tribbie.jpg" width="150" alt="缇宝"><br><img src="assets/stickers/w/tribbie.webp" width="26" alt=""> <b>缇宝</b><br><sub>命运的三子</sub><br><code>amphoreus-tribbie</code><br><sub>I · 三声部讲解法</sub></td>
+<td align="center" width="25%"><img src="assets/cards/cerydra.jpg" width="150" alt="刻律德菈"><br><img src="assets/stickers/w/cerydra.webp" width="26" alt=""> <b>刻律德菈</b><br><sub>执棋的君主</sub><br><code>amphoreus-cerydra</code><br><sub>II · 立法三读</sub></td>
+<td align="center" width="25%"><img src="assets/cards/march7th.jpg" width="150" alt="三月七 / 长夜月"><br><img src="assets/stickers/w/march7th.webp" width="26" alt=""><img src="assets/stickers/w/march7th-evernight.webp" width="26" alt=""><img src="assets/stickers/w/chimera-march7th.webp" width="26" alt="胶糖卷"> <b>三月七 / 长夜月</b><br><sub>隐秘的陌客</sub><br><code>amphoreus-march7th</code><br><sub>III · 拍照式记录法 + 底片法</sub></td>
+<td align="center" width="25%"><img src="assets/cards/terrae.jpg" width="150" alt="丹恒"><br><img src="assets/stickers/w/terrae.webp" width="26" alt=""> <b>丹恒</b><br><sub>掣地的伏龙</sub><br><code>amphoreus-terrae</code><br><sub>IV · 承载法</sub></td>
 </tr>
 <tr>
-<td align="center" width="25%"><img src="assets/cards/hysilens.jpg" width="150" alt="海瑟音"><br><img src="assets/stickers/hysilens.png" width="26" alt=""> <b>海瑟音</b><br><sub>奏浪的剑骑</sub><br><code>amphoreus-hysilens</code><br><sub>V · 歌集复盘法 + 无路引航式</sub></td>
-<td align="center" width="25%"><img src="assets/cards/hyacine.jpg" width="150" alt="风堇"><br><img src="assets/stickers/hyacine.png" width="26" alt=""> <b>风堇</b><br><sub>摇光的医师</sub><br><code>amphoreus-hyacine</code><br><sub>VI · 双处方</sub></td>
-<td align="center" width="25%"><img src="assets/cards/phainon.jpg" width="150" alt="白厄"><br><img src="assets/stickers/phainon.png" width="26" alt=""> <b>白厄</b><br><sub>负火的囚徒</sub><br><code>amphoreus-phainon</code><br><sub>VII · 推石法</sub></td>
-<td align="center" width="25%"><img src="assets/cards/anaxa.jpg" width="150" alt="那刻夏"><br><img src="assets/stickers/anaxa.png" width="26" alt=""> <b>那刻夏</b><br><sub>殁世的学士</sub><br><code>amphoreus-anaxa</code><br><sub>VIII · 五问法 + 删除测试</sub></td>
+<td align="center" width="25%"><img src="assets/cards/hysilens.jpg" width="150" alt="海瑟音"><br><img src="assets/stickers/w/hysilens.webp" width="26" alt=""> <b>海瑟音</b><br><sub>奏浪的剑骑</sub><br><code>amphoreus-hysilens</code><br><sub>V · 歌集复盘法 + 无路引航式</sub></td>
+<td align="center" width="25%"><img src="assets/cards/hyacine.jpg" width="150" alt="风堇"><br><img src="assets/stickers/w/hyacine.webp" width="26" alt=""> <b>风堇</b><br><sub>摇光的医师</sub><br><code>amphoreus-hyacine</code><br><sub>VI · 双处方</sub></td>
+<td align="center" width="25%"><img src="assets/cards/phainon.jpg" width="150" alt="白厄"><br><img src="assets/stickers/w/phainon.webp" width="26" alt=""> <b>白厄</b><br><sub>负火的囚徒</sub><br><code>amphoreus-phainon</code><br><sub>VII · 推石法</sub></td>
+<td align="center" width="25%"><img src="assets/cards/anaxa.jpg" width="150" alt="那刻夏"><br><img src="assets/stickers/w/anaxa.webp" width="26" alt=""> <b>那刻夏</b><br><sub>殁世的学士</sub><br><code>amphoreus-anaxa</code><br><sub>VIII · 五问法 + 删除测试</sub></td>
 </tr>
 <tr>
-<td align="center" width="25%"><img src="assets/cards/aglaea.jpg" width="150" alt="阿格莱雅"><br><img src="assets/stickers/aglaea.png" width="26" alt=""> <b>阿格莱雅</b><br><sub>黄金的织者</sub><br><code>amphoreus-aglaea</code><br><sub>IX · 织造法</sub></td>
-<td align="center" width="25%"><img src="assets/cards/mydei.jpg" width="150" alt="万敌"><br><img src="assets/stickers/mydei.png" width="26" alt=""> <b>万敌</b><br><sub>亡国的王储</sub><br><code>amphoreus-mydei</code><br><sub>X · 先让十步法</sub></td>
-<td align="center" width="25%"><img src="assets/cards/castorice.jpg" width="150" alt="遐蝶"><br><img src="assets/stickers/castorice.png" width="26" alt=""> <b>遐蝶</b><br><sub>死荫的侍女</sub><br><code>amphoreus-castorice</code><br><sub>XI · 告别四步</sub></td>
-<td align="center" width="25%"><img src="assets/cards/cipher.jpg" width="150" alt="赛飞儿"><br><img src="assets/stickers/cipher.png" width="26" alt=""> <b>赛飞儿</b><br><sub>捷足的羁客</sub><br><code>amphoreus-cipher</code><br><sub>XII · 行窃三则</sub></td>
+<td align="center" width="25%"><img src="assets/cards/aglaea.jpg" width="150" alt="阿格莱雅"><br><img src="assets/stickers/w/aglaea.webp" width="26" alt=""> <b>阿格莱雅</b><br><sub>黄金的织者</sub><br><code>amphoreus-aglaea</code><br><sub>IX · 织造法</sub></td>
+<td align="center" width="25%"><img src="assets/cards/mydei.jpg" width="150" alt="万敌"><br><img src="assets/stickers/w/mydei.webp" width="26" alt=""> <b>万敌</b><br><sub>亡国的王储</sub><br><code>amphoreus-mydei</code><br><sub>X · 先让十步法</sub></td>
+<td align="center" width="25%"><img src="assets/cards/castorice.jpg" width="150" alt="遐蝶"><br><img src="assets/stickers/w/castorice.webp" width="26" alt=""> <b>遐蝶</b><br><sub>死荫的侍女</sub><br><code>amphoreus-castorice</code><br><sub>XI · 告别四步</sub></td>
+<td align="center" width="25%"><img src="assets/cards/cipher.jpg" width="150" alt="赛飞儿"><br><img src="assets/stickers/w/cipher.webp" width="26" alt=""> <b>赛飞儿</b><br><sub>捷足的羁客</sub><br><code>amphoreus-cipher</code><br><sub>XII · 行窃三则</sub></td>
 </tr>
 <tr>
-<td align="center" width="25%"><img src="assets/cards/cyrene.jpg" width="150" alt="昔涟"><br><img src="assets/stickers/cyrene.png" width="26" alt=""> <b>昔涟</b><br><sub>无瑕的真我</sub><br><code>amphoreus-cyrene</code><br><sub>XIII · 如我所书法</sub></td>
-<td align="center" width="25%"><img src="assets/cards/trailblazer-stelle.jpg" width="150" alt="开拓者·星"><br><img src="assets/stickers/trailblazer-stelle.png" width="26" alt=""> <b>开拓者 · 星</b><br><sub>创世的著者</sub></td>
+<td align="center" width="25%"><img src="assets/cards/cyrene.jpg" width="150" alt="昔涟"><br><img src="assets/stickers/w/cyrene.webp" width="26" alt=""> <b>昔涟</b><br><sub>无瑕的真我</sub><br><code>amphoreus-cyrene</code><br><sub>XIII · 如我所书法</sub></td>
+<td align="center" width="25%"><img src="assets/cards/trailblazer-stelle.jpg" width="150" alt="开拓者·星"><br><img src="assets/stickers/w/trailblazer-stelle.webp" width="26" alt=""> <b>开拓者 · 星</b><br><sub>创世的著者</sub></td>
 <td align="center" width="25%"><b>amphoreus 总路由</b><br><sub>开拓者「创世的著者」</sub><br><code>amphoreus</code><br><sub>意图识别与分发:<br>深度门 L0 直答 / L1 单卡<br>L2 串卡 / L3 流水线会诊<br>按角色适配与风格预算<br>路由至十三卡,<br>不混声、不代演;<br>兼沙龙主持:点名 / 举手 /<br>控场 / 捕捉升档</sub></td>
-<td align="center" width="25%"><img src="assets/cards/trailblazer-caelus.jpg" width="150" alt="开拓者·穹"><br><img src="assets/stickers/trailblazer-caelus.png" width="26" alt=""> <b>开拓者 · 穹</b><br><sub>创世的著者</sub></td>
+<td align="center" width="25%"><img src="assets/cards/trailblazer-caelus.jpg" width="150" alt="开拓者·穹"><br><img src="assets/stickers/w/trailblazer-caelus.webp" width="26" alt=""> <b>开拓者 · 穹</b><br><sub>创世的著者</sub></td>
 </tr>
 </table>
 
@@ -126,7 +126,7 @@ flowchart LR
 ```
 
 <table><tr>
-<td width="88"><img src="assets/stickers/march7th-evernight.png" width="80" alt="长夜月"></td>
+<td width="88"><img src="assets/stickers/w/march7th-evernight-warning.webp" width="80" alt="长夜月"></td>
 <td><b>长夜月 · 隐秘的陌客</b><br><sub>事故场景全程静音档;删除、回滚、脱敏、清档由三月七以一句交接语让位于「长夜月」特勤,完成必附底片单,结束后交回。</sub></td>
 </tr></table>
 
@@ -135,7 +135,7 @@ flowchart LR
 ## 沙龙与陪聊
 
 <table><tr>
-<td width="88"><img src="assets/stickers/aglaea.png" width="80" alt="阿格莱雅"></td>
+<td width="88"><img src="assets/stickers/w/aglaea-generous.webp" width="80" alt="阿格莱雅"></td>
 <td><b>阿格莱雅 · 黄金的织者</b><br><sub>把律法的皇女和纷争的王储塞进同一个房间,再拉你当裁判——现在,这样的沙龙可以随时开一桌。我会看好他们,保证讨论维持在「微醺」的状态。</sub></td>
 </tr></table>
 
@@ -151,14 +151,48 @@ flowchart LR
 - **圆桌** — 陪聊的议题形态:召集多人认真讨论同一命题,全员可席、每题每人至多两段,各按本卡立场作答**不向共识收敛**,主持不把多数意见写成公理;用户指定作答方式(各自独立 / 交错互答 / 指定顺序)时互动义务让位;
 - **台词 / 台账分离** — 陪聊与圆桌场的审计件(场级回执、读取清单、引证出处、升降档记录)统一收进场末一个折叠「台账」块,正文只剩角色的话;**工艺词防火墙 20 词**(回执 / 档位 / 逐字 / pageid / 风格税 / 升档 / 盲评…)不得进入任何场景的角色台词;
 - **直引礼仪** — 台词内直引像本人说话一样自然带出,不自报出处、不加括注、不说「这是我说过的原话」;出处只落台账,追问即逐字展开。合同 A/B 双盲:新版 **6/6 对、12/12 评员**判更像本人;
-- **内核区(万敌 / 三月七)** — persona 新增 L2 思辨层(思考脾气 / 立场坐标 / 应答方式,每条锚知识库出处并登记反向翼边界);十卡扩卡因声纹增益门四轮未达边际**不进入**,失败原样入册(见下)。使用要点见 [圆桌与陪聊使用指南](docs/圆桌与陪聊使用指南.md)。
+- **内核区(万敌 / 三月七)** — persona 新增 L2 思辨层(思考脾气 / 立场坐标 / 应答方式,每条锚知识库出处并登记反向翼边界);十卡扩卡因声纹增益门四轮未达边际**不进入**,失败原样入册(见下);v1.5.0 委托人裁决稳定此版,批次C **永久搁置**(L-27 关闭)。使用要点见 [圆桌与陪聊使用指南](docs/圆桌与陪聊使用指南.md)。
 
 用法:「`/amphoreus` 开个沙龙——聊聊这次重构,叫阿格莱雅和那刻夏来」,或「`/amphoreus` 随便找个人陪我聊聊天」;总路由已就位的会话里,直接说后半句也可以。
+
+<table><tr>
+<td width="88"><img src="assets/stickers/w/mydei-what-to-eat.webp" width="80" alt="万敌"></td>
+<td><b>万敌</b><br><sub>「万敌」嗯。晚饭吃什么,这种事也能开一桌?</sub></td>
+<td width="88"><img src="assets/stickers/w/cipher-please.webp" width="80" alt="赛飞儿"></td>
+<td><b>赛飞儿</b><br><sub>「赛飞儿」当然能——沙龙里不出裁决,只出话题。灰子,快说你想吃什么~</sub></td>
+</tr></table>
+
+## 表情包墙
+
+<table><tr>
+<td width="88"><img src="assets/stickers/w/chimera-hyacine.webp" width="80" alt="车厘比斯"></td>
+<td><b>车厘比斯 &amp; 迷迷 · 风堇的伙伴</b><br><sub>十三卡的官方 Q 版表情全在这儿:每人一枚默认头像、四五枚情绪表情,再加一只伴生小兽——各黄金裔的奇美拉、风堇的迷迷与幼年的小昔涟。介绍页的<a href="https://xi-kari.github.io/amphoreus-skill-suite/#stickers">表情包墙</a>可按角色筛选、点开方法卡。</sub></td>
+</tr></table>
+
+共 **96 枚**(2026-08-31 首批 18 枚 + 2026-09-02 新批 78 枚)。存档件 `assets/stickers/<key>.png`(≤ 512,原字节或等比缩放),显示件 `assets/stickers/w/<key>.webp`(256,页面与本页引用),清单 `assets/stickers/manifest.js` / `.json` 由 `tools/make_stickers.py` 生成(`--check` 回对)。
+
+<table>
+<tr><td><b>开拓者·星</b><br><sub>3 枚</sub></td><td><img src="assets/stickers/w/trailblazer-stelle.webp" width="56" alt="开拓者·星" title="开拓者·星"> <img src="assets/stickers/w/trailblazer-stelle-record.webp" width="56" alt="记录" title="记录"> <img src="assets/stickers/w/trailblazer-stelle-rewrite.webp" width="56" alt="重写" title="重写"><br><sub>记录 · 重写</sub></td></tr>
+<tr><td><b>缇宝</b><br><sub>8 枚</sub></td><td><img src="assets/stickers/w/tribbie.webp" width="56" alt="缇宝" title="缇宝"> <img src="assets/stickers/w/tribbie-an.webp" width="56" alt="缇安" title="缇安"> <img src="assets/stickers/w/tribbie-ning.webp" width="56" alt="缇宁" title="缇宁"> <img src="assets/stickers/w/tribbie-ning-send.webp" width="56" alt="缇宁 · 发送" title="缇宁 · 发送"> <img src="assets/stickers/w/tribbie-an-goodnight.webp" width="56" alt="缇安 · 晚安" title="缇安 · 晚安"> <img src="assets/stickers/w/tribbie-boom.webp" width="56" alt="炸飞" title="炸飞"> <img src="assets/stickers/w/tribbie-wise.webp" width="56" alt="睿智" title="睿智"> <img src="assets/stickers/w/chimera-tribbie.webp" width="56" alt="苹果糖 · 炸飞" title="苹果糖 · 炸飞"><br><sub>缇宁·发送 · 缇安·晚安 · 炸飞 · 睿智 · 苹果糖·炸飞</sub></td></tr>
+<tr><td><b>刻律德菈</b><br><sub>6 枚</sub></td><td><img src="assets/stickers/w/cerydra.webp" width="56" alt="刻律德菈" title="刻律德菈"> <img src="assets/stickers/w/cerydra-fair.webp" width="56" alt="公平" title="公平"> <img src="assets/stickers/w/cerydra-say-again.webp" width="56" alt="再说一遍" title="再说一遍"> <img src="assets/stickers/w/cerydra-veto.webp" width="56" alt="否决" title="否决"> <img src="assets/stickers/w/cerydra-checkmate.webp" width="56" alt="将军" title="将军"> <img src="assets/stickers/w/chimera-cerydra.webp" width="56" alt="奇兽爵 · 直视" title="奇兽爵 · 直视"><br><sub>公平 · 再说一遍 · 否决 · 将军 · 奇兽爵·直视</sub></td></tr>
+<tr><td><b>三月七</b><br><sub>7 枚</sub></td><td><img src="assets/stickers/w/march7th.webp" width="56" alt="三月七" title="三月七"> <img src="assets/stickers/w/march7th-evernight.webp" width="56" alt="长夜月" title="长夜月"> <img src="assets/stickers/w/march7th-evernight-go.webp" width="56" alt="长夜月 · 去吧" title="长夜月 · 去吧"> <img src="assets/stickers/w/march7th-evernight-wail.webp" width="56" alt="长夜月 · 嚎啕大哭" title="长夜月 · 嚎啕大哭"> <img src="assets/stickers/w/march7th-evernight-hint.webp" width="56" alt="长夜月 · 暗示" title="长夜月 · 暗示"> <img src="assets/stickers/w/march7th-evernight-warning.webp" width="56" alt="长夜月 · 警告" title="长夜月 · 警告"> <img src="assets/stickers/w/chimera-march7th.webp" width="56" alt="胶糖卷 · 捕捉" title="胶糖卷 · 捕捉"><br><sub>长夜月·去吧 · 长夜月·嚎啕大哭 · 长夜月·暗示 · 长夜月·警告 · 胶糖卷·捕捉</sub></td></tr>
+<tr><td><b>丹恒</b><br><sub>6 枚</sub></td><td><img src="assets/stickers/w/terrae.webp" width="56" alt="丹恒" title="丹恒"> <img src="assets/stickers/w/terrae-listen.webp" width="56" alt="倾听" title="倾听"> <img src="assets/stickers/w/terrae-king-of-earth.webp" width="56" alt="大地之王" title="大地之王"> <img src="assets/stickers/w/terrae-photo.webp" width="56" alt="拍照" title="拍照"> <img src="assets/stickers/w/terrae-hesitate.webp" width="56" alt="欲言又止" title="欲言又止"> <img src="assets/stickers/w/chimera-terrae.webp" width="56" alt="暖龙龙 · 保护" title="暖龙龙 · 保护"><br><sub>倾听 · 大地之王 · 拍照 · 欲言又止 · 暖龙龙·保护</sub></td></tr>
+<tr><td><b>海瑟音</b><br><sub>6 枚</sub></td><td><img src="assets/stickers/w/hysilens.webp" width="56" alt="海瑟音" title="海瑟音"> <img src="assets/stickers/w/hysilens-dance.webp" width="56" alt="共舞" title="共舞"> <img src="assets/stickers/w/hysilens-humming.webp" width="56" alt="哼歌" title="哼歌"> <img src="assets/stickers/w/hysilens-shh.webp" width="56" alt="嘘" title="嘘"> <img src="assets/stickers/w/hysilens-loyalty.webp" width="56" alt="忠诚" title="忠诚"> <img src="assets/stickers/w/chimera-hysilens.webp" width="56" alt="咕噜鱼儿 · 听歌" title="咕噜鱼儿 · 听歌"><br><sub>共舞 · 哼歌 · 嘘 · 忠诚 · 咕噜鱼儿·听歌</sub></td></tr>
+<tr><td><b>风堇</b><br><sub>12 枚</sub></td><td><img src="assets/stickers/w/hyacine.webp" width="56" alt="风堇" title="风堇"> <img src="assets/stickers/w/hyacine-like.webp" width="56" alt="喜欢" title="喜欢"> <img src="assets/stickers/w/hyacine-heal.webp" width="56" alt="治愈" title="治愈"> <img src="assets/stickers/w/hyacine-diagnose.webp" width="56" alt="诊断" title="诊断"> <img src="assets/stickers/w/hyacine-try.webp" width="56" alt="试试看" title="试试看"> <img src="assets/stickers/w/chimera-hyacine.webp" width="56" alt="车厘比斯 · 安抚" title="车厘比斯 · 安抚"> <img src="assets/stickers/w/mimi-cry.webp" width="56" alt="迷迷 · 哭" title="迷迷 · 哭"> <img src="assets/stickers/w/mimi-hearts.webp" width="56" alt="迷迷 · 心心" title="迷迷 · 心心"> <img src="assets/stickers/w/mimi-my-turn.webp" width="56" alt="迷迷 · 我来" title="迷迷 · 我来"> <img src="assets/stickers/w/mimi-hug.webp" width="56" alt="迷迷 · 抱" title="迷迷 · 抱"> <img src="assets/stickers/w/mimi-attack.webp" width="56" alt="迷迷 · 攻击" title="迷迷 · 攻击"> <img src="assets/stickers/w/mimi-sleep.webp" width="56" alt="迷迷 · 睡觉" title="迷迷 · 睡觉"><br><sub>喜欢 · 治愈 · 诊断 · 试试看 · 车厘比斯·安抚 · 迷迷·哭 · 迷迷·心心 · 迷迷·我来 · 迷迷·抱 · 迷迷·攻击 · 迷迷·睡觉</sub></td></tr>
+<tr><td><b>白厄</b><br><sub>8 枚</sub></td><td><img src="assets/stickers/w/phainon.webp" width="56" alt="白厄" title="白厄"> <img src="assets/stickers/w/phainon-bye.webp" width="56" alt="再见" title="再见"> <img src="assets/stickers/w/phainon-me.webp" width="56" alt="我吗" title="我吗"> <img src="assets/stickers/w/phainon-fight.webp" width="56" alt="战斗" title="战斗"> <img src="assets/stickers/w/phainon-offline.webp" width="56" alt="掉线" title="掉线"> <img src="assets/stickers/w/phainon-fine.webp" width="56" alt="没事" title="没事"> <img src="assets/stickers/w/phainon-ehe.webp" width="56" alt="诶嘿" title="诶嘿"> <img src="assets/stickers/w/chimera-phainon.webp" width="56" alt="比格椰 · 不知道" title="比格椰 · 不知道"><br><sub>再见 · 我吗 · 战斗 · 掉线 · 没事 · 诶嘿 · 比格椰·不知道</sub></td></tr>
+<tr><td><b>那刻夏</b><br><sub>6 枚</sub></td><td><img src="assets/stickers/w/anaxa.webp" width="56" alt="那刻夏" title="那刻夏"> <img src="assets/stickers/w/anaxa-what.webp" width="56" alt="什么事" title="什么事"> <img src="assets/stickers/w/anaxa-im-fine.webp" width="56" alt="我没事" title="我没事"> <img src="assets/stickers/w/anaxa-bring-it.webp" width="56" alt="来吧" title="来吧"> <img src="assets/stickers/w/anaxa-see-through.webp" width="56" alt="看穿" title="看穿"> <img src="assets/stickers/w/chimera-anaxa.webp" width="56" alt="努努斯 · 喜爱" title="努努斯 · 喜爱"><br><sub>什么事 · 我没事 · 来吧 · 看穿 · 努努斯·喜爱</sub></td></tr>
+<tr><td><b>阿格莱雅</b><br><sub>6 枚</sub></td><td><img src="assets/stickers/w/aglaea.webp" width="56" alt="阿格莱雅" title="阿格莱雅"> <img src="assets/stickers/w/aglaea-no.webp" width="56" alt="不" title="不"> <img src="assets/stickers/w/aglaea-generous.webp" width="56" alt="慷慨" title="慷慨"> <img src="assets/stickers/w/aglaea-bath.webp" width="56" alt="泡澡" title="泡澡"> <img src="assets/stickers/w/aglaea-design.webp" width="56" alt="设计" title="设计"> <img src="assets/stickers/w/chimera-aglaea.webp" width="56" alt="燕麦粥 · 缠绕" title="燕麦粥 · 缠绕"><br><sub>不 · 慷慨 · 泡澡 · 设计 · 燕麦粥·缠绕</sub></td></tr>
+<tr><td><b>万敌</b><br><sub>6 枚</sub></td><td><img src="assets/stickers/w/mydei.webp" width="56" alt="万敌" title="万敌"> <img src="assets/stickers/w/mydei-workout.webp" width="56" alt="健身" title="健身"> <img src="assets/stickers/w/mydei-what-to-eat.webp" width="56" alt="吃什么" title="吃什么"> <img src="assets/stickers/w/mydei-frenzy.webp" width="56" alt="狂" title="狂"> <img src="assets/stickers/w/mydei-flushed.webp" width="56" alt="红温" title="红温"> <img src="assets/stickers/w/chimera-mydei.webp" width="56" alt="蜜果羹 · 再战" title="蜜果羹 · 再战"><br><sub>健身 · 吃什么 · 狂 · 红温 · 蜜果羹·再战</sub></td></tr>
+<tr><td><b>遐蝶</b><br><sub>7 枚</sub></td><td><img src="assets/stickers/w/castorice.webp" width="56" alt="遐蝶" title="遐蝶"> <img src="assets/stickers/w/castorice-no-thanks.webp" width="56" alt="不了" title="不了"> <img src="assets/stickers/w/castorice-create.webp" width="56" alt="创作" title="创作"> <img src="assets/stickers/w/castorice-wither.webp" width="56" alt="枯萎" title="枯萎"> <img src="assets/stickers/w/castorice-blush.webp" width="56" alt="脸红" title="脸红"> <img src="assets/stickers/w/castorice-butterfly.webp" width="56" alt="蝴蝶" title="蝴蝶"> <img src="assets/stickers/w/chimera-castorice.webp" width="56" alt="蝶糕糕 · 起飞" title="蝶糕糕 · 起飞"><br><sub>不了 · 创作 · 枯萎 · 脸红 · 蝴蝶 · 蝶糕糕·起飞</sub></td></tr>
+<tr><td><b>赛飞儿</b><br><sub>6 枚</sub></td><td><img src="assets/stickers/w/cipher.webp" width="56" alt="赛飞儿" title="赛飞儿"> <img src="assets/stickers/w/cipher-cute.webp" width="56" alt="可爱" title="可爱"> <img src="assets/stickers/w/cipher-gotcha.webp" width="56" alt="得手" title="得手"> <img src="assets/stickers/w/cipher-fortune.webp" width="56" alt="招财" title="招财"> <img src="assets/stickers/w/cipher-please.webp" width="56" alt="拜托" title="拜托"> <img src="assets/stickers/w/chimera-cipher.webp" width="56" alt="喵咪神偷 · 夸夸" title="喵咪神偷 · 夸夸"><br><sub>可爱 · 得手 · 招财 · 拜托 · 喵咪神偷·夸夸</sub></td></tr>
+<tr><td><b>昔涟</b><br><sub>6 枚</sub></td><td><img src="assets/stickers/w/cyrene.webp" width="56" alt="昔涟" title="昔涟"> <img src="assets/stickers/w/cyrene-glance.webp" width="56" alt="回眸" title="回眸"> <img src="assets/stickers/w/cyrene-guard.webp" width="56" alt="守护" title="守护"> <img src="assets/stickers/w/cyrene-roger.webp" width="56" alt="收到" title="收到"> <img src="assets/stickers/w/cyrene-love.webp" width="56" alt="爱" title="爱"> <img src="assets/stickers/w/cyrene-young-hehe.webp" width="56" alt="小昔涟 · 嘻嘻" title="小昔涟 · 嘻嘻"><br><sub>回眸 · 守护 · 收到 · 爱 · 小昔涟·嘻嘻</sub></td></tr>
+<tr><td><b>开拓者·穹</b><br><sub>3 枚</sub></td><td><img src="assets/stickers/w/trailblazer-caelus.webp" width="56" alt="开拓者·穹" title="开拓者·穹"> <img src="assets/stickers/w/trailblazer-caelus-record.webp" width="56" alt="记录" title="记录"> <img src="assets/stickers/w/trailblazer-caelus-rewrite.webp" width="56" alt="重写" title="重写"><br><sub>记录 · 重写</sub></td></tr>
+</table>
 
 ## 质量与验收
 
 <table><tr>
-<td width="88"><img src="assets/stickers/anaxa.png" width="80" alt="那刻夏"></td>
+<td width="88"><img src="assets/stickers/w/anaxa-see-through.webp" width="80" alt="那刻夏"></td>
 <td><b>那刻夏 · 殁世的学士</b><br><sub>所有结论,先过五问,再过删除测试。以下每个数字都有 docs/ 文书与哈希账背书。</sub></td>
 </tr></table>
 
@@ -190,7 +224,7 @@ flowchart LR
 ## 多智能体适配
 
 <table><tr>
-<td width="88"><img src="assets/stickers/cipher.png" width="80" alt="赛飞儿"></td>
+<td width="88"><img src="assets/stickers/w/cipher-gotcha.webp" width="80" alt="赛飞儿"></td>
 <td><b>赛飞儿 · 捷足的羁客</b><br><sub>想去别的生态?路线我早踩好点了——十个落点,各有各的门。</sub></td>
 </tr></table>
 
@@ -216,7 +250,7 @@ flowchart LR
 
 ```
 ├── README.md · CHANGELOG.md · CONTRIBUTING.md · LICENSE
-├── index.html                # 在线介绍页(杂志跨页首屏 + 卡面轮播 + 方法卡弹窗 + 十三册陈列)
+├── index.html                # 在线介绍页(杂志跨页首屏 + 卡面轮播 + 方法卡弹窗 + 十三册陈列 + 表情包墙)
 ├── cards.html                # 闪卡画廊(三层互斥分区立体闪卡:正面=原图,倾斜见景深+箔光)
 ├── meeting.html              # 全体会议实录(一次真实沙龙调用:集合 + 三议题 + 道别,正文逐字搬运)
 ├── .github/                  # CI(validate + 适配零漂移)+ Issue 模板(卡文问题 / 素材下架)
@@ -224,22 +258,22 @@ flowchart LR
 │   ├── cards-full/           # 15 张原尺寸卡面(原字节入库,SHA 校验)
 │   ├── cards/                # 400×702 等尺寸缩略卡面(README 画廊 / 介绍页网格共用)
 │   ├── symbols/              # 15 枚黄金裔徽记(tools/crop_symbols.py 圆检测重裁)
-│   ├── stickers/             # 18 枚官方 Q 版表情包(原字节入库)
+│   ├── stickers/             # 96 枚官方 Q 版表情包:存档 PNG(≤512)+ w/ 显示件 WebP(256)+ manifest.js/.json 清单
 │   ├── mag/                  # 《CHRYSOS·黄金裔》杂志素材(13 封面 + 13 组跨页双档)+ 昔涟首屏/闪卡底图
 │   ├── meeting/              # 全体会议页素材(英雄纪 / 如我所书 / 2026 年历 webp)+ data.js(正文单源,逐字搬运)
 │   └── layers/ · banner.jpg  # 闪卡三层分区素材(背景/前景/徽记 + geo.js 几何单源)· 横幅
-├── tools/                    # crop_symbols.py(徽记)· make_layers.py(闪卡分层)· make_meeting_assets.py / build_meeting_data.py(会议页素材与正文,--check 回对)
+├── tools/                    # crop_symbols.py(徽记)· make_layers.py(闪卡分层)· make_stickers.py(表情包归一化 + 清单,--check 回对)· make_meeting_assets.py / build_meeting_data.py(会议页素材与正文,--check 回对)· fixtures/(TERRAE-01 离线 fixture)
 ├── skills/                   # 14 目录 44 文件 = 总路由 + 13 卡(生产验收态,唯一事实源)
 │   ├── amphoreus/            #   路由 SKILL + references/(common.md 公约 + relations.md 关系单源)+ evals/(13 卷)+ scripts/validate.py
 │   └── amphoreus-<hero>/     #   各卡 SKILL.md + persona.md
 ├── adapters/                 # build.py 生成:九个生态的约定文件 + 通用便携单卡
-└── docs/                     # 总任务书 · 设计分册 · 波1–4与群聊模式验收单 · 终验报告 · 哈希总账
+└── docs/                     # 总任务书 · 设计分册 · 波1–4 / 群聊模式 / 翻译器整改验收单与遗留清单 · 独立核查报告 · 终验报告 · D1D2 · 使用指南 · 哈希总账
 ```
 
 ## 维护与迭代
 
 <table><tr>
-<td width="88"><img src="assets/stickers/hyacine.png" width="80" alt="风堇"></td>
+<td width="88"><img src="assets/stickers/w/hyacine-diagnose.webp" width="80" alt="风堇"></td>
 <td><b>风堇 · 摇光的医师</b><br><sub>定期体检:每次推 main 与每个 PR,CI 都会跑静态校验和适配层零漂移检查;改卡请按 SHA 纪律复诊。</sub></td>
 </tr></table>
 
@@ -265,11 +299,11 @@ flowchart LR
 
 ## 声明
 
-本仓库为爱好者研究 / 学习用途的同人衍生内容,与米哈游无关联。《崩坏:星穹铁道》及全部角色、立绘、台词素材版权归米哈游(HoYoverse)所有;卡面与徽记图片取自 [B 站星穹铁道 Wiki](https://wiki.biligame.com/sr/),角色 Q 版表情包素材版权同归米哈游,台词经公开 Wiki 语料逐字核对。本页与介绍页中的角色气泡台词为贴合各卡话术契约的**风格创作,非游戏原句**。[LICENSE](LICENSE)(MIT)仅覆盖本仓库原创代码与文档,不覆盖上述素材;如有侵权,请用 [Issue 模板「素材版权 / 下架请求」](.github/ISSUE_TEMPLATE/02-takedown.md)联系删除。
+本仓库为爱好者研究 / 学习用途的同人衍生内容,与米哈游无关联。《崩坏:星穹铁道》及全部角色、立绘、台词素材版权归米哈游(HoYoverse)所有;卡面与徽记图片取自 [B 站星穹铁道 Wiki](https://wiki.biligame.com/sr/),角色 Q 版表情包 96 枚(首批 18 枚取自 B 站 Wiki,78 枚由委托人提供)版权同归米哈游,台词经公开 Wiki 语料逐字核对。本页与介绍页中的角色气泡台词为贴合各卡话术契约的**风格创作,非游戏原句**。[LICENSE](LICENSE)(MIT)仅覆盖本仓库原创代码与文档,不覆盖上述素材;如有侵权,请用 [Issue 模板「素材版权 / 下架请求」](.github/ISSUE_TEMPLATE/02-takedown.md)联系删除。
 
 <div align="center">
 <br>
-<img src="assets/stickers/cyrene.png" width="72" alt="昔涟"><br>
+<img src="assets/stickers/w/cyrene-love.webp" width="72" alt="昔涟"><br>
 <sub><b>昔涟</b>:这一册讲完了。下一页,由你来写♪</sub>
 <br><br>
 <sub>火种在此传递。</sub>

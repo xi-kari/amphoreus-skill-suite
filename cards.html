@@ -83,11 +83,14 @@ body.explode .legend{display:block}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:52px 32px;padding:54px 0 80px}
 @media (max-width:560px){.grid{gap:44px 20px;padding-top:40px}}
 .slot{text-align:center}
-.cap{margin-top:16px}
+.cap{margin-top:16px;position:relative}
+.cap .pet{width:54px;height:54px;object-fit:contain;display:block;margin:-30px auto 2px;pointer-events:none;filter:drop-shadow(0 4px 8px rgba(59,45,107,.25));transition:transform .3s cubic-bezier(.2,.8,.2,1.2)}
+.slot:hover .cap .pet{transform:translateY(-6px) rotate(-8deg) scale(1.12)}
 .cap .no{font-family:var(--lat);font-size:.72rem;letter-spacing:.3em;color:var(--gold2)}
 .cap .nm{font-family:var(--serif);font-weight:900;color:var(--parch);font-size:1.02rem;margin-top:2px}
 .cap .nm small{font-weight:600;font-size:.78rem;color:var(--gold2);margin-left:8px;letter-spacing:.08em}
 .cap code{display:block;margin-top:3px;font-size:.72rem;color:var(--faint);font-family:Consolas,monospace}
+.cap .petn{display:block;margin-top:2px;font-size:.68rem;color:var(--gold2);letter-spacing:.06em}
 
 /* ============ 闪卡引擎 ============
    卡面拆成三个互斥分区层(内容零重复,正面合成=原图):
@@ -132,7 +135,8 @@ img.l{width:100%;height:100%;object-fit:cover}
 @keyframes sway{0%,100%{transform:rotateX(2.4deg) rotateY(-3.8deg)}50%{transform:rotateX(-2.4deg) rotateY(3.8deg)}}
 body:not(.explode) .hcard:not(.live):not(.still) .sway{animation:sway 7.5s ease-in-out infinite;animation-delay:calc(var(--i,0)*-1.15s)}
 @media (prefers-reduced-motion:reduce){
-  .sway,.tilt,.l,.crestw{animation:none!important;transition:none!important}
+  .sway,.tilt,.l,.crestw,.cap .pet{animation:none!important;transition:none!important}
+  .slot:hover .cap .pet{transform:none!important}
 }
 
 /* ============ 拆层视图:切回真 3D,三层摊开 ============ */
@@ -188,7 +192,7 @@ footer a:hover{color:var(--gold)}
 </div></div>
 
 <footer>
-  <div class="wrap">卡面素材:「逐火者的命录」系列 · 取自 <a href="https://wiki.biligame.com/sr/%E9%80%90%E7%81%AB%E8%80%85%E7%9A%84%E5%91%BD%E8%B7%AF.exe">B 站星穹铁道 Wiki</a> · 页面底图为委托人提供的昔涟立绘 · 版权归米哈游及原作者所有<br>
+  <div class="wrap">卡面素材:「逐火者的命录」系列 · 取自 <a href="https://wiki.biligame.com/sr/%E9%80%90%E7%81%AB%E8%80%85%E7%9A%84%E5%91%BD%E8%B7%AF.exe">B 站星穹铁道 Wiki</a> · 页面底图为委托人提供的昔涟立绘 · 卡下伙伴为官方 Q 版表情(奇美拉 / 小昔涟 / 开拓者「记录 / 重写」) · 版权归米哈游及原作者所有<br>
   分层:三层互斥分区(背景邻域修补 / isnet 抠像近二值化+不稳定区整块归并+徽记挖空 / Hough 圆检测徽记),正面合成逐像素还原原图(内存与编码后双重校验) · 详见 <a href="https://github.com/xi-kari/amphoreus-skill-suite/blob/main/tools/make_layers.py">tools/make_layers.py</a></div>
 </footer>
 
@@ -232,13 +236,21 @@ function cardHTML(c,eager){
   </div></div>
  </div>`}
 
+/* 卡下方的伙伴:各黄金裔的奇美拉,昔涟为小昔涟,双开拓者为「记录 / 重写」表情(assets/stickers/w/) */
+const PET={'trailblazer-stelle':'trailblazer-stelle-record',tribbie:'chimera-tribbie',cerydra:'chimera-cerydra',march7th:'chimera-march7th',terrae:'chimera-terrae',
+ hysilens:'chimera-hysilens',hyacine:'chimera-hyacine',phainon:'chimera-phainon',anaxa:'chimera-anaxa',aglaea:'chimera-aglaea',mydei:'chimera-mydei',
+ castorice:'chimera-castorice',cipher:'chimera-cipher',cyrene:'cyrene-young-hehe','trailblazer-caelus':'trailblazer-caelus-rewrite'};
+const PETN={'trailblazer-stelle':'开拓者·星 · 记录',tribbie:'苹果糖',cerydra:'奇兽爵',march7th:'胶糖卷',terrae:'暖龙龙',hysilens:'咕噜鱼儿',hyacine:'车厘比斯',
+ phainon:'比格椰',anaxa:'努努斯',aglaea:'燕麦粥',mydei:'蜜果羹',castorice:'蝶糕糕',cipher:'喵咪神偷',cyrene:'小昔涟','trailblazer-caelus':'开拓者·穹 · 重写'};
 const grid=document.getElementById('grid');
 grid.innerHTML=CARDS.map((c,i)=>`
  <div class="slot" style="--i:${i}">${cardHTML(c,i<4)}
   <div class="cap">
+   <img class="pet" src="assets/stickers/w/${PET[c.k]}.webp" alt="${PETN[c.k]}" loading="lazy" decoding="async">
    <div class="no">N°${String(i).padStart(2,'0')}</div>
    <div class="nm">${c.n}<small>${c.t}</small></div>
    <code>${c.k.startsWith('trailblazer')?'amphoreus(总路由)':'amphoreus-'+c.k}</code>
+   <span class="petn">${c.k.startsWith('trailblazer')?'':'伙伴 · '}${PETN[c.k]}</span>
   </div>
  </div>`).join('');
 
