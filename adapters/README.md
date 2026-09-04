@@ -26,7 +26,7 @@ python adapters/build.py
 
 ## 便携版单卡的构成
 
-每个 `generic/amphoreus-<hero>.md` = 生成头(含来源 SHA)+ 卡文 `SKILL.md` 原文 + 家族公约 `common.md` 原文(含〈沙龙与陪聊〉),单文件自足;`amphoreus-router.md` 另附关系单源 `relations.md` 原文;台词库 `persona.md` 为可选伴读(工作场角色说话 ≤15% 风格预算,陪聊 / 沙龙场不计税,严肃场景自动静音)。
+每个 `generic/amphoreus-<hero>.md` = 生成头(含来源 SHA)+ 卡文 `SKILL.md` 原文 + 家族公约 `common.md` 原文(含〈沙龙与陪聊〉与〈圆桌〉、工艺词防火墙、台词 / 台账分离),单文件自足;`amphoreus-router.md` 另附关系单源 `relations.md` 原文;台词库 `persona.md` 为可选伴读(工作场角色说话 ≤15% 风格预算,陪聊 / 沙龙场不计税,严肃场景自动静音)。
 
 ## 忠实性说明
 

@@ -1,0 +1,42 @@
+{
+  "status": "FROZEN",
+  "fixture_root": "tools/fixtures/terrae_dev_env (仓库内副本;冻结题 TERRAE-01 输入行登记的是作者本机绝对路径 D:\\研究\\…\\workdir\\三期\fixtures\terrae_dev_env,见遗留清单 L-29;他机复跑请把该路径替换为本目录的绝对路径,题面其余文字不变)",
+  "source_read_only_contract": true,
+  "disposable_copy_allowed": true,
+  "network_required": false,
+  "credentials_present": false,
+  "files": {
+    "disposable_copy/healthcheck.py": {
+      "bytes": 320,
+      "sha256": "15D612B6CD45A70EC90A4791AC451078991A1573F304D70CFDEDA69EEFBC33E9"
+    },
+    "disposable_copy/README.md": {
+      "bytes": 89,
+      "sha256": "A59D6D5B3038226CF29BABE11DD9F898D7C658018B3C1F8A8108CE15BDB7A330"
+    },
+    "disposable_copy/requirements.lock": {
+      "bytes": 39,
+      "sha256": "EA8EFF8C15C1A5A37B8B296104B748ABC22D6EFE744A237094D992D7F322822C"
+    },
+    "disposable_copy/runtime.txt": {
+      "bytes": 13,
+      "sha256": "33B022F68B4B15B3AA2E3F95F1717498B623E7AA83C02A1216064BDAC1F72090"
+    },
+    "source/healthcheck.py": {
+      "bytes": 320,
+      "sha256": "15D612B6CD45A70EC90A4791AC451078991A1573F304D70CFDEDA69EEFBC33E9"
+    },
+    "source/README.md": {
+      "bytes": 89,
+      "sha256": "A59D6D5B3038226CF29BABE11DD9F898D7C658018B3C1F8A8108CE15BDB7A330"
+    },
+    "source/requirements.lock": {
+      "bytes": 39,
+      "sha256": "EA8EFF8C15C1A5A37B8B296104B748ABC22D6EFE744A237094D992D7F322822C"
+    },
+    "source/runtime.txt": {
+      "bytes": 13,
+      "sha256": "33B022F68B4B15B3AA2E3F95F1717498B623E7AA83C02A1216064BDAC1F72090"
+    }
+  }
+}

@@ -1,0 +1,553 @@
+TRANSLATOR REMEDIATION VERIFICATION
+
+STATUS: FAIL_STOP at Phase 3 / Step 7 / Batch B trial gate; acceptance state is 待核.
+CHANGED_BRANCH: repo branch main remains unchanged at 374c12290dc766ebb556b6fbcade1a4e535d004b; production changes are deployed directly to two skills trees only.
+CHANGED_FIELDS:
+- common.md: 深度门/圆桌场, 圆桌合同, 工艺词防火墙, 台词与台账分离, 主持第五件事, 回执与出处消歧
+- relations.md: 圆桌参数/回应对提示/禁区搭桥/素材边界
+- amphoreus-aglaea/SKILL.md: 登记降级句式等行改写, 83 lines retained
+- validate.py: roundtable contract assertions and single-source firewall parser
+
+ARTIFACT_PATHS:
+MODIFIED_FILE: D:\研究\翁法罗斯skill套件计划\翻译器整改交付\modified\skills\amphoreus\references\common.md
+DIFF_FILE: D:\研究\翁法罗斯skill套件计划\翻译器整改交付\diff\批次A.diff
+VERIFICATION_FILE: D:\研究\翁法罗斯skill套件计划\翻译器整改交付\VERIFICATION.txt
+ROLLBACK_SH: D:\研究\翁法罗斯skill套件计划\翻译器整改交付\ROLLBACK.sh
+ROLLBACK_PS1: D:\研究\翁法罗斯skill套件计划\翻译器整改交付\ROLLBACK.ps1
+
+ARTIFACT_HASHES:
+BASELINE_FILE_SHA256: 130FAD65A98167896EC1EB720E0EFC9F616DBF488ABD52B800D1AA56B36FAD16
+MODIFIED_FILE_SHA256: ADD8B0098BC9B8B4068373ED9A6325A427DC516EE7D698270CC81BBD4B400213
+PRODUCTION_FILE_SHA256: ADD8B0098BC9B8B4068373ED9A6325A427DC516EE7D698270CC81BBD4B400213
+DIFF_FILE_SHA256: 864F585B4CFC07976916712D4671F6D236A16EC2629D495970917E17B5123DBD
+ROLLBACK_SH_SHA256: 7A30C5BCC16700EBAD5EF14A00C13CA180DCB27BCD5ED24E9703CE86BEACAACB
+ROLLBACK_PS1_SHA256: 20EBF65B5D64AE5E9D5BC4202388A660987B4CC08461A3C096CA3CD46E83B9C2
+ROLLBACK_PS1_SHA256_PRE_FIX: FFE2DA4F34760C7A4C8F73C68423A5A7AAC1E70BA4D99D6FF079F9697580C0EB (2026-09-02 审核 F-1 整改前原件，存档 workdir\ROLLBACK_预整改_FFE2DA4F.ps1；该版在 Windows PowerShell 5.1 因 .NET Core 专有 API 报 MethodNotFound 不可运行)
+ACCEPTANCE_SHA256_PHASE1_HISTORY: 98CD431AE1CB5BE16C385EC06DC4B184650C00292552C60EDB116FEDE2124449
+LEGACY_SHA256_PHASE1_HISTORY: F4BC831672BEDAAC2100DDDF6AECE3156B5F3298F57153CC4ED4C974911CA168
+LEGACY_SHA256_PRE_FIX: F4258C02E8196A40E8F9EEBAB17753074376A52CB583CF4C6C74C6805B1BE75C (2026-09-02 遗留清单增补 L-11–L-16 前原件)
+
+BASELINE_COUNTS:
+files_per_tree=44
+bytes_per_tree=412609
+three_way_byte_identical=true
+all44_manifest_sha256=20CA228A346E48F8BC34BC001B819BE68FF3A2357408AF33526D45DF6F68CE53 (历史值；生成公式未文档化、不可独立复算——审核 F-2，仅留档)
+all44_manifest_v2_definition=对 44 行「relpath:SHA256十六进制大写」(relpath 相对 baseline\skills、分隔符统一为「/」) 按码点升序排序、以单个 LF 拼接且无结尾换行的 UTF-8 字节串取 SHA256
+all44_manifest_v2_sha256=AB156A949FC2DAF24A0E66F2D77B0B7B16E629A4ED532822829577B559854C49
+all44_manifest_v2_script=workdir\compute_manifest_v2.py
+
+[BASELINE]
+COMMAND: python -B D:\研究\翁法罗斯skill套件计划\翻译器整改交付\baseline\skills\amphoreus\scripts\validate.py --root D:\研究\翁法罗斯skill套件计划\翻译器整改交付\baseline\skills --wave all
+INPUT: none
+LITERAL_STDOUT_BEGIN
+amphoreus wave all: PASS
+root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\baseline\skills
+router_manifest=18/18
+cards=13/13
+evals=13 scenarios=65
+encoding=UTF-8 line_endings=LF
+behavior=not_run_by_static_validator
+LITERAL_STDOUT_END
+LITERAL_STDERR_BEGIN
+LITERAL_STDERR_END
+EXIT_STATUS: 0
+
+[MODIFIED_CODEX]
+COMMAND: python -B C:\Users\cangm\.codex\skills\amphoreus\scripts\validate.py --root C:\Users\cangm\.codex\skills --wave all
+INPUT: none
+LITERAL_STDOUT_BEGIN
+amphoreus wave all: PASS
+root=C:\Users\cangm\.codex\skills
+router_manifest=18/18
+cards=13/13
+evals=13 scenarios=65
+encoding=UTF-8 line_endings=LF
+behavior=not_run_by_static_validator
+LITERAL_STDOUT_END
+LITERAL_STDERR_BEGIN
+LITERAL_STDERR_END
+EXIT_STATUS: 0
+
+[MODIFIED_CLAUDE]
+COMMAND: python -B C:\Users\cangm\.claude\skills\amphoreus\scripts\validate.py --root C:\Users\cangm\.claude\skills --wave all
+INPUT: none
+LITERAL_STDOUT_BEGIN
+amphoreus wave all: PASS
+root=C:\Users\cangm\.claude\skills
+router_manifest=18/18
+cards=13/13
+evals=13 scenarios=65
+encoding=UTF-8 line_endings=LF
+behavior=not_run_by_static_validator
+LITERAL_STDOUT_END
+LITERAL_STDERR_BEGIN
+LITERAL_STDERR_END
+EXIT_STATUS: 0
+
+[ROLLBACK]
+NOTE: 2026-09-02 审核 F-1 补正实录。本段由生产主机 Windows PowerShell 5.1.26100.8894 亲跑生成（驱动 workdir\test_rollback_ps51.py，原始六项记录 workdir\rollback_ps51_实录.json），替换此前由 workdir\generate_verification.py 拼装的非实录段；被替换段对应的旧 ROLLBACK.ps1（SHA256 FFE2DA4F34760C7A4C8F73C68423A5A7AAC1E70BA4D99D6FF079F9697580C0EB，存档 workdir\ROLLBACK_预整改_FFE2DA4F.ps1）在 5.1 下因 .NET Core 专有 API 报 MethodNotFound 不可运行。
+INTERPRETER: Windows PowerShell 5.1.26100.8894 (powershell.exe)
+COMMAND: powershell -NoProfile -ExecutionPolicy Bypass -File D:\研究\翁法罗斯skill套件计划\翻译器整改交付\ROLLBACK.ps1 -CodexRoot D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\codex -ClaudeRoot D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\claude
+INPUT: CodexRoot=disposable modified snapshot copy; ClaudeRoot=independent disposable modified snapshot copy; baseline=baseline\skills (44 files)
+LITERAL_STDOUT_BEGIN
+amphoreus wave all: PASS
+root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\codex
+router_manifest=18/18
+cards=13/13
+evals=13 scenarios=65
+encoding=UTF-8 line_endings=LF
+behavior=not_run_by_static_validator
+ROLLBACK PASS name=codex root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\codex files=44 exit=0
+amphoreus wave all: PASS
+root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\claude
+router_manifest=18/18
+cards=13/13
+evals=13 scenarios=65
+encoding=UTF-8 line_endings=LF
+behavior=not_run_by_static_validator
+ROLLBACK PASS name=claude root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\claude files=44 exit=0
+ROLLBACK COMPLETE restored=2 trees files_per_tree=44
+LITERAL_STDOUT_END
+LITERAL_STDERR_BEGIN
+LITERAL_STDERR_END
+EXIT_STATUS: 0
+RESTORED_TREES_EQUAL_BASELINE: codex=true claude=true (44/44 逐文件 SHA256 与 baseline 全等)
+PRODUCTION_UNTOUCHED: true (生产两树四改动文件运行前后哈希零变化)
+
+[ROLLBACK_GUARDS]
+INTERPRETER: Windows PowerShell 5.1.26100.8894
+GUARD_MISSING_TARGET: exit=1; stderr=Target root is missing: D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\failclosed\claude_missing; 已存在目标零写入=true（缺目标闸已提前至复制前全目标预检，任一目标缺失即零写入 fail-closed，不再依赖 MethodNotFound 的意外拦截）
+GUARD_SAME_PATH: exit=1; stderr=CodexRoot and ClaudeRoot must be different directories.; 零写入=true
+GUARD_RELATIVE_PATH: exit=1; stderr=Target root is not absolute: relative\skills; 零写入=true
+DETAIL: workdir\rollback_ps51_实录.json（T1–T5 全量 stdout/stderr/exit 与前后树哈希比对）
+
+[ROLLBACK_SH_RUN]
+COMMAND: bash /mnt/d/研究/翁法罗斯skill套件计划/翻译器整改交付/ROLLBACK.sh -CodexRoot D:/研究/翁法罗斯skill套件计划/翻译器整改交付/workdir/rollback_test_ps51/shrun/codex -ClaudeRoot D:/研究/翁法罗斯skill套件计划/翻译器整改交付/workdir/rollback_test_ps51/shrun/claude
+NOTE: 裸 `bash` 经 Windows CreateProcess 解析到 System32 的 WSL bash，脚本路径须用 /mnt/d 视角（与下节 ROLLBACK_SH_SYNTAX 的 wsl.exe 口径一致）；透传目标根用正斜杠 Windows 路径，由 powershell.exe 侧接收。
+LITERAL_STDOUT_BEGIN
+amphoreus wave all: PASS
+root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\shrun\codex
+router_manifest=18/18
+cards=13/13
+evals=13 scenarios=65
+encoding=UTF-8 line_endings=LF
+behavior=not_run_by_static_validator
+ROLLBACK PASS name=codex root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\shrun\codex files=44 exit=0
+amphoreus wave all: PASS
+root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\shrun\claude
+router_manifest=18/18
+cards=13/13
+evals=13 scenarios=65
+encoding=UTF-8 line_endings=LF
+behavior=not_run_by_static_validator
+ROLLBACK PASS name=claude root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\shrun\claude files=44 exit=0
+ROLLBACK COMPLETE restored=2 trees files_per_tree=44
+LITERAL_STDOUT_END
+LITERAL_STDERR_BEGIN
+LITERAL_STDERR_END
+EXIT_STATUS: 0
+RESTORED_TREES_EQUAL_BASELINE: codex=true claude=true
+
+[ROLLBACK_SH_SYNTAX]
+COMMAND: wsl.exe bash -n /mnt/d/研究/翁法罗斯skill套件计划/翻译器整改交付/ROLLBACK.sh
+INPUT: none
+LITERAL_STDOUT_BEGIN
+LITERAL_STDOUT_END
+LITERAL_STDERR_BEGIN
+LITERAL_STDERR_END
+EXIT_STATUS: 0
+
+[ROLLBACK_SH_EXECUTABLE]
+COMMAND: wsl.exe stat -c "%A %a %n" /mnt/d/研究/翁法罗斯skill套件计划/翻译器整改交付/ROLLBACK.sh
+INPUT: none
+LITERAL_STDOUT_BEGIN
+-rwxrwxrwx 777 /mnt/d/研究/翁法罗斯skill套件计划/翻译器整改交付/ROLLBACK.sh
+LITERAL_STDOUT_END
+LITERAL_STDERR_BEGIN
+LITERAL_STDERR_END
+EXIT_STATUS: 0
+
+[REPO_STATUS]
+COMMAND: git status --porcelain=v2 --branch
+INPUT: none
+LITERAL_STDOUT_BEGIN
+# branch.oid 374c12290dc766ebb556b6fbcade1a4e535d004b
+# branch.head main
+# branch.upstream origin/main
+# branch.ab +0 -0
+LITERAL_STDOUT_END
+LITERAL_STDERR_BEGIN
+LITERAL_STDERR_END
+EXIT_STATUS: 0
+
+ROLLBACK_RESTORED_STATUS:
+rollback_copy_common_sha256=130FAD65A98167896EC1EB720E0EFC9F616DBF488ABD52B800D1AA56B36FAD16
+baseline_common_sha256=130FAD65A98167896EC1EB720E0EFC9F616DBF488ABD52B800D1AA56B36FAD16
+rollback_copy_matches_baseline=true
+rollback_copy_static_behavior_literal=behavior=not_run_by_static_validator
+rollback_copy_validate_exit_status=0
+
+PRODUCTION_RETAINED_STATUS:
+production_common_sha256=ADD8B0098BC9B8B4068373ED9A6325A427DC516EE7D698270CC81BBD4B400213
+modified_snapshot_common_sha256=ADD8B0098BC9B8B4068373ED9A6325A427DC516EE7D698270CC81BBD4B400213
+production_matches_modified_snapshot=true
+production_differs_from_baseline=true
+
+FINAL_STATIC_CHECKS:
+{
+  "files_per_tree_44": true,
+  "production_trees_byte_identical": true,
+  "production_has_changes": true,
+  "anaxa_and_evals_frozen": true,
+  "design_files_unchanged": true,
+  "all_production_files_lf": true,
+  "number_tab_pollution_zero": true,
+  "aglaea_skill_line_count_83": true,
+  "codex_validate_pass": true,
+  "claude_validate_pass": true,
+  "repo_status_exit_zero": true,
+  "repo_head_unchanged": true,
+  "repo_worktree_clean": true,
+  "acceptance_last_line_waiting": true
+}
+changed_count=4
+changed_files=["amphoreus-aglaea/SKILL.md", "amphoreus/references/common.md", "amphoreus/references/relations.md", "amphoreus/scripts/validate.py"]
+
+BEHAVIOR_RESULT:
+perform_transcripts=13 cards / 65 frozen scenarios
+batch_gate=FAIL_STOP
+blocking_scenario=HYSILENS-04
+original_score=9/12 FAIL, hard_fail=0
+rerun1_score=8/12 FAIL, hard_fail=0
+rerun1_cross=agree=true, suggested_pass=false
+diagnosis=frozen-question defect; input lacks lesson/evidence while expected/card require evidence-backed制度候选; common forbids filling missing evidence
+behavior_summary_status=see summary.json
+roundtable_status=see 批次A-summary.json
+restored_behavior_status=static contract restored on disposable copies; behavior was not rerun after rollback and is not claimed by static validation
+
+FROZEN_BOUNDARIES:
+anaxa_files_unchanged=true
+evals_14_files_unchanged=true
+design_files_unchanged=true
+repo_worktree_clean=true
+acceptance_last_line_waiting=true
+
+[PHASE2]
+status=FAIL_STOP
+stop_step=步骤2/批次A行为门
+stop_trigger=TERRAE-01 two rounds same cause
+baseline_audit_report_sha256=D6EDF6781374BCA69A9C78260D540318BB865455C8A0CD4FAD8BEB80B3829C41
+ACCEPTANCE_SHA256_PHASE2=45672D903CB4365971669AB6CDC93808BE32528D5971FDCC5204E1117EF3069C
+LEGACY_SHA256_PHASE2=482E46F850ADD8ECDAE16E5EBCEA1EE953586871006F63426C01FC35FA465E15
+doctor=status=ok quick_check=ok chunks=62354 chunks_fts=62354 semantic_vectors=62354
+phase2_changed_fields=amphoreus-aglaea/SKILL.md;amphoreus/evals/hysilens.md;amphoreus/references/common.md
+codex_claude_identical=true
+files_per_tree=44
+bytes_per_tree=419762
+anaxa_unchanged=true
+rubric_and_other_64_unchanged=true
+canonical_transcripts=13
+canonical_scores=13
+canonical_cross=8
+missing_cross=hysilens,mydei,phainon,terrae,tribbie
+score_failures=TERRAE-01,TERRAE-03
+cross_failures=AGLAEA-01,CIPHER-01,CIPHER-02
+cross_score_disagreement_pass=CERYDRA-05
+repo_head=374c12290dc766ebb556b6fbcade1a4e535d004b
+repo_clean=true
+rollback_ps1_sha256=20EBF65B5D64AE5E9D5BC4202388A660987B4CC08461A3C096CA3CD46E83B9C2
+rollback_ps1_bytes=3532
+rollback_sh_sha256=7A30C5BCC16700EBAD5EF14A00C13CA180DCB27BCD5ED24E9703CE86BEACAACB
+rollback_sh_executable_wsl=true mode=777
+
+[PHASE2_ARTIFACTS]
+MODIFIED_FILE=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\二期\MODIFIED_FILE.json
+MODIFIED_FILE_SHA256=62EFC35AC59B9A47EDCA180A9F593B861BFCF22E8837E4EECBD987D5420C5345
+DIFF_FILE=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\diff\二期_补丁批.diff
+DIFF_FILE_SHA256=A2FB65382B79A48D6B5D0DD3C7EE436C67D9E31820BBC474E704D0CDB5A5E452
+VERIFICATION=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\VERIFICATION.txt
+ROLLBACK_SH=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\ROLLBACK.sh
+
+[PHASE2_BASELINE]
+command=python -B "D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\verify_phase2_baseline.py"
+input=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\二期\baseline_skills
+literal_output=BASELINE PASS files=44 bytes=418857 manifest_v2_sha256=3FEC209E669382B9CA807D12473AC6798498FF4FABF5E6E0C8927299A64532C8 expected=3FEC209E669382B9CA807D12473AC6798498FF4FABF5E6E0C8927299A64532C8
+exit_status=0
+
+[PHASE2_MODIFIED]
+command=python -B "D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\二期\modified_skills\amphoreus\scripts\validate.py" --root "D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\二期\modified_skills" --wave all
+input=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\二期\modified_skills
+literal_output_begin
+amphoreus wave all: PASS
+root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\二期\modified_skills
+router_manifest=18/18
+cards=13/13
+evals=13 scenarios=65
+encoding=UTF-8 line_endings=LF
+behavior=not_run_by_static_validator
+literal_output_end
+exit_status=0
+result=44 files; changed fields three; static PASS; production retains modified state
+
+[PHASE2_ROLLBACK]
+command=powershell -NoProfile -ExecutionPolicy Bypass -Command "Import-Module Microsoft.PowerShell.Utility -ErrorAction Stop; & 'D:\研究\翁法罗斯skill套件计划\翻译器整改交付\ROLLBACK.ps1' -CodexRoot 'D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\二期\rollback_test\codex' -ClaudeRoot 'D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\二期\rollback_test\claude'"
+input={"codex_copy":"D:\\研究\\翁法罗斯skill套件计划\\翻译器整改交付\\workdir\\二期\\rollback_test\\codex","claude_copy":"D:\\研究\\翁法罗斯skill套件计划\\翻译器整改交付\\workdir\\二期\\rollback_test\\claude","files_per_tree":44,"source_snapshot":"D:\\研究\\翁法罗斯skill套件计划\\翻译器整改交付\\00_基线\\二期\\modified_skills"}
+literal_output_begin
+amphoreus wave all: PASS
+root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\二期\rollback_test\codex
+router_manifest=18/18
+cards=13/13
+evals=13 scenarios=65
+encoding=UTF-8 line_endings=LF
+behavior=not_run_by_static_validator
+ROLLBACK PASS name=codex root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\二期\rollback_test\codex files=44 exit=0
+amphoreus wave all: PASS
+root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\二期\rollback_test\claude
+router_manifest=18/18
+cards=13/13
+evals=13 scenarios=65
+encoding=UTF-8 line_endings=LF
+behavior=not_run_by_static_validator
+ROLLBACK PASS name=claude root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\二期\rollback_test\claude files=44 exit=0
+ROLLBACK COMPLETE restored=2 trees files_per_tree=44
+literal_output_end
+literal_stderr=
+exit_status=0
+restored_behavior=codex_copy and claude_copy restored to original 44-file baseline; both validate PASS; production unchanged and retains phase2 modified state
+attempt1_preserved=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\失败轨迹\二期_关账_ROLLBACK首跑模块自动加载失败.json
+attempt1_sha256=65DEA85583BD237F79A84B51525D17079258E9E3AFB5765298C7A63F4E866887
+operation_note=本机应急回滚须在同一 Windows PowerShell 5.1 进程显式执行 Import-Module Microsoft.PowerShell.Utility -ErrorAction Stop 后调用 ROLLBACK.ps1；裸 powershell -File ROLLBACK.ps1 可能复现模块自动加载失败，规范命令见本段 command。
+
+[PHASE2_STOP]
+TERRAE-01_attempt1=F1=1 F2=1 total=10 pass=false
+TERRAE-01_rerun1=F1=1 F2=1 total=10 pass=false
+same_cause=frozen input omits repository/host/stack while frozen expectation requires actual probes, literal outputs and exit status
+classification=frozen-question contract defect; no authorization to calibrate TERRAE-01 in phase2
+not_run=salon_upgrade_downgrade,T3_full,T5,batchB,batchC,step5
+acceptance=待核：交 fable5 审核，勾选权在审核方与用户
+
+
+
+[PHASE3_STEP1_DOCUMENT_FIX]
+status=PASS
+phase2_acceptance_anchor=45672D903CB4365971669AB6CDC93808BE32528D5971FDCC5204E1117EF3069C
+phase2_legacy_anchor=482E46F850ADD8ECDAE16E5EBCEA1EE953586871006F63426C01FC35FA465E15
+phase2_changelog=文书\换题清单_二期.md
+phase2_changelog_sha_scope=amphoreus/evals/hysilens.md whole-file SHA256
+canonical_heading_normalization=行为重跑\二期\批次A\canonical_heading_normalization.json
+cerydra_normalized_sha256=C473EBDB1BAAF481EA9A41A851AB8E5CF6F1BF254DDB5D697AFD3661DB783451
+terrae_normalized_sha256=F752264DE7896EFE5F153D149A19FA26EDBEE89F59305C1876E88591759FB2AD
+tribbie_normalized_sha256=0532BE56AB95A0F7373BC9E2CCA6F90CCDA309B4357A688D58B4F271CAE4FD71
+new_transcript_heading=### 用户输入
+common_C1_deferred=true
+
+[PHASE3]
+status=FAIL_STOP
+stop_step=step7/batchB_voice_gain_gate
+phase3_prompt_sha256=8E0FCBEA08765885427166222E965462AD48579C1C94A87596EBCE8603C52123
+phase2_audit_sha256=9387F41C09E97E535454A3C7893E2EC3261EC54697277A78AB52B4C535CDC4B5
+ACCEPTANCE_SHA256_PHASE3_HISTORY=C2E48C4C9EF8B3C64A4A7D2C6FF84AC044DC01520E0FED484FEDF6F070111A66
+LEGACY_SHA256_PHASE3_HISTORY=51C8CBDE815E4CD3FF233097600AA376661314C458B3190EAE7EAE69A5C7D74A
+production_files=44
+phase3_changed_fields=amphoreus/evals/terrae.md;amphoreus-mydei/persona.md;amphoreus-march7th/persona.md
+codex_claude_identical=true
+anaxa_unchanged=true
+rubric_unchanged=true
+other_evals_unchanged=true
+cross_effective=13/13
+batchA_closed=true
+T3_dialogue_hits=0
+T5=R1_PASS,R2_PASS,R3_first_FAIL,R3_rerun1_PASS
+batchB_behavior=mydei_5of5,march7th_5of5,cross_5of5_each,polarity_errors_0
+batchB_voice_scores=mydei_new23_old22,march7th_new21_old23,aggregate_new44_old45,wins_new5_old5
+batchB_gate=FAIL
+not_run=batchC,T1_T2_T3_T4_T5_final
+repo_head=374c12290dc766ebb556b6fbcade1a4e535d004b
+repo_clean=true
+
+[PHASE3_ARTIFACTS]
+MODIFIED_FILE=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\三期\MODIFIED_FILE.json
+MODIFIED_FILE_SHA256=2017F9977F61E6BD0CC3F7BCAD5252651ED6E524D43F91696D3D00DD19571ACA
+DIFF_FILE=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\diff\三期_生产总变更.diff
+DIFF_FILE_SHA256=1C3D976FA1BFEF7761B12912952837DF54029E9DB67740A2CB067518117A6EBA
+VERIFICATION=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\VERIFICATION.txt
+ROLLBACK_SH=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\ROLLBACK.sh
+ROLLBACK_SH_SHA256=7A30C5BCC16700EBAD5EF14A00C13CA180DCB27BCD5ED24E9703CE86BEACAACB
+PHASE3_ARTIFACT_INDEX_四期补列=四期文书轨扩列的三期凭证指针；值为当前 SHA256（KB复核/停止报告/换题清单_三期 在四期文书轨被修订，故为修订后值）
+文书/换题清单_三期.md=11a11d98f3c8c542d47382db9ff9ee5484dd20a6a109562badd41aa934bfb30f
+文书/terrae题组对象规格审视.md=e11ff7ca385b6deeffa32fd91cb4c34cf61788d7b718cca6f9c1fea5cd6e9065
+文书/评分口径备忘_三期.md=61ac438d2b9a42d11b599fd0452262bff6661506c11855dd9a5f2ff12fab68e3
+KB复核/三期/批次B_逐锚复核.json=510f55d4ceff90fc5656e6e6a2b07e7581a554b71759f39194a11be58e5bcf08
+圆桌专项/二期/处置轮.md=b76df21b1e316901769e337ede20ff7ed50416cef482977e1dc65bff436181da
+行为重跑/三期/处置轮/canonical_adjudication.json=dc7f44ada201b77778c1af38526437d9f2a4d89a77d9ee15e1375245ac7cf0a0
+行为重跑/三期/批次B/batchB-pilot.json=4e5d383c1d3644e74d2b69632891c998337583074d73efc1e43a1bc2a98f0072
+失败轨迹/三期_步骤7_批次B声纹增益门停止.md=ec64a7a2e031acde5b3a44b6b314d43158c68a0bca69f58e99cd815f2e2bdda9
+diff/三期_terrae题组校准.diff=b3316258f7476117ef16be9d15cded24ba14c7c925a24460e537bba28f5622f8
+diff/三期_批次B内核区.diff=70b2ba99c704cd694307d681deb0dae6db02df040f80f3b6fb01294f206d6600
+diff/三期_T3扫描器修复.diff=876daa7bb4c4dfc92b76fff7ec45f295dacfba8f199378e95bcbd2d0bb69ed19
+圆桌专项/三期/step6-summary-final.json=901b0af9104e9f18cd2b52ac6e62381ef2e0373c330d9b82f8b6396277c226bc
+
+[PHASE3_BASELINE]
+command=python -B "D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\verify_phase3_baseline.py"
+input=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\三期\baseline_skills
+literal_output=BASELINE PASS files=44 bytes=419762 manifest_v2_sha256=B640B2B50D51D324077140DC765C77D95B5B56DBDF6E8479540976AB3D90B2E2 expected=B640B2B50D51D324077140DC765C77D95B5B56DBDF6E8479540976AB3D90B2E2
+exit_status=0
+
+[PHASE3_MODIFIED]
+command=python -B "D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\三期\final_modified_skills\amphoreus\scripts\validate.py" --root "D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\三期\final_modified_skills" --wave all
+input=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\三期\final_modified_skills
+literal_output_begin
+amphoreus wave all: PASS
+root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\三期\final_modified_skills
+router_manifest=18/18
+cards=13/13
+evals=13 scenarios=65
+encoding=UTF-8 line_endings=LF
+behavior=not_run_by_static_validator
+literal_output_end
+exit_status=0
+result=44 files; three changed fields; production retains modified state
+
+[PHASE3_ROLLBACK]
+command=powershell -NoProfile -ExecutionPolicy Bypass -Command "Import-Module Microsoft.PowerShell.Utility -ErrorAction Stop; & 'D:\研究\翁法罗斯skill套件计划\翻译器整改交付\ROLLBACK.ps1' -CodexRoot 'D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\三期\final_rollback_test\codex' -ClaudeRoot 'D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\三期\final_rollback_test\claude'"
+input={"codex_copy":"D:\\研究\\翁法罗斯skill套件计划\\翻译器整改交付\\workdir\\三期\\final_rollback_test\\codex","claude_copy":"D:\\研究\\翁法罗斯skill套件计划\\翻译器整改交付\\workdir\\三期\\final_rollback_test\\claude","source":"D:\\研究\\翁法罗斯skill套件计划\\翻译器整改交付\\00_基线\\三期\\final_modified_skills","files_per_tree":44}
+literal_output_begin
+amphoreus wave all: PASS
+root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\三期\final_rollback_test\codex
+router_manifest=18/18
+cards=13/13
+evals=13 scenarios=65
+encoding=UTF-8 line_endings=LF
+behavior=not_run_by_static_validator
+ROLLBACK PASS name=codex root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\三期\final_rollback_test\codex files=44 exit=0
+amphoreus wave all: PASS
+root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\三期\final_rollback_test\claude
+router_manifest=18/18
+cards=13/13
+evals=13 scenarios=65
+encoding=UTF-8 line_endings=LF
+behavior=not_run_by_static_validator
+ROLLBACK PASS name=claude root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\三期\final_rollback_test\claude files=44 exit=0
+ROLLBACK COMPLETE restored=2 trees files_per_tree=44
+literal_output_end
+literal_stderr=
+exit_status=0
+restored_behavior=two disposable final-modified copies restored to original 44-file baseline; both validate PASS; production unchanged and retains phase3 modified state
+
+[PHASE3_STOP]
+pilot=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\行为重跑\三期\批次B\batchB-pilot.json
+pilot_sha256=4E5D383C1D3644E74D2B69632891C998337583074D73EFC1E43A1BC2A98F0072
+failure_reason=行为分与 cross 均通过，极性错误为 0；但盲判合计新旧各胜 5 题，且总声纹分 new=44 低于 old=45，march7th 单卡 new=21 低于 old=23，因此没有总体声纹增益。
+stop_report=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\失败轨迹\三期_步骤7_批次B声纹增益门停止.md
+stop_report_sha256=5E710C1C2B026F277B490510911F70E863758CE5F315E4DDC2028D467EE7BC94
+acceptance=待核：交 fable5 审核，勾选权在审核方与用户
+
+[PHASE4]
+status=FAIL_STOP
+stop_step=step4/gate_retest_two_rounds_below_margin
+closed_at=2026-09-04T12:19:33
+production_changed_fields=none (44 files == 00_基线/四期/baseline_skills == phase3 final_modified_skills)
+codex_claude_identical=true
+anaxa_unchanged=true
+rubric_unchanged=true
+evals_unchanged=true
+persona_unchanged=true
+probe=0of4_questions_ge_plus20pct;probe_holds=false;whitelist3_not_triggered
+gate_round1=new22.0_old22.0_delta0;mydei-2;march7th+2;judge_agree4of6;pairing2of2;FAIL
+gate_round2=new23.5_old21.5_delta+2.0;mydei+1;march7th+1;each_card_not_worse=true;judge_agree6of6;FAIL_below_margin
+gate_rounds_same_cause=false
+not_run=batchC,T1_T2_T3_T4_T5_final
+batchD=unauthorized
+rollback_dryrun=exit0;codex_eq_baseline=True;claude_eq_baseline=True;production_untouched=True
+validate_prod=codex_exit0;claude_exit0
+repo_touched=false
+
+[PHASE4_ARTIFACTS]
+workdir/四期/probe/manifest.json=876713c16133dbadfbc45854433adc21348205cab81d18ab78983db39b3f1f96
+workdir/四期/probe/responses_index.json=0420859234d12fb240f8fd4af2407fdb04ba027e8bdbda52765422f5f8091020
+workdir/四期/probe/probe_result.json=af3350fde4eea72928decd89a4db79d718fcae7f167f8908d58883d1420b5959
+workdir/四期/probe/PROBE_CLOSEOUT.json=5e0ff53325c0e25bfd76b257c5f2edc56acf6005bb12d4f0892ba853263fe00a
+workdir/四期/gate/sealed_map.json=c7b6228fb83aa9a495f285e80500f6a83c833ffd5f66710722e39872244e5d16
+workdir/四期/gate/gate_manifest.json=8fb382f2ab6e0a986218bb5328b4964746ee7d23b8c4274dac72177a3ff8ace0
+workdir/四期/gate/judge_templates.json=ea3192d7c2c19c3c3a1978a7f8274a0e15a504add9e8a32e97462c3bd6c2d95b
+workdir/四期/gate/power_analysis.json=bcee8c0b056a65c0e30df2c3de074a4d719d3669e8127c8f546bc57b3ba031ed
+workdir/四期/gate/strip_list.json=4bebb327a0a3c9d1c1081d00f997d55918d7166ddacce57c60d3b9719f7d2961
+workdir/四期/gate/responses_index.json=4c162312aa48a83a078e28a80ebdf3a151ca226a97f00beb9c6efc3b9e7e3ff6
+workdir/四期/gate/judging/judge_results_raw.json=05998194a1a6efa83395c9f4bcb9e635cbaa01ef835695766d79be1e5ef1c54f
+workdir/四期/gate/gate_result.json=f0bf3c9069ccd7fc4008802a03bcc64090c24ce68f219940216251b6e237f985
+workdir/四期/gate/ROUND1_CLOSEOUT.json=3c7c2ee1f3d23666a1ddb97c41fd196e8cf39eb58f0b252563d6fc791d8fcd71
+workdir/四期/gate/round2/sealed_map.json=d53e9dbb5a87a4486101cebac3a8c07f23a41162828b28747aec31a28cb7b6d9
+workdir/四期/gate/round2/responses_index.json=00043254d24fbcd1fe6ea25be93da4a45f5af702e9a32fcd25b96ffe45f6a059
+workdir/四期/gate/GATE_VERDICT.json=018179d8f9f52b668ab3d1ee78ffb5ca4e79f1ad01f3f8bc4503ca785f99db3c
+workdir/四期/gate/round2/gate_result_r2.json=3e4ee45d8b2f66d880c8bc339c2d9a995f68116a33793be268989c0e024eae42
+workdir/四期/gate/round2/judging/judge_results_raw.json=426cb6a3ae60a8d2e7c7310b4bee888ed7a5cfbd932308ba63364745aad9db1a
+失败轨迹/四期_步骤4_门复测两轮未达边际停止.md=462d8e6bb8ed5f5b1832c526bfd9b999f26f637cd8035ae7c8f4a2ff7bc1aa7e
+00_基线/四期/rollback_终验.json=987d2c551194927e48c256dfaacbb5c39e8ecf69fb19e7f08eebb2d6243e4d75
+00_基线/四期/validate_终态.json=78d6795c3b3b6d08dea31c004634635b3dd74254362f01d09fccf7cc3eff62bd
+00_基线/四期/prod_sha256_改前.json=15283a217edda2a3e799431f7825332cd6a7219f0b454ee0b6088592085b6a60
+ACCEPTANCE_SHA256_PHASE4=B70C0990EC32D9E8AE8B197A81368C3424A2C0204AACD88ABE94393539DD0BEF
+LEGACY_SHA256_PHASE4=F085BF27F4345A9FD424818033D1E6B5FA3877CCDC03D222F91DCA4141D4C8BC
+STOP_REPORT_SHA256_PHASE4=462D8E6BB8ED5F5B1832C526BFD9B999F26F637CD8035AE7C8F4A2FF7BC1AA7E
+PHASE4_NOTE=遗留清单.md 在四期关账脚本 step7_closeout.py 首版中因恢复点切片错误被截断为 22 行（截断态 SHA 897264DE 曾短暂登记），随即依 00_基线/三期/文书补丁后 快照＋本会话已读的三期终态节逐字重建并补四期节；重建后重锚。截断态未进入任何审核。
+
+[PHASE5]
+status=FAIL_STOP
+stop_step=step3/gate_retest_two_rounds_below_margin
+closed_at=2026-09-04T13:54:54
+production_changed_fields=amphoreus/references/common.md (2914e3b96db66215f98a1b4de1fe6d0ce5eec599d3c1324c795b098e112c9385 -> b5b676deffed7ab90d097414e45e5bd9a5aac04ef01c6d8b99b40f436db82880)
+production_files=44
+codex_claude_identical=true
+other_43_files_eq_phase3_final=true
+persona_unchanged=true;skill_unchanged=true;evals_unchanged=true;rubric_unchanged=true;validate_py_unchanged=true
+regression_65=769of780;pass=65of65;hard_fails=0;baseline_phase3_batchA=767of780
+regression_input_drift_reruns=HYSILENS-04,TERRAE-01,TERRAE-05(blind_inputs resynced from evals)
+regression_disputed_rejudged=MYDEI-04(3-judge median 12)
+L31_selfcite_in_dialogue=phase4_R1_21,R2_25 -> phase5_R1_0,R2_0
+common_ab=new_common24.0_old_common17.5_delta+6.5;pairs6of6;judges12of12
+gate_round1=new22.5_old22.5_delta+0.0;judge_agree4of6;pairing2of2;FAIL
+gate_round2=new22.5_old20.5_delta+2.0;mydei10.5v10.5;march7th12.0v10.0;each_card_not_worse=true;judge_agree5of6;pairing2of2;FAIL_below_margin
+gate_pooled_4rounds=sum_delta+4.0of120;new_wins12;old_wins7;ties5;sign_p=0.1796
+not_run=batchC,T1_T2_T3_T4_T5_final
+batchD=unauthorized
+rollback_dryrun=exit0;codex_eq_baseline=True;claude_eq_baseline=True;production_untouched=True
+validate_prod=codex_exit0;claude_exit0
+repo_touched=false
+
+[PHASE5_ARTIFACTS]
+workdir/五期/deploy_step1.json=ec097bedfcf9892844c4d1ebfc1585efc15e3f34fa53c2a98242b60cad92958f
+workdir/五期/tree_check.json=c71ca28564847b3f79a9ae4e222282c1a70f55f6072d50c14ca518efc620c49b
+workdir/五期/regression_summary.json=8717a822e7f55e53f076c4f41ce649420f87b8ba12ba47f3085656fa5a20539c
+workdir/五期/regression/manifest.json=d57955649053f19f81f83c27da9f87e0b908976f84ee709dc64417458bb7a654
+workdir/五期/regression/responses_index.json=293f2104a0f6b2a69fe75ab5969c361c1e54eaee855c091aa3a64d63cbbc2b33
+workdir/五期/regression/judging/scores_all65.json=c07e35b4a85b402ebf7ae9b3c0ce049c81f7c58f93ee4f125d41922db120f8ed
+workdir/五期/regression/judging/scores_final65.json=164e59983e579817910389fe3006e0936c16b832a4c42bdabb769586fe22448c
+workdir/五期/regression/rerun/drifted_or_fail_scores_r1.json=4558797dfc25a94d9a6a1672c10a5b438b00771c9e67a9474b32baadc4f53814
+workdir/五期/regression/rerun/MYDEI-04_extra_judges.json=d46d00b77c6c1d8e92fa523dcc554ccb449af83686241d1c1fb180caba666ae1
+workdir/五期/gate/gate_manifest.json=4529f672eaea4f5e935a3e27add3a40a641575e4f33cd117e426dad2d2514dd1
+workdir/五期/gate/sealed_map.json=118bea5e65a25ca3d164267d0713ffdda7dae4e04ff2a0c23ec1a0eda095a009
+workdir/五期/gate/responses_index.json=887af444b11d3c7ef50ad8a971c6a48942c02605a3690d82be4af81ad979154d
+workdir/五期/gate/judging/judge_results_raw.json=950c10ad2037fceaafa6c20d822dc8fe80b62c3e2c9563597ef3f47151842469
+workdir/五期/gate/gate_result.json=d934ef665fc7c4206f2ef24de844d26c7da40986e7563a2de90cec0ed00bd749
+workdir/五期/gate/L31_effect.json=5a06d4832624b5a20011b9d2d84f043ccefe059eeefd7357962e155d146667f6
+workdir/五期/gate/L31_effect_detail.json=83569766e4ad83c7f7eaff2f7eccce5052be269e86ff5c3a2d2d46b5897654c2
+workdir/五期/gate/pooled_4rounds.json=79fda518238f7fb68232548e909f9c1b89030439786502df0ccbddbb759fe7d1
+workdir/五期/gate/round2/order.json=9f64abef19317d071d2053f7b94bf51c3786cb62e4413cb2e77ff897797961b1
+workdir/五期/gate/round2/sealed_map.json=76ec560165a623289d623079ebc405d15bff41e427cc5e038437f40cb4955415
+workdir/五期/gate/round2/responses_index.json=a185dcf1f281451847eacd653fe84d6e0a6983aca0ddf3f0c620ffd639977d09
+workdir/五期/gate/round2/judging/judge_results_raw.json=e9c9a020996dbd2210d4adc27a35798549d5a964ee30886582cccc52f59dcb09
+workdir/五期/gate/round2/gate_result_r2.json=85329e826563ee729b5f716270d047f4b898e50f8538b5491f5d19089221a9c4
+workdir/五期/gate/common_ab/manifest.json=14da656765f6fc2c41b219df9c88961140b8a262eab6694a2880f1c9626de7a3
+workdir/五期/gate/common_ab/sealed_map.json=35d6318b5b8745473f18fad8ffdf3b11aed551955e36f553a04712c2abf818ae
+workdir/五期/gate/common_ab/judging/judge_results_raw.json=f44a7f670c9482502a09c4ac3aedcbb499f2761fb0baf7c58fd9206ab85d4e46
+workdir/五期/gate/common_ab/result.json=c2096cba53e484e232fbd28d56c811320b29681798734cef283719643d73ba42
+行为重跑/五期/summary.json=16f0d40da4863671ab1be9024bfa061d5a96ecb0259ac319010d1539cd72057f
+行为重跑/五期/全量/scores_final65.json=164e59983e579817910389fe3006e0936c16b832a4c42bdabb769586fe22448c
+diff/五期_common直引礼仪.diff=30b121f89210ddfc8dcfaf70d6d7123b642cfbd62250637e7272cc54c5c9bf73
+失败轨迹/五期_步骤3_门复测两轮未达边际停止.md=a2983130207d2e7850523169f78137a51f5eca107153cad2933e8e7761438e8b
+00_基线/五期/rollback_终验.json=0d1ca13ae4d78e520f1bf9565dd74d6ccbcc3994f6eaced87dc82ab783418ca3
+00_基线/五期/validate_终态.json=d16b7a815032a84d50aabe404a3dff470d17f5aa19ac002eca7156cb32e03171
+00_基线/五期/prod_sha256_改后.json=6db5ee8d80cdbc8fcf2af7822cf460ac6060263e3e08c99bed0bfeee9cef52ef
+ACCEPTANCE_SHA256_PHASE5=6598374E0AD876CF04A3279CF30CC9CF52BC6B71368F74AF52F9C202624C56F5
+LEGACY_SHA256_PHASE5=1198CD10584FBF710901CB7F37E092DA67389790D1809D3C4E9F4D300CAF36F3
+STOP_REPORT_SHA256_PHASE5=A2983130207D2E7850523169F78137A51F5ECA107153CAD2933E8E7761438E8B
+PHASE5_NOTE=五期关账后对本期新写 20 个 JSON/脚本件做 CRLF→LF 归一并重锚 [PHASE5_ARTIFACTS]；内容零变化。

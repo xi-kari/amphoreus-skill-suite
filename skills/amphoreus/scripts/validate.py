@@ -432,6 +432,26 @@ def check_persona_voice_groups(hero: str, path: Path, text: str, errors: list[st
             errors.append(f"march7th protected archive signoff mismatch: {path}")
 
 
+def parse_craft_firewall_terms(text: str, path: Path, errors: list[str]) -> tuple[str, ...]:
+    pattern = re.compile(
+        r"^- 工艺词防火墙：下列 (?P<count>\d+) 词只许出现在台账区、工作场模板字段与合同文本，不得进入任何场景的角色台词与旁白：(?P<terms>[^\n]+)。$",
+        re.MULTILINE,
+    )
+    matches = list(pattern.finditer(text))
+    if len(matches) != 1:
+        errors.append(f"common craft firewall must occur exactly once: {path}")
+        return ()
+    declared = int(matches[0].group("count"))
+    terms = tuple(part.strip() for part in matches[0].group("terms").split("、") if part.strip())
+    if declared != len(terms):
+        errors.append(
+            f"common craft firewall count mismatch: declared={declared} actual={len(terms)}: {path}"
+        )
+    if len(set(terms)) != len(terms):
+        errors.append(f"common craft firewall contains duplicate terms: {path}")
+    return terms
+
+
 def normalize_whole_line_emphasis(line: str) -> str:
     normalized = line.strip()
     while True:
@@ -571,6 +591,9 @@ def check_router(skills_root: Path, errors: list[str]) -> tuple[int, int]:
             for token in ("称呼矩阵", "兴趣边", "同场禁区", "沙龙参数", "amphoreus-cyrene", "长夜月", "U+2022"):
                 if token not in text:
                     errors.append(f"relations contract missing {token}: {path}")
+            for token in ("圆桌参数", "回应对提示", "同场禁区对子不直接对话", "素材边界"):
+                if token not in text:
+                    errors.append(f"relations roundtable contract missing {token}: {path}")
         elif relative == "references/common.md":
             for token in (
                 "记忆形体",
@@ -586,6 +609,16 @@ def check_router(skills_root: Path, errors: list[str]) -> tuple[int, int]:
             ):
                 if token not in text:
                     errors.append(f"common contract missing {token}: {path}")
+            for token in (
+                "| 圆桌场 |",
+                "### 圆桌（议题场）",
+                "主持四件事在圆桌内扩为五件",
+                "<details><summary>台账</summary>",
+                "工作场不适用本条",
+            ):
+                if token not in text:
+                    errors.append(f"common roundtable contract missing {token}: {path}")
+            parse_craft_firewall_terms(text, path, errors)
     return len(required), files_checked
 
 
