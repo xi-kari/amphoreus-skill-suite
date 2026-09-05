@@ -31,7 +31,7 @@ python adapters/build.py --check
 
 ## 便携版单卡的构成
 
-每个 `generic/amphoreus-<hero>.md` 包含生成头(含来源 SHA)、卡文 `SKILL.md` 原文、家族公约 `common.md` 原文及 `references/stickers.md` 表情索引原文。`amphoreus-router.md` 另附关系单源 `relations.md` 原文;台词库 `persona.md` 为可选伴读(工作场角色说话 ≤15% 风格预算,陪聊 / 沙龙场不计税,严肃场景自动静音)。
+每个 `generic/amphoreus-<hero>.md` 包含生成头(含来源 SHA)、卡文 `SKILL.md` 原文、家族公约 `common.md` 原文及 `references/stickers.md` 表情索引原文。`amphoreus-router.md` 另附关系单源 `relations.md` 原文;台词库 `persona.md` 为可选伴读(工作场角色说话 ≤15% 风格预算,陪聊 / 沙龙场不计税,实际严肃工作段自动静音)。
 
 ## 对话中的表情包
 
@@ -63,3 +63,5 @@ python adapters/generic/scripts/stickers.py --speaker 昔涟 --list --format jso
 ## 忠实性说明
 
 适配层不改写任何卡文、共享合同或表情索引内容,只做打包与约定壳;行为契约、缺席条款(`module_unavailable`)、移交事实包纪律与原生版逐字一致。原有验收结论(行为 65/65、两线端到端 CONFIRMED)是在 Claude Code 环境下取得的,不能作为表情显示或其他生态运行效果的验收结果。生成物一致性由构建检查覆盖,实际选图与内嵌显示仍需在各自模型和客户端中验证。
+
+日常聊天的开场、持续对话与告别均只呈现自然话语、必要场面和表情，不自动附台账、回执、读取清单或模式说明。用户主动追问来源或执行情况时只答所问，随后继续自然聊天；明确的工程工作请求按工作合同处理。

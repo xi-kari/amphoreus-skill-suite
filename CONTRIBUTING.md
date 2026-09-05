@@ -21,9 +21,12 @@
 python -B skills/amphoreus/scripts/validate.py --root skills --wave all
 python -B tools/package_stickers.py --check
 python -B -m unittest discover -s tools/tests -p 'test_stickers.py'
+python -B -m unittest discover -s tools/tests -p 'test_chat_output.py'
 ```
 
 预期输出 `amphoreus wave all: PASS`(exit 0)。注意它如实标注 `behavior=not_run_by_static_validator`——静态 PASS 不等于行为评测通过。
+
+日常聊天行为用例在 `tools/tests/chat_cases.json`。实际运行后，将每题的 `<id>-final.md` 与完整 `<id>-events.jsonl` 保存在独立输出目录，使用 `python -B tools/tests/check_chat_output.py --outputs <输出目录>` 检查全部可见助手消息；再按 `semantic_review` 逐题核对语义、来源诚实性与场景切换。检查器单元测试只验证检查工具本身，不能代替真实对话验收。
 
 ## 三、适配层:只改生成器,勿手改产物
 

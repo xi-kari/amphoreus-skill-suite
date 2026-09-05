@@ -29,6 +29,9 @@ jobs:
       - name: 表情选择与输出行为测试
         run: python -B -m unittest discover -s tools/tests -p 'test_stickers.py'
 
+      - name: 对话输出检查器回归
+        run: python -B -m unittest discover -s tools/tests -p 'test_chat_output.py'
+
       - name: 适配层内容校验
         run: python -B adapters/build.py --check
 

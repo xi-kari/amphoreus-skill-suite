@@ -435,7 +435,7 @@ def check_persona_voice_groups(hero: str, path: Path, text: str, errors: list[st
 
 def parse_craft_firewall_terms(text: str, path: Path, errors: list[str]) -> tuple[str, ...]:
     pattern = re.compile(
-        r"^- 工艺词防火墙：下列 (?P<count>\d+) 词只许出现在台账区、工作场模板字段与合同文本，不得进入任何场景的角色台词与旁白：(?P<terms>[^\n]+)。$",
+        r"^- 工艺词防火墙：下列 (?P<count>\d+) 词只许出现在用户主动要求的过程说明、工作场模板字段与合同文本，不得作为日常聊天的流程播报：(?P<terms>[^\n]+)。$",
         re.MULTILINE,
     )
     matches = list(pattern.finditer(text))
@@ -719,7 +719,12 @@ def check_router(skills_root: Path, errors: list[str]) -> tuple[int, int]:
                 "| 圆桌场 |",
                 "### 圆桌（议题场）",
                 "主持四件事在圆桌内扩为五件",
-                "<details><summary>台账</summary>",
+                "## 日常聊天的可见输出",
+                "覆盖助手全部可见文字",
+                "收场也不例外",
+                "用户主动询问来源",
+                "不隐瞒、不编造",
+                "不为聊天额外创建审计文件",
                 "工作场不适用本条",
             ):
                 if token not in text:

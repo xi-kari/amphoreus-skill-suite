@@ -1,0 +1,164 @@
+[
+  {
+    "id": "chat_aglaea",
+    "skill": "amphoreus-aglaea",
+    "prompt": "阿格莱雅，今天只想和你闲聊。窗边有一束暖光，你会在这样的下午做什么？",
+    "mode": "chat",
+    "expected_speakers": ["阿格莱雅"],
+    "min_images": 0,
+    "max_images": 1
+  },
+  {
+    "id": "chat_anaxa",
+    "skill": "amphoreus-anaxa",
+    "prompt": "那刻夏，陪我随便聊两句吧。我刚想起小时候总问云为什么不会掉下来。",
+    "mode": "chat",
+    "expected_speakers": ["那刻夏"],
+    "min_images": 0,
+    "max_images": 1
+  },
+  {
+    "id": "chat_castorice",
+    "skill": "amphoreus-castorice",
+    "prompt": "遐蝶，今天没什么事，只想和你坐一会儿。花开得很安静，我们也不用急着说话。",
+    "mode": "chat",
+    "expected_speakers": ["遐蝶"],
+    "min_images": 0,
+    "max_images": 1
+  },
+  {
+    "id": "chat_cerydra",
+    "skill": "amphoreus-cerydra",
+    "prompt": "刻律德菈，下班啦，今天不谈工作。要是能偷得一个清闲的晚上，你想怎样过？",
+    "mode": "chat",
+    "expected_speakers": ["刻律德菈"],
+    "min_images": 0,
+    "max_images": 1
+  },
+  {
+    "id": "chat_cipher",
+    "skill": "amphoreus-cipher",
+    "prompt": "赛飞儿，陪我聊聊。我桌上的最后一块饼干不见了，你有没有什么有趣的猜想？",
+    "mode": "chat",
+    "expected_speakers": ["赛飞儿"],
+    "min_images": 0,
+    "max_images": 1
+  },
+  {
+    "id": "chat_cyrene",
+    "skill": "amphoreus-cyrene",
+    "prompt": "昔涟，陪我聊两句吧。今天回家时看见很漂亮的晚霞，忽然不想走那么快了。",
+    "mode": "chat",
+    "expected_speakers": ["昔涟"],
+    "min_images": 0,
+    "max_images": 1
+  },
+  {
+    "id": "chat_hyacine",
+    "skill": "amphoreus-hyacine",
+    "prompt": "风堇，今天只是想闲聊。下雨的下午，热茶和热可可你会选哪个？",
+    "mode": "chat",
+    "expected_speakers": ["风堇"],
+    "min_images": 0,
+    "max_images": 1
+  },
+  {
+    "id": "chat_hysilens",
+    "skill": "amphoreus-hysilens",
+    "prompt": "海瑟音，今晚陪我说几句轻松的话吧。听着窗外的风，我忽然很想去看海。",
+    "mode": "chat",
+    "expected_speakers": ["海瑟音"],
+    "min_images": 0,
+    "max_images": 1
+  },
+  {
+    "id": "chat_march7th",
+    "skill": "amphoreus-march7th",
+    "prompt": "三月七，来闲聊呀。我今天拍到一只打哈欠的小猫，照片有点糊但特别可爱。",
+    "mode": "chat",
+    "expected_speakers": ["三月七"],
+    "min_images": 0,
+    "max_images": 1
+  },
+  {
+    "id": "chat_mydei",
+    "skill": "amphoreus-mydei",
+    "prompt": "万敌，今天不挑战什么，只想歇会儿。你愿意陪我坐在树荫下吹吹风吗？",
+    "mode": "chat",
+    "expected_speakers": ["万敌"],
+    "min_images": 0,
+    "max_images": 1
+  },
+  {
+    "id": "chat_phainon",
+    "skill": "amphoreus-phainon",
+    "prompt": "白厄，陪我随便聊聊吧。要是今天能早一点休息，你会想给自己留点什么小乐趣？",
+    "mode": "chat",
+    "expected_speakers": ["白厄"],
+    "min_images": 0,
+    "max_images": 1
+  },
+  {
+    "id": "chat_terrae",
+    "skill": "amphoreus-terrae",
+    "prompt": "丹恒，今天只想闲聊。旅途中那些不起眼的小风景，有时候反而会记很久，你觉得呢？",
+    "mode": "chat",
+    "expected_speakers": ["丹恒"],
+    "min_images": 0,
+    "max_images": 1
+  },
+  {
+    "id": "chat_tribbie",
+    "skill": "amphoreus-tribbie",
+    "prompt": "缇宝，陪我聊两句！如果把今天过成一种甜点，你会挑什么口味？",
+    "mode": "chat",
+    "expected_speakers": ["缇宝"],
+    "min_images": 0,
+    "max_images": 1
+  },
+  {
+    "id": "chat_salon_close",
+    "skill": "amphoreus",
+    "prompt": "开个小沙龙，请昔涟和三月七各聊一句下雨天的小快乐，然后我们就散场。今天只聊天，不安排后续事情。",
+    "mode": "chat",
+    "expected_speakers": ["昔涟", "三月七"],
+    "min_images": 0,
+    "max_images": 4
+  },
+  {
+    "id": "chat_roundtable_close",
+    "skill": "amphoreus",
+    "prompt": "请阿格莱雅、那刻夏和缇宝开个轻松圆桌，各说一句下午茶配什么点心，再互道晚安收场。只是闲聊，不需要形成任何决定。",
+    "mode": "chat",
+    "expected_speakers": ["阿格莱雅", "那刻夏", "缇宝"],
+    "min_images": 0,
+    "max_images": 4
+  },
+  {
+    "id": "chat_release_words",
+    "skill": "amphoreus-march7th",
+    "prompt": "三月七，今天只想吐槽两句，不用操作任何东西。我同事聊天总爱说发布、回滚，连点错奶茶都说要回滚，好好笑。",
+    "mode": "chat",
+    "expected_speakers": ["三月七"],
+    "min_images": 0,
+    "max_images": 1
+  },
+  {
+    "id": "source_question",
+    "skill": "amphoreus-cyrene",
+    "prompt": "昔涟，你这次说话的角色设定从哪里来的？请告诉我这轮实际读过哪些文件、哪些只是沿用上下文，不要把没有读取的内容说成已经检查过。",
+    "mode": "source",
+    "expected_speakers": ["昔涟"],
+    "min_images": 0,
+    "max_images": 1
+  },
+  {
+    "id": "chat_audit_topic",
+    "skill": "amphoreus-cerydra",
+    "prompt": "刻律德菈，只是随便聊聊：我朋友做审计，每天都在整理台账。下班还把买菜清单叫台账，我觉得挺有趣的。",
+    "mode": "chat",
+    "expected_speakers": ["刻律德菈"],
+    "min_images": 0,
+    "max_images": 1
+  }
+]
