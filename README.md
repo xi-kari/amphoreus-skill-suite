@@ -60,6 +60,10 @@ python ~/.claude/skills/amphoreus/scripts/validate.py --root ~/.claude/skills --
 
 > 无需安装知识库:`starrail_knowledge_base` MCP 只是作者侧建卡与验收设施;台词与关系数据已随卡分发(persona.md / relations.md),离线即用。聊到库外剧情时,角色会如实说不知道,不拿模型记忆编造。
 
+角色回复支持按语境配表情:支持图片的客户端中默认开启,可以随时说「关表情」「开表情」;静音默认关闭。单角色每轮一张,多人全轮最多四张,图片跟随实际发言者。96 张小图、角色索引和只读选图脚本随 `skills/amphoreus/` 一起安装,无需原图目录或网络服务。
+
+Codex 桌面端可用 `$amphoreus-cyrene` 直呼昔涟,或 `$amphoreus` 进入总路由;将上述 14 个目录完整复制到 Codex 的技能安装目录即可。图片使用安装位置的绝对路径在回复中内嵌;其他客户端按各自图片能力呈现,纯文本终端或资源不可访问时自然省略图片。
+
 ## 十三卡画廊
 
 与[在线介绍页](https://xi-kari.github.io/amphoreus-skill-suite/)同序陈列(卡序 I–XIII),各卡司职见画廊下方速览表。
@@ -171,6 +175,8 @@ flowchart LR
 
 共 **96 枚**(2026-08-31 首批 18 枚 + 2026-09-02 新批 78 枚)。存档件 `assets/stickers/<key>.png`(≤ 512,原字节或等比缩放),显示件 `assets/stickers/w/<key>.webp`(256,页面与本页引用),清单 `assets/stickers/manifest.js` / `.json` 由 `tools/make_stickers.py` 生成(`--check` 回对)。
 
+对话用资源由 `python tools/package_stickers.py` 从上述清单和显示件生成到 `skills/amphoreus/`,用 `python tools/package_stickers.py --check` 检查同步;修改后运行 `python adapters/build.py` 同步其他客户端的便携包。选图脚本仅需 Python 标准库,例如 `python skills/amphoreus/scripts/stickers.py --speaker cyrene --mood 收到`,会返回可直接放入回复的 Markdown 图片。
+
 <table>
 <tr><td><b>开拓者·星</b><br><sub>3 枚</sub></td><td><img src="assets/stickers/w/trailblazer-stelle.webp" width="56" alt="开拓者·星" title="开拓者·星"> <img src="assets/stickers/w/trailblazer-stelle-record.webp" width="56" alt="记录" title="记录"> <img src="assets/stickers/w/trailblazer-stelle-rewrite.webp" width="56" alt="重写" title="重写"><br><sub>记录 · 重写</sub></td></tr>
 <tr><td><b>缇宝</b><br><sub>8 枚</sub></td><td><img src="assets/stickers/w/tribbie.webp" width="56" alt="缇宝" title="缇宝"> <img src="assets/stickers/w/tribbie-an.webp" width="56" alt="缇安" title="缇安"> <img src="assets/stickers/w/tribbie-ning.webp" width="56" alt="缇宁" title="缇宁"> <img src="assets/stickers/w/tribbie-ning-send.webp" width="56" alt="缇宁 · 发送" title="缇宁 · 发送"> <img src="assets/stickers/w/tribbie-an-goodnight.webp" width="56" alt="缇安 · 晚安" title="缇安 · 晚安"> <img src="assets/stickers/w/tribbie-boom.webp" width="56" alt="炸飞" title="炸飞"> <img src="assets/stickers/w/tribbie-wise.webp" width="56" alt="睿智" title="睿智"> <img src="assets/stickers/w/chimera-tribbie.webp" width="56" alt="苹果糖 · 炸飞" title="苹果糖 · 炸飞"><br><sub>缇宁·发送 · 缇安·晚安 · 炸飞 · 睿智 · 苹果糖·炸飞</sub></td></tr>
@@ -200,7 +206,7 @@ flowchart LR
 
 | 检验项 | 结果 |
 | --- | --- |
-| 静态校验 | `validate.py --wave all` PASS:卡 13/13 · 路由清单 18/18(含 relations.md)· 评测 13 卷 65 场景 · UTF-8/LF |
+| 静态校验 | `validate.py --wave all` PASS:卡 13/13 · 路由及资源清单 117/117 · 冻结评测 13 卷 65 场景完整 · 文本 UTF-8/LF |
 | 行为评测 | 每卡 5 题冻结场景(含每卡 1 道场景切换题);沙龙批次 13 卡全量重跑 **65/65**;翻译器整改批次每期公约变更即 65 全量,五期终态 **769/780、65/65**、硬失败 0(rubric 冻结未动;失败重跑留痕:昔涟 C-03、丹恒 T-05、海瑟音 H-04 首跑真失败或题面缺陷,入册后闭合) |
 | 台词保真 | 语音总账 **246 条**逐字对齐游戏知识库(沙龙批次 persona 增补 78 条语料),引文字符级冻结检查内建于 validator |
 | 风格税 | 工作场已记录最高 **13.5%**(红线 ≤ 15%,工作场口径;陪聊场不计税),严肃场景自动静音;工艺词防火墙 20 词台词区扫描 **0 命中** |
@@ -262,9 +268,9 @@ flowchart LR
 │   ├── mag/                  # 《CHRYSOS·黄金裔》杂志素材(13 封面 + 13 组跨页双档)+ 昔涟首屏/闪卡底图
 │   ├── meeting/              # 全体会议页素材(英雄纪 / 如我所书 / 2026 年历 webp)+ data.js(正文单源,逐字搬运)
 │   └── layers/ · banner.jpg  # 闪卡三层分区素材(背景/前景/徽记 + geo.js 几何单源)· 横幅
-├── tools/                    # crop_symbols.py(徽记)· make_layers.py(闪卡分层)· make_stickers.py(表情包归一化 + 清单,--check 回对)· make_meeting_assets.py / build_meeting_data.py(会议页素材与正文,--check 回对)· fixtures/(TERRAE-01 离线 fixture)
-├── skills/                   # 14 目录 44 文件 = 总路由 + 13 卡(生产验收态,唯一事实源)
-│   ├── amphoreus/            #   路由 SKILL + references/(common.md 公约 + relations.md 关系单源)+ evals/(13 卷)+ scripts/validate.py
+├── tools/                    # 素材生成与回对、package_stickers.py(对话资源打包)、tests/(选图与分发测试)、fixtures/(TERRAE-01 离线 fixture)
+├── skills/                   # 14 目录 143 文件 = 总路由 + 13 卡 + 对话资源
+│   ├── amphoreus/            #   路由 SKILL + references/(共享合同、关系、表情索引)+ evals/(13 卷)+ scripts/(校验、选图)+ assets/stickers/
 │   └── amphoreus-<hero>/     #   各卡 SKILL.md + persona.md
 ├── adapters/                 # build.py 生成:九个生态的约定文件 + 通用便携单卡
 └── docs/                     # 总任务书 · 设计分册 · 波1–4 / 群聊模式 / 翻译器整改验收单与遗留清单 · 独立核查报告 · 终验报告 · D1D2 · 使用指南 · 哈希总账

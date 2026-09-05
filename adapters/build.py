@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """从 skills/ 单一事实源生成其他智能体生态的适配文件。
 
-生成物(全部带 GENERATED 头,勿手改;重跑本脚本即同步):
+生成物(规则文本带 GENERATED 头,资源与脚本逐字节复制;勿手改):
   adapters/generic/amphoreus-router.md          便携版总路由(含卡索引与关系单源 relations.md 原文)
   adapters/generic/amphoreus-<hero>.md          便携版单卡 = 家族公约 + 卡文原文
+  adapters/generic/assets/stickers/            对话表情与清单
+  adapters/generic/scripts/stickers.py          标准库选图脚本
   adapters/openai-codex/AGENTS.md               AGENTS.md 约定(Codex / OpenCode / Amp / Jules 等)
   adapters/gemini-cli/GEMINI.md                 Gemini CLI 约定
   adapters/cline/amphoreus.md                   Cline(.clinerules/)/ Roo Code(.roo/rules/)规则文件
@@ -18,6 +20,7 @@ CI 会重跑本脚本并要求零 diff(适配层不得手改漂移)。
 """
 from __future__ import annotations
 
+import argparse
 import hashlib
 import re
 from pathlib import Path
@@ -51,10 +54,8 @@ def read(p: Path) -> str:
     return p.read_text(encoding="utf-8")
 
 
-def write(p: Path, text: str) -> None:
-    p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(text, encoding="utf-8", newline="\n")
-    print(f"  {p.relative_to(ROOT)}")
+def add_text(outputs: dict[Path, bytes], p: Path, text: str) -> None:
+    outputs[p] = text.encode("utf-8")
 
 
 def gen_header(*sources: Path) -> str:
@@ -77,16 +78,26 @@ USAGE_NOTE = (
     "台词库 `skills/amphoreus-<hero>/persona.md` 为可选伴读,工作场仅在 ≤15% 风格预算内取用(陪聊 / 沙龙场不计);"
     "严肃场景(报错、不可逆操作、安全)自动静音,方法照常执行。"
     "陪聊 / 沙龙场规则见文内家族公约〈沙龙与陪聊〉;多角沙龙的称呼与兴趣边以关系单源 relations.md 为准(附于便携版总路由文件)。\n"
+    "\n> **表情资源定位**:连同本文件所在 `generic/` 目录的 `assets/stickers/` 与 `scripts/stickers.py` 一起部署。"
+    "文内原生 `amphoreus` 根目录在便携版中对应本文件所在的 `generic/` 目录;"
+    "`references/stickers.md` 对应本文件末尾内嵌的表情索引。按实际部署路径读取资源并输出图片绝对路径。"
+    "无文件工具或仅粘贴系统提示的宿主自然省略图片;仅在用户明确提供并已验证可用时使用其图片地址,不推测远程回退地址。\n"
 )
 
 
-def build_generic() -> None:
+def build_generic(outputs: dict[Path, bytes]) -> None:
     common = SKILLS / "amphoreus" / "references" / "common.md"
     relations = SKILLS / "amphoreus" / "references" / "relations.md"
     router = SKILLS / "amphoreus" / "SKILL.md"
-    write(
+    stickers = SKILLS / "amphoreus" / "references" / "stickers.md"
+    sticker_index = (
+        "\n---\n\n## 表情索引(skills/amphoreus/references/stickers.md 原文)\n\n"
+        + read(stickers)
+    )
+    add_text(
+        outputs,
         ADP / "generic" / "amphoreus-router.md",
-        gen_header(router, common, relations)
+        gen_header(router, common, relations, stickers)
         + "# Amphoreus 总路由(便携版)\n\n"
         + USAGE_NOTE
         + "\n## 卡索引\n\n"
@@ -96,21 +107,36 @@ def build_generic() -> None:
         + "\n---\n\n## 家族公约(skills/amphoreus/common.md 原文)\n\n"
         + read(common)
         + "\n---\n\n## 关系单源(skills/amphoreus/references/relations.md 原文:称呼矩阵 / 兴趣边 / 同场禁区 / 沙龙参数)\n\n"
-        + read(relations),
+        + read(relations)
+        + sticker_index,
     )
     for key, name, title, method in HEROES:
         sk = SKILLS / f"amphoreus-{key}" / "SKILL.md"
-        write(
+        add_text(
+            outputs,
             ADP / "generic" / f"amphoreus-{key}.md",
-            gen_header(sk, common)
+            gen_header(sk, common, stickers)
             + f"# {name}「{title}」·便携版单卡\n\n"
             + f"`amphoreus-{key}` —— {method}\n\n"
             + USAGE_NOTE
             + "\n---\n\n## 卡文(SKILL.md 原文)\n\n"
             + read(sk)
             + "\n---\n\n## 家族公约(common.md 原文)\n\n"
-            + read(common),
+            + read(common)
+            + sticker_index,
         )
+
+
+def build_sticker_runtime(outputs: dict[Path, bytes]) -> None:
+    native = SKILLS / "amphoreus"
+    assets = native / "assets" / "stickers"
+    if not (assets / "manifest.json").is_file() or not any(assets.rglob("*.webp")):
+        raise ValueError("缺少原生表情清单或 WebP 资源,请先生成 skills/amphoreus/assets/stickers/。")
+    for source in sorted(assets.rglob("*")):
+        if source.is_file():
+            outputs[ADP / "generic" / source.relative_to(native)] = source.read_bytes()
+    helper = native / "scripts" / "stickers.py"
+    outputs[ADP / "generic" / "scripts" / helper.name] = helper.read_bytes()
 
 
 CONVENTION_BODY = """# 翁法罗斯 Skill 套件 —— {tool} 适配
@@ -175,11 +201,12 @@ CONVENTION_TARGETS = [
 ]
 
 
-def build_conventions() -> None:
+def build_conventions(outputs: dict[Path, bytes]) -> None:
     index = card_index()
     src = SKILLS / "amphoreus" / "SKILL.md"
     for rel, tool, install in CONVENTION_TARGETS:
-        write(
+        add_text(
+            outputs,
             ADP / Path(rel),
             gen_header(src)
             + CONVENTION_BODY.format(tool=tool, index=index)
@@ -187,10 +214,46 @@ def build_conventions() -> None:
         )
 
 
+def generated_outputs() -> dict[Path, bytes]:
+    outputs: dict[Path, bytes] = {}
+    build_generic(outputs)
+    build_sticker_runtime(outputs)
+    build_conventions(outputs)
+    return outputs
+
+
+def stale_assets(outputs: dict[Path, bytes]) -> list[Path]:
+    assets = ADP / "generic" / "assets" / "stickers"
+    return sorted(p for p in assets.rglob("*") if p.is_file() and p not in outputs)
+
+
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--check", action="store_true", help="只读检查所有生成文件、图片与索引是否同步")
+    args = parser.parse_args()
+    outputs = generated_outputs()
+    stale = stale_assets(outputs)
+    if args.check:
+        drift = [p for p, data in outputs.items() if not p.is_file() or p.read_bytes() != data]
+        for p in drift:
+            print(f"out of sync: {p.relative_to(ROOT)}")
+        for p in stale:
+            print(f"stale asset: {p.relative_to(ROOT)}")
+        if drift or stale:
+            raise SystemExit(1)
+        print(f"adapters in sync: {len(outputs)} files")
+        return
     print("generating adapters:")
-    build_generic()
-    build_conventions()
+    for p, data in outputs.items():
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_bytes(data)
+        print(f"  {p.relative_to(ROOT)}")
+    asset_root = (ADP / "generic" / "assets" / "stickers").resolve()
+    for p in stale:
+        if not p.resolve().is_relative_to(asset_root):
+            raise ValueError(f"生成资源路径越界: {p}")
+        p.unlink()
+        print(f"  removed stale asset: {p.relative_to(ROOT)}")
     print("done.")
 
 

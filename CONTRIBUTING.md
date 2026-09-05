@@ -17,18 +17,21 @@
 ## 二、本地校验
 
 ```bash
-# 静态校验:卡 13/13 · 路由清单 18/18 · 13 卷评测 65 场景 · UTF-8/LF
-python skills/amphoreus/scripts/validate.py --root skills --wave all
+# 静态校验:卡 13/13 · 路由及资源清单 117/117 · 冻结场景完整性 · 文本 UTF-8/LF
+python -B skills/amphoreus/scripts/validate.py --root skills --wave all
+python -B tools/package_stickers.py --check
+python -B -m unittest discover -s tools/tests -p 'test_stickers.py'
 ```
 
 预期输出 `amphoreus wave all: PASS`(exit 0)。注意它如实标注 `behavior=not_run_by_static_validator`——静态 PASS 不等于行为评测通过。
 
 ## 三、适配层:只改生成器,勿手改产物
 
-`adapters/` 下所有 `.md` 均由 `build.py` 生成(文件头带 GENERATED 标记与来源 SHA):
+`adapters/` 下带 GENERATED 文件头的便携卡与平台约定,以及 `generic/` 中的表情资源和选图脚本,均由 `build.py` 生成:
 
 ```bash
 python adapters/build.py
+python adapters/build.py --check
 ```
 
 - 新增目标生态:在 `build.py` 的 `CONVENTION_TARGETS` 追加一行(输出路径 / 工具名 / 安装说明),重跑即可;
@@ -36,6 +39,8 @@ python adapters/build.py
 - CI 会重跑 `build.py` 并要求 `git diff --exit-code -- adapters`,手改产物会在 PR 上直接红灯。
 
 ## 四、素材管线
+
+网站表情清单与显示件更新后,运行 `python -B tools/package_stickers.py` 生成随 skill 安装的图片、精简清单与索引,再运行 `python -B adapters/build.py` 同步便携包。两者的 `--check` 均只读检查;角色变体和伙伴必须登记实际形象,不得仅按所属角色组混用。
 
 | 目录 | 来源与纪律 |
 | --- | --- |

@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 import re
 import sys
 from pathlib import Path
@@ -549,16 +550,118 @@ def exact_files(root: Path) -> set[str]:
     }
 
 
+def check_sticker_manifest(router: Path, errors: list[str]) -> set[str]:
+    path = router / "assets" / "stickers" / "manifest.json"
+    if not path.is_file():
+        return set()
+    try:
+        data = json.loads(read_clean(path, errors))
+    except json.JSONDecodeError as exc:
+        errors.append(f"invalid sticker manifest JSON: {path}: {exc}")
+        return set()
+    if not isinstance(data, dict) or set(data) != {"version", "speakers", "items"}:
+        errors.append(f"sticker manifest must contain version, speakers and items: {path}")
+        return set()
+    if type(data["version"]) is not int or data["version"] != 1:
+        errors.append(f"unsupported sticker manifest version: {path}")
+    speakers, items = data["speakers"], data["items"]
+    if not isinstance(speakers, list) or not isinstance(items, list):
+        errors.append(f"sticker speakers and items must be arrays: {path}")
+        return set()
+    if len(speakers) != 32 or len(items) != 96:
+        errors.append(f"sticker manifest must contain 32 speakers and 96 items: {path}")
+    key_pattern = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
+    speaker_defaults: dict[str, str] = {}
+    selectors: dict[str, str] = {}
+    for row in speakers:
+        if not isinstance(row, dict) or set(row) != {"key", "name", "aliases", "default"}:
+            errors.append(f"invalid sticker speaker fields: {path}: {row!r}")
+            continue
+        key, name, aliases, default = (row[field] for field in ("key", "name", "aliases", "default"))
+        if not isinstance(key, str) or not key_pattern.fullmatch(key):
+            errors.append(f"invalid sticker speaker key: {path}: {key!r}")
+            continue
+        if key in speaker_defaults:
+            errors.append(f"duplicate sticker speaker key: {path}: {key}")
+        if not isinstance(default, str) or not key_pattern.fullmatch(default):
+            errors.append(f"invalid sticker speaker default: {path}: {key}")
+            continue
+        speaker_defaults[key] = default
+        if not isinstance(name, str) or not name.strip() or not isinstance(aliases, list):
+            errors.append(f"invalid sticker speaker name or aliases: {path}: {key}")
+            continue
+        for selector in [key, name, *aliases]:
+            if not isinstance(selector, str) or not selector.strip():
+                errors.append(f"invalid sticker speaker alias: {path}: {key}")
+                continue
+            normalized = selector.strip().casefold()
+            owner = selectors.get(normalized)
+            if owner is not None and owner != key:
+                errors.append(f"ambiguous sticker speaker selector: {path}: {selector!r}")
+            selectors[normalized] = key
+    if not set(HEROES).issubset(speaker_defaults):
+        errors.append(f"sticker manifest missing hero speakers: {sorted(set(HEROES) - speaker_defaults.keys())}")
+    item_speakers: dict[str, str] = {}
+    required: set[str] = set()
+    for row in items:
+        if not isinstance(row, dict) or set(row) != {"key", "speaker", "label", "file"}:
+            errors.append(f"invalid sticker item fields: {path}: {row!r}")
+            continue
+        key, speaker, label, filename = (row[field] for field in ("key", "speaker", "label", "file"))
+        if not isinstance(key, str) or not key_pattern.fullmatch(key):
+            errors.append(f"invalid sticker item key: {path}: {key!r}")
+            continue
+        if key in item_speakers:
+            errors.append(f"duplicate sticker item key: {path}: {key}")
+        if not isinstance(speaker, str) or speaker not in speaker_defaults:
+            errors.append(f"unknown sticker speaker: {path}: {key}: {speaker!r}")
+        item_speakers[key] = speaker
+        if not isinstance(label, str) or not label.strip():
+            errors.append(f"invalid sticker label: {path}: {key}")
+        if filename != f"{key}.webp":
+            errors.append(f"sticker filename must be the safe relative key.webp: {path}: {key}")
+            continue
+        required.add(f"assets/stickers/{filename}")
+    for speaker, default in speaker_defaults.items():
+        if item_speakers.get(default) != speaker:
+            errors.append(f"sticker default must belong to its speaker: {path}: {speaker}: {default}")
+    return required
+
+
+def check_sticker_webp(path: Path, asset_root: Path, errors: list[str]) -> None:
+    if not path.resolve().is_relative_to(asset_root.resolve()):
+        errors.append(f"sticker file resolves outside its asset directory: {path}")
+        return
+    try:
+        raw = path.read_bytes()
+    except OSError as exc:
+        errors.append(f"cannot read sticker file: {path}: {exc}")
+        return
+    if (
+        len(raw) < 20
+        or raw[:4] != b"RIFF"
+        or raw[8:12] != b"WEBP"
+        or raw[12:16] not in {b"VP8 ", b"VP8L", b"VP8X"}
+        or int.from_bytes(raw[4:8], "little") != len(raw) - 8
+    ):
+        errors.append(f"invalid WebP header or file length: {path}")
+
+
 def check_router(skills_root: Path, errors: list[str]) -> tuple[int, int]:
     router = skills_root / "amphoreus"
     required = {
         "SKILL.md",
         "references/common.md",
         "references/relations.md",
+        "references/stickers.md",
         "scripts/validate.py",
+        "scripts/stickers.py",
+        "assets/stickers/manifest.json",
         "evals/rubric.md",
         *(f"evals/{hero}.md" for hero in HEROES),
     }
+    sticker_files = check_sticker_manifest(router, errors)
+    required.update(sticker_files)
     actual = exact_files(router) if router.is_dir() else set()
     if actual != required:
         errors.append(
@@ -569,8 +672,11 @@ def check_router(skills_root: Path, errors: list[str]) -> tuple[int, int]:
         path = router / relative
         if not path.is_file():
             continue
-        text = read_clean(path, errors)
         files_checked += 1
+        if relative in sticker_files:
+            check_sticker_webp(path, router / "assets" / "stickers", errors)
+            continue
+        text = read_clean(path, errors)
         if relative == "SKILL.md":
             fields, body = parse_frontmatter(path, text, errors)
             if fields.get("name") != "amphoreus":

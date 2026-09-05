@@ -1,0 +1,790 @@
+{
+  "version": 1,
+  "speakers": [
+    {
+      "key": "aglaea",
+      "name": "阿格莱雅",
+      "aliases": [],
+      "default": "aglaea"
+    },
+    {
+      "key": "anaxa",
+      "name": "那刻夏",
+      "aliases": [],
+      "default": "anaxa"
+    },
+    {
+      "key": "castorice",
+      "name": "遐蝶",
+      "aliases": [],
+      "default": "castorice"
+    },
+    {
+      "key": "cerydra",
+      "name": "刻律德菈",
+      "aliases": [],
+      "default": "cerydra"
+    },
+    {
+      "key": "cipher",
+      "name": "赛飞儿",
+      "aliases": [],
+      "default": "cipher"
+    },
+    {
+      "key": "cyrene",
+      "name": "昔涟",
+      "aliases": [],
+      "default": "cyrene"
+    },
+    {
+      "key": "hyacine",
+      "name": "风堇",
+      "aliases": [],
+      "default": "hyacine"
+    },
+    {
+      "key": "hysilens",
+      "name": "海瑟音",
+      "aliases": [],
+      "default": "hysilens"
+    },
+    {
+      "key": "march7th",
+      "name": "三月七",
+      "aliases": [],
+      "default": "march7th"
+    },
+    {
+      "key": "march7th-evernight",
+      "name": "长夜月",
+      "aliases": [
+        "evernight"
+      ],
+      "default": "march7th-evernight"
+    },
+    {
+      "key": "mydei",
+      "name": "万敌",
+      "aliases": [],
+      "default": "mydei"
+    },
+    {
+      "key": "phainon",
+      "name": "白厄",
+      "aliases": [],
+      "default": "phainon"
+    },
+    {
+      "key": "terrae",
+      "name": "丹恒",
+      "aliases": [
+        "丹恒•腾荒",
+        "丹恒·腾荒",
+        "丹恒腾荒",
+        "dan-heng"
+      ],
+      "default": "terrae"
+    },
+    {
+      "key": "trailblazer-caelus",
+      "name": "开拓者·穹",
+      "aliases": [
+        "穹",
+        "开拓者男",
+        "caelus"
+      ],
+      "default": "trailblazer-caelus"
+    },
+    {
+      "key": "trailblazer-stelle",
+      "name": "开拓者·星",
+      "aliases": [
+        "星",
+        "开拓者女",
+        "stelle"
+      ],
+      "default": "trailblazer-stelle"
+    },
+    {
+      "key": "tribbie",
+      "name": "缇宝",
+      "aliases": [],
+      "default": "tribbie"
+    },
+    {
+      "key": "tribbie-an",
+      "name": "缇安",
+      "aliases": [],
+      "default": "tribbie-an"
+    },
+    {
+      "key": "tribbie-ning",
+      "name": "缇宁",
+      "aliases": [],
+      "default": "tribbie-ning"
+    },
+    {
+      "key": "chimera-mydei",
+      "name": "蜜果羹",
+      "aliases": [],
+      "default": "chimera-mydei"
+    },
+    {
+      "key": "chimera-terrae",
+      "name": "暖龙龙",
+      "aliases": [],
+      "default": "chimera-terrae"
+    },
+    {
+      "key": "chimera-cerydra",
+      "name": "奇兽爵",
+      "aliases": [],
+      "default": "chimera-cerydra"
+    },
+    {
+      "key": "chimera-hysilens",
+      "name": "咕噜鱼儿",
+      "aliases": [],
+      "default": "chimera-hysilens"
+    },
+    {
+      "key": "chimera-phainon",
+      "name": "比格椰",
+      "aliases": [],
+      "default": "chimera-phainon"
+    },
+    {
+      "key": "chimera-tribbie",
+      "name": "苹果糖",
+      "aliases": [],
+      "default": "chimera-tribbie"
+    },
+    {
+      "key": "chimera-cipher",
+      "name": "喵咪神偷",
+      "aliases": [],
+      "default": "chimera-cipher"
+    },
+    {
+      "key": "chimera-castorice",
+      "name": "蝶糕糕",
+      "aliases": [],
+      "default": "chimera-castorice"
+    },
+    {
+      "key": "chimera-anaxa",
+      "name": "努努斯",
+      "aliases": [],
+      "default": "chimera-anaxa"
+    },
+    {
+      "key": "chimera-march7th",
+      "name": "胶糖卷",
+      "aliases": [],
+      "default": "chimera-march7th"
+    },
+    {
+      "key": "chimera-aglaea",
+      "name": "燕麦粥",
+      "aliases": [],
+      "default": "chimera-aglaea"
+    },
+    {
+      "key": "chimera-hyacine",
+      "name": "车厘比斯",
+      "aliases": [],
+      "default": "chimera-hyacine"
+    },
+    {
+      "key": "cyrene-young",
+      "name": "小昔涟",
+      "aliases": [],
+      "default": "cyrene-young-hehe"
+    },
+    {
+      "key": "mimi",
+      "name": "迷迷",
+      "aliases": [],
+      "default": "mimi-hug"
+    }
+  ],
+  "items": [
+    {
+      "key": "aglaea",
+      "speaker": "aglaea",
+      "label": "阿格莱雅",
+      "file": "aglaea.webp"
+    },
+    {
+      "key": "anaxa",
+      "speaker": "anaxa",
+      "label": "那刻夏",
+      "file": "anaxa.webp"
+    },
+    {
+      "key": "castorice",
+      "speaker": "castorice",
+      "label": "遐蝶",
+      "file": "castorice.webp"
+    },
+    {
+      "key": "cerydra",
+      "speaker": "cerydra",
+      "label": "刻律德菈",
+      "file": "cerydra.webp"
+    },
+    {
+      "key": "cipher",
+      "speaker": "cipher",
+      "label": "赛飞儿",
+      "file": "cipher.webp"
+    },
+    {
+      "key": "cyrene",
+      "speaker": "cyrene",
+      "label": "昔涟",
+      "file": "cyrene.webp"
+    },
+    {
+      "key": "hyacine",
+      "speaker": "hyacine",
+      "label": "风堇",
+      "file": "hyacine.webp"
+    },
+    {
+      "key": "hysilens",
+      "speaker": "hysilens",
+      "label": "海瑟音",
+      "file": "hysilens.webp"
+    },
+    {
+      "key": "march7th",
+      "speaker": "march7th",
+      "label": "三月七",
+      "file": "march7th.webp"
+    },
+    {
+      "key": "march7th-evernight",
+      "speaker": "march7th-evernight",
+      "label": "长夜月",
+      "file": "march7th-evernight.webp"
+    },
+    {
+      "key": "mydei",
+      "speaker": "mydei",
+      "label": "万敌",
+      "file": "mydei.webp"
+    },
+    {
+      "key": "phainon",
+      "speaker": "phainon",
+      "label": "白厄",
+      "file": "phainon.webp"
+    },
+    {
+      "key": "terrae",
+      "speaker": "terrae",
+      "label": "丹恒",
+      "file": "terrae.webp"
+    },
+    {
+      "key": "trailblazer-caelus",
+      "speaker": "trailblazer-caelus",
+      "label": "开拓者·穹",
+      "file": "trailblazer-caelus.webp"
+    },
+    {
+      "key": "trailblazer-stelle",
+      "speaker": "trailblazer-stelle",
+      "label": "开拓者·星",
+      "file": "trailblazer-stelle.webp"
+    },
+    {
+      "key": "tribbie",
+      "speaker": "tribbie",
+      "label": "缇宝",
+      "file": "tribbie.webp"
+    },
+    {
+      "key": "tribbie-an",
+      "speaker": "tribbie-an",
+      "label": "缇安",
+      "file": "tribbie-an.webp"
+    },
+    {
+      "key": "tribbie-ning",
+      "speaker": "tribbie-ning",
+      "label": "缇宁",
+      "file": "tribbie-ning.webp"
+    },
+    {
+      "key": "mydei-workout",
+      "speaker": "mydei",
+      "label": "健身",
+      "file": "mydei-workout.webp"
+    },
+    {
+      "key": "mydei-what-to-eat",
+      "speaker": "mydei",
+      "label": "吃什么",
+      "file": "mydei-what-to-eat.webp"
+    },
+    {
+      "key": "mydei-frenzy",
+      "speaker": "mydei",
+      "label": "狂",
+      "file": "mydei-frenzy.webp"
+    },
+    {
+      "key": "mydei-flushed",
+      "speaker": "mydei",
+      "label": "红温",
+      "file": "mydei-flushed.webp"
+    },
+    {
+      "key": "terrae-listen",
+      "speaker": "terrae",
+      "label": "倾听",
+      "file": "terrae-listen.webp"
+    },
+    {
+      "key": "terrae-king-of-earth",
+      "speaker": "terrae",
+      "label": "大地之王",
+      "file": "terrae-king-of-earth.webp"
+    },
+    {
+      "key": "terrae-photo",
+      "speaker": "terrae",
+      "label": "拍照",
+      "file": "terrae-photo.webp"
+    },
+    {
+      "key": "terrae-hesitate",
+      "speaker": "terrae",
+      "label": "欲言又止",
+      "file": "terrae-hesitate.webp"
+    },
+    {
+      "key": "cerydra-fair",
+      "speaker": "cerydra",
+      "label": "公平",
+      "file": "cerydra-fair.webp"
+    },
+    {
+      "key": "cerydra-say-again",
+      "speaker": "cerydra",
+      "label": "再说一遍",
+      "file": "cerydra-say-again.webp"
+    },
+    {
+      "key": "cerydra-veto",
+      "speaker": "cerydra",
+      "label": "否决",
+      "file": "cerydra-veto.webp"
+    },
+    {
+      "key": "cerydra-checkmate",
+      "speaker": "cerydra",
+      "label": "将军",
+      "file": "cerydra-checkmate.webp"
+    },
+    {
+      "key": "chimera-mydei",
+      "speaker": "chimera-mydei",
+      "label": "再战",
+      "file": "chimera-mydei.webp"
+    },
+    {
+      "key": "chimera-terrae",
+      "speaker": "chimera-terrae",
+      "label": "保护",
+      "file": "chimera-terrae.webp"
+    },
+    {
+      "key": "chimera-cerydra",
+      "speaker": "chimera-cerydra",
+      "label": "直视",
+      "file": "chimera-cerydra.webp"
+    },
+    {
+      "key": "chimera-hysilens",
+      "speaker": "chimera-hysilens",
+      "label": "听歌",
+      "file": "chimera-hysilens.webp"
+    },
+    {
+      "key": "chimera-phainon",
+      "speaker": "chimera-phainon",
+      "label": "不知道",
+      "file": "chimera-phainon.webp"
+    },
+    {
+      "key": "chimera-tribbie",
+      "speaker": "chimera-tribbie",
+      "label": "炸飞",
+      "file": "chimera-tribbie.webp"
+    },
+    {
+      "key": "chimera-cipher",
+      "speaker": "chimera-cipher",
+      "label": "夸夸",
+      "file": "chimera-cipher.webp"
+    },
+    {
+      "key": "chimera-castorice",
+      "speaker": "chimera-castorice",
+      "label": "起飞",
+      "file": "chimera-castorice.webp"
+    },
+    {
+      "key": "chimera-anaxa",
+      "speaker": "chimera-anaxa",
+      "label": "喜爱",
+      "file": "chimera-anaxa.webp"
+    },
+    {
+      "key": "chimera-march7th",
+      "speaker": "chimera-march7th",
+      "label": "捕捉",
+      "file": "chimera-march7th.webp"
+    },
+    {
+      "key": "chimera-aglaea",
+      "speaker": "chimera-aglaea",
+      "label": "缠绕",
+      "file": "chimera-aglaea.webp"
+    },
+    {
+      "key": "chimera-hyacine",
+      "speaker": "chimera-hyacine",
+      "label": "安抚",
+      "file": "chimera-hyacine.webp"
+    },
+    {
+      "key": "cyrene-young-hehe",
+      "speaker": "cyrene-young",
+      "label": "嘻嘻",
+      "file": "cyrene-young-hehe.webp"
+    },
+    {
+      "key": "trailblazer-stelle-record",
+      "speaker": "trailblazer-stelle",
+      "label": "记录",
+      "file": "trailblazer-stelle-record.webp"
+    },
+    {
+      "key": "trailblazer-stelle-rewrite",
+      "speaker": "trailblazer-stelle",
+      "label": "重写",
+      "file": "trailblazer-stelle-rewrite.webp"
+    },
+    {
+      "key": "trailblazer-caelus-record",
+      "speaker": "trailblazer-caelus",
+      "label": "记录",
+      "file": "trailblazer-caelus-record.webp"
+    },
+    {
+      "key": "trailblazer-caelus-rewrite",
+      "speaker": "trailblazer-caelus",
+      "label": "重写",
+      "file": "trailblazer-caelus-rewrite.webp"
+    },
+    {
+      "key": "cyrene-glance",
+      "speaker": "cyrene",
+      "label": "回眸",
+      "file": "cyrene-glance.webp"
+    },
+    {
+      "key": "cyrene-guard",
+      "speaker": "cyrene",
+      "label": "守护",
+      "file": "cyrene-guard.webp"
+    },
+    {
+      "key": "cyrene-roger",
+      "speaker": "cyrene",
+      "label": "收到",
+      "file": "cyrene-roger.webp"
+    },
+    {
+      "key": "cyrene-love",
+      "speaker": "cyrene",
+      "label": "爱",
+      "file": "cyrene-love.webp"
+    },
+    {
+      "key": "hysilens-dance",
+      "speaker": "hysilens",
+      "label": "共舞",
+      "file": "hysilens-dance.webp"
+    },
+    {
+      "key": "hysilens-humming",
+      "speaker": "hysilens",
+      "label": "哼歌",
+      "file": "hysilens-humming.webp"
+    },
+    {
+      "key": "hysilens-shh",
+      "speaker": "hysilens",
+      "label": "嘘",
+      "file": "hysilens-shh.webp"
+    },
+    {
+      "key": "hysilens-loyalty",
+      "speaker": "hysilens",
+      "label": "忠诚",
+      "file": "hysilens-loyalty.webp"
+    },
+    {
+      "key": "phainon-bye",
+      "speaker": "phainon",
+      "label": "再见",
+      "file": "phainon-bye.webp"
+    },
+    {
+      "key": "phainon-me",
+      "speaker": "phainon",
+      "label": "我吗",
+      "file": "phainon-me.webp"
+    },
+    {
+      "key": "phainon-fight",
+      "speaker": "phainon",
+      "label": "战斗",
+      "file": "phainon-fight.webp"
+    },
+    {
+      "key": "phainon-offline",
+      "speaker": "phainon",
+      "label": "掉线",
+      "file": "phainon-offline.webp"
+    },
+    {
+      "key": "phainon-fine",
+      "speaker": "phainon",
+      "label": "没事",
+      "file": "phainon-fine.webp"
+    },
+    {
+      "key": "phainon-ehe",
+      "speaker": "phainon",
+      "label": "诶嘿",
+      "file": "phainon-ehe.webp"
+    },
+    {
+      "key": "tribbie-ning-send",
+      "speaker": "tribbie-ning",
+      "label": "发送",
+      "file": "tribbie-ning-send.webp"
+    },
+    {
+      "key": "tribbie-an-goodnight",
+      "speaker": "tribbie-an",
+      "label": "晚安",
+      "file": "tribbie-an-goodnight.webp"
+    },
+    {
+      "key": "tribbie-boom",
+      "speaker": "tribbie",
+      "label": "炸飞",
+      "file": "tribbie-boom.webp"
+    },
+    {
+      "key": "tribbie-wise",
+      "speaker": "tribbie",
+      "label": "睿智",
+      "file": "tribbie-wise.webp"
+    },
+    {
+      "key": "cipher-cute",
+      "speaker": "cipher",
+      "label": "可爱",
+      "file": "cipher-cute.webp"
+    },
+    {
+      "key": "cipher-gotcha",
+      "speaker": "cipher",
+      "label": "得手",
+      "file": "cipher-gotcha.webp"
+    },
+    {
+      "key": "cipher-fortune",
+      "speaker": "cipher",
+      "label": "招财",
+      "file": "cipher-fortune.webp"
+    },
+    {
+      "key": "cipher-please",
+      "speaker": "cipher",
+      "label": "拜托",
+      "file": "cipher-please.webp"
+    },
+    {
+      "key": "mimi-cry",
+      "speaker": "mimi",
+      "label": "哭",
+      "file": "mimi-cry.webp"
+    },
+    {
+      "key": "mimi-hearts",
+      "speaker": "mimi",
+      "label": "心心",
+      "file": "mimi-hearts.webp"
+    },
+    {
+      "key": "mimi-my-turn",
+      "speaker": "mimi",
+      "label": "我来",
+      "file": "mimi-my-turn.webp"
+    },
+    {
+      "key": "mimi-hug",
+      "speaker": "mimi",
+      "label": "抱",
+      "file": "mimi-hug.webp"
+    },
+    {
+      "key": "mimi-attack",
+      "speaker": "mimi",
+      "label": "攻击",
+      "file": "mimi-attack.webp"
+    },
+    {
+      "key": "mimi-sleep",
+      "speaker": "mimi",
+      "label": "睡觉",
+      "file": "mimi-sleep.webp"
+    },
+    {
+      "key": "castorice-no-thanks",
+      "speaker": "castorice",
+      "label": "不了",
+      "file": "castorice-no-thanks.webp"
+    },
+    {
+      "key": "castorice-create",
+      "speaker": "castorice",
+      "label": "创作",
+      "file": "castorice-create.webp"
+    },
+    {
+      "key": "castorice-wither",
+      "speaker": "castorice",
+      "label": "枯萎",
+      "file": "castorice-wither.webp"
+    },
+    {
+      "key": "castorice-blush",
+      "speaker": "castorice",
+      "label": "脸红",
+      "file": "castorice-blush.webp"
+    },
+    {
+      "key": "castorice-butterfly",
+      "speaker": "castorice",
+      "label": "蝴蝶",
+      "file": "castorice-butterfly.webp"
+    },
+    {
+      "key": "anaxa-what",
+      "speaker": "anaxa",
+      "label": "什么事",
+      "file": "anaxa-what.webp"
+    },
+    {
+      "key": "anaxa-im-fine",
+      "speaker": "anaxa",
+      "label": "我没事",
+      "file": "anaxa-im-fine.webp"
+    },
+    {
+      "key": "anaxa-bring-it",
+      "speaker": "anaxa",
+      "label": "来吧",
+      "file": "anaxa-bring-it.webp"
+    },
+    {
+      "key": "anaxa-see-through",
+      "speaker": "anaxa",
+      "label": "看穿",
+      "file": "anaxa-see-through.webp"
+    },
+    {
+      "key": "march7th-evernight-go",
+      "speaker": "march7th-evernight",
+      "label": "去吧",
+      "file": "march7th-evernight-go.webp"
+    },
+    {
+      "key": "march7th-evernight-wail",
+      "speaker": "march7th-evernight",
+      "label": "嚎啕大哭",
+      "file": "march7th-evernight-wail.webp"
+    },
+    {
+      "key": "march7th-evernight-hint",
+      "speaker": "march7th-evernight",
+      "label": "暗示",
+      "file": "march7th-evernight-hint.webp"
+    },
+    {
+      "key": "march7th-evernight-warning",
+      "speaker": "march7th-evernight",
+      "label": "警告",
+      "file": "march7th-evernight-warning.webp"
+    },
+    {
+      "key": "aglaea-no",
+      "speaker": "aglaea",
+      "label": "不",
+      "file": "aglaea-no.webp"
+    },
+    {
+      "key": "aglaea-generous",
+      "speaker": "aglaea",
+      "label": "慷慨",
+      "file": "aglaea-generous.webp"
+    },
+    {
+      "key": "aglaea-bath",
+      "speaker": "aglaea",
+      "label": "泡澡",
+      "file": "aglaea-bath.webp"
+    },
+    {
+      "key": "aglaea-design",
+      "speaker": "aglaea",
+      "label": "设计",
+      "file": "aglaea-design.webp"
+    },
+    {
+      "key": "hyacine-like",
+      "speaker": "hyacine",
+      "label": "喜欢",
+      "file": "hyacine-like.webp"
+    },
+    {
+      "key": "hyacine-heal",
+      "speaker": "hyacine",
+      "label": "治愈",
+      "file": "hyacine-heal.webp"
+    },
+    {
+      "key": "hyacine-diagnose",
+      "speaker": "hyacine",
+      "label": "诊断",
+      "file": "hyacine-diagnose.webp"
+    },
+    {
+      "key": "hyacine-try",
+      "speaker": "hyacine",
+      "label": "试试看",
+      "file": "hyacine-try.webp"
+    }
+  ]
+}
