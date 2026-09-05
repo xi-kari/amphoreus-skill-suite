@@ -56,7 +56,7 @@
 | H-A02 | 同页同修订，角色故事 2，行 101 | “在那寂然无声的宫殿废墟，只剩海列屈拉与她一个人的欢宴。” | `A56558D180CE0057CD8CBD70E3075A90850F66BC506FCCD3E6D9BB8634454875`／同上 |
 | H-D01 | `大海啊，埋葬暗酒色的梦` `20079/77803`，行 312–359 | 忠诚、诅咒、同胞陨落与漫长等待的枷锁；结尾选择为自己歌唱并换取抗争力量；`assertion_mode=hypothesis` | `540764EC19336C16A50F5CE402F459E28D5036B338E5D43812E11A0A995030AE`／`game_dialogue_transcribed_by_wiki` |
 | H-A03 | `过场提示/人物` `9695/100300`，黄金裔行 202 | 海妖、“海洋”半神、实验因子 `ApoRia432`、孤身对抗千年虚无 | `384F5F652F87C7BF4CF2C40BF51A488B3C32E6BA3523CBE84F8D4D6D90F8E64C`／`game_archive_transcribed_by_wiki` |
-| H-D02 | `初日啊，逐退群星与残月` `20074/77799`，`section_path=剧情内容／找找能与昔涟安静「放松」的地方／剧情选项`，行 892，`utterance_id=sr:utterance:20074:892:428`，`branch_path=[]`、`branch_id=null` | “倒是你，一尾成日忙碌摇鳍的金鳟，怎突然有闲心来探望我？”；阿格莱雅“金鳟”称呼的直接剧情证据 | `local_file=01_开拓任务/06_第四幕•翁法罗斯/06_英雄未死之前/02_任务_初日啊，逐退群星与残月.md`；`E0225E80A00DB6889AE4E99A1695087433BB1ACDAAF2C14767AD7EEFE37DC69E`／`game_dialogue_transcribed_by_wiki`／`assertion_mode=explicit` |
+| H-D02 | `初日啊，逐退群星与残月` `20074/77799`，`section_path=剧情内容／找找能与昔涟安静「放松」的地方／剧情选项`，行 892，`utterance_id=sr:utterance:20074:892:428`，`branch_path=[]`、`branch_id=null` | “倒是你，一尾成日忙碌摇鳍的金鳟，怎突然有闲心来探望我？”；阿格莱雅“金鳟”称呼的直接剧情证据 | `local_file=01_开拓任务/06_第四幕•δ-me13/06_英雄未死之前/02_任务_初日啊，逐退群星与残月.md`；`E0225E80A00DB6889AE4E99A1695087433BB1ACDAAF2C14767AD7EEFE37DC69E`／`game_dialogue_transcribed_by_wiki`／`assertion_mode=explicit` |
 
 ## 签名台词语料
 

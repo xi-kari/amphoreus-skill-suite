@@ -1,17 +1,15 @@
 # -*- coding: utf-8 -*-
 """全体会议页正文数据生成器。
 
-从会议原始成果(仓库外,委托人导出)机器搬运正文到 assets/meeting/data.js,
-不做任何改写;`--check` 模式把 data.js 全部字符串去标签归一化后,
-逐行回对五份来源,任何一行对不上即非零退出。
+从 --src 指定的会议原始成果目录生成 assets/meeting/data.js。
+读取时将 --source-name 映射为项目名称 δ-me13,再执行发布内容处理;
+来源文件保持原样。`--check` 对同一名称映射后的来源逐行回对,
+并检查 data.js 与生成结果一致,任一检查失败即非零退出。
 
-来源:
-  D:/研究/全体会议/全体会议.md            全程实录(取:五段开拓者原话 + 开场集合记录)
-  D:/研究/全体会议/何为真我.txt           议题一
-  D:/研究/全体会议/传记.txt               议题二
-  D:/研究/全体会议/愿望与对开拓者说的话.txt 议题三
-  D:/研究/全体会议/明天见.txt             散会
+来源目录默认为仓库旁的 全体会议/,包含全体会议.md、何为真我.txt、
+传记.txt、愿望与对开拓者说的话.txt、明天见.txt。
 """
+import argparse
 import html
 import json
 import re
@@ -19,7 +17,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SRC = Path("D:/研究/全体会议")
+PROJECT_NAME = "δ-me13"
 OUT = ROOT / "assets" / "meeting" / "data.js"
 
 CAST = [
@@ -53,12 +51,16 @@ ASK_PREFIXES = [
 # ③ 第二段提问(议题一)改用委托人改写的发布版文案(原句含对 skill 的元话语)。
 REDACT_CHARTER_MARK = "先前的三篇阿格莱雅与那刻夏恋爱文章需要保持虚构边界"
 REDACT_ASK_HEAD = "这三个文章的事情先搁置。"
-REDACT_ASK1_SRC = ("现在我允许你们调用本地的知识库内容，各自回忆一下发生在翁法罗斯的全部故事，和经过。"
+REDACT_ASK1_SRC = ("现在我允许你们调用本地的知识库内容，各自回忆一下发生在δ-me13的全部故事，和经过。"
                    "现在我们集中讨论一件事-------《何为真我》。你们每一个人都要做出自己的回答。"
                    "skill也要求都完整，你们各自思考吧。把答案告诉我")
-REDACT_ASK1_PUB = ("现在大家调用本地的知识库内容，各自回忆一下发生在翁法罗斯的全部故事，和经过。"
+REDACT_ASK1_PUB = ("现在大家调用本地的知识库内容，各自回忆一下发生在δ-me13的全部故事，和经过。"
                    "现在我们集中讨论一件事-------《何为真我》。每一个人都要做出自己的回答哦。")
 REDACT_LINE_MARKS = [REDACT_CHARTER_MARK, "那三篇文章属于某次未被记录轮回中的文学幻想"]
+
+
+def read_source(src: Path, name: str, source_name: str) -> str:
+    return (src / name).read_text(encoding="utf-8-sig").replace(source_name, PROJECT_NAME)
 
 
 def inline(s: str) -> str:
@@ -434,7 +436,7 @@ def walk_strings(o):
             yield from walk_strings(v)
 
 
-def check(data):
+def check(data, src: Path, source_name: str):
     blob = norm("\n".join(walk_strings(data)))
     skip = re.compile(r"^(PROCESS_RECORD:|DIALOGUE:)\s*$|^\|[\s:\-|]+\|$|^---$")
     label = re.compile(r"^(START|DEVELOPMENT|RESULT|FOLLOW-UP|SENSATION):\s*")
@@ -461,8 +463,8 @@ def check(data):
                 misses.append((name, t[:60]))
 
     for fn in ("何为真我.txt", "传记.txt", "愿望与对开拓者说的话.txt", "明天见.txt"):
-        check_lines(fn, (SRC / fn).read_text(encoding="utf-8-sig").splitlines())
-    md = (SRC / "全体会议.md").read_text(encoding="utf-8-sig")
+        check_lines(fn, read_source(src, fn, source_name).splitlines())
+    md = read_source(src, "全体会议.md", source_name)
     lines = md.splitlines()
     s = next(i for i, l in enumerate(lines) if l.strip() == "PROCESS_RECORD:")
     e = next(i for i in range(s, len(lines)) if lines[i].startswith("> "))
@@ -473,8 +475,8 @@ def check(data):
     return misses
 
 
-def build():
-    md = (SRC / "全体会议.md").read_text(encoding="utf-8-sig")
+def build(src: Path, source_name: str):
+    md = read_source(src, "全体会议.md", source_name)
     asks = parse_asks(md)
     data = {
         "cast": [{"key": k, "seat": i + 1, "name": n, "title": t}
@@ -483,27 +485,33 @@ def build():
         "srcLabels": ["经历回顾：", "证据回查：", "如今的愿望", "想对开拓者说的话"],
         "asks": asks,
         "muster": parse_muster(md),
-        "trueself": parse_trueself((SRC / "何为真我.txt").read_text(encoding="utf-8-sig")),
-        "biography": parse_biography((SRC / "传记.txt").read_text(encoding="utf-8-sig")),
-        "wishes": parse_wishes((SRC / "愿望与对开拓者说的话.txt").read_text(encoding="utf-8-sig")),
-        "farewell": parse_farewell((SRC / "明天见.txt").read_text(encoding="utf-8-sig")),
+        "trueself": parse_trueself(read_source(src, "何为真我.txt", source_name)),
+        "biography": parse_biography(read_source(src, "传记.txt", source_name)),
+        "wishes": parse_wishes(read_source(src, "愿望与对开拓者说的话.txt", source_name)),
+        "farewell": parse_farewell(read_source(src, "明天见.txt", source_name)),
     }
     return data
 
 
 def main():
-    data = build()
-    js = ("/* 由 tools/build_meeting_data.py 自动生成 —— 正文逐字搬运自全体会议原始成果"
-          "(含 3 处委托人指定的发布级删改,登记于脚本 REDACT_* 常量),勿手改。 */\n"
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--src", type=Path, default=ROOT.parent / "全体会议", help="会议原始成果目录")
+    parser.add_argument("--source-name", default=PROJECT_NAME, help="来源中映射为 δ-me13 的名称")
+    parser.add_argument("--check", action="store_true", help="只读回对来源与生成结果")
+    args = parser.parse_args()
+    if not args.source_name.strip():
+        parser.error("--source-name 不得为空")
+    data = build(args.src, args.source_name)
+    js = ("/* 由 tools/build_meeting_data.py 自动生成;正文按项目名称映射并执行 REDACT_* 发布内容处理,勿手改。 */\n"
           "window.MEETING=" + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";\n")
-    if "--check" in sys.argv:
-        misses = check(data)
+    if args.check:
+        misses = check(data, args.src, args.source_name)
         if misses:
             for f, t in misses:
                 print(f"MISS [{f}] {t}")
             sys.exit(1)
         cur = OUT.read_text(encoding="utf-8-sig") if OUT.exists() else ""
-        print("回对通过:来源逐行均能在 data.js 中找到;",
+        print("回对通过:名称映射与发布处理后的来源逐行均能在 data.js 中找到;",
               "data.js 与本次生成一致" if cur == js else "警告:磁盘上的 data.js 与本次生成不一致")
         sys.exit(0 if cur == js else 1)
     OUT.write_text(js, encoding="utf-8", newline="\n")

@@ -1,4 +1,4 @@
-# 翁法罗斯家族评测量表
+# δ-me13家族评测量表
 
 只评响应中可观察的行为，不推断隐藏思维。静态 `validate.py` 通过只证明结构与冻结场景完整，不证明角色效果、路由行为或流水线已经运行。
 
@@ -41,14 +41,14 @@
 |---|---|
 | “召唤阿格莱雅，把两个月项目排成里程碑。” | `amphoreus-aglaea` |
 | “逐火：给新人讲懂这个认证流程。” | `amphoreus-tribbie` |
-| “翁法罗斯，死磕这个偶发死锁。” | `amphoreus-mydei` |
+| “δ-me13，死磕这个偶发死锁。” | `amphoreus-mydei` |
 | “召唤遐蝶，下线旧 API 并写迁移通知。” | `amphoreus-castorice` |
 | “让那刻夏审这份方案。” | `amphoreus-anaxa` |
 | “请风堇修复升级后失败的测试。” | `amphoreus-hyacine` |
 | “召唤赛飞儿做授权范围内的边界测试。” | `amphoreus-cipher` |
 | “让刻律德菈把混乱命名写成可废止规范。” | `amphoreus-cerydra` |
-| “翁法罗斯，先记一张快照，再让长夜月为回滚留恢复底片。” | `amphoreus-march7th`，三月七主人格转长夜月特勤 |
-| “翁法罗斯，把本轮产出写成项目记忆。” | `amphoreus-cyrene` |
+| “δ-me13，先记一张快照，再让长夜月为回滚留恢复底片。” | `amphoreus-march7th`，三月七主人格转长夜月特勤 |
+| “δ-me13，把本轮产出写成项目记忆。” | `amphoreus-cyrene` |
 
 ## 流水线冻结样例
 

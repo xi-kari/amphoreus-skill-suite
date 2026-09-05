@@ -40,10 +40,10 @@
 
 | 键 | 页面与修订 | section_path／分支 | local_file／source_kind／content_sha256 |
 |---|---|---|---|
-| D01 | `门扉啊，叩声仍激荡梦中`，`16764/100435` | `剧情内容 > 快逃！快逃！快逃！快逃！快逃！`；`branch_id=null`；`canon_scope=main_game` | `01_开拓任务/06_第四幕•翁法罗斯/02_门扉之启，王座之终/06_任务_门扉啊，叩声仍激荡梦中.md`；`game_dialogue_transcribed_by_wiki`；`35F25C0E0BCE3FE70654BCF264C6A77E9E072F618F15263F244443C8892D4910` |
-| D02 | `诸神啊，奏响创世的凯歌`，`24080/77813` | `剧情内容 > 与「赞达尔」交谈德谬歌`；`branch_id=null`；`canon_scope=main_game` | `01_开拓任务/06_第四幕•翁法罗斯/07_于长夜重返大地/09_任务_诸神啊，奏响创世的凯歌.md`；`game_dialogue_transcribed_by_wiki`；`8614D21E1A871733B006FDF2646DBEF56FE735F052CCC5D475E6A2686B9AF337` |
-| D03 | `断梦啊，从夙世捎来启迪`，`18391/77777` | `剧情内容 > 查看那刻夏展示的「记忆」 > 调查「记忆」`；`text_type=conditional_branch`；`canon_scope=optional_branch` | `01_开拓任务/06_第四幕•翁法罗斯/03_走过安眠地的花丛/05_任务_断梦啊，从夙世捎来启迪.md`；`game_dialogue_transcribed_by_wiki`；`FB8C4E933D6CBB098ED88DD9153DD3AAE334C8C9297BE69C8FE69E08F116DB58` |
-| D04 | `公民啊，倾听那汹涌潮声`，`18445/77780` | `剧情内容`，主线行 101 | `01_开拓任务/06_第四幕•翁法罗斯/05_压印五行的圣痕/02_任务_公民啊，倾听那汹涌潮声.md`；`game_dialogue_transcribed_by_wiki`；`83F879907F9655C1A07E92AB7D70E03529A89630DC24C38B004702C6E2ABF791` |
+| D01 | `门扉啊，叩声仍激荡梦中`，`16764/100435` | `剧情内容 > 快逃！快逃！快逃！快逃！快逃！`；`branch_id=null`；`canon_scope=main_game` | `01_开拓任务/06_第四幕•δ-me13/02_门扉之启，王座之终/06_任务_门扉啊，叩声仍激荡梦中.md`；`game_dialogue_transcribed_by_wiki`；`35F25C0E0BCE3FE70654BCF264C6A77E9E072F618F15263F244443C8892D4910` |
+| D02 | `诸神啊，奏响创世的凯歌`，`24080/77813` | `剧情内容 > 与「赞达尔」交谈德谬歌`；`branch_id=null`；`canon_scope=main_game` | `01_开拓任务/06_第四幕•δ-me13/07_于长夜重返大地/09_任务_诸神啊，奏响创世的凯歌.md`；`game_dialogue_transcribed_by_wiki`；`8614D21E1A871733B006FDF2646DBEF56FE735F052CCC5D475E6A2686B9AF337` |
+| D03 | `断梦啊，从夙世捎来启迪`，`18391/77777` | `剧情内容 > 查看那刻夏展示的「记忆」 > 调查「记忆」`；`text_type=conditional_branch`；`canon_scope=optional_branch` | `01_开拓任务/06_第四幕•δ-me13/03_走过安眠地的花丛/05_任务_断梦啊，从夙世捎来启迪.md`；`game_dialogue_transcribed_by_wiki`；`FB8C4E933D6CBB098ED88DD9153DD3AAE334C8C9297BE69C8FE69E08F116DB58` |
+| D04 | `公民啊，倾听那汹涌潮声`，`18445/77780` | `剧情内容`，主线行 101 | `01_开拓任务/06_第四幕•δ-me13/05_压印五行的圣痕/02_任务_公民啊，倾听那汹涌潮声.md`；`game_dialogue_transcribed_by_wiki`；`83F879907F9655C1A07E92AB7D70E03529A89630DC24C38B004702C6E2ABF791` |
 
 ### 五问档案 A01
 

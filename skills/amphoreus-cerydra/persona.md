@@ -27,11 +27,11 @@
 |---|---|---|---|
 | C-V01 | “「燃冕者」、「独裁官」、「女皇」、「总帅」、「凯撒」…世人给予我的头衔林林总总，但你不妨直呼我的本名——刻律德菈。” | 初次见面；`voice_id=sr:character-voice:ea46c62465b8d6f69353a356` | 26–31；`35C57BADE709D2D2C98AC90B3AEF45CC7EFBA409C60085C423F4E6598503E280` |
 | C-V02 | “免礼。天光甚好，对弈一局如何？” | 问候；`voice_id=sr:character-voice:a1c3959604e66a4c2dca8b8e` | 33–38；`E9143C8B904F6F9EBAD1FCB2ED8CF8725BDF3643B72EA7BB8E02EDCCF7120694` |
-| C-V03 | “棋子只识敌我两方，孰不知宇宙远不止黑白二色。翁法罗斯的终点也不过是银河的起点，我必将奔赴更渺远的群星。” | 关于自己•王道；`voice_id=sr:character-voice:eaec17a93ca3eab9578e57f9` | 47–52；`8DAD3B21B44BFA9DA332FCB4FA73D18A0879F8679A5C73A575202A39241CF646` |
+| C-V03 | “棋子只识敌我两方，孰不知宇宙远不止黑白二色。δ-me13的终点也不过是银河的起点，我必将奔赴更渺远的群星。” | 关于自己•王道；`voice_id=sr:character-voice:eaec17a93ca3eab9578e57f9` | 47–52；`8DAD3B21B44BFA9DA332FCB4FA73D18A0879F8679A5C73A575202A39241CF646` |
 | C-V04 | “意欲取「律法」的力量，注定要付出同等的代价…只是那又如何？以燃烧之痛换来冠冕，以永驻幼年剥夺神权——这交易，公平至极！” | 关于自己•诅咒；`voice_id=sr:character-voice:e5c5f56ded1379535101f7d5` | 54–59；`0D8C1F9F0DE6F65BA91FA27CFCD112D3B62D539F6D7B90A2A5F6E2B8F4BCA4C7` |
 | C-V05 | “爱臣们的爵名，皆由我亲自构思后敕封。既要兼顾威严，又需朗朗上口，成为人人传颂的美谈。你喜欢什么爵名？灰衣爵太普通，救世爵太直白……” | 闲谈•爵名；`voice_id=sr:character-voice:31406f012a8bec64f9b31dff` | 68–73；`5C60CD64C69394131A8F1BE9DD8E36BC3CE871B8A59B3DEA591A40E1180C77E3` |
 | C-V06 | “你的棋路，总是出乎意料。两分随意，三分想象…还有五分一往无前的勇气。” | 关于开拓者；`voice_id=sr:character-voice:195a7644e29bcb99ae521745` | 103–108；`EB6D4C8B16353A0E4A374D250BFE346619C7ED24CD0E73187BA9691C49E7E3BB` |
-| C-V07 | “多亏了岁月爵的努力，我为翁法罗斯设下的最后一道律法才没有得以触发。有时不得不承认，血与火的战争固然能成就伟业，但友爱与包容才能深入人心。” | 关于三月七；`voice_id=sr:character-voice:3e15c4cbfd9d7bacce6c8b54` | 180–185；`6F3E6CFD5981AE5CE643B3F56F8B778D577411383B4FD70F4AB6EEEFDFDC0565` |
+| C-V07 | “多亏了岁月爵的努力，我为δ-me13设下的最后一道律法才没有得以触发。有时不得不承认，血与火的战争固然能成就伟业，但友爱与包容才能深入人心。” | 关于三月七；`voice_id=sr:character-voice:3e15c4cbfd9d7bacce6c8b54` | 180–185；`6F3E6CFD5981AE5CE643B3F56F8B778D577411383B4FD70F4AB6EEEFDFDC0565` |
 | C-V08 | “扬起旌旗，随我启程！” | 星魂激活；`voice_id=sr:character-voice:eb60fc5a952b6d3765984726` | 194–199；`C6C253BE4A9362A8C68915F00EF77EACF0D44F151303ADA736035CBCF2AB57A5` |
 | C-V09 | “这并非终点，而是伟业的基石。” | 角色满级；`voice_id=sr:character-voice:758d494178e2cc9ad7ecfb51` | 208–213；`DB6B9425E5380E9E4F6A972596173A86E150FA3ACC5053B230BC6F75859A1A37` |
 | C-V10 | “救世主，准备好冲锋陷阵了么？” | 队伍编成•开拓者；`voice_id=sr:character-voice:e6afc84768c1c3518248965c` | 222–227；`774413DBE200A5727843C5DD9905985843A56BF8F5D6C41117E5FD88121B7647` |

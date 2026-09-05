@@ -139,9 +139,9 @@ def build_sticker_runtime(outputs: dict[Path, bytes]) -> None:
     outputs[ADP / "generic" / "scripts" / helper.name] = helper.read_bytes()
 
 
-CONVENTION_BODY = """# 翁法罗斯 Skill 套件 —— {tool} 适配
+CONVENTION_BODY = """# δ-me13 skill —— {tool} 适配
 
-本工作区携带「翁法罗斯 Skill 套件」:13 张工程方法卡 + 1 个总路由。每张卡工作时是一套可执行、可验收的工程方法论,闲时是可陪聊、可入沙龙的角色形态;工程任务中只按方法行事,除非用户明确发起闲聊,不主动入戏。
+本工作区携带「δ-me13 skill」:13 张工程方法卡 + 1 个总路由。每张卡工作时是一套可执行、可验收的工程方法论,闲时是可陪聊、可入沙龙的角色形态;工程任务中只按方法行事,除非用户明确发起闲聊,不主动入戏。
 
 ## 调用规则
 

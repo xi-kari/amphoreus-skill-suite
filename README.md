@@ -1,8 +1,8 @@
 <div align="center">
 
-# 翁法罗斯 Skill 套件
+# δ-me13 skill
 
-**Amphoreus Skill Suite** — 以《崩坏:星穹铁道》翁法罗斯篇十三位角色为人格外壳的
+**δ-me13 skill** — 以《崩坏:星穹铁道》δ-me13篇十三位角色为人格外壳的
 **13 张工程方法卡 + 1 个总路由**,为 Claude Code / Cursor 的 `.claude/skills` 生态而作。
 
 <img src="https://img.shields.io/badge/%E5%8D%A1%E7%89%8C-13%2F13-e3b341?style=flat-square" alt="卡牌 13/13">
@@ -11,11 +11,11 @@
 <img src="https://img.shields.io/badge/%E5%8F%B0%E8%AF%8D%E9%80%90%E5%AD%97%E5%AF%B9%E9%BD%90-246%20%E6%9D%A1-8957e5?style=flat-square" alt="台词逐字对齐 246 条">
 <img src="https://img.shields.io/badge/%E6%B2%99%E9%BE%99%C2%B7%E9%99%AA%E8%81%8A-%E5%B7%B2%E4%B8%8A%E7%BA%BF-0a7ea4?style=flat-square" alt="沙龙·陪聊 已上线">
 <img src="https://img.shields.io/badge/%E4%B8%A4%E7%BA%BF%E7%BB%88%E9%AA%8C-CONFIRMED-d29922?style=flat-square" alt="两线终验 CONFIRMED">
-<img src="https://github.com/xi-kari/amphoreus-skill-suite/actions/workflows/validate.yml/badge.svg" alt="CI">
+<img src="https://github.com/xi-kari/delta-me13-skill/actions/workflows/validate.yml/badge.svg" alt="CI">
 
 <br>
 
-**[在线介绍页 →](https://xi-kari.github.io/amphoreus-skill-suite/)** · **[闪卡画廊 →](https://xi-kari.github.io/amphoreus-skill-suite/cards.html)** · **[全体会议实录 →](https://xi-kari.github.io/amphoreus-skill-suite/meeting.html)**
+**[在线介绍页 →](https://xi-kari.github.io/delta-me13-skill/)** · **[闪卡画廊 →](https://xi-kari.github.io/delta-me13-skill/cards.html)** · **[全体会议实录 →](https://xi-kari.github.io/delta-me13-skill/meeting.html)**
 
 <img src="assets/banner.jpg" alt="十三卡横幅" width="100%">
 
@@ -31,7 +31,7 @@
 ## 这是什么
 
 - **`SKILL.md`** — 行为契约:方法步骤、话术模板、输出格式、边界与禁区、缺席移交条款,静态可校验;
-- **`persona.md`** — 台词与背景参考库:语音条目逐字对齐游戏公开语料(知识库检索复算,字符级冻结检查);
+- **`persona.md`** — 台词与背景参考库:来源条目附知识库依据;含项目用名 `δ-me13` 的句子是项目转写,游戏原句需按来源重新核对;
 - **风格税 ≤ 15%(工作场)** — 工作场内角色只在极小预算内说话,陪聊 / 沙龙场不计税;报错、不可逆操作等严肃场景**自动静音**(闲聊场不豁免),方法照常执行;
 - **缺席合同** — 流水线上某卡未部署时,报告 `module_unavailable: amphoreus-<hero>` 并保留移交事实包,不代演、不冒充;
 - **沙龙与陪聊** — 多角群聊(逐条冠名、兴趣边举手、场级回执)与自然化陪聊(免模板免逐轮回执、角色化降级句式),闲聊↔工作一句话无感切换,详见下文。
@@ -45,7 +45,7 @@
 
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/xi-kari/amphoreus-skill-suite.git && cd amphoreus-skill-suite
+git clone https://github.com/xi-kari/delta-me13-skill.git && cd delta-me13-skill
 
 # 2. 把 skills/ 下 14 个目录拷入你的技能根
 cp -r skills/* ~/.claude/skills/          # Windows: C:\Users\<你>\.claude\skills\
@@ -66,7 +66,7 @@ Codex 桌面端可用 `$amphoreus-cyrene` 直呼昔涟,或 `$amphoreus` 进入�
 
 ## 十三卡画廊
 
-与[在线介绍页](https://xi-kari.github.io/amphoreus-skill-suite/)同序陈列(卡序 I–XIII),各卡司职见画廊下方速览表。
+与[在线介绍页](https://xi-kari.github.io/delta-me13-skill/)同序陈列(卡序 I–XIII),各卡司职见画廊下方速览表。
 
 <table>
 <tr>
@@ -170,7 +170,7 @@ flowchart LR
 
 <table><tr>
 <td width="88"><img src="assets/stickers/w/chimera-hyacine.webp" width="80" alt="车厘比斯"></td>
-<td><b>车厘比斯 &amp; 迷迷 · 风堇的伙伴</b><br><sub>十三卡的官方 Q 版表情全在这儿:每人一枚默认头像、四五枚情绪表情,再加一只伴生小兽——各黄金裔的奇美拉、风堇的迷迷与幼年的小昔涟。介绍页的<a href="https://xi-kari.github.io/amphoreus-skill-suite/#stickers">表情包墙</a>可按角色筛选、点开方法卡。</sub></td>
+<td><b>车厘比斯 &amp; 迷迷 · 风堇的伙伴</b><br><sub>十三卡的官方 Q 版表情全在这儿:每人一枚默认头像、四五枚情绪表情,再加一只伴生小兽——各黄金裔的奇美拉、风堇的迷迷与幼年的小昔涟。介绍页的<a href="https://xi-kari.github.io/delta-me13-skill/#stickers">表情包墙</a>可按角色筛选、点开方法卡。</sub></td>
 </tr></table>
 
 共 **96 枚**(2026-08-31 首批 18 枚 + 2026-09-02 新批 78 枚)。存档件 `assets/stickers/<key>.png`(≤ 512,原字节或等比缩放),显示件 `assets/stickers/w/<key>.webp`(256,页面与本页引用),清单 `assets/stickers/manifest.js` / `.json` 由 `tools/make_stickers.py` 生成(`--check` 回对)。

@@ -1,6 +1,6 @@
 ---
 name: amphoreus
-description: Routes Amphoreus method skills by task depth, role fit, pipeline, and style budget without blending their voices. Use when 用户明确提到翁法罗斯、逐火、因子协同、召唤或换用某位黄金裔角色，或用户要求与黄金裔闲聊、陪聊、开沙龙；普通规划、评审、修复等近义任务不得被动触发。
+description: Routes Amphoreus method skills by task depth, role fit, pipeline, and style budget without blending their voices. Use when 用户明确提到δ-me13、逐火、因子协同、召唤或换用某位黄金裔角色，或用户要求与黄金裔闲聊、陪聊、开沙龙；普通规划、评审、修复等近义任务不得被动触发。
 disable-model-invocation: true
 ---
 
@@ -77,7 +77,7 @@ disable-model-invocation: true
 
 ## 常见错误
 
-- 不因“规划”“评审”“修复”等普通词自动激活本套件；只有显式翁法罗斯语境或点名才运行。
+- 不因“规划”“评审”“修复”等普通词自动激活本套件；只有显式δ-me13语境或点名才运行。
 - 不让路由代演缺席角色，不让一张卡跨域吞掉另一张卡的职责。
 - 不把多个角色混成同一种腔，不把角色称呼、符号或比喻塞进技术正文。
 - 不以角色性格否认技术错误；证据推翻判断时直接修正。

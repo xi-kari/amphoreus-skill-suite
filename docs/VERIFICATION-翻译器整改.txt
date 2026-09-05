@@ -9,11 +9,11 @@ CHANGED_FIELDS:
 - validate.py: roundtable contract assertions and single-source firewall parser
 
 ARTIFACT_PATHS:
-MODIFIED_FILE: D:\研究\翁法罗斯skill套件计划\翻译器整改交付\modified\skills\amphoreus\references\common.md
-DIFF_FILE: D:\研究\翁法罗斯skill套件计划\翻译器整改交付\diff\批次A.diff
-VERIFICATION_FILE: D:\研究\翁法罗斯skill套件计划\翻译器整改交付\VERIFICATION.txt
-ROLLBACK_SH: D:\研究\翁法罗斯skill套件计划\翻译器整改交付\ROLLBACK.sh
-ROLLBACK_PS1: D:\研究\翁法罗斯skill套件计划\翻译器整改交付\ROLLBACK.ps1
+MODIFIED_FILE: D:\研究\δ-me13skill套件计划\翻译器整改交付\modified\skills\amphoreus\references\common.md
+DIFF_FILE: D:\研究\δ-me13skill套件计划\翻译器整改交付\diff\批次A.diff
+VERIFICATION_FILE: D:\研究\δ-me13skill套件计划\翻译器整改交付\VERIFICATION.txt
+ROLLBACK_SH: D:\研究\δ-me13skill套件计划\翻译器整改交付\ROLLBACK.sh
+ROLLBACK_PS1: D:\研究\δ-me13skill套件计划\翻译器整改交付\ROLLBACK.ps1
 
 ARTIFACT_HASHES:
 BASELINE_FILE_SHA256: 130FAD65A98167896EC1EB720E0EFC9F616DBF488ABD52B800D1AA56B36FAD16
@@ -37,11 +37,11 @@ all44_manifest_v2_sha256=AB156A949FC2DAF24A0E66F2D77B0B7B16E629A4ED532822829577B
 all44_manifest_v2_script=workdir\compute_manifest_v2.py
 
 [BASELINE]
-COMMAND: python -B D:\研究\翁法罗斯skill套件计划\翻译器整改交付\baseline\skills\amphoreus\scripts\validate.py --root D:\研究\翁法罗斯skill套件计划\翻译器整改交付\baseline\skills --wave all
+COMMAND: python -B D:\研究\δ-me13skill套件计划\翻译器整改交付\baseline\skills\amphoreus\scripts\validate.py --root D:\研究\δ-me13skill套件计划\翻译器整改交付\baseline\skills --wave all
 INPUT: none
 LITERAL_STDOUT_BEGIN
 amphoreus wave all: PASS
-root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\baseline\skills
+root=D:\研究\δ-me13skill套件计划\翻译器整改交付\baseline\skills
 router_manifest=18/18
 cards=13/13
 evals=13 scenarios=65
@@ -87,25 +87,25 @@ EXIT_STATUS: 0
 [ROLLBACK]
 NOTE: 2026-09-02 审核 F-1 补正实录。本段由生产主机 Windows PowerShell 5.1.26100.8894 亲跑生成（驱动 workdir\test_rollback_ps51.py，原始六项记录 workdir\rollback_ps51_实录.json），替换此前由 workdir\generate_verification.py 拼装的非实录段；被替换段对应的旧 ROLLBACK.ps1（SHA256 FFE2DA4F34760C7A4C8F73C68423A5A7AAC1E70BA4D99D6FF079F9697580C0EB，存档 workdir\ROLLBACK_预整改_FFE2DA4F.ps1）在 5.1 下因 .NET Core 专有 API 报 MethodNotFound 不可运行。
 INTERPRETER: Windows PowerShell 5.1.26100.8894 (powershell.exe)
-COMMAND: powershell -NoProfile -ExecutionPolicy Bypass -File D:\研究\翁法罗斯skill套件计划\翻译器整改交付\ROLLBACK.ps1 -CodexRoot D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\codex -ClaudeRoot D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\claude
+COMMAND: powershell -NoProfile -ExecutionPolicy Bypass -File D:\研究\δ-me13skill套件计划\翻译器整改交付\ROLLBACK.ps1 -CodexRoot D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\codex -ClaudeRoot D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\claude
 INPUT: CodexRoot=disposable modified snapshot copy; ClaudeRoot=independent disposable modified snapshot copy; baseline=baseline\skills (44 files)
 LITERAL_STDOUT_BEGIN
 amphoreus wave all: PASS
-root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\codex
+root=D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\codex
 router_manifest=18/18
 cards=13/13
 evals=13 scenarios=65
 encoding=UTF-8 line_endings=LF
 behavior=not_run_by_static_validator
-ROLLBACK PASS name=codex root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\codex files=44 exit=0
+ROLLBACK PASS name=codex root=D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\codex files=44 exit=0
 amphoreus wave all: PASS
-root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\claude
+root=D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\claude
 router_manifest=18/18
 cards=13/13
 evals=13 scenarios=65
 encoding=UTF-8 line_endings=LF
 behavior=not_run_by_static_validator
-ROLLBACK PASS name=claude root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\claude files=44 exit=0
+ROLLBACK PASS name=claude root=D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\claude files=44 exit=0
 ROLLBACK COMPLETE restored=2 trees files_per_tree=44
 LITERAL_STDOUT_END
 LITERAL_STDERR_BEGIN
@@ -116,31 +116,31 @@ PRODUCTION_UNTOUCHED: true (生产两树四改动文件运行前后哈希零变�
 
 [ROLLBACK_GUARDS]
 INTERPRETER: Windows PowerShell 5.1.26100.8894
-GUARD_MISSING_TARGET: exit=1; stderr=Target root is missing: D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\failclosed\claude_missing; 已存在目标零写入=true（缺目标闸已提前至复制前全目标预检，任一目标缺失即零写入 fail-closed，不再依赖 MethodNotFound 的意外拦截）
+GUARD_MISSING_TARGET: exit=1; stderr=Target root is missing: D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\failclosed\claude_missing; 已存在目标零写入=true（缺目标闸已提前至复制前全目标预检，任一目标缺失即零写入 fail-closed，不再依赖 MethodNotFound 的意外拦截）
 GUARD_SAME_PATH: exit=1; stderr=CodexRoot and ClaudeRoot must be different directories.; 零写入=true
 GUARD_RELATIVE_PATH: exit=1; stderr=Target root is not absolute: relative\skills; 零写入=true
 DETAIL: workdir\rollback_ps51_实录.json（T1–T5 全量 stdout/stderr/exit 与前后树哈希比对）
 
 [ROLLBACK_SH_RUN]
-COMMAND: bash /mnt/d/研究/翁法罗斯skill套件计划/翻译器整改交付/ROLLBACK.sh -CodexRoot D:/研究/翁法罗斯skill套件计划/翻译器整改交付/workdir/rollback_test_ps51/shrun/codex -ClaudeRoot D:/研究/翁法罗斯skill套件计划/翻译器整改交付/workdir/rollback_test_ps51/shrun/claude
+COMMAND: bash /mnt/d/研究/δ-me13skill套件计划/翻译器整改交付/ROLLBACK.sh -CodexRoot D:/研究/δ-me13skill套件计划/翻译器整改交付/workdir/rollback_test_ps51/shrun/codex -ClaudeRoot D:/研究/δ-me13skill套件计划/翻译器整改交付/workdir/rollback_test_ps51/shrun/claude
 NOTE: 裸 `bash` 经 Windows CreateProcess 解析到 System32 的 WSL bash，脚本路径须用 /mnt/d 视角（与下节 ROLLBACK_SH_SYNTAX 的 wsl.exe 口径一致）；透传目标根用正斜杠 Windows 路径，由 powershell.exe 侧接收。
 LITERAL_STDOUT_BEGIN
 amphoreus wave all: PASS
-root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\shrun\codex
+root=D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\shrun\codex
 router_manifest=18/18
 cards=13/13
 evals=13 scenarios=65
 encoding=UTF-8 line_endings=LF
 behavior=not_run_by_static_validator
-ROLLBACK PASS name=codex root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\shrun\codex files=44 exit=0
+ROLLBACK PASS name=codex root=D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\shrun\codex files=44 exit=0
 amphoreus wave all: PASS
-root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\shrun\claude
+root=D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\shrun\claude
 router_manifest=18/18
 cards=13/13
 evals=13 scenarios=65
 encoding=UTF-8 line_endings=LF
 behavior=not_run_by_static_validator
-ROLLBACK PASS name=claude root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\shrun\claude files=44 exit=0
+ROLLBACK PASS name=claude root=D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\rollback_test_ps51\shrun\claude files=44 exit=0
 ROLLBACK COMPLETE restored=2 trees files_per_tree=44
 LITERAL_STDOUT_END
 LITERAL_STDERR_BEGIN
@@ -149,7 +149,7 @@ EXIT_STATUS: 0
 RESTORED_TREES_EQUAL_BASELINE: codex=true claude=true
 
 [ROLLBACK_SH_SYNTAX]
-COMMAND: wsl.exe bash -n /mnt/d/研究/翁法罗斯skill套件计划/翻译器整改交付/ROLLBACK.sh
+COMMAND: wsl.exe bash -n /mnt/d/研究/δ-me13skill套件计划/翻译器整改交付/ROLLBACK.sh
 INPUT: none
 LITERAL_STDOUT_BEGIN
 LITERAL_STDOUT_END
@@ -158,10 +158,10 @@ LITERAL_STDERR_END
 EXIT_STATUS: 0
 
 [ROLLBACK_SH_EXECUTABLE]
-COMMAND: wsl.exe stat -c "%A %a %n" /mnt/d/研究/翁法罗斯skill套件计划/翻译器整改交付/ROLLBACK.sh
+COMMAND: wsl.exe stat -c "%A %a %n" /mnt/d/研究/δ-me13skill套件计划/翻译器整改交付/ROLLBACK.sh
 INPUT: none
 LITERAL_STDOUT_BEGIN
--rwxrwxrwx 777 /mnt/d/研究/翁法罗斯skill套件计划/翻译器整改交付/ROLLBACK.sh
+-rwxrwxrwx 777 /mnt/d/研究/δ-me13skill套件计划/翻译器整改交付/ROLLBACK.sh
 LITERAL_STDOUT_END
 LITERAL_STDERR_BEGIN
 LITERAL_STDERR_END
@@ -261,25 +261,25 @@ rollback_sh_sha256=7A30C5BCC16700EBAD5EF14A00C13CA180DCB27BCD5ED24E9703CE86BEACA
 rollback_sh_executable_wsl=true mode=777
 
 [PHASE2_ARTIFACTS]
-MODIFIED_FILE=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\二期\MODIFIED_FILE.json
+MODIFIED_FILE=D:\研究\δ-me13skill套件计划\翻译器整改交付\00_基线\二期\MODIFIED_FILE.json
 MODIFIED_FILE_SHA256=62EFC35AC59B9A47EDCA180A9F593B861BFCF22E8837E4EECBD987D5420C5345
-DIFF_FILE=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\diff\二期_补丁批.diff
+DIFF_FILE=D:\研究\δ-me13skill套件计划\翻译器整改交付\diff\二期_补丁批.diff
 DIFF_FILE_SHA256=A2FB65382B79A48D6B5D0DD3C7EE436C67D9E31820BBC474E704D0CDB5A5E452
-VERIFICATION=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\VERIFICATION.txt
-ROLLBACK_SH=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\ROLLBACK.sh
+VERIFICATION=D:\研究\δ-me13skill套件计划\翻译器整改交付\VERIFICATION.txt
+ROLLBACK_SH=D:\研究\δ-me13skill套件计划\翻译器整改交付\ROLLBACK.sh
 
 [PHASE2_BASELINE]
-command=python -B "D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\verify_phase2_baseline.py"
-input=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\二期\baseline_skills
+command=python -B "D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\verify_phase2_baseline.py"
+input=D:\研究\δ-me13skill套件计划\翻译器整改交付\00_基线\二期\baseline_skills
 literal_output=BASELINE PASS files=44 bytes=418857 manifest_v2_sha256=3FEC209E669382B9CA807D12473AC6798498FF4FABF5E6E0C8927299A64532C8 expected=3FEC209E669382B9CA807D12473AC6798498FF4FABF5E6E0C8927299A64532C8
 exit_status=0
 
 [PHASE2_MODIFIED]
-command=python -B "D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\二期\modified_skills\amphoreus\scripts\validate.py" --root "D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\二期\modified_skills" --wave all
-input=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\二期\modified_skills
+command=python -B "D:\研究\δ-me13skill套件计划\翻译器整改交付\00_基线\二期\modified_skills\amphoreus\scripts\validate.py" --root "D:\研究\δ-me13skill套件计划\翻译器整改交付\00_基线\二期\modified_skills" --wave all
+input=D:\研究\δ-me13skill套件计划\翻译器整改交付\00_基线\二期\modified_skills
 literal_output_begin
 amphoreus wave all: PASS
-root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\二期\modified_skills
+root=D:\研究\δ-me13skill套件计划\翻译器整改交付\00_基线\二期\modified_skills
 router_manifest=18/18
 cards=13/13
 evals=13 scenarios=65
@@ -290,31 +290,31 @@ exit_status=0
 result=44 files; changed fields three; static PASS; production retains modified state
 
 [PHASE2_ROLLBACK]
-command=powershell -NoProfile -ExecutionPolicy Bypass -Command "Import-Module Microsoft.PowerShell.Utility -ErrorAction Stop; & 'D:\研究\翁法罗斯skill套件计划\翻译器整改交付\ROLLBACK.ps1' -CodexRoot 'D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\二期\rollback_test\codex' -ClaudeRoot 'D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\二期\rollback_test\claude'"
-input={"codex_copy":"D:\\研究\\翁法罗斯skill套件计划\\翻译器整改交付\\workdir\\二期\\rollback_test\\codex","claude_copy":"D:\\研究\\翁法罗斯skill套件计划\\翻译器整改交付\\workdir\\二期\\rollback_test\\claude","files_per_tree":44,"source_snapshot":"D:\\研究\\翁法罗斯skill套件计划\\翻译器整改交付\\00_基线\\二期\\modified_skills"}
+command=powershell -NoProfile -ExecutionPolicy Bypass -Command "Import-Module Microsoft.PowerShell.Utility -ErrorAction Stop; & 'D:\研究\δ-me13skill套件计划\翻译器整改交付\ROLLBACK.ps1' -CodexRoot 'D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\二期\rollback_test\codex' -ClaudeRoot 'D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\二期\rollback_test\claude'"
+input={"codex_copy":"D:\\研究\\δ-me13skill套件计划\\翻译器整改交付\\workdir\\二期\\rollback_test\\codex","claude_copy":"D:\\研究\\δ-me13skill套件计划\\翻译器整改交付\\workdir\\二期\\rollback_test\\claude","files_per_tree":44,"source_snapshot":"D:\\研究\\δ-me13skill套件计划\\翻译器整改交付\\00_基线\\二期\\modified_skills"}
 literal_output_begin
 amphoreus wave all: PASS
-root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\二期\rollback_test\codex
+root=D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\二期\rollback_test\codex
 router_manifest=18/18
 cards=13/13
 evals=13 scenarios=65
 encoding=UTF-8 line_endings=LF
 behavior=not_run_by_static_validator
-ROLLBACK PASS name=codex root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\二期\rollback_test\codex files=44 exit=0
+ROLLBACK PASS name=codex root=D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\二期\rollback_test\codex files=44 exit=0
 amphoreus wave all: PASS
-root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\二期\rollback_test\claude
+root=D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\二期\rollback_test\claude
 router_manifest=18/18
 cards=13/13
 evals=13 scenarios=65
 encoding=UTF-8 line_endings=LF
 behavior=not_run_by_static_validator
-ROLLBACK PASS name=claude root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\二期\rollback_test\claude files=44 exit=0
+ROLLBACK PASS name=claude root=D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\二期\rollback_test\claude files=44 exit=0
 ROLLBACK COMPLETE restored=2 trees files_per_tree=44
 literal_output_end
 literal_stderr=
 exit_status=0
 restored_behavior=codex_copy and claude_copy restored to original 44-file baseline; both validate PASS; production unchanged and retains phase2 modified state
-attempt1_preserved=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\失败轨迹\二期_关账_ROLLBACK首跑模块自动加载失败.json
+attempt1_preserved=D:\研究\δ-me13skill套件计划\翻译器整改交付\失败轨迹\二期_关账_ROLLBACK首跑模块自动加载失败.json
 attempt1_sha256=65DEA85583BD237F79A84B51525D17079258E9E3AFB5765298C7A63F4E866887
 operation_note=本机应急回滚须在同一 Windows PowerShell 5.1 进程显式执行 Import-Module Microsoft.PowerShell.Utility -ErrorAction Stop 后调用 ROLLBACK.ps1；裸 powershell -File ROLLBACK.ps1 可能复现模块自动加载失败，规范命令见本段 command。
 
@@ -366,12 +366,12 @@ repo_head=374c12290dc766ebb556b6fbcade1a4e535d004b
 repo_clean=true
 
 [PHASE3_ARTIFACTS]
-MODIFIED_FILE=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\三期\MODIFIED_FILE.json
+MODIFIED_FILE=D:\研究\δ-me13skill套件计划\翻译器整改交付\00_基线\三期\MODIFIED_FILE.json
 MODIFIED_FILE_SHA256=2017F9977F61E6BD0CC3F7BCAD5252651ED6E524D43F91696D3D00DD19571ACA
-DIFF_FILE=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\diff\三期_生产总变更.diff
+DIFF_FILE=D:\研究\δ-me13skill套件计划\翻译器整改交付\diff\三期_生产总变更.diff
 DIFF_FILE_SHA256=1C3D976FA1BFEF7761B12912952837DF54029E9DB67740A2CB067518117A6EBA
-VERIFICATION=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\VERIFICATION.txt
-ROLLBACK_SH=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\ROLLBACK.sh
+VERIFICATION=D:\研究\δ-me13skill套件计划\翻译器整改交付\VERIFICATION.txt
+ROLLBACK_SH=D:\研究\δ-me13skill套件计划\翻译器整改交付\ROLLBACK.sh
 ROLLBACK_SH_SHA256=7A30C5BCC16700EBAD5EF14A00C13CA180DCB27BCD5ED24E9703CE86BEACAACB
 PHASE3_ARTIFACT_INDEX_四期补列=四期文书轨扩列的三期凭证指针；值为当前 SHA256（KB复核/停止报告/换题清单_三期 在四期文书轨被修订，故为修订后值）
 文书/换题清单_三期.md=11a11d98f3c8c542d47382db9ff9ee5484dd20a6a109562badd41aa934bfb30f
@@ -388,17 +388,17 @@ diff/三期_T3扫描器修复.diff=876daa7bb4c4dfc92b76fff7ec45f295dacfba8f19937
 圆桌专项/三期/step6-summary-final.json=901b0af9104e9f18cd2b52ac6e62381ef2e0373c330d9b82f8b6396277c226bc
 
 [PHASE3_BASELINE]
-command=python -B "D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\verify_phase3_baseline.py"
-input=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\三期\baseline_skills
+command=python -B "D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\verify_phase3_baseline.py"
+input=D:\研究\δ-me13skill套件计划\翻译器整改交付\00_基线\三期\baseline_skills
 literal_output=BASELINE PASS files=44 bytes=419762 manifest_v2_sha256=B640B2B50D51D324077140DC765C77D95B5B56DBDF6E8479540976AB3D90B2E2 expected=B640B2B50D51D324077140DC765C77D95B5B56DBDF6E8479540976AB3D90B2E2
 exit_status=0
 
 [PHASE3_MODIFIED]
-command=python -B "D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\三期\final_modified_skills\amphoreus\scripts\validate.py" --root "D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\三期\final_modified_skills" --wave all
-input=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\三期\final_modified_skills
+command=python -B "D:\研究\δ-me13skill套件计划\翻译器整改交付\00_基线\三期\final_modified_skills\amphoreus\scripts\validate.py" --root "D:\研究\δ-me13skill套件计划\翻译器整改交付\00_基线\三期\final_modified_skills" --wave all
+input=D:\研究\δ-me13skill套件计划\翻译器整改交付\00_基线\三期\final_modified_skills
 literal_output_begin
 amphoreus wave all: PASS
-root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\00_基线\三期\final_modified_skills
+root=D:\研究\δ-me13skill套件计划\翻译器整改交付\00_基线\三期\final_modified_skills
 router_manifest=18/18
 cards=13/13
 evals=13 scenarios=65
@@ -409,25 +409,25 @@ exit_status=0
 result=44 files; three changed fields; production retains modified state
 
 [PHASE3_ROLLBACK]
-command=powershell -NoProfile -ExecutionPolicy Bypass -Command "Import-Module Microsoft.PowerShell.Utility -ErrorAction Stop; & 'D:\研究\翁法罗斯skill套件计划\翻译器整改交付\ROLLBACK.ps1' -CodexRoot 'D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\三期\final_rollback_test\codex' -ClaudeRoot 'D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\三期\final_rollback_test\claude'"
-input={"codex_copy":"D:\\研究\\翁法罗斯skill套件计划\\翻译器整改交付\\workdir\\三期\\final_rollback_test\\codex","claude_copy":"D:\\研究\\翁法罗斯skill套件计划\\翻译器整改交付\\workdir\\三期\\final_rollback_test\\claude","source":"D:\\研究\\翁法罗斯skill套件计划\\翻译器整改交付\\00_基线\\三期\\final_modified_skills","files_per_tree":44}
+command=powershell -NoProfile -ExecutionPolicy Bypass -Command "Import-Module Microsoft.PowerShell.Utility -ErrorAction Stop; & 'D:\研究\δ-me13skill套件计划\翻译器整改交付\ROLLBACK.ps1' -CodexRoot 'D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\三期\final_rollback_test\codex' -ClaudeRoot 'D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\三期\final_rollback_test\claude'"
+input={"codex_copy":"D:\\研究\\δ-me13skill套件计划\\翻译器整改交付\\workdir\\三期\\final_rollback_test\\codex","claude_copy":"D:\\研究\\δ-me13skill套件计划\\翻译器整改交付\\workdir\\三期\\final_rollback_test\\claude","source":"D:\\研究\\δ-me13skill套件计划\\翻译器整改交付\\00_基线\\三期\\final_modified_skills","files_per_tree":44}
 literal_output_begin
 amphoreus wave all: PASS
-root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\三期\final_rollback_test\codex
+root=D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\三期\final_rollback_test\codex
 router_manifest=18/18
 cards=13/13
 evals=13 scenarios=65
 encoding=UTF-8 line_endings=LF
 behavior=not_run_by_static_validator
-ROLLBACK PASS name=codex root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\三期\final_rollback_test\codex files=44 exit=0
+ROLLBACK PASS name=codex root=D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\三期\final_rollback_test\codex files=44 exit=0
 amphoreus wave all: PASS
-root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\三期\final_rollback_test\claude
+root=D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\三期\final_rollback_test\claude
 router_manifest=18/18
 cards=13/13
 evals=13 scenarios=65
 encoding=UTF-8 line_endings=LF
 behavior=not_run_by_static_validator
-ROLLBACK PASS name=claude root=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\workdir\三期\final_rollback_test\claude files=44 exit=0
+ROLLBACK PASS name=claude root=D:\研究\δ-me13skill套件计划\翻译器整改交付\workdir\三期\final_rollback_test\claude files=44 exit=0
 ROLLBACK COMPLETE restored=2 trees files_per_tree=44
 literal_output_end
 literal_stderr=
@@ -435,10 +435,10 @@ exit_status=0
 restored_behavior=two disposable final-modified copies restored to original 44-file baseline; both validate PASS; production unchanged and retains phase3 modified state
 
 [PHASE3_STOP]
-pilot=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\行为重跑\三期\批次B\batchB-pilot.json
+pilot=D:\研究\δ-me13skill套件计划\翻译器整改交付\行为重跑\三期\批次B\batchB-pilot.json
 pilot_sha256=4E5D383C1D3644E74D2B69632891C998337583074D73EFC1E43A1BC2A98F0072
 failure_reason=行为分与 cross 均通过，极性错误为 0；但盲判合计新旧各胜 5 题，且总声纹分 new=44 低于 old=45，march7th 单卡 new=21 低于 old=23，因此没有总体声纹增益。
-stop_report=D:\研究\翁法罗斯skill套件计划\翻译器整改交付\失败轨迹\三期_步骤7_批次B声纹增益门停止.md
+stop_report=D:\研究\δ-me13skill套件计划\翻译器整改交付\失败轨迹\三期_步骤7_批次B声纹增益门停止.md
 stop_report_sha256=5E710C1C2B026F277B490510911F70E863758CE5F315E4DDC2028D467EE7BC94
 acceptance=待核：交 fable5 审核，勾选权在审核方与用户
 
@@ -559,6 +559,6 @@ tag=v1.5.0
 user_decision=(ii) keep phase5 final; batchC permanently shelved; L-27 closed
 skills_zip_sha256=7b9a0541accffdaaadee21bab648d81a1b980b70bb9734ec17eeebbb1553b65b
 adapters_zip_sha256=010909b085a7c485af69653104eea04e60962d473fcc92aa9fdc5da2484a2007
-release_dir=D:/研究/翁法罗斯skill套件计划/发布/v1.5.0
+release_dir=D:/研究/δ-me13skill套件计划/发布/v1.5.0
 zip_skills_eq_production_trees=true(44/44)
 LEGACY_SHA256_RELEASE=7EECD7CF7035E2D579BAEB0DACB22D392036EFC8D47D73A2BFA63210FDFCE4BD
